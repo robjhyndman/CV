@@ -7,7 +7,6 @@ all: $(TEXFILE).pdf
 # Compile main tex file
 $(TEXFILE).pdf: $(TEXFILE).tex $(BIBFILES)
 	latexmk -pdf $(TEXFILE)
-	cp $(TEXFILE).pdf ~/git/Website/static/
 
 # View main tex file
 view: $(TEXFILE).pdf
