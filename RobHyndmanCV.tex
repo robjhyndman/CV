@@ -10,6 +10,7 @@
 \titlespacing{\section}{0pt}{3ex}{1ex}
 
 \name{Rob J Hyndman}
+
 \info{\faicon{map-marker} & Department of Econometrics \& Business
                                Statistics, Monash University, VIC 3800, Australia.\\
       \faicon{home}       & robjhyndman.com\\
@@ -37,6 +38,7 @@
 
 \makebibcategory{reports}{Statistical consulting reports}
 \makebibcategory{nonstat}{Non-statistical books}
+\makebibcategory{inprogress}{Working papers under revision or review}
 
 
 \addtocategory{books}{
@@ -151,7 +153,7 @@
   pearce2016exploring,
   handguns,
   fvanaive,
-  temporal-hierarchies
+  temporal-hierarchies,
 }
 
 \addtocategory{chapters}{
@@ -181,19 +183,21 @@
   boostingar,
   epic,
   iwfos14,
-  cikm2015}
+  cikm2015,
+  probhts,
+  }
 
-\addtocategory{techreports}{
-  sturges95,
-  GHT96,
-  EH00,
-  OSKHL05,
-  hetero06,
-  GSI,
-  rsmreview,
-  KH08,
-  rectify,
-  htsvignette,
+\addtocategory{inprogress}{
+  %sturges95,
+  %GHT96,
+  %EH00,
+  %OSKHL05,
+  %hetero06,
+  %GSI,
+  %rsmreview,
+  %KH08,
+  %rectify,
+  %htsvignette,
   bivarridges,
   ropes,
   tscv,
@@ -273,8 +277,8 @@
 2005--& \textbf{Editor-in-Chief},
         \textit{International Journal of Forecasting}.\\
 2011--& \textbf{Editor}, \textit{Journal of Statistical Software}.\\
-2001--& \textbf{Director, Business \& Economic Forecasting Unit},
-        Department of Econometrics \& Business Statistics, Monash University.\\
+%2001--& \textbf{Director, Business \& Economic Forecasting Unit},
+%        Department of Econometrics \& Business Statistics, Monash University.\\
 1999--& \textbf{Director of Consulting},
         Department of Econometrics \& Business Statistics, Monash University.
 \end{tabular}
@@ -284,6 +288,7 @@
 \section{Honours and awards}
 
 ~\begin{tabular}{ll}
+%2017 & Visiting Expert Professor, Chinese Academy of Sciences, Beijing, China.\\
 2016 & KNAW Visiting Professor, TU/Eindhoven, Netherlands.\\
 2010 & Dean's Award for excellence in innovation and external collaboration, Monash University.\\
 2010 & HP Innovation Research Award.\\
@@ -332,16 +337,16 @@ Member, Statistical Society of Australia.
 \item Since 1991 I have authored \ref{sumpapers} papers, chapters or books on statistical topics. A list of these appears on pages \pageref{papersstart}--\pageref{papersend}.
 \item I have received several awards for my research including the 2007 Moran Medal from the Australian Academy of Science.
 \item  My current research projects include forecasting electricity demand, forecasting large collections of time series, and strategies for improving forecasts through bagging and boosting.
-\item I currently supervise five PhD students and one post-doctoral fellow. I have previously supervised another 21 PhD students and 3 Masters students.
+\item I currently supervise five PhD students and two post-doctoral fellows. I have previously supervised another 22 PhD students and 3 Masters students.
 \item In 2008 I won the Monash Vice-Chancellor's award for postgraduate supervisor of the year.
-\item I publish a blog on research issues (\url{robjhyndman.com/hyndsight/}) which receives an average of about 1500 pageviews per day.
+\item I publish a blog on research issues (\url{robjhyndman.com/hyndsight/}) which receives an average of about 2800 pageviews per day.
 \item I have produced \ref{sumsoftware} R packages as a result of my research. These are listed on page~\pageref{sumsoftware}.
 \end{itemize}
 
 \clearpage
 
 \section{Grants}
-I have acquired (in most cases jointly) over \$3.5 million in external research grants since 2000. External research grants over \$10,000 are listed below.\vspace*{0.3cm}
+I have acquired (in most cases jointly) about \$4 million in external research grants since 2000. External research grants over \$10,000 are listed below.\vspace*{0.3cm}
 
 {\def\next{\\\\[-0.2cm]}\fontsize{10}{12pt}\selectfont
 \begin{tabular}{@{}lP{13.3cm}r@{}}
@@ -384,8 +389,9 @@ I have acquired (in most cases jointly) over \$3.5 million in external research 
 \next
 2011--2013 & R.J. Hyndman and S. Fan, ``Development of electricity peak demand and energy forecasts for the SWIS''. \emph{Funding from the Independent Market Operator (Western Australia)}. &\$93,450
 \next
-2012--2015 & K.A. Smith-Miles, R.J. Hyndman, L. Villanova and M. Kah. ``Optimising experimental design for robust product development: a cast study for high-efficiency energy generation''. \emph{ARC Linkage Grant with Ceramic Fuel Cells Ltd}. & \$240,000\next
-2014--2016 & A.N. Panagiotelis, G. Athanasopoulos, R.J. Hyndman, F. Vahid. ``Macroeconomic forecasting in a `Big Data' world''. \emph{ARC Discovery Grant}.& \$335,000\\
+2013--2016 & K.A. Smith-Miles, R.J. Hyndman, L. Villanova and M. Kah. ``Optimising experimental design for robust product development: a cast study for high-efficiency energy generation''. \emph{ARC Linkage Grant with Ceramic Fuel Cells Ltd}. & \$362,389\next
+2014--2017 & A.N. Panagiotelis, G. Athanasopoulos, R.J. Hyndman, F. Vahid. ``Macroeconomic forecasting in a `Big Data' world''. \emph{ARC Discovery Grant}.& \$451,034\\
+2017--2019&  R.J. Hyndman, D. Cook, P. Toscas. ``RiskLab Projects: Econometrics''. \emph{RiskLab at Data61}. & \$151,200\\
 \bottomrule
 \end{tabular}}
 
@@ -398,12 +404,12 @@ I have acquired (in most cases jointly) over \$3.5 million in external research 
 \item Knibbs lecture, \emph{Population forecasting and the importance of being uncertain}, Statistical Society of Australia, Melbourne, November 2007.
 \item Invited speaker, \emph{Forecasting functional time series}, Australian Frontiers of Science, Canberra, February 2008.
 \item Keynote speaker, \emph{Extreme Forecasting}, International Symposium on Forecasting, Hong Kong, June 2009.
-\item Workshop leader, \emph{Statistical Forecasting: Principles and Practice}, Swiss Statistical Society, Kandersteg, June 2011.
+%\item Workshop leader, \emph{Statistical Forecasting: Principles and Practice}, Swiss Statistical Society, Kandersteg, June 2011.
 \item Invited speaker, \emph{Advances in automatic time series forecasting}, Australian Statistics Conference, Adelaide, July 2012.
 \item Keynote speaker, \emph{Man vs Wild Data}, Young Statisticians Conference, Melbourne, February 2013.
 \item Keynote speaker, \emph{Forecasting without forecasters}, {International Symposium on Forecasting}, Seoul, June 2013.
 \item Keynote speaker, \emph{Automatic time series forecasting},  ``New Trends on Intelligent Systems and Soft Computing 2014'', University of Granada, Spain, February 2014.
-\item Workshop leader, \emph{State space models for time series}, Australian Bureau of Statistics, May 2014.
+%\item Workshop leader, \emph{State space models for time series}, Australian Bureau of Statistics, May 2014.
 \item Keynote speaker, \emph{Challenges in forecasting peak electricity demand}, Energy Forum, Valais, Switzerland, June 2014.
 \item Workshop leader, \emph{Functional time series in demography}, Humboldt University, Berlin, June 2014.
 \item Workshop leader, \emph{Forecasting: principles and practice}, University of Western Australia, September 2014.
@@ -411,6 +417,24 @@ I have acquired (in most cases jointly) over \$3.5 million in external research 
 \item Keynote speaker,  \emph{Exploring the boundaries of predictability: what can we forecast, and when should we give up?}, Yahoo Big Thinkers, June 2015.
 \item Keynote speaker, \emph{Forecasting big time series data using R}, Chinese R conference, Nanchang, October 2015.
 \item Keynote speaker, \emph{Forecasting large collections of related time series}, German Statistical Week, Augsburg, September 2016.
+\item Invited speaker, International Symposium on Energy Analytics, Cairns, June 2017.
+\item Keynote speaker, ICML Time Series Workshop, Sydney, August 2017.
+\end{compactitem}
+
+
+\section{Teaching}
+
+\begin{compactitem}\itemsep=0.1cm
+\item %Student evaluations of the postgraduate subject ``Quantitative Business Research Methods'' (for DBA students) consistently rated my teaching above 4.5 out of 5.
+Student evaluations for the undergraduate subject ``Applied forecasting for business and economics'' in 2015 rated my teaching at 4.79 out of 5.
+
+\item In 1998, I received the award for ``Excellence in teaching'' by the Monash Science Society. This is awarded by the students of the Science faculty.
+%\item I am coauthor of the third edition of \textit{Forecasting: methods and applications} (Wiley, 1998).% This is the leading textbook in business forecasting and is very widely used internationally.% I am also the author of an instructor's manual for the book and I maintain the associated web site. The website receives an average of about 240 pageviews per day.
+\item I am author of an innovative textbook with George Athanasopoulos entitled \textit{Forecasting: principles and practice} (\url{OTexts.org/fpp/}) which is available online and free of charge. The website has an average of about 7000 pageviews per day.
+
+\item I am establishing an online textbook publishing platform to allow other academics to also publish books in the same format.
+
+%\item I maintain the electronic ``Time Series Data Library'' on the world-wide web. This library includes over 800 data sets for students to use in projects. It has become well-known internationally and is accessed by students and researchers around the world. %The web site receives an average of about 1100 pageviews per day.
 \end{compactitem}
 
 \section{Consulting}
@@ -427,20 +451,14 @@ I have acquired (in most cases jointly) over \$3.5 million in external research 
 % Maddocks: racial profiling case.
 \end{compactitem}
 
+\section{Advisory boards}
 
-\section{Teaching}
-
-\begin{compactitem}\itemsep=0.1cm
-\item %Student evaluations of the postgraduate subject ``Quantitative Business Research Methods'' (for DBA students) consistently rated my teaching above 4.5 out of 5.
-Student evaluations for the undergraduate subject ``Applied forecasting for business and economics'' in 2015 rated my teaching at 4.79 out of 5.
-
-\item In 1998, I received the award for ``Excellence in teaching'' by the Monash Science Society. This is awarded by the students of the Science faculty.
-%\item I am coauthor of the third edition of \textit{Forecasting: methods and applications} (Wiley, 1998).% This is the leading textbook in business forecasting and is very widely used internationally.% I am also the author of an instructor's manual for the book and I maintain the associated web site. The website receives an average of about 240 pageviews per day.
-\item I am author of an innovative textbook with George Athanasopoulos entitled \textit{Forecasting: principles and practice} (\url{OTexts.org/fpp/}) which is available online and free of charge. The website has an average of about 5000 pageviews per day.
-
-\item I am establishing an online textbook publishing platform to allow other academics to also publish books in the same format.
-
-\item I maintain the electronic ``Time Series Data Library'' on the world-wide web. This library includes over 800 data sets for students to use in projects. It has become well-known internationally and is accessed by students and researchers around the world. %The web site receives an average of about 1100 pageviews per day.
+%I am on several scientific advisory boards for external organizations:
+\begin{compactitem}
+\item Member of the Scaling committee, Victorian Tertiary Admissions Centre. This committee is responsible for producing the ATAR for VCE students.
+\item Member of the Interstate Transfer Index Technical Group for the Australasian Conference of Tertiary Admissions Centres.
+\item Member of the Aboriginal and Torres Strait Islander Statistical and Technical Advisory Group for the Australian Institute of Health and Welfare.
+\item Member of the Methodology Advisory Committee for the Australian Bureau of Statistics.
 \end{compactitem}
 
 
@@ -453,18 +471,22 @@ Student evaluations for the undergraduate subject ``Applied forecasting for busi
 \printbib{papers}
 \printbib{chapters}
 \printbib{conferences}
-\printbib{techreports}
+\printbib{inprogress}
 \printbib{bookreviews}
 \printbib{editorials}
 \end{publications}
 
-\pagebreak
+%\pagebreak
 
+% Consulting reports
 \setcounter{sumpapers}{0}
 \label{consulting}
 \printbibliography[heading=reports,type=report,keyword=consulting]%
 \lastref{sumpapers}\addtocounter{sumpapers}{-1}%
 \refstepcounter{sumpapers}\label{sumreports}
+
+% Software
+\newpage
 \setcounter{sumpapers}{0}
 \newrefcontext[sorting=ty]
 \printbibliography[category=software,heading=software]\lastref{sumpapers}
