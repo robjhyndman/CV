@@ -2,7 +2,11 @@
 TEXFILE= RobHyndmanCV
 BIBFILES := $(wildcard *.bib)
 
-all: $(TEXFILE).pdf
+all: Rpackages.bib $(TEXFILE).pdf
+
+# Generate bib file for all R packages
+Rpackages.bib: Rpackages.R
+	R CMD BATCH Rpackages.R
 
 # Compile main tex file
 $(TEXFILE).pdf: $(TEXFILE).tex $(BIBFILES)
@@ -12,10 +16,11 @@ $(TEXFILE).pdf: $(TEXFILE).tex $(BIBFILES)
 view: $(TEXFILE).pdf
 	evince $(TEXFILE).pdf &
 
-# Clean up stray files
+# Clean up
 clean:
 	latexmk -c
-	rm -rf $(TEXFILE).pdf
+	rm -f $(TEXFILE).pdf
+	rm -f Rpackages.bib
 
 .PHONY: all clean
 
