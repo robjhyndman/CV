@@ -81,5 +81,7 @@ write.bib(
     "smoothAPC",
     "stR",
     "sugrrants",
-    "thief"))
+    "thief",
+    "tscompdata",
+    "tsfeatures"))
 
