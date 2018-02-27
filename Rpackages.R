@@ -79,6 +79,7 @@ write.bib(
     "MEFM",
     "ozdata",
     "rainbow",
+    "rmarkdown",
     "robets",
     "smoothAPC",
     "stR",
