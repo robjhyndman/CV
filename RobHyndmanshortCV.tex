@@ -1,0 +1,151 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{cv,booktabs,fontawesome}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Change color to blue
+\def\headcolor{\color[rgb]{0,0,0.5}}
+
+% Space before section headings
+\titlespacing{\section}{0pt}{3ex}{1ex}
+
+\name{Rob J Hyndman}
+
+\info{\faicon{map-marker} & Department of Econometrics \& Business
+                               Statistics, Monash University, VIC 3800, Australia.\\
+      \faicon{home}       & robjhyndman.com\\
+      \faicon{phone}      & +61 3 9905 5141\\
+      \faicon{envelope}   & Rob.Hyndman@monash.edu\\
+      \faicon{twitter}    & @robjhyndman\\
+      \faicon{github}     & robjhyndman}
+
+\bibliography{rjhpubs,rjhreports,Rpackages}
+
+\DeclareSourcemap{
+  \maps[datatype=bibtex, overwrite]{
+    \map{
+      \step[fieldset=month, null]
+    }
+  }
+}
+
+% Use useprefix because of Ashton de Silva
+\ExecuteBibliographyOptions{useprefix=true}
+
+\usepackage[sfdefault,lf,t]{carlito}
+\renewcommand{\bibfont}{\normalfont\fontsize{10}{12.4}\sffamily}
+\usepackage{inconsolata}
+
+\makebibcategory{selected}{Selected refereed research papers}
+
+\addtocategory{books}{
+  MWH3,
+  expsmooth08,
+  fpp2,
+}
+
+\addtocategory{selected}{
+  YW93,
+  HDRF95,
+  HDR96,
+  HBG96,
+  HF96,
+  GHH97,
+  HKSG02,
+  HHF04,
+  HKOS05,
+  HK06,
+  HU07,
+  HB08,
+  HK08,
+  HS09,
+  HS10,
+  HF10,
+  hierarchical,
+  DHS11,
+  HBY13,
+  gefcom,
+  m3pca,
+  hfts,
+  temporal-hierarchies,
+  tscv,
+  mint,
+  boostingar,
+  probhts,
+  }
+
+
+
+\begin{document}
+\maketitle
+
+\section{Education and Qualifications}
+
+~\begin{tabular}{lll}
+1988 & B.Sc.(Hons) & University of Melbourne\\
+1992 & Ph.D. & University of Melbourne\\
+2000 & A.Stat. & Statistical Society of Australia.
+\end{tabular}
+
+
+\section{Current positions}
+
+~\begin{tabular}{lP{15cm}}
+2003--& \textbf{Professor of Statistics},
+        Department of Econometrics \& Business Statistics, Monash University.\\
+2005--& \textbf{Director},
+        International Institute of Forecasters.\\
+2005--& \textbf{Editor-in-Chief},
+        \textit{International Journal of Forecasting}.\\
+2011--& \textbf{Section Editor}, \textit{Journal of Statistical Software}.
+%2001--& \textbf{Director, Business \& Economic Forecasting Unit},
+%        Department of Econometrics \& Business Statistics, Monash University.\\
+%1999--& \textbf{Director of Consulting},
+%        Department of Econometrics \& Business Statistics, Monash University.
+\end{tabular}
+
+
+
+\section{Recent honours and awards}
+
+~\begin{tabular}{ll}
+%2017 & Visiting Expert Professor, Chinese Academy of Sciences, Beijing, China.\\
+2016 & KNAW Visiting Professor, TU/Eindhoven, Netherlands.\\
+2010 & Dean's Award for excellence in innovation and external collaboration, Monash University.\\
+2010 & HP Innovation Research Award.\\
+%2009--2010 & Entry in \emph{Great minds of the 21st century}, 1st--4th editions.\\
+2008 & Dean's award for excellence in research, Monash University.\\
+2008 & Vice-Chancellor's award for postgraduate supervisor of the year, Monash University.\\
+2007 & Knibbs Lecturer, Statistical Society of Australia (ACT branch).\\
+2007 & Moran Medal for Statistical Science, Australian Academy of Science.\\
+2006 & Belz Lecturer, Statistical Society of Australia (Victorian branch).
+\end{tabular}
+
+\section{Research}
+
+\begin{itemize}\parskip=0cm
+\item Since 1991 I have authored 166 papers, chapters or books on statistical topics. A list of selected publications appears on the following page.
+\item  My current research involves the analysis of large collections of time series, and includes visualization, forecasting, reconciliation and modelling. Applications include electricity demand and smart-meter data, security sensors, manufacturing data and retail sales.
+\item I currently supervise six PhD students and two post-doctoral research fellows. I have previously supervised another 22 PhD students and 3 Masters students.
+\item I publish a blog on research issues (\url{robjhyndman.com/hyndsight/}) which receives an average of about 2800 pageviews per day.
+\item I have produced 27 R packages as a result of my research; 21 of them are on CRAN.
+\end{itemize}
+
+\section{Advisory boards}
+
+%I am on several scientific advisory boards for external organizations:
+\begin{compactitem}
+\item Member of the Scaling committee, Victorian Tertiary Admissions Centre. This committee is responsible for producing the ATAR for VCE students.
+\item Member of the Interstate Transfer Index Technical Group for the Australasian Conference of Tertiary Admissions Centres.
+\item Member of the Aboriginal and Torres Strait Islander Statistical and Technical Advisory Group for the Australian Institute of Health and Welfare.
+\item Member of the Methodology Advisory Committee for the Australian Bureau of Statistics.
+\end{compactitem}
+
+\enlargethispage*{0.6cm}
+
+\setlength{\bibitemsep}{1.8pt}
+
+\printbib{books}
+\printbib{selected}
+
+\end{document}
