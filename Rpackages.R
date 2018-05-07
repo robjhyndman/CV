@@ -1,7 +1,12 @@
 getbibentry <- function(pkg)
 {
   # Grab locally stored package info
-  meta <- packageDescription(pkg)
+  meta <- suppressWarnings(packageDescription(pkg))
+  if(!is.list(meta))
+  {
+    if(is.na(meta))
+      stop(paste(pkg,"not found"))
+  }
   # Check if CRAN version exists
   url <- paste("https://CRAN.R-project.org/web/packages/",
                pkg,"/index.html",sep="")
@@ -11,7 +16,7 @@ getbibentry <- function(pkg)
   {
     x <- rvest::html_nodes(z, "td")
     meta$Version <- stringr::str_extract(as.character(x[2]), "([0-9.]+)")
-    pub <- which(!is.na(stringr::str_locate(x, "<td>Published:</td>")[,1]))
+    pub <- which(!is.na(stringr::str_locate(as.character(x), "<td>Published:</td>")[,1]))
     meta$Year <- stringr::str_extract(as.character(x[pub+1]), "([0-9]+)")
     meta$URL <- paste("https://CRAN.R-project.org/package=",
                    pkg,sep="")
@@ -33,7 +38,10 @@ getbibentry <- function(pkg)
   # Add J to my name
   meta$Author <- gsub("Rob Hyndman","Rob J Hyndman",meta$Author)
 
-  # Create bibentry
+  # Replace R Core Team with {R Core Team}
+  meta$Author <- gsub("R Core Team","{R Core Team}",meta$Author)
+
+    # Create bibentry
   rref <- bibentry(
     bibtype="Manual",
     title=paste(meta$Package,": ",meta$Title, sep=""),
@@ -86,5 +94,6 @@ write.bib(
     "sugrrants",
     "thief",
     "tscompdata",
-    "tsfeatures"))
+    "tsfeatures",
+    "tsibble"))
 
