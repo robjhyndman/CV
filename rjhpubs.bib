@@ -1,503 +1,524 @@
-@techreport{oddstream,
-  author = {Priyanga Dilini Talagala and Rob J Hyndman and Kate Smith-Miles and Sevvandi Kandanaarachchi and Mario Andres Muñoz},
-  year = 2018,
+@Article{tscv,
+  title = {A note on the validity of cross-validation for evaluating autoregressive time series prediction},
+  author = {Christoph Bergmeir and Rob J Hyndman and Bonsoo Koo},
+  year = {2018},
+  volume = {120},
+  pages = {70-83},
+  journal = {Computational Statistics \& Data Analysis},
+  url = {robjhyndman.com/publications/cv-time-series/},
+}
+
+@Book{fpp2,
+  title = {Forecasting: principles and practice},
+  author = {Rob J Hyndman and George Athanasopoulos},
+  year = {2018},
+  publisher = {OTexts},
+  url = {OTexts.org/fpp2},
+  edition = {2nd edition},
+  address = {Melbourne, Australia},
+}
+
+@Article{vizenergy,
+  author = {Rob J Hyndman and Xueqin A Lin and Pierre Pinson},
+  year = {2018},
+  journal = {IEEE Power and Energy Magazine},
+  title = {Visualizing Big Energy Data: Solutions for This Crucial Component of Data Analysis},
+  volume = {16},
+  number = {3},
+  pages = {18-25},
+  keywords = {Big Data;Data analysis;Data models;Data visualization;Phasor measurement units;Principal component analysis;Probability distribution;Smart meters},
+  doi = {10.1109/MPE.2018.2801441},
+  month = {May},
+}
+
+@Article{bagginguncertainty,
+  title = {Exploring the sources of uncertainty: why does bagging for time series forecasting work?},
+  author = {Fotios Petropoulos and Rob J Hyndman and Christoph Bergmeir},
+  journal = {European Journal of Operational Research},
+  year = {2018},
+  volume = {268},
+  number = {2},
+  pages = {545-554},
+}
+
+@TechReport{oddstream,
+  author = {Priyanga Dilini Talagala and Rob J Hyndman and Kate Smith-Miles and Sevvandi Kandanaarachchi and Mario Andres Mu{\~n}oz},
+  year = {2018},
   title = {Anomaly detection in streaming nonstationary temporal data},
-  Institution = {Department of Econometrics and Business Statistics},
+  institution = {Department of Econometrics and Business Statistics},
   type = {Working Paper},
   number = {4/18},
-  url = {robjhyndman.com/publications/oddstream/}
+  url = {robjhyndman.com/publications/oddstream/},
 }
 
-@techreport{calendarviz,
-  author = {Earo Wang and Dianne Cook and Rob J Hyndman},
-  year = 2017,
-  title = {Calendar-based graphics for visualizing people's daily schedules},
-  Institution              = {Department of Econometrics \& Business Statistics, Monash University},
-  Number                   = {17/01},
-  Type                     = {Working paper},
-  Url                      = {robjhyndman.com/publications/ausmacrodata}
-  }
-
-@article{mint,
-  Title                    = {Optimal forecast reconciliation for hierarchical and grouped time series through trace minimization},
-  Author                   = {Shanika L Wickramasuriya and George Athanasopoulos and Rob J Hyndman},
-  journal =  {J American Statistical Association},
-  Year  = 2018,
+@Article{mint,
+  title = {Optimal forecast reconciliation for hierarchical and grouped time series through trace minimization},
+  author = {Shanika L Wickramasuriya and George Athanasopoulos and Rob J Hyndman},
+  journal = {J American Statistical Association},
+  year = {2018},
   note = {to appear},
-  Url = {robjhyndman.com/publications/mint/}
-}
-
-@article{bagginguncertainty,
-  title={Exploring the sources of uncertainty: why does bagging for time series forecasting work?},
-  author={Petropoulos, Fotios and Hyndman, Rob J and Bergmeir, Christoph},
-  journal={European Journal of Operational Research},
-  year={2018},
-  volume = {268},
-  number = 2,
-  pages = {545-554}
-}
-
-@article{vizenergy,
- author = {Rob J Hyndman and Xueqin A Lin and Pierre Pinson},
- year = 2018,
- journal = {IEEE Power and Energy Magazine},
- title={Visualizing Big Energy Data: Solutions for This Crucial Component of Data Analysis},
-volume={16},
-number={3},
-pages={18-25},
-keywords={Big Data;Data analysis;Data models;Data visualization;Phasor measurement units;Principal component analysis;Probability distribution;Smart meters},
-doi={10.1109/MPE.2018.2801441},
-month={May}
-}
-
-@Article{dynamicpareto,
-  Title                    = {Dynamic Algorithm Selection for Pareto Optimal Set Approximation},
-  Author                   = {Ingrida Steponavi\v{c}\.{e} and Rob J Hyndman and Kate Smith-Miles and Laura Villanova},
-  Year                     = {2017},
-  Issue                    = {1},
-  Pages                    = {263-282},
-  Volume                   = {67},
-
-  Journal                  = {Journal of Global Optimization}
-}
-
-@Article{fvanaive,
-  Title                    = {A note on upper bounds for forecast-value-added relative to naïve forecasts},
-  Author                   = {Goodwin, Paul and Petropoulos, Fotios and Hyndman, Rob J},
-  Year                     = {2017},
-  volume = 68,
-  issue = 9,
-  pages = {1082-1084},
-  Journal                  = {Journal of the Operational Research Society}
-}
-
-@Article{handguns,
-  Title                    = {Handgun acquisitions in {California} after two mass shootings},
-  Author                   = {Studdert, D M and Zhang, Y and Rodden, J A and Hyndman, R J and Wintemute, G J},
-  Year                     = {2017},
-  Doi                      = {10.7326/M16-1574},
-  Number                   = {10},
-  Pages                    = {698-706},
-  Volume                   = {166},
-
-  Journal                  = {Annals of Internal Medicine}
-}
-
-@Article{hfts,
-  Title                    = {Grouped functional time series forecasting: an application to age-specific mortality rates},
-  Author                   = {Han Lin Shang and Rob J Hyndman},
-  Year                     = {2017},
-  Doi                      = {10.1080/10618600.2016.1237877},
-  Number                   = {2},
-  Pages                    = {330-343},
-  Volume                   = {26},
-
-  Journal                  = {Journal of Computational and Graphical Statistics}
-}
-
-@Article{m3pca,
-  Title                    = {Visualising forecasting algorithm performance using time series instance spaces},
-  Author                   = {Yanfei Kang and Rob J Hyndman and Kate Smith-Miles},
-  Year                     = {2017},
-  Number                   = {2},
-  Pages                    = {345-358},
-  Volume                   = {33},
-
-  Journal                  = {International Journal of Forecasting}
-}
-
-@Inproceedings{probhts,
-  Title                    = {Coherent probabilistic forecasts for hierarchical time series},
-  Author                   = {Souhaib {Ben Taieb} and James W Taylor and Rob J Hyndman},
-  Booktitle                = {Proceedings of the 34th International Conference on Machine Learning, PMLR},
-  Year                     = {2017},
-  volume = 70,
-  pages = {3348-3357}
+  url = {robjhyndman.com/publications/mint/},
 }
 
 @Article{temporal-hierarchies,
-  Title                    = {Forecasting with temporal hierarchies},
-  Author                   = {George Athanasopoulos and Rob J Hyndman and Nikolaos Kourentzes and Fotios Petropoulos},
-  Year                     = {2017},
-  Number                   = {1},
-  Pages                    = {60-74},
-  Volume                   = {262},
+  title = {Forecasting with temporal hierarchies},
+  author = {George Athanasopoulos and Rob J Hyndman and Nikolaos Kourentzes and Fotios Petropoulos},
+  year = {2017},
+  number = {1},
+  pages = {60-74},
+  volume = {262},
+  journal = {European Journal of Operational Research},
+}
 
-  Journal                  = {European Journal of Operational Research}
+@TechReport{ausmacrodata,
+  title = {The Australian Macro Database: An online resource for macroeconomic research in Australia},
+  author = {Timur Behlul and Anastasios Panagiotelis and George Athanasopoulos and Rob J Hyndman and Farshid Vahid},
+  institution = {Department of Econometrics \& Business Statistics, Monash University},
+  year = {2017},
+  number = {17/01},
+  type = {Working paper},
+  url = {robjhyndman.com/publications/ausmacrodata},
+}
+
+@InProceedings{probhts,
+  title = {Coherent probabilistic forecasts for hierarchical time series},
+  author = {Souhaib {Ben Taieb} and James W Taylor and Rob J Hyndman},
+  booktitle = {Proceedings of the 34th International Conference on Machine Learning, PMLR},
+  year = {2017},
+  volume = {70},
+  pages = {3348-3357},
+}
+
+@TechReport{smartmeterhts,
+  title = {Hierarchical Probabilistic Forecasting of Electricity Demand with Smart Meter Data},
+  author = {Souhaib {Ben Taieb} and James W Taylor and Rob J Hyndman},
+  institution = {Department of Econometrics \& Business Statistics, Monash University},
+  year = {2017},
+  type = {Working paper},
+  url = {robjhyndman.com/publications/hpf-electricity/},
+}
+
+@Article{fvanaive,
+  title = {A note on upper bounds for forecast-value-added relative to naïve forecasts},
+  author = {Paul Goodwin and Fotios Petropoulos and Rob J Hyndman},
+  year = {2017},
+  volume = {68},
+  issue = {9},
+  pages = {1082-1084},
+  journal = {Journal of the Operational Research Society},
+}
+
+@TechReport{ausmacrofcast,
+  title = {Macroeconomic forecasting for Australia using a large number of predictors},
+  author = {Bin Jiang and George Athanasopoulos and Rob J Hyndman and Anastasios Panagiotelis and Farshid Vahid},
+  institution = {Department of Econometrics \& Business Statistics, Monash University},
+  year = {2017},
+  number = {17/02},
+  type = {Working paper},
+  url = {robjhyndman.com/publications/ausmacrofcast},
+}
+
+@Article{m3pca,
+  title = {Visualising forecasting algorithm performance using time series instance spaces},
+  author = {Yanfei Kang and Rob J Hyndman and Kate Smith-Miles},
+  year = {2017},
+  number = {2},
+  pages = {345-358},
+  volume = {33},
+  journal = {International Journal of Forecasting},
+}
+
+@Article{hfts,
+  title = {Grouped functional time series forecasting: an application to age-specific mortality rates},
+  author = {Han Lin Shang and Rob J Hyndman},
+  year = {2017},
+  doi = {10.1080/10618600.2016.1237877},
+  number = {2},
+  pages = {330-343},
+  volume = {26},
+  journal = {Journal of Computational and Graphical Statistics},
+}
+
+@Article{dynamicpareto,
+  title = {Dynamic Algorithm Selection for Pareto Optimal Set Approximation},
+  author = {Ingrida Steponavi{\v c}\.e and Rob J Hyndman and Kate Smith-Miles and Laura Villanova},
+  year = {2017},
+  issue = {1},
+  pages = {263-282},
+  volume = {67},
+  journal = {Journal of Global Optimization},
+}
+
+@Article{handguns,
+  title = {Handgun acquisitions in {California} after two mass shootings},
+  author = {D M Studdert and Y Zhang and J A Rodden and R J Hyndman and G J Wintemute},
+  year = {2017},
+  doi = {10.7326/M16-1574},
+  number = {10},
+  pages = {698-706},
+  volume = {166},
+  journal = {Annals of Internal Medicine},
 }
 
 @Article{Tham2016,
-  Title                    = {Associations between outdoor fungal spores and childhood and adolescent asthma hospitalisations},
-  Author                   = {Rachel Tham and Don Vicendese and Shyamali C Dharmage and Rob J Hyndman and Ed Newbigin and Emma Lewis and Molly O'Sullivan and Adrian J Lowe and Philip Taylor and Philip Bardin and Mimi L Tang and Michael J Abramson and Bircan Erbas},
-  Year                     = {2017},
-  Issue                    = {4},
-  Pages                    = {1140–1147.e4},
-  Volume                   = {139},
-
-  Journal                  = {Journal of Allergy and Clinical Immunology}
+  title = {Associations between outdoor fungal spores and childhood and adolescent asthma hospitalisations},
+  author = {Rachel Tham and Don Vicendese and Shyamali C Dharmage and Rob J Hyndman and Ed Newbigin and Emma Lewis and Molly O'Sullivan and Adrian J Lowe and Philip Taylor and Philip Bardin and Mimi L Tang and Michael J Abramson and Bircan Erbas},
+  year = {2017},
+  issue = {4},
+  pages = {1140–1147.e4},
+  volume = {139},
+  journal = {Journal of Allergy and Clinical Immunology},
 }
 
-@Techreport{ausmacrodata,
-  Title                    = {The Australian Macro Database: An online resource for macroeconomic research in Australia},
-  Author                   = {Timur Behlul and Anastasios Panagiotelis and George Athanasopoulos and Rob J Hyndman and Farshid Vahid},
-  Institution              = {Department of Econometrics \& Business Statistics, Monash University},
-  Year                     = {2017},
-  Number                   = {17/01},
-  Type                     = {Working paper},
-  Url                      = {robjhyndman.com/publications/ausmacrodata}
-}
-
-@Techreport{ausmacrofcast,
-  Title                    = {Macroeconomic forecasting for Australia using a large number of predictors},
-  Author                   = {Bin Jiang and George Athanasopoulos and Rob J Hyndman and Anastasios Panagiotelis and Farshid Vahid},
-  Institution              = {Department of Econometrics \& Business Statistics, Monash University},
-  Year                     = {2017},
-  Number                   = {17/02},
-  Type                     = {Working paper},
-  Url                      = {robjhyndman.com/publications/ausmacrofcast}
-}
-
-@Techreport{smartmeterhts,
-  Title                    = {Hierarchical Probabilistic Forecasting of Electricity Demand with Smart Meter Data},
-  Author                   = {Souhaib {Ben Taieb} and James W Taylor and Rob J Hyndman},
-  Institution              = {Department of Econometrics \& Business Statistics, Monash University},
-  Year                     = {2017},
-  Type                     = {Working paper},
-  Url                      = {robjhyndman.com/publications/hpf-electricity/}
-}
-
-@Article{baggedETS,
-  Title                    = {Bagging exponential smoothing methods using {STL}
-decomposition and {Box-Cox} transformation},
-  Author                   = {Bergmeir, Christoph and Hyndman, Rob J and Ben{\i}tez, Jos\'{e} M},
-  Year                     = {2016},
-  Number                   = {2},
-  Pages                    = {303--312},
-  Volume                   = {32},
-
-  Journal                  = {International Journal of Forecasting}
-}
-
-@Article{fasthts,
-  Title                    = {Fast computation of reconciled forecasts for hierarchical and grouped time series},
-  Author                   = {Hyndman, Rob J and Lee, Alan and Wang, Earo},
-  Year                     = {2016},
-  Pages                    = {16--32},
-  Volume                   = {97},
-
-  Journal                  = {Computational Statistics \& Data Analysis}
-}
-
-@Article{gefcom2014,
-  Title                    = {Probabilistic Energy Forecasting: Global Energy Forecasting Competition 2014 and Beyond},
-  Author                   = {Tao Hong and Pierre Pinson and Shu Fan and Hamidreza Zareipour and Alberto Troccoli and Rob J Hyndman},
-  Year                     = {2016},
-  Number                   = {3},
-  Pages                    = {896-913},
-  Volume                   = {32},
-
-  Journal                  = {International Journal of Forecasting}
-}
-
-@Article{pearce2016exploring,
-  Title                    = {Exploring the influence of short-term temperature patterns on temperature-related mortality: a case-study of Melbourne, Australia},
-  Author                   = {Pearce, John L and Hyer, Madison and Hyndman, Rob J and Loughnan, Margaret and Dennekamp, Martine and Nicholls, Neville},
-  Year                     = {2016},
-  Number                   = {1},
-  Pages                    = {107},
-  Volume                   = {15},
-
-  Journal                  = {Environmental Health}
-}
-
-@Inbook{sampling-multiobjective-optimization,
-  Title                    = {On sampling methods for costly multi-objective black-box optimization},
-  Author                   = {Ingrida Steponavi\v{c}\.{e} and Mojdeh Shirazi-Manesh and Rob J. Hyndman and Kate Smith-Miles and Laura Villanova},
-  Booktitle                = {Advances in Stochastic and Deterministic Global Optimization},
-  Year                     = {2016},
-  Editor                   = {P. M. Pardalos and A. Zhigljavsky and J. \v{Z}ilinskas},
-  Pages                    = {273–296},
-  Publisher                = {Springer},
-
-  Address                  = {New York}
+@TechReport{calendarviz,
+  author = {Earo Wang and Dianne Cook and Rob J Hyndman},
+  year = {2017},
+  title = {Calendar-based graphics for visualizing people's daily schedules},
+  institution = {Department of Econometrics \& Business Statistics, Monash University},
+  number = {17/01},
+  type = {Working paper},
+  url = {robjhyndman.com/publications/ausmacrodata},
 }
 
 @Article{smart-meter-quantiles,
-  Title                    = {Forecasting uncertainty in electricity smart meter data by boosting additive quantile regression},
-  Author                   = {Souhaib Ben~Taieb and Raphael Huser and Rob J Hyndman and Marc G Genton},
-  Year                     = {2016},
-  Issue                    = {5},
-  Pages                    = {2448-2455},
-  Volume                   = {7},
-
-  Journal                  = {IEEE Transactions on Smart Grid}
+  title = {Forecasting uncertainty in electricity smart meter data by boosting additive quantile regression},
+  author = {Souhaib Ben~Taieb and Raphael Huser and Rob J Hyndman and Marc G Genton},
+  year = {2016},
+  issue = {5},
+  pages = {2448-2455},
+  volume = {7},
+  journal = {IEEE Transactions on Smart Grid},
 }
 
-@Techreport{BayesianRankVAR,
-  Title                    = {Bayesian rank selection in multivariate regression},
-  Author                   = {Bin Jiang and Anastasios Panagiotelis and George Athanasopoulos and Rob J Hyndman and Farshid Vahid},
-  Institution              = {Department of Econometrics \& Business Statistics, Monash University},
-  Year                     = {2016},
-  Number                   = {05/16},
-  Type                     = {Working paper},
-  Url                      = {robjhyndman.com/publications/bayesian-rank-selection-in-multivariate-regression/}
+@Article{baggedETS,
+  title = {Bagging exponential smoothing methods using {STL}
+decomposition and {Box-Cox} transformation},
+  author = {Christoph Bergmeir and Rob J Hyndman and Jos{\a'e} M Ben{\i}tez},
+  year = {2016},
+  number = {2},
+  pages = {303--312},
+  volume = {32},
+  journal = {International Journal of Forecasting},
 }
 
-@Techreport{participationrates,
-  Title                    = {Long-term forecasts of age-specific participation rates with functional data models},
-  Author                   = {Thomas Url and Rob J Hyndman and Alexander Dokumentov},
-  Institution              = {Department of Econometrics \& Business Statistics, Monash University},
-  Year                     = {2016},
-  Number                   = {03/16},
-  Type                     = {Working paper},
-  Url                      = {robjhyndman.com/publications/participation-rates/}
+@Article{gefcom2014,
+  title = {Probabilistic Energy Forecasting: Global Energy Forecasting Competition 2014 and Beyond},
+  author = {Tao Hong and Pierre Pinson and Shu Fan and Hamidreza Zareipour and Alberto Troccoli and Rob J Hyndman},
+  year = {2016},
+  number = {3},
+  pages = {896-913},
+  volume = {32},
+  journal = {International Journal of Forecasting},
 }
 
-@Article{acfplots14,
-  Title                    = {Discussion of ``High-dimensional autocovariance matrices and optimal linear prediction''},
-  Author                   = {Rob J Hyndman},
-  Year                     = {2015},
-  Number                   = {1},
-  Pages                    = {792-796},
-  Volume                   = {9},
-
-  Journal                  = {Electronic J. Statistics}
+@Article{fasthts,
+  title = {Fast computation of reconciled forecasts for hierarchical and grouped time series},
+  author = {Rob J Hyndman and Alan Lee and Earo Wang},
+  year = {2016},
+  pages = {16--32},
+  volume = {97},
+  journal = {Computational Statistics \& Data Analysis},
 }
 
-@Inproceedings{cikm2015,
-  Title                    = {Large-scale unusual time series detection},
-  Author                   = {Hyndman, Rob J and Wang, Earo and Laptev, Nikolay},
-  Booktitle                = {Proceedings of the IEEE International Conference on Data Mining},
-  Year                     = {2015},
-  Publisher                = {Atlantic City, NJ, USA. 14--17 November 2015}
+@TechReport{BayesianRankVAR,
+  title = {Bayesian rank selection in multivariate regression},
+  author = {Bin Jiang and Anastasios Panagiotelis and George Athanasopoulos and Rob J Hyndman and Farshid Vahid},
+  institution = {Department of Econometrics \& Business Statistics, Monash University},
+  year = {2016},
+  number = {05/16},
+  type = {Working paper},
+  url = {robjhyndman.com/publications/bayesian-rank-selection-in-multivariate-regression/},
 }
 
-@Article{hyndman2015change,
-  Title                    = {New IJF Editors},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {2015},
-  Number                   = {4},
-  Pages                    = {1104},
-  Volume                   = {31},
-
-  Journal                  = {International Journal of Forecasting},
-  Publisher                = {Elsevier}
+@Article{pearce2016exploring,
+  title = {Exploring the influence of short-term temperature patterns on temperature-related mortality: a case-study of Melbourne, Australia},
+  author = {John L Pearce and Madison Hyer and Rob J Hyndman and Margaret Loughnan and Martine Dennekamp and Neville Nicholls},
+  year = {2016},
+  number = {1},
+  pages = {107},
+  volume = {15},
+  journal = {Environmental Health},
 }
 
-@Article{hyndman2015new,
-  Title                    = {Change to the IJF Editors},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {2015},
-  Number                   = {2},
-  Pages                    = {391},
-  Volume                   = {31},
+@InBook{sampling-multiobjective-optimization,
+  title = {On sampling methods for costly multi-objective black-box optimization},
+  author = {Ingrida Steponavi{\v c}\.e and Mojdeh Shirazi-Manesh and Rob J. Hyndman and Kate Smith-Miles and Laura Villanova},
+  booktitle = {Advances in Stochastic and Deterministic Global Optimization},
+  year = {2016},
+  editor = {P. M. Pardalos and A. Zhigljavsky and J. {\v Z}ilinskas},
+  pages = {273–296},
+  publisher = {Springer},
+  address = {New York},
+}
 
-  Journal                  = {International Journal of Forecasting},
-  Publisher                = {Elsevier}
+@TechReport{participationrates,
+  title = {Long-term forecasts of age-specific participation rates with functional data models},
+  author = {Thomas Url and Rob J Hyndman and Alexander Dokumentov},
+  institution = {Department of Econometrics \& Business Statistics, Monash University},
+  year = {2016},
+  number = {03/16},
+  type = {Working paper},
+  url = {robjhyndman.com/publications/participation-rates/},
+}
+
+@TechReport{str,
+  title = {STR: A seasonal-trend decomposition procedure based on regression},
+  author = {Alexander Dokumentov and Rob J Hyndman},
+  institution = {Department of Econometrics \& Business Statistics, Monash University},
+  year = {2015},
+  number = {13/15},
+  type = {Working paper},
+  url = {robjhyndman.com/publications/str/},
 }
 
 @Article{jaci2015,
-  Title                    = {Do human rhinovirus infections and food allergy modify grass pollen--induced asthma hospital admissions in children?},
-  Author                   = {Erbas, Bircan and Dharmage, Shyamali C and Tang, Mimi LK and Akram, Muhammad and Allen, Katrina J and Vicendese, Don and Davies, Janet M and Hyndman, Rob J and Newbigin, Ed J and Taylor, Philip E and Philip G Bardin and Michael J Abramson},
-  Year                     = {2015},
-  Number                   = {4},
-  Pages                    = {1118-1120.e2},
-  Volume                   = {136},
+  title = {Do human rhinovirus infections and food allergy modify grass pollen--induced asthma hospital admissions in children?},
+  author = {Bircan Erbas and Shyamali C Dharmage and Mimi LK Tang and Muhammad Akram and Katrina J Allen and Don Vicendese and Janet M Davies and Rob J Hyndman and Ed J Newbigin and Philip E Taylor and Philip G Bardin and Michael J Abramson},
+  year = {2015},
+  number = {4},
+  pages = {1118-1120.e2},
+  volume = {136},
+  journal = {Journal of Allergy and Clinical Immunology},
+}
 
-  Journal                  = {Journal of Allergy and Clinical Immunology}
+@InBook{saschapter2,
+  title = {Another look at forecast-accuracy metrics for intermittent demand},
+  author = {Rob J Hyndman},
+  booktitle = {Business Forecasting: Practical Problems and Solutions},
+  year = {2015},
+  chapter = {3.8},
+  editor = {Michael Gilliland and Len Tashman and Udo Sglavo},
+  pages = {204-211},
+  publisher = {John Wiley \& Sons},
+}
+
+@Article{hyndman2015new,
+  title = {Change to the IJF Editors},
+  author = {Rob J Hyndman},
+  year = {2015},
+  number = {2},
+  pages = {391},
+  volume = {31},
+  journal = {International Journal of Forecasting},
+  publisher = {Elsevier},
+}
+
+@Article{acfplots14,
+  title = {Discussion of ``High-dimensional autocovariance matrices and optimal linear prediction''},
+  author = {Rob J Hyndman},
+  year = {2015},
+  number = {1},
+  pages = {792-796},
+  volume = {9},
+  journal = {Electronic J. Statistics},
+}
+
+@InBook{saschapter,
+  title = {Measuring forecast accuracy},
+  author = {Rob J Hyndman},
+  booktitle = {Business Forecasting: Practical Problems and Solutions},
+  year = {2015},
+  chapter = {3.4},
+  editor = {Michael Gilliland and Len Tashman and Udo Sglavo},
+  pages = {177-184},
+  publisher = {John Wiley \& Sons},
+}
+
+@Article{hyndman2015change,
+  title = {New IJF Editors},
+  author = {Rob J Hyndman},
+  year = {2015},
+  number = {4},
+  pages = {1104},
+  volume = {31},
+  journal = {International Journal of Forecasting},
+  publisher = {Elsevier},
+}
+
+@Book{unbelievable,
+  title = {Unbelievable},
+  author = {Rob J Hyndman},
+  year = {2015},
+  publisher = {CreateSpace},
+  url = {robjhyndman.com/unbelievable},
+  address = {Scotts Valley, CA},
 }
 
 @Article{lagphase,
-  Title                    = {Statistical issues with using herbarium data for the estimation of invasion lag-phases},
-  Author                   = {Hyndman, Rob J and Mesgaran, Mohsen B and Cousens, Roger D},
-  Year                     = {2015},
-  Number                   = {12},
-  Pages                    = {3371-3381},
-  Url                      = {robjhyndman.com/lagphase},
-  Volume                   = {17},
-
-  Abstract                 = {Abstract We present a new method for estimating the length of the
+  title = {Statistical issues with using herbarium data for the estimation of invasion lag-phases},
+  author = {Rob J Hyndman and Mohsen B Mesgaran and Roger D Cousens},
+  year = {2015},
+  number = {12},
+  pages = {3371-3381},
+  url = {robjhyndman.com/lagphase},
+  volume = {17},
+  abstract = {Abstract We present a new method for estimating the length of the
 invasion lag phase from simple time series of counts of herbarium
 records. This is based on annual rather than cumulative data , a
 generalized linear model incorporating a log link for overall
 collection ...},
-  Journal                  = {Biological Invasions}
+  journal = {Biological Invasions},
 }
 
-@Inbook{saschapter,
-  Title                    = {Measuring forecast accuracy},
-  Author                   = {Rob J Hyndman},
-  Booktitle                = {Business Forecasting: Practical Problems and Solutions},
-  Year                     = {2015},
-  Chapter                  = {3.4},
-  Editor                   = {Michael Gilliland and Len Tashman and Udo Sglavo},
-  Pages                    = {177-184},
-  Publisher                = {John Wiley \& Sons}
+@InProceedings{cikm2015,
+  title = {Large-scale unusual time series detection},
+  author = {Rob J Hyndman and Earo Wang and Nikolay Laptev},
+  booktitle = {Proceedings of the IEEE International Conference on Data Mining},
+  year = {2015},
+  publisher = {Atlantic City, NJ, USA. 14--17 November 2015},
 }
 
-@Inbook{saschapter2,
-  Title                    = {Another look at forecast-accuracy metrics for intermittent demand},
-  Author                   = {Rob J Hyndman},
-  Booktitle                = {Business Forecasting: Practical Problems and Solutions},
-  Year                     = {2015},
-  Chapter                  = {3.8},
-  Editor                   = {Michael Gilliland and Len Tashman and Udo Sglavo},
-  Pages                    = {204-211},
-  Publisher                = {John Wiley \& Sons}
-}
-
-@Book{unbelievable,
-  Title                    = {Unbelievable},
-  Author                   = {Rob J Hyndman},
-  Year                     = {2015},
-  Publisher                = {CreateSpace},
-  Url                      = {robjhyndman.com/unbelievable},
-
-  Address                  = {Scotts Valley, CA}
-}
-
-@Techreport{kdd2015,
-  Title                    = {Probabilistic time series forecasting with boosted additive models: an application to smart meter data},
-  Author                   = {Taieb, Souhaib Ben and Huser, Raphael and Hyndman, Rob J and Genton, Marc G},
-  Institution              = {Department of Econometrics \& Business Statistics, Monash University},
-  Year                     = {2015},
-  Number                   = {12/15},
-  Type                     = {Working paper},
-  Url                      = {robjhyndman.com/publications/kdd2015}
-}
-
-
-@Techreport{str,
-  Title                    = {STR: A seasonal-trend decomposition procedure based on regression},
-  Author                   = {Alexander Dokumentov and Rob J Hyndman},
-  Institution              = {Department of Econometrics \& Business Statistics, Monash University},
-  Year                     = {2015},
-  Number                   = {13/15},
-  Type                     = {Working paper},
-  Url                      = {robjhyndman.com/publications/str/}
-}
-
-@article{tscv,
-  Title                    = {A note on the validity of cross-validation for evaluating autoregressive time series prediction},
-  Author                   = {Christoph Bergmeir and Rob J Hyndman and Bonsoo Koo},
-  Year                     = {2018},
-  volume = 120,
-  pages = {70-83},
-  journal = {Computational Statistics \& Data Analysis},
-  Url                      = {robjhyndman.com/publications/cv-time-series/}
-}
-
-@Incollection{BHT14,
-  Title                    = {Prospective Life Tables},
-  Author                   = {Booth, Heather and Hyndman, Rob J and Tickle, Leonie},
-  Booktitle                = {Computational Actuarial Science with {R}},
-  Editor                   = {Charpentier, Arthur},
-  Year                     = {2014},
-  Chapter                  = {8},
-  Pages                    = {323--348},
-  Publisher                = {Chapman \& Hall/CRC},
-
-  Journal                  = {Computational Actuarial Science, with R}
-}
-
-@Inproceedings{boostingar,
-  Title                    = {Boosting multi-step autoregressive forecasts},
-  Author                   = {Ben Taieb, Souhaib and Hyndman, Rob J},
-  Booktitle                = {Proceedings of The 31st International Conference on Machine
-Learning},
-  Year                     = {2014},
-  Pages                    = {109--117},
-  Url                      = {jmlr.org/proceedings/papers/v32/taieb14.pdf},
-
-  Address                  = {Beijing, China. June 2014}
-}
-
-@Inproceedings{epic,
-  Title                    = {Efficient identification of the Pareto optimal set},
-  Author                   = {Steponavi\v{c}\.{e}, Ingrida and Hyndman, Rob J and Smith-Miles,
-Kate and Villanova, Laura},
-  Booktitle                = {Learning and Intelligent Optimization: Lecture Notes in Computer Science},
-  Year                     = {2014},
-  Pages                    = {341-352},
-  Publisher                = {Springer},
-  Volume                   = {8426}
-}
-
-@Article{foresight14,
-  Title                    = {Optimally reconciling forecasts in a hierarchy},
-  Author                   = {Rob J Hyndman and George Athanasopoulos},
-  Year                     = {2014},
-  Pages                    = {42-48},
-  Volume                   = {Fall 2014},
-
-  Journal                  = {Foresight}
-}
-
-@Book{fpp2,
-  Title                    = {Forecasting: principles and practice},
-  Author                   = {Hyndman, Rob J and Athanasopoulos, George},
-  Year                     = {2018},
-  Publisher                = {OTexts},
-  Url                      = {OTexts.org/fpp2},
-  edition = {2nd edition},
-  Address                  = {Melbourne, Australia}
-}
-
-@Article{fungal14,
-  Title                    = {Outdoor fungal spores are associated with child asthma hospitalisations --- a case-crossover study},
-  Author                   = {Rachel Tham and Shyamali Dharmage and Philip Taylor and Ed Newbigin and Mimi L. K. Tang and Don Vicendese and Rob J. Hyndman and Michael J. Abramson and Bircan Erbas},
-  Year                     = {2014},
-  Number                   = {Suppl 58},
-  Volume                   = {44},
-
-  Journal                  = {European Respiratory Journal}
+@TechReport{kdd2015,
+  title = {Probabilistic time series forecasting with boosted additive models: an application to smart meter data},
+  author = {Souhaib Ben Taieb and Raphael Huser and Rob J Hyndman and Marc G Genton},
+  institution = {Department of Econometrics \& Business Statistics, Monash University},
+  year = {2015},
+  number = {12/15},
+  type = {Working paper},
+  url = {robjhyndman.com/publications/kdd2015},
 }
 
 @Article{gefcom,
-  Title                    = {A gradient boosting approach to the Kaggle load forecasting
+  title = {A gradient boosting approach to the Kaggle load forecasting
 competition},
-  Author                   = {Ben Taieb, Souhaib and Hyndman, Rob J},
-  Year                     = {2014},
-  Number                   = {2},
-  Pages                    = {382--394},
-  Volume                   = {30},
-
-  Journal                  = {International Journal of Forecasting},
-  Keywords                 = {additive models; gradient boosting; kaggle competition; machine
-learning; multi-step forecasting; short-term load forecasting}
+  author = {Souhaib {Ben Taieb} and Rob J Hyndman},
+  year = {2014},
+  number = {2},
+  pages = {382--394},
+  volume = {30},
+  journal = {International Journal of Forecasting},
+  keywords = {additive models; gradient boosting; kaggle competition; machine
+learning; multi-step forecasting; short-term load forecasting},
 }
 
-@Inproceedings{iwfos14,
-  Title                    = {Common functional principal component models for mortality forecasting},
-  Author                   = {Rob J Hyndman and Farah Yasmeen},
-  Booktitle                = {Contributions in infinite-dimensional statistics and related topics},
-  Editor                   = { Enea G. Bongiorno and Ernesto Salinelli and Aldo Goia and Philippe Vieu},
-  Year                     = {2014},
-  Chapter                  = {29},
-  Pages                    = {161-166}
+@InProceedings{boostingar,
+  title = {Boosting multi-step autoregressive forecasts},
+  author = {Souhaib {Ben Taieb} and Rob J Hyndman},
+  booktitle = {Proceedings of The 31st International Conference on Machine
+Learning},
+  year = {2014},
+  pages = {109--117},
+  url = {jmlr.org/proceedings/papers/v32/taieb14.pdf},
+  address = {Beijing, China. June 2014},
 }
 
-@Techreport{ropes,
-  Title                    = {Low-dimensional decomposition, smoothing and forecasting of sparse functional data},
-  Author                   = {Alexander Dokumentov and Rob J Hyndman},
-  Institution              = {Department of Econometrics \& Business Statistics, Monash University},
-  Year                     = {2014},
-  Number                   = {16/14},
-  Type                     = {Working paper},
-  Url                      = {robjhyndman.com/publications/ropes/}
+@InCollection{BHT14,
+  title = {Prospective Life Tables},
+  author = {Heather Booth and Rob J Hyndman and Leonie Tickle},
+  booktitle = {Computational Actuarial Science with {R}},
+  editor = {Arthur Charpentier},
+  year = {2014},
+  chapter = {8},
+  pages = {323--348},
+  publisher = {Chapman \& Hall/CRC},
+  journal = {Computational Actuarial Science, with R},
+}
+
+@TechReport{ropes,
+  title = {Low-dimensional decomposition, smoothing and forecasting of sparse functional data},
+  author = {Alexander Dokumentov and Rob J Hyndman},
+  institution = {Department of Econometrics \& Business Statistics, Monash University},
+  year = {2014},
+  number = {16/14},
+  type = {Working paper},
+  url = {robjhyndman.com/publications/ropes/},
+}
+
+@Article{foresight14,
+  title = {Optimally reconciling forecasts in a hierarchy},
+  author = {Rob J Hyndman and George Athanasopoulos},
+  year = {2014},
+  pages = {42-48},
+  volume = {Fall 2014},
+  journal = {Foresight},
+}
+
+@InProceedings{iwfos14,
+  title = {Common functional principal component models for mortality forecasting},
+  author = {Rob J Hyndman and Farah Yasmeen},
+  booktitle = {Contributions in infinite-dimensional statistics and related topics},
+  editor = {Enea G. Bongiorno and Ernesto Salinelli and Aldo Goia and Philippe Vieu},
+  year = {2014},
+  chapter = {29},
+  pages = {161-166},
+}
+
+@InProceedings{epic,
+  title = {Efficient identification of the Pareto optimal set},
+  author = {Ingrida Steponavi{\v c}\.{e} and Rob J Hyndman and Kate Smith-Miles and Laura Villanova},
+  booktitle = {Learning and Intelligent Optimization: Lecture Notes in Computer Science},
+  year = {2014},
+  pages = {341-352},
+  publisher = {Springer},
+  volume = {8426},
+}
+
+@Article{fungal14,
+  title = {Outdoor fungal spores are associated with child asthma hospitalisations --- a case-crossover study},
+  author = {Rachel Tham and Shyamali Dharmage and Philip Taylor and Ed Newbigin and Mimi L. K. Tang and Don Vicendese and Rob J. Hyndman and Michael J. Abramson and Bircan Erbas},
+  year = {2014},
+  number = {Suppl 58},
+  volume = {44},
+  journal = {European Respiratory Journal},
+}
+
+@TechReport{bivarridges,
+  title = {Bivariate data with ridges: two-dimensional smoothing of mortality rates},
+  author = {Alexander Dokumentov and Rob J Hyndman},
+  institution = {Department of Econometrics \& Business Statistics, Monash University},
+  year = {2013},
+  number = {26/13},
+  type = {Working paper},
+  url = {robjhyndman.com/publications/mortality-smoothing/},
+}
+
+@Article{IJFeditorial13,
+  title = {Change of editors},
+  author = {Rob J Hyndman},
+  year = {2013},
+  number = {1},
+  pages = {A1},
+  url = {dx.doi.org/10.1016/S0169-2070(12)00145-8},
+  volume = {29},
+  journal = {International Journal of Forecasting},
+}
+
+@Misc{TSDL,
+  title = {Time Series Data Library},
+  author = {Rob J Hyndman},
+  year = {2013},
+  howpublished = {\url{data.is/TSDLdemo}},
+  note = {Type: Website; Accessed: 2013-9-9},
+  url = {data.is/TSDLdemo},
+  annote = {Accessed 9 September 2013},
+}
+
+@Misc{htsvignette,
+  title = {hts: An {R} package for forecasting hierarchical or grouped
+time series},
+  author = {Rob J Hyndman and George Athanasopoulos and Han Lin Shang},
+  year = {2013},
+  howpublished = {Vignette published on CRAN},
+  url = {CRAN.R-project.org/web/packages/hts/vignettes/hts.pdf},
+  abstract = {This paper describes several methods that are currently
+available in the hts package, for forecasting hierarchical
+time series. The methods included are: top-down, buttom-up,
+middle-out and optimal combination. The implementation of
+these methods is illustrated by using regional infant
+mortality counts in Australia.},
+  keywords = {bottom-up; middle-out; optimal combination; top-down},
 }
 
 @Article{HBY13,
-  Title                    = {Coherent mortality forecasting: the product-ratio method with
+  title = {Coherent mortality forecasting: the product-ratio method with
 functional time series models},
-  Author                   = {Hyndman, Rob J and Booth, Heather and Yasmeen, Farah},
-  Year                     = {2013},
-  Number                   = {1},
-  Pages                    = {261--283},
-  Url                      = {dx.doi.org/10.1007/s13524-012-0145-5},
-  Volume                   = {50},
-
-  Abstract                 = {When independence is assumed, forecasts of mortality for
+  author = {Rob J Hyndman and Heather Booth and Farah Yasmeen},
+  year = {2013},
+  number = {1},
+  pages = {261--283},
+  url = {dx.doi.org/10.1007/s13524-012-0145-5},
+  volume = {50},
+  abstract = {When independence is assumed, forecasts of mortality for
 subpopulations are almost always divergent in the long term.
 We propose a method for coherent forecasting of mortality
 rates for two or more subpopulations, based on functional
@@ -512,84 +533,57 @@ state-specific data for Australia. Based on out-of-sample
 forecasts, the coherent forecasts are at least as accurate in
 overall terms as comparable independent forecasts, and
 forecast accuracy is homogenized across subpopulations.},
-  Affiliation              = {Department of Econometrics and Business Statistics, Monash
+  affiliation = {Department of Econometrics and Business Statistics, Monash
 University, Clayton, VIC 3800, Australia.
 rob.hyndman@monash.edu},
-  Institution              = {Department of Econometrics \& Business Statistics, Monash University},
-  Journal                  = {Demography}
-}
-
-@Misc{htsvignette,
-  Title                    = {hts: An {R} package for forecasting hierarchical or grouped
-time series},
-  Author                   = {Hyndman, Rob J and Athanasopoulos, George and Shang, Han Lin},
-  Year                     = {2013},
-  HowPublished             = {Vignette published on CRAN},
-  Url                      = {CRAN.R-project.org/web/packages/hts/vignettes/hts.pdf},
-
-  Abstract                 = {This paper describes several methods that are currently
-available in the hts package, for forecasting hierarchical
-time series. The methods included are: top-down, buttom-up,
-middle-out and optimal combination. The implementation of
-these methods is illustrated by using regional infant
-mortality counts in Australia.},
-  Keywords                 = {bottom-up; middle-out; optimal combination; top-down}
-}
-
-@Article{IJFeditorial13,
-  Title                    = {Change of editors},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {2013},
-  Number                   = {1},
-  Pages                    = {A1},
-  Url                      = {dx.doi.org/10.1016/S0169-2070(12)00145-8},
-  Volume                   = {29},
-
-  Journal                  = {International Journal of Forecasting}
+  institution = {Department of Econometrics \& Business Statistics, Monash University},
+  journal = {Demography},
 }
 
 @Unpublished{rsmreview,
-  Title                    = {Nonparametric and semiparametric response surface methodology: a
+  title = {Nonparametric and semiparametric response surface methodology: a
 review of designs, models and optimization techniques},
-  Author                   = {Villanova, Laura and Hyndman, Rob J and Smith-Miles, Kate and Poli,
-Irene},
-  Year                     = {2013},
-  Url                      = {robjhyndman.com/papers/ISR-RSRSM.pdf}
+  author = {Laura Villanova and Rob J Hyndman and Kate Smith-Miles and Irene Poli},
+  year = {2013},
+  url = {robjhyndman.com/papers/ISR-RSRSM.pdf},
 }
 
-@Misc{TSDL,
-  Title                    = {Time Series Data Library},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {2013},
-  HowPublished             = {\url{data.is/TSDLdemo}},
-  Note                     = {Type: Website; Accessed: 2013-9-9},
-  Url                      = {data.is/TSDLdemo},
-
-  Annote                   = {Accessed 9 September 2013}
+@Unpublished{rectify,
+  title = {Recursive and direct multi-step forecasting: the best of both
+worlds},
+  author = {Souhaib {Ben Taieb} and Rob J Hyndman},
+  year = {2012},
+  howpublished = {Working paper 19/12. Department of Econometrics and Business
+Statistics, Monash University},
+  url = {robjhyndman.com/publications/rectify/},
+  institution = {Department of Econometrics \& Business Statistics, Monash University},
+  number = {19/12},
 }
 
-@Techreport{bivarridges,
-  Title                    = {Bivariate data with ridges: two-dimensional smoothing of mortality rates},
-  Author                   = {Alexander Dokumentov and Rob J Hyndman},
-  Institution              = {Department of Econometrics \& Business Statistics, Monash University},
-  Year                     = {2013},
-  Number                   = {26/13},
-  Type                     = {Working paper},
-  Url                      = {robjhyndman.com/publications/mortality-smoothing/}
+@Article{mapcah12,
+  title = {A case-crossover design to examine the role of aeroallergens and
+respiratory viruses on childhood asthma exacerbations requiring
+hospitalization : The {MAPCAH} study},
+  author = {Bircan Erbas and Shyamali C Dharmage and Molly O Sullivan and Muhammad Akram and Ed Newbigin and Philip Taylor and Don Vicendese and Rob J Hyndman and Philip Bardin and Mimi L Tang and Michael J Abramson},
+  year = {2012},
+  number = {018},
+  url = {dx.doi.org/10.4172/2155-6180.S7-018},
+  volume = {S7},
+  journal = {Journal of Biometrics \& Biostatistics},
+  keywords = {asthma; case crossover design; infections; internal validity;
+respiratory viral; Respiratory viral infections},
 }
 
 @Article{EUHSA12,
-  Title                    = {Forecasts of {COPD} mortality in Australia: 2006-2025},
-  Author                   = {Erbas, Bircan and Ullah, Shahid and Hyndman, Rob J and Scollo,
-Michelle and Abramson, Michael J},
-  Year                     = {2012},
-  Month                    = feb,
-  Number                   = {1},
-  Pages                    = {17},
-  Url                      = {dx.doi.org/10.1186/1471-2288-12-17},
-  Volume                   = {12},
-
-  Abstract                 = {ABSTRACT: BACKGROUND: Chronic Obstructive Pulmonary Disease
+  title = {Forecasts of {COPD} mortality in Australia: 2006-2025},
+  author = {Bircan Erbas and Shahid Ullah and Rob J Hyndman and Michelle Scollo and Michael J Abramson},
+  year = {2012},
+  month = {feb},
+  number = {1},
+  pages = {17},
+  url = {dx.doi.org/10.1186/1471-2288-12-17},
+  volume = {12},
+  abstract = {ABSTRACT: BACKGROUND: Chronic Obstructive Pulmonary Disease
 (COPD) is currently the fifth leading cause of death in
 Australia, and there are marked differences in mortality trends
 between men and women. In this study, we have sought to model
@@ -611,23 +605,22 @@ By using a new method to predict age-specific trends in COPD
 mortality over time, this study provides important insights into
 at-risk age groups for men and women separately, which has
 implications for policy and program development.},
-  Journal                  = {BMC Medical Research Methodology},
-  Keywords                 = {copd mortality; forecasting; functional data analysis; tobacco
+  journal = {BMC Medical Research Methodology},
+  keywords = {copd mortality; forecasting; functional data analysis; tobacco
 consumption},
-  Publisher                = {BioMed Central Ltd}
+  publisher = {BioMed Central Ltd},
 }
 
 @Article{FH11,
-  Title                    = {Short-term load forecasting based on a semi-parametric additive
+  title = {Short-term load forecasting based on a semi-parametric additive
 model},
-  Author                   = {Fan, Shu and Hyndman, Rob J},
-  Year                     = {2012},
-  Number                   = {1},
-  Pages                    = {134--141},
-  Url                      = {dx.doi.org/10.1109/TPWRS.2011.2162082},
-  Volume                   = {27},
-
-  Abstract                 = {Short-term load forecasting is an essential instrument in power
+  author = {Shu Fan and Rob J Hyndman},
+  year = {2012},
+  number = {1},
+  pages = {134--141},
+  url = {dx.doi.org/10.1109/TPWRS.2011.2162082},
+  volume = {27},
+  abstract = {Short-term load forecasting is an essential instrument in power
 system planning, operation, and control. Many operating decisions
 are based on load forecasts, such as dispatch scheduling of
 generating capacity, reliability analysis, and maintenance
@@ -638,91 +631,53 @@ an unnecessary level of reserve. On the other hand,
 underestimation may result in a risky operation, with
 insufficient preparation of spinning reserve, causing the system
 to operate in a vulnerable region to the disturbance.},
-  Journal                  = {IEEE Transactions on Power Systems},
-  Keywords                 = {Additive model; forecast distribution; short-term load
-forecasting; time series}
-}
-
-@Article{mapcah12,
-  Title                    = {A case-crossover design to examine the role of aeroallergens and
-respiratory viruses on childhood asthma exacerbations requiring
-hospitalization : The {MAPCAH} study},
-  Author                   = {Erbas, Bircan and Dharmage, Shyamali C and Sullivan, Molly O and
-Akram, Muhammad and Newbigin, Ed and Taylor, Philip and
-Vicendese, Don and Hyndman, Rob J and Bardin, Philip and Tang,
-Mimi L and Abramson, Michael J},
-  Year                     = {2012},
-  Number                   = {018},
-  Url                      = {dx.doi.org/10.4172/2155-6180.S7-018},
-  Volume                   = {S7},
-
-  Journal                  = {Journal of Biometrics \& Biostatistics},
-  Keywords                 = {asthma; case crossover design; infections; internal validity;
-respiratory viral; Respiratory viral infections}
-}
-
-@Unpublished{rectify,
-  Title                    = {Recursive and direct multi-step forecasting: the best of both
-worlds},
-  Author                   = {Ben Taieb, Souhaib and Hyndman, Rob J},
-  Year                     = {2012},
-  HowPublished             = {Working paper 19/12. Department of Econometrics and Business
-Statistics, Monash University},
-  Url                      = {robjhyndman.com/publications/rectify/},
-
-  Institution              = {Department of Econometrics \& Business Statistics, Monash University},
-  Number                   = {19/12}
+  journal = {IEEE Transactions on Power Systems},
+  keywords = {Additive model; forecast distribution; short-term load
+forecasting; time series},
 }
 
 @Article{AH11,
-  Title                    = {The value of feedback in forecasting competitions},
-  Author                   = {Athanasopoulos, George and Hyndman, Rob J},
-  Year                     = {2011},
-  Month                    = jul,
-  Number                   = {3},
-  Pages                    = {845--849},
-  Url                      = {dx.doi.org/10.1016/j.ijforecast.2011.03.002},
-  Volume                   = {27},
-
-  Journal                  = {International Journal of Forecasting},
-  Keywords                 = {kaggle; online competition; public leaderboard; revising
+  title = {The value of feedback in forecasting competitions},
+  author = {George Athanasopoulos and Rob J Hyndman},
+  year = {2011},
+  month = {jul},
+  number = {3},
+  pages = {845--849},
+  url = {dx.doi.org/10.1016/j.ijforecast.2011.03.002},
+  volume = {27},
+  journal = {International Journal of Forecasting},
+  keywords = {kaggle; online competition; public leaderboard; revising
 forecasts; tourism},
-  Publisher                = {Elsevier B.V.}
+  publisher = {Elsevier B.V.},
 }
 
 @Article{AHSW11,
-  Title                    = {The tourism forecasting competition},
-  Author                   = {Athanasopoulos, George and Hyndman, Rob J and Song, Haiyan and
-Wu, Doris C},
-  Year                     = {2011},
-  Month                    = jul,
-  Number                   = {3},
-  Pages                    = {822--844},
-  Url                      = {dx.doi.org/10.1016/j.ijforecast.2010.04.009},
-  Volume                   = {27},
-
-  Journal                  = {International Journal of Forecasting},
-  Keywords                 = {arima; autoregressive; distributed lag model; dynamic
+  title = {The tourism forecasting competition},
+  author = {George Athanasopoulos and Rob J Hyndman and Haiyan Song and Doris C Wu},
+  year = {2011},
+  month = {jul},
+  number = {3},
+  pages = {822--844},
+  url = {dx.doi.org/10.1016/j.ijforecast.2010.04.009},
+  volume = {27},
+  journal = {International Journal of Forecasting},
+  keywords = {arima; autoregressive; distributed lag model; dynamic
 regression; exponential smoothing; state space model; time
 varying parameter model; vector autoregression},
-  Publisher                = {Elsevier B.V.}
+  publisher = {Elsevier B.V.},
 }
 
 @Article{Carta2011,
-  Title                    = {Method for optimizing coating properties based on an evolutionary
+  title = {Method for optimizing coating properties based on an evolutionary
 algorithm approach},
-  Author                   = {Carta, Davide and Villanova, Laura and Costacurta, Stefano and
-Patelli, Alessandro and Poli, Irene and Vezz\'{u}, Simone and
-Scopece, Paolo and Lisi, Fabio and Smith-Miles, Kate A and
-Hyndman, Rob J and Hill, Anita J and Falcaro, Paolo},
-  Year                     = {2011},
-  Month                    = aug,
-  Number                   = {16},
-  Pages                    = {6373--6380},
-  Url                      = {dx.doi.org/10.1021/ac201337e},
-  Volume                   = {83},
-
-  Abstract                 = {In industry as well as many areas of scientific research, data
+  author = {Davide Carta and Laura Villanova and Stefano Costacurta and Alessandro Patelli and Irene Poli and Simone Vezz{\a'u} and Paolo Scopece and Fabio Lisi and Kate A Smith-Miles and Rob J Hyndman and Anita J Hill and Paolo Falcaro},
+  year = {2011},
+  month = {aug},
+  number = {16},
+  pages = {6373--6380},
+  url = {dx.doi.org/10.1021/ac201337e},
+  volume = {83},
+  abstract = {In industry as well as many areas of scientific research, data
 collected often contain a number of responses of interest for a
 chosen set of exploratory variables. Optimization of such
 multivariable multiresponse systems is a challenge well suited to
@@ -753,20 +708,19 @@ variables. Use of EMMA to optimize control factors of a product
 or process is illustrated, and the proposed approach is shown to
 be a promising tool for simultaneously optimizing and modeling
 multivariable multiresponse systems.},
-  Journal                  = {Analytical Chemistry}
+  journal = {Analytical Chemistry},
 }
 
 @Article{DHS11,
-  Title                    = {Forecasting time series with complex seasonal patterns using
+  title = {Forecasting time series with complex seasonal patterns using
 exponential smoothing},
-  Author                   = {De Livera, Alysha M and Hyndman, Rob J and Snyder, Ralph D},
-  Year                     = {2011},
-  Number                   = {496},
-  Pages                    = {1513--1527},
-  Url                      = {dx.doi.org/10.1198/jasa.2011.tm09771},
-  Volume                   = {106},
-
-  Abstract                 = {An innovations state space modeling framework is introduced for
+  author = {Alysha M {De Livera} and Rob J Hyndman and Ralph D Snyder},
+  year = {2011},
+  number = {496},
+  pages = {1513--1527},
+  url = {dx.doi.org/10.1198/jasa.2011.tm09771},
+  volume = {106},
+  abstract = {An innovations state space modeling framework is introduced for
 forecasting complex seasonal time series such as those with
 multiple seasonal periods, high-frequency seasonality,
 non-integer seasonality, and dual-calendar effects. The new
@@ -785,114 +739,118 @@ formulation is presented as a means of decomposing complex
 seasonal time series, and it is shown that this decomposition
 leads to the identification and extraction of seasonal components
 which are otherwise not apparent in the time series plot itself.},
-  Journal                  = {Journal of the American Statistical Association},
-  Keywords                 = {fourier series; prediction intervals; seasonality; state space
-models; time series decomposition; Time series decomposition.}
+  journal = {Journal of the American Statistical Association},
+  keywords = {fourier series; prediction intervals; seasonality; state space
+models; time series decomposition; Time series decomposition.},
 }
 
 @Article{FH10b,
-  Title                    = {The price elasticity of electricity demand in South Australia},
-  Author                   = {Fan, Shu and Hyndman, Rob J},
-  Year                     = {2011},
-  Number                   = {6},
-  Pages                    = {3709--3719},
-  Url                      = {dx.doi.org/10.1016/j.enpol.2011.03.080},
-  Volume                   = {39},
+  title = {The price elasticity of electricity demand in South Australia},
+  author = {Shu Fan and Rob J Hyndman},
+  year = {2011},
+  number = {6},
+  pages = {3709--3719},
+  url = {dx.doi.org/10.1016/j.enpol.2011.03.080},
+  volume = {39},
+  journal = {Energy Policy},
+  keywords = {Electricity demand; Price elasticity; Time series},
+  publisher = {Elsevier},
+}
 
-  Journal                  = {Energy Policy},
-  Keywords                 = {Electricity demand; Price elasticity; Time series},
-  Publisher                = {Elsevier}
+@Article{usertalk11,
+  title = {Giving a useR! talk},
+  author = {Rob J Hyndman},
+  year = {2011},
+  number = {1},
+  pages = {69--71},
+  volume = {3},
+  abstract = {Giving a UseR! talk at the the inter- national R user conference
+is a balancing act in which you have to try to impart some new
+ideas, provide sufficient background and keep the au- dience
+interested, all in a very short period of time.},
+  journal = {The R journal},
 }
 
 @Article{hierarchical,
-  Title                    = {Optimal combination forecasts for hierarchical time series},
-  Author                   = {Hyndman, Rob J and Ahmed, Roman A and Athanasopoulos, George and
-Shang, Han Lin},
-  Year                     = {2011},
-  Month                    = sep,
-  Number                   = {9},
-  Pages                    = {2579--2589},
-  Url                      = {dx.doi.org/10.1016/j.csda.2011.03.006},
-  Volume                   = {55},
-
-  Journal                  = {Computational Statistics \& Data Analysis},
-  Keywords                 = {bottom-up forecasting},
-  Publisher                = {Citeseer}
+  title = {Optimal combination forecasts for hierarchical time series},
+  author = {Rob J Hyndman and Roman A Ahmed and George Athanasopoulos and Han Lin Shang},
+  year = {2011},
+  month = {sep},
+  number = {9},
+  pages = {2579--2589},
+  url = {dx.doi.org/10.1016/j.csda.2011.03.006},
+  volume = {55},
+  journal = {Computational Statistics \& Data Analysis},
+  keywords = {bottom-up forecasting},
+  publisher = {Citeseer},
 }
 
 @Article{longrun,
-  Title                    = {Improved interval estimation of long run response from a
+  title = {Improved interval estimation of long run response from a
 dynamic linear model: A highest density region approach},
-  Author                   = {Kim, Jae H and Fraser, Iain and Hyndman, Rob J},
-  Year                     = {2011},
-  Month                    = aug,
-  Number                   = {8},
-  Pages                    = {2477--2489},
-  Url                      = {dx.doi.org/10.1016/j.csda.2011.03.003},
-  Volume                   = {55},
-
-  Institution              = {Department of Econometrics \& Business Statistics, Monash University},
-  Journal                  = {Computational Statistics \& Data Analysis},
-  Publisher                = {Elsevier}
-}
-
-@Article{Pearce10a,
-  Title                    = {Investigating the influence of synoptic-scale meteorology on air
-quality using self-organizing maps and generalized additive
-modelling},
-  Author                   = {Pearce, John L and Beringer, Jason and Nicholls, Neville and
-Hyndman, Rob J and Uotila, Petteri and Tapper, Nigel J},
-  Year                     = {2011},
-  Month                    = jan,
-  Number                   = {1},
-  Pages                    = {128--136},
-  Url                      = {dx.doi.org/10.1016/j.atmosenv.2010.09.032},
-  Volume                   = {45},
-
-  Journal                  = {Atmospheric Environment}
+  author = {Jae H Kim and Iain Fraser and Rob J Hyndman},
+  year = {2011},
+  month = {aug},
+  number = {8},
+  pages = {2477--2489},
+  url = {dx.doi.org/10.1016/j.csda.2011.03.003},
+  volume = {55},
+  institution = {Department of Econometrics \& Business Statistics, Monash University},
+  journal = {Computational Statistics \& Data Analysis},
+  publisher = {Elsevier},
 }
 
 @Article{Pearce10b,
-  Title                    = {Quantifying the influence of local meteorology on air quality
+  title = {Quantifying the influence of local meteorology on air quality
 using generalized additive models},
-  Author                   = {Pearce, John L and Beringer, Jason and Nicholls, Neville and
-Hyndman, Rob J and Tapper, Nigel J},
-  Year                     = {2011},
-  Month                    = feb,
-  Number                   = {6},
-  Pages                    = {1328--1336},
-  Url                      = {dx.doi.org/10.1016/j.atmosenv.2010.11.051},
-  Volume                   = {45},
+  author = {John L Pearce and Jason Beringer and Neville Nicholls and Rob J Hyndman and Nigel J Tapper},
+  year = {2011},
+  month = {feb},
+  number = {6},
+  pages = {1328--1336},
+  url = {dx.doi.org/10.1016/j.atmosenv.2010.11.051},
+  volume = {45},
+  journal = {Atmospheric Environment},
+}
 
-  Journal                  = {Atmospheric Environment}
+@Article{Pearce10a,
+  title = {Investigating the influence of synoptic-scale meteorology on air
+quality using self-organizing maps and generalized additive
+modelling},
+  author = {John L Pearce and Jason Beringer and Neville Nicholls and Rob J Hyndman and Petteri Uotila and Nigel J Tapper},
+  year = {2011},
+  month = {jan},
+  number = {1},
+  pages = {128--136},
+  url = {dx.doi.org/10.1016/j.atmosenv.2010.09.032},
+  volume = {45},
+  journal = {Atmospheric Environment},
 }
 
 @Article{SBH11,
-  Title                    = {Point and interval forecasts of mortality rates and life
+  title = {Point and interval forecasts of mortality rates and life
 expectancy : a comparison of ten principal component methods},
-  Author                   = {Shang, Han Lin and Booth, Heather and Hyndman, Rob J},
-  Year                     = {2011},
-  Month                    = jul,
-  Pages                    = {173--214},
-  Url                      = {dx.doi.org/10.4054/DemRes.2011.25.5},
-  Volume                   = {25},
-
-  Journal                  = {Demographic Research},
-  Keywords                 = {demography; fertility; forecasting; forecasting time series;
+  author = {Han Lin Shang and Heather Booth and Rob J Hyndman},
+  year = {2011},
+  month = {jul},
+  pages = {173--214},
+  url = {dx.doi.org/10.4054/DemRes.2011.25.5},
+  volume = {25},
+  journal = {Demographic Research},
+  keywords = {demography; fertility; forecasting; forecasting time series;
 interval forecasts; lee-carter method; life expectancy; mortality
-forecasting; principal components analysis}
+forecasting; principal components analysis},
 }
 
 @Article{SH11,
-  Title                    = {Nonparametric time series forecasting with dynamic updating},
-  Author                   = {Shang, Han Lin and Hyndman, Rob J},
-  Year                     = {2011},
-  Number                   = {7},
-  Pages                    = {1310--1324},
-  Url                      = {dx.doi.org/10.1016/j.matcom.2010.04.027},
-  Volume                   = {81},
-
-  Abstract                 = {We present a nonparametric method to forecast a seasonal
+  title = {Nonparametric time series forecasting with dynamic updating},
+  author = {Han Lin Shang and Rob J Hyndman},
+  year = {2011},
+  number = {7},
+  pages = {1310--1324},
+  url = {dx.doi.org/10.1016/j.matcom.2010.04.027},
+  volume = {81},
+  abstract = {We present a nonparametric method to forecast a seasonal
 univariate time series, and propose four dynamic updating methods
 to improve point forecast accuracy. Our methods consider a
 seasonal univariate time series as a functional time series. We
@@ -909,224 +867,154 @@ data-driven and computationally fast, and hence they are feasible
 to be applied in real time high frequency dynamic updating. The
 methods are demonstrated using monthly sea surface temperatures
 from 1950 to 2008.},
-  Journal                  = {Mathematics and Computers in Simulation},
-  Keywords                 = {Functional principal component analysis; Functional time series;
+  journal = {Mathematics and Computers in Simulation},
+  keywords = {Functional principal component analysis; Functional time series;
 Ordinary least squares; Penalized least squares; Ridge
-regression; Sea surface temperatures; Seasonal time series}
+regression; Sea surface temperatures; Seasonal time series},
 }
 
 @Article{tourismeditorial11,
-  Title                    = {Tourism forecasting: an introduction},
-  Author                   = {Song, Haiyan and Hyndman, Rob J},
-  Year                     = {2011},
-  Month                    = apr,
-  Number                   = {3},
-  Pages                    = {817--821},
-  Url                      = {dx.doi.org/10.1016/j.ijforecast.2011.03.001},
-  Volume                   = {27},
-
-  Journal                  = {International Journal of Forecasting}
-}
-
-@Article{usertalk11,
-  Title                    = {Giving a useR! talk},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {2011},
-  Number                   = {1},
-  Pages                    = {69--71},
-  Volume                   = {3},
-
-  Abstract                 = {Giving a UseR! talk at the the inter- national R user conference
-is a balancing act in which you have to try to impart some new
-ideas, provide sufficient background and keep the au- dience
-interested, all in a very short period of time.},
-  Journal                  = {The R journal}
+  title = {Tourism forecasting: an introduction},
+  author = {Haiyan Song and Rob J Hyndman},
+  year = {2011},
+  month = {apr},
+  number = {3},
+  pages = {817--821},
+  url = {dx.doi.org/10.1016/j.ijforecast.2011.03.001},
+  volume = {27},
+  journal = {International Journal of Forecasting},
 }
 
 @Article{EAGE+10,
-  Title                    = {Using functional data analysis models to estimate future time
+  title = {Using functional data analysis models to estimate future time
 trends of age-specific breast cancer mortality for the United
 States and {England-Wales}},
-  Author                   = {Erbas, Bircan and Akram, Muhammad and Gertig, Dorota M and
-English, Dallas and Hopper, John L and Kavanagh, Anne M and
-Hyndman, Rob J},
-  Year                     = {2010},
-  Number                   = {2},
-  Pages                    = {159--165},
-  Url                      = {dx.doi.org/10.2188/jea.JE20090072},
-  Volume                   = {20},
-
-  Journal                  = {Journal of Epidemiology},
-  Keywords                 = {breast cancer; forecasting; functional-data-analysis models;
-mortality trends}
+  author = {Bircan Erbas and Muhammad Akram and Dorota M Gertig and Dallas English and John L Hopper and Anne M Kavanagh and Rob J Hyndman},
+  year = {2010},
+  number = {2},
+  pages = {159--165},
+  url = {dx.doi.org/10.2188/jea.JE20090072},
+  volume = {20},
+  journal = {Journal of Epidemiology},
+  keywords = {breast cancer; forecasting; functional-data-analysis models;
+mortality trends},
 }
 
-@Inproceedings{FH10,
-  Title                    = {Short-term load forecasting based on a semi-parametric
+@InProceedings{FH10,
+  title = {Short-term load forecasting based on a semi-parametric
 additive model},
-  Author                   = {Fan, Shu and Hyndman, Rob J},
-  Booktitle                = {Proceedings, 20th Australasian Universities Power Engineering
+  author = {Shu Fan and Rob J Hyndman},
+  booktitle = {Proceedings, 20th Australasian Universities Power Engineering
 Conference},
-  Year                     = {2010},
-
-  Institution              = {University of Canterbury, Christchurch, New Zealand.}
+  year = {2010},
+  institution = {University of Canterbury, Christchurch, New Zealand.},
 }
 
-@Inproceedings{Han10,
-  Title                    = {Exploratory graphics for functional data},
-  Author                   = {Shang, Han Lin and Hyndman, Rob J},
-  Booktitle                = {Proceedings, Interface 2010: Computing Science and Statistics},
-  Year                     = {2010},
-
-  Address                  = {Seattle, Washington, June 16--19.}
-}
-
-@Article{HF10,
-  Title                    = {Density forecasting for long-term peak electricity demand},
-  Author                   = {Hyndman, Rob J and Fan, Shu},
-  Year                     = {2010},
-  Month                    = may,
-  Number                   = {2},
-  Pages                    = {1142--1153},
-  Url                      = {dx.doi.org/10.1109/TPWRS.2009.2036017},
-  Volume                   = {25},
-
-  Journal                  = {IEEE Transactions on Power Systems}
-}
-
-@Article{HS10,
-  Title                    = {Rainbow plots, bagplots and boxplots for functional data},
-  Author                   = {Hyndman, Rob J and Shang, Han Lin},
-  Year                     = {2010},
-  Number                   = {1},
-  Pages                    = {29--45},
-  Volume                   = {19},
-
-  Journal                  = {Journal of Computational and Graphical Statistics}
-}
-
-@Incollection{IESS10a,
-  Title                    = {Moving averages},
-  Author                   = {Hyndman, Rob J},
-  Booktitle                = {International Encyclopedia of Statistical Science},
-  Editor                   = {Lovric, Miodrag},
-  Year                     = {2010},
-  Pages                    = {866--869},
-  Publisher                = {Springer},
-
-  Journal                  = {International Encyclopedia of Statistical Science}
-}
-
-@Incollection{IESS10b,
-  Title                    = {Forecasting overview},
-  Author                   = {Hyndman, Rob J},
-  Booktitle                = {International Encyclopedia of Statistical Science},
-  Editor                   = {Lovric, Miodrag},
-  Year                     = {2010},
-  Pages                    = {536--539},
-  Publisher                = {Springer},
-
-  Journal                  = {International Encyclopedia of Statistical Science}
-}
-
-@Incollection{IESS10c,
-  Title                    = {Business forecasting methods},
-  Author                   = {Hyndman, Rob J},
-  Booktitle                = {International Encyclopedia of Statistical Science},
-  Editor                   = {Lovric, Miodrag},
-  Year                     = {2010},
-  Pages                    = {185--187},
-  Publisher                = {Springer},
-
-  Journal                  = {International Encyclopedia of Statistical Science}
-}
-
-@Article{IJFeditorial10a,
-  Title                    = {Encouraging replication and reproducible research},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {2010},
-  Month                    = jan,
-  Number                   = {1},
-  Pages                    = {2--3},
-  Url                      = {dx.doi.org/10.1016/j.ijforecast.2009.12.003},
-  Volume                   = {26},
-
-  Journal                  = {International Journal of Forecasting}
+@InCollection{IESS10c,
+  title = {Business forecasting methods},
+  author = {Rob J Hyndman},
+  booktitle = {International Encyclopedia of Statistical Science},
+  editor = {Miodrag Lovric},
+  year = {2010},
+  pages = {185--187},
+  publisher = {Springer},
+  journal = {International Encyclopedia of Statistical Science},
 }
 
 @Article{IJFeditorial10b,
-  Title                    = {Changing of the guard},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {2010},
-  Month                    = jan,
-  Number                   = {1},
-  Pages                    = {1},
-  Url                      = {dx.doi.org/10.1016/j.ijforecast.2009.12.002},
-  Volume                   = {26},
+  title = {Changing of the guard},
+  author = {Rob J Hyndman},
+  year = {2010},
+  month = {jan},
+  number = {1},
+  pages = {1},
+  url = {dx.doi.org/10.1016/j.ijforecast.2009.12.002},
+  volume = {26},
+  journal = {International Journal of Forecasting},
+}
 
-  Journal                  = {International Journal of Forecasting}
+@Article{IJFeditorial10a,
+  title = {Encouraging replication and reproducible research},
+  author = {Rob J Hyndman},
+  year = {2010},
+  month = {jan},
+  number = {1},
+  pages = {2--3},
+  url = {dx.doi.org/10.1016/j.ijforecast.2009.12.003},
+  volume = {26},
+  journal = {International Journal of Forecasting},
+}
+
+@InCollection{IESS10b,
+  title = {Forecasting overview},
+  author = {Rob J Hyndman},
+  booktitle = {International Encyclopedia of Statistical Science},
+  editor = {Miodrag Lovric},
+  year = {2010},
+  pages = {536--539},
+  publisher = {Springer},
+  journal = {International Encyclopedia of Statistical Science},
+}
+
+@InCollection{IESS10a,
+  title = {Moving averages},
+  author = {Rob J Hyndman},
+  booktitle = {International Encyclopedia of Statistical Science},
+  editor = {Miodrag Lovric},
+  year = {2010},
+  pages = {866--869},
+  publisher = {Springer},
+  journal = {International Encyclopedia of Statistical Science},
+}
+
+@Article{HF10,
+  title = {Density forecasting for long-term peak electricity demand},
+  author = {Rob J Hyndman and Shu Fan},
+  year = {2010},
+  month = {may},
+  number = {2},
+  pages = {1142--1153},
+  url = {dx.doi.org/10.1109/TPWRS.2009.2036017},
+  volume = {25},
+  journal = {IEEE Transactions on Power Systems},
+}
+
+@Article{HS10,
+  title = {Rainbow plots, bagplots and boxplots for functional data},
+  author = {Rob J Hyndman and Han Lin Shang},
+  year = {2010},
+  number = {1},
+  pages = {29--45},
+  volume = {19},
+  journal = {Journal of Computational and Graphical Statistics},
 }
 
 @Article{KH10,
-  Title                    = {Free open-source forecasting using {R}},
-  Author                   = {Kolassa, Stephan and Hyndman, Rob J},
-  Year                     = {2010},
-  Pages                    = {19--24},
-  Volume                   = {17},
-
-  Journal                  = {Foresight: the International Journal of Applied Forecasting}
+  title = {Free open-source forecasting using {R}},
+  author = {Stephan Kolassa and Rob J Hyndman},
+  year = {2010},
+  pages = {19--24},
+  volume = {17},
+  journal = {Foresight: the International Journal of Applied Forecasting},
 }
 
-@Inproceedings{laura1,
-  Title                    = {Functionalization of microarray devices: process optimization
-using a multiobjective {PSO} and multiresponse {MARS} modeling},
-  Author                   = {Villanova, Laura and Falcaro, Paolo and Carta, Davide and
-Poli, Irene and Hyndman, Rob J and Smith-Miles, Kate A},
-  Booktitle                = {Proceedings. 2010 {IEEE} congress on evolutionary computation},
-  Year                     = {2010},
-
-  Address                  = {July 2010. Barcelona, Spain.}
-}
-
-@Article{VHNC10,
-  Title                    = {Detecting trend and seasonal changes in satellite image time
-series},
-  Author                   = {Verbesselt, Jan and Hyndman, Rob J and Newnham, Glenn and
-Culvenor, Darius},
-  Year                     = {2010},
-  Month                    = jan,
-  Number                   = {1},
-  Pages                    = {106--115},
-  Url                      = {dx.doi.org/10.1016/j.rse.2009.08.014},
-  Volume                   = {114},
-
-  Journal                  = {Remote Sensing of Environment},
-  Publisher                = {Elsevier B.V.}
-}
-
-@Article{VHZC10,
-  Title                    = {Phenological change detection while accounting for abrupt and
-gradual trends in satellite image time series},
-  Author                   = {Verbesselt, Jan and Hyndman, Rob J and Zeileis, Achim and
-Culvenor, Darius},
-  Year                     = {2010},
-  Number                   = {12},
-  Pages                    = {2970--2980},
-  Volume                   = {114},
-
-  Journal                  = {Remote Sensing of Environment}
+@InProceedings{Han10,
+  title = {Exploratory graphics for functional data},
+  author = {Han Lin Shang and Rob J Hyndman},
+  booktitle = {Proceedings, Interface 2010: Computing Science and Statistics},
+  year = {2010},
+  address = {Seattle, Washington, June 16--19.},
 }
 
 @Article{VISTS10,
-  Title                    = {The vector innovations structural time series framework : a
+  title = {The vector innovations structural time series framework : a
 simple approach to multivariate forecasting},
-  Author                   = {de Silva, Ashton and Hyndman, Rob J and Snyder, Ralph D},
-  Year                     = {2010},
-  Number                   = {4},
-  Pages                    = {353--374},
-  Volume                   = {10},
-
-  Abstract                 = {The vector innovations structural time series framework is
+  author = {Ashton {de Silva} and Rob J Hyndman and Ralph D Snyder},
+  year = {2010},
+  number = {4},
+  pages = {353--374},
+  volume = {10},
+  abstract = {The vector innovations structural time series framework is
 proposed as a way of modelling a set of related time series. As
 with all multivariate approaches, the aim is to exploit potential
 inter- series dependencies to improve the fit and forecasts. The
@@ -1140,100 +1028,111 @@ dollar. The forecasting accuracy of the new modelling framework
 is compared to other common uni- and multivariate approaches in
 an experiment using time series from a large macroeconomic
 database.},
-  Journal                  = {Statistical Modelling},
-  Keywords                 = {exponential smoothing; forecast comparison; multivariate time
+  journal = {Statistical Modelling},
+  keywords = {exponential smoothing; forecast comparison; multivariate time
 se-; multivariate time series; ries; state space model; vector
 autoregression; vector innovations structural time; vector
-innovations structural time series model}
+innovations structural time series model},
+}
+
+@Article{VHNC10,
+  title = {Detecting trend and seasonal changes in satellite image time
+series},
+  author = {Jan Verbesselt and Rob J Hyndman and Glenn Newnham and Darius Culvenor},
+  year = {2010},
+  month = {jan},
+  number = {1},
+  pages = {106--115},
+  url = {dx.doi.org/10.1016/j.rse.2009.08.014},
+  volume = {114},
+  journal = {Remote Sensing of Environment},
+  publisher = {Elsevier B.V.},
+}
+
+@Article{VHZC10,
+  title = {Phenological change detection while accounting for abrupt and
+gradual trends in satellite image time series},
+  author = {Jan Verbesselt and Rob J Hyndman and Achim Zeileis and Darius Culvenor},
+  year = {2010},
+  number = {12},
+  pages = {2970--2980},
+  volume = {114},
+  journal = {Remote Sensing of Environment},
+}
+
+@InProceedings{laura1,
+  title = {Functionalization of microarray devices: process optimization
+using a multiobjective {PSO} and multiresponse {MARS} modeling},
+  author = {Laura Villanova and Paolo Falcaro and Davide Carta and Irene Poli and Rob J Hyndman and Kate A Smith-Miles},
+  booktitle = {Proceedings. 2010 {IEEE} congress on evolutionary computation},
+  year = {2010},
+  address = {July 2010. Barcelona, Spain.},
 }
 
 @Article{YHE10,
-  Title                    = {Forecasting age-related changes in breast cancer mortality among
+  title = {Forecasting age-related changes in breast cancer mortality among
 white and black {US} women},
-  Author                   = {Yasmeen, Farah and Hyndman, Rob J and Erbas, Bircan},
-  Year                     = {2010},
-  Number                   = {5},
-  Pages                    = {542--549},
-  Volume                   = {32},
-
-  Journal                  = {Cancer Epidemiology}
+  author = {Farah Yasmeen and Rob J Hyndman and Bircan Erbas},
+  year = {2010},
+  number = {5},
+  pages = {542--549},
+  volume = {32},
+  journal = {Cancer Epidemiology},
 }
 
 @Article{AHO09,
-  Title                    = {Exponential smoothing and non-negative data},
-  Author                   = {Akram, Muhammad and Hyndman, Rob J and Ord, J K},
-  Year                     = {2009},
-  Month                    = dec,
-  Number                   = {4},
-  Pages                    = {415--432},
-  Url                      = {dx.doi.org/10.1111/j.1467-842X.2009.00555.x},
-  Volume                   = {51},
-
-  Journal                  = {Australian \& New Zealand Journal of Statistics},
-  Keywords                 = {exponential smoothing; forecasting; positive-valued processes;
-seasonality; space models; state; time series}
-}
-
-@Article{dSHS09,
-  Title                    = {A multivariate innovations state space {Beveridge-Nelson}
-decomposition},
-  Author                   = {de Silva, Ashton and Hyndman, Rob J and Snyder, Ralph D},
-  Year                     = {2009},
-  Number                   = {5},
-  Pages                    = {1067--1074},
-  Url                      = {www.sciencedirect.com/science/article/pii/S0264999309000698},
-  Volume                   = {26},
-
-  Journal                  = {Economic Modelling},
-  Keywords                 = {beveridge-nelson decomposition; common components; model;
-multivariate time series; series model; vector innovations
-structural time},
-  Publisher                = {Elsevier}
+  title = {Exponential smoothing and non-negative data},
+  author = {Muhammad Akram and Rob J Hyndman and J K Ord},
+  year = {2009},
+  month = {dec},
+  number = {4},
+  pages = {415--432},
+  url = {dx.doi.org/10.1111/j.1467-842X.2009.00555.x},
+  volume = {51},
+  journal = {Australian \& New Zealand Journal of Statistics},
+  keywords = {exponential smoothing; forecasting; positive-valued processes;
+seasonality; space models; state; time series},
 }
 
 @Article{hiertourism,
-  Title                    = {Hierarchical forecasts for Australian domestic tourism},
-  Author                   = {Athanasopoulos, George and Ahmed, Roman A and Hyndman, Rob J},
-  Year                     = {2009},
-  Month                    = jan,
-  Number                   = {1},
-  Pages                    = {146--166},
-  Url                      = {dx.doi.org/10.1016/j.ijforecast.2008.07.004},
-  Volume                   = {25},
-
-  Journal                  = {International Journal of Forecasting},
-  Keywords                 = {australia; down method; exponential smoothing; hierarchical
+  title = {Hierarchical forecasts for Australian domestic tourism},
+  author = {George Athanasopoulos and Roman A Ahmed and Rob J Hyndman},
+  year = {2009},
+  month = {jan},
+  number = {1},
+  pages = {146--166},
+  url = {dx.doi.org/10.1016/j.ijforecast.2008.07.004},
+  volume = {25},
+  journal = {International Journal of Forecasting},
+  keywords = {australia; down method; exponential smoothing; hierarchical
 forecasting; innovations state space models; method; optimal
-combination forecasts; top-; top-down; tourism demand}
+combination forecasts; top-; top-down; tourism demand},
 }
 
 @Article{HS09,
-  Title                    = {Forecasting functional time series (with discussion)},
-  Author                   = {Hyndman, Rob J and Shang, Han Lin},
-  Year                     = {2009},
-  Month                    = sep,
-  Number                   = {3},
-  Pages                    = {199--221},
-  Url                      = {dx.doi.org/10.1016/j.jkss.2009.06.002},
-  Volume                   = {38},
-
-  Journal                  = {Journal of the Korean Statistical Society},
-  Keywords                 = {demographic forecasting},
-  Publisher                = {Elsevier B.V.}
+  title = {Forecasting functional time series (with discussion)},
+  author = {Rob J Hyndman and Han Lin Shang},
+  year = {2009},
+  month = {sep},
+  number = {3},
+  pages = {199--221},
+  url = {dx.doi.org/10.1016/j.jkss.2009.06.002},
+  volume = {38},
+  journal = {Journal of the Korean Statistical Society},
+  keywords = {demographic forecasting},
+  publisher = {Elsevier B.V.},
 }
 
 @Article{OKSH09,
-  Title                    = {Monitoring processes with changing variances},
-  Author                   = {Ord, J K and Koehler, Anne B and Snyder, Ralph D and Hyndman, Rob
-J},
-  Year                     = {2009},
-  Month                    = jul,
-  Number                   = {3},
-  Pages                    = {518--525},
-  Url                      = {dx.doi.org/10.1016/j.ijforecast.2009.05.026},
-  Volume                   = {25},
-
-  Abstract                 = {Statistical process control (SPC) has evolved beyond its
+  title = {Monitoring processes with changing variances},
+  author = {J K Ord and Anne B Koehler and Ralph D Snyder and Rob?J Hyndman},
+  year = {2009},
+  month = {jul},
+  number = {3},
+  pages = {518--525},
+  url = {dx.doi.org/10.1016/j.ijforecast.2009.05.026},
+  volume = {25},
+  abstract = {Statistical process control (SPC) has evolved beyond its
 classical applications in manufacturing to monitoring economic
 and social phenomena. This extension has required the
 consideration of autocorrelated and possibly non-stationary time
@@ -1243,116 +1142,112 @@ we use the innovations state space modeling framework to develop
 conditionally heteroscedastic models. We provide examples to show
 that the incorrect use of homoscedastic models may lead to
 erroneous decisions about the nature of the process.},
-  Journal                  = {International Journal of Forecasting},
-  Keywords                 = {Control charts; GARCH; Heteroscedasticity; Innovations; State
-space; Statistical process control}
+  journal = {International Journal of Forecasting},
+  keywords = {Control charts; GARCH; Heteroscedasticity; Innovations; State
+space; Statistical process control},
 }
 
-@Inproceedings{SH09,
-  Title                    = {Nonparametric time series forecasting with dynamic updating},
-  Author                   = {Shang, Han Lin and Hyndman, Rob J},
-  Booktitle                = {18th World {IMAS/MODSIM} Congress},
-  Year                     = {2009},
-  Number                   = {July},
+@InProceedings{SH09,
+  title = {Nonparametric time series forecasting with dynamic updating},
+  author = {Han Lin Shang and Rob J Hyndman},
+  booktitle = {18th World {IMAS/MODSIM} Congress},
+  year = {2009},
+  number = {July},
+  address = {Cairns, Australia. 13-17 July 2009.},
+}
 
-  Address                  = {Cairns, Australia. 13-17 July 2009.}
+@Article{dSHS09,
+  title = {A multivariate innovations state space {Beveridge-Nelson}
+decomposition},
+  author = {Ashton {de Silva} and Rob J Hyndman and Ralph D Snyder},
+  year = {2009},
+  number = {5},
+  pages = {1067--1074},
+  url = {www.sciencedirect.com/science/article/pii/S0264999309000698},
+  volume = {26},
+  journal = {Economic Modelling},
+  keywords = {beveridge-nelson decomposition; common components; model;
+multivariate time series; series model; vector innovations
+structural time},
+  publisher = {Elsevier},
 }
 
 @Article{WSH09,
-  Title                    = {Rule induction for forecasting method selection: meta-learning
+  title = {Rule induction for forecasting method selection: meta-learning
 the characteristics of univariate time series},
-  Author                   = {Wang, Xiaozhe and Smith-Miles, Kate A and Hyndman, Rob J},
-  Year                     = {2009},
-  Month                    = jun,
-  Number                   = {10-12},
-  Pages                    = {2581--2594},
-  Url                      = {dx.doi.org/10.1016/j.neucom.2008.10.017},
-  Volume                   = {72},
-
-  Journal                  = {Neurocomputing},
-  Keywords                 = {clustering; data characteristics; forecasting methods selection;
-rule induction; univariate time series}
+  author = {Xiaozhe Wang and Kate A Smith-Miles and Rob J Hyndman},
+  year = {2009},
+  month = {jun},
+  number = {10-12},
+  pages = {2581--2594},
+  url = {dx.doi.org/10.1016/j.neucom.2008.10.017},
+  volume = {72},
+  journal = {Neurocomputing},
+  keywords = {clustering; data characteristics; forecasting methods selection;
+rule induction; univariate time series},
 }
 
 @Article{austourism,
-  Title                    = {Modelling and forecasting Australian domestic tourism},
-  Author                   = {Athanasopoulos, George and Hyndman, Rob J},
-  Year                     = {2008},
-  Number                   = {1},
-  Pages                    = {19--31},
-  Url                      = {linkinghub.elsevier.com/retrieve/pii/S0261517707001057},
-  Volume                   = {29},
-
-  Journal                  = {Tourism Management}
-}
-
-@Book{expsmooth08,
-  Title                    = {Forecasting with exponential smoothing: the state space approach},
-  Author                   = {Hyndman, Rob J and Koehler, Anne B and Ord, J K and Snyder,
-Ralph D},
-  Year                     = {2008},
-  Publisher                = {Springer-Verlag},
-  Url                      = {www.exponentialsmoothing.net},
-
-  Address                  = {Berlin},
-  Journal                  = {Decision Sciences}
+  title = {Modelling and forecasting Australian domestic tourism},
+  author = {George Athanasopoulos and Rob J Hyndman},
+  year = {2008},
+  number = {1},
+  pages = {19--31},
+  url = {linkinghub.elsevier.com/retrieve/pii/S0261517707001057},
+  volume = {29},
+  journal = {Tourism Management},
 }
 
 @Article{Gould08,
-  Title                    = {Forecasting time series with multiple seasonal patterns},
-  Author                   = {Gould, Phillip G and Koehler, Anne B and Vahid, Farshid and
-Snyder, Ralph D and Ord, J K and Hyndman, Rob J},
-  Year                     = {2008},
-  Month                    = nov,
-  Number                   = {1},
-  Pages                    = {205--220},
-  Url                      = {dx.doi.org/10.1016/j.ejor.2007.08.024},
-  Volume                   = {191},
-
-  Journal                  = {European Journal of Operational Research},
-  Keywords                 = {exponential smoothing; forecasting; seasonality; state space
-models; time series}
+  title = {Forecasting time series with multiple seasonal patterns},
+  author = {Phillip G Gould and Anne B Koehler and Farshid Vahid and Ralph D Snyder and J K Ord and Rob J Hyndman},
+  year = {2008},
+  month = {nov},
+  number = {1},
+  pages = {205--220},
+  url = {dx.doi.org/10.1016/j.ejor.2007.08.024},
+  volume = {191},
+  journal = {European Journal of Operational Research},
+  keywords = {exponential smoothing; forecasting; seasonality; state space
+models; time series},
 }
 
 @Article{HAA08,
-  Title                    = {The admissible parameter space for exponential smoothing models},
-  Author                   = {Hyndman, Rob J and Akram, Muhammad and Archibald, Blyth C},
-  Year                     = {2008},
-  Month                    = feb,
-  Number                   = {2},
-  Pages                    = {407--426},
-  Url                      = {dx.doi.org/10.1007/s10463-006-0109-x},
-  Volume                   = {60},
-
-  Journal                  = {Annals of the Institute of Statistical Mathematics},
-  Keywords                 = {akram; bility; business statistics; department of econometrics
+  title = {The admissible parameter space for exponential smoothing models},
+  author = {Rob J Hyndman and Muhammad Akram and Blyth C Archibald},
+  year = {2008},
+  month = {feb},
+  number = {2},
+  pages = {407--426},
+  url = {dx.doi.org/10.1007/s10463-006-0109-x},
+  volume = {60},
+  journal = {Annals of the Institute of Statistical Mathematics},
+  keywords = {akram; bility; business statistics; department of econometrics
 and; exponential smoothing; hyndman; invertibility; j; m;
 observability; parameter; parameter space; r; reachability;
-space; sta-; stability; state space models; structural models}
+space; sta-; stability; state space models; structural models},
 }
 
 @Article{HB08,
-  Title                    = {Stochastic population forecasts using functional data models for
+  title = {Stochastic population forecasts using functional data models for
 mortality, fertility and migration},
-  Author                   = {Hyndman, Rob J and Booth, Heather},
-  Year                     = {2008},
-  Number                   = {3},
-  Pages                    = {323--342},
-  Volume                   = {24},
-
-  Journal                  = {International Journal of Forecasting}
+  author = {Rob J Hyndman and Heather Booth},
+  year = {2008},
+  number = {3},
+  pages = {323--342},
+  volume = {24},
+  journal = {International Journal of Forecasting},
 }
 
 @Article{HK08,
-  Title                    = {Automatic time series forecasting : the forecast package for {R}},
-  Author                   = {Hyndman, Rob J and Khandakar, Yeasmin},
-  Year                     = {2008},
-  Number                   = {3},
-  Pages                    = {1--22},
-  Url                      = {ideas.repec.org/a/jss/jstsof/27i03.html},
-  Volume                   = {26},
-
-  Abstract                 = {Automatic forecasts of large numbers of univariate time series
+  title = {Automatic time series forecasting : the forecast package for {R}},
+  author = {Rob J Hyndman and Yeasmin Khandakar},
+  year = {2008},
+  number = {3},
+  pages = {1--22},
+  url = {ideas.repec.org/a/jss/jstsof/27i03.html},
+  volume = {26},
+  abstract = {Automatic forecasts of large numbers of univariate time series
 are often needed in business and other contexts. We describe two
 automatic forecasting algorithms that have been implemented in
 the forecast package for R. The first is based on innovations
@@ -1362,66 +1257,94 @@ models. The algorithms are applicable to both seasonal and
 non-seasonal data, and are compared and illustrated using four
 real time series. We also briefly describe some of the other
 functionality available in the forecast package.},
-  Journal                  = {Journal of Statistical Software},
-  Keywords                 = {arima models; automatic forecasting; exponential smoothing;
+  journal = {Journal of Statistical Software},
+  keywords = {arima models; automatic forecasting; exponential smoothing;
 prediction inter-; r; state space models; time series; vals},
-  Publisher                = {American Statistical Association}
+  publisher = {American Statistical Association},
 }
 
-@Inbook{HS08,
-  Title                    = {Bagplots, boxplots and outlier detection for functional data},
-  Author                   = {Hyndman, Rob J and Shang, Han Lin},
-  Year                     = {2008},
-  Editor                   = {Dabo-Niang, S and Ferraty, F},
-  Pages                    = {201--207},
-  Publisher                = {Springer},
+@Book{expsmooth08,
+  title = {Forecasting with exponential smoothing: the state space approach},
+  author = {Rob J Hyndman and Anne B Koehler and J K Ord and Ralph D Snyder},
+  year = {2008},
+  publisher = {Springer-Verlag},
+  url = {www.exponentialsmoothing.net},
+  address = {Berlin},
+  journal = {Decision Sciences},
+}
 
-  booktitle                  = {Functional and Operatorial Statistics}
+@InBook{HS08,
+  title = {Bagplots, boxplots and outlier detection for functional data},
+  author = {Rob J Hyndman and Han Lin Shang},
+  year = {2008},
+  editor = {S Dabo-Niang and F Ferraty},
+  pages = {201--207},
+  publisher = {Springer},
+  booktitle = {Functional and Operatorial Statistics},
 }
 
 @Unpublished{KH08,
-  Title                    = {Forecasting without significance tests?},
-  Author                   = {Kostenko, Andrey V and Hyndman, Rob J},
-  Year                     = {2008},
-  Url                      = {robjhyndman.com/papers/sst2.pdf},
-
-  Institution              = {Department of Econometrics \& Business Statistics, Monash University}
+  title = {Forecasting without significance tests?},
+  author = {Andrey V Kostenko and Rob J Hyndman},
+  year = {2008},
+  url = {robjhyndman.com/papers/sst2.pdf},
+  institution = {Department of Econometrics \& Business Statistics, Monash University},
 }
 
 @Article{MBH08,
-  Title                    = {Generation of synthetic sequences of half-hourly temperature},
-  Author                   = {Magnano, Luciana and Boland, John W and Hyndman, Rob J},
-  Year                     = {2008},
-  Month                    = dec,
-  Number                   = {8},
-  Pages                    = {818--835},
-  Url                      = {dx.doi.org/10.1002/env.905},
-  Volume                   = {19},
-
-  Abstract                 = {We present tools to generate synthetic sequences of half-hourly
+  title = {Generation of synthetic sequences of half-hourly temperature},
+  author = {Luciana Magnano and John W Boland and Rob J Hyndman},
+  year = {2008},
+  month = {dec},
+  number = {8},
+  pages = {818--835},
+  url = {dx.doi.org/10.1002/env.905},
+  volume = {19},
+  abstract = {We present tools to generate synthetic sequences of half-hourly
 temperatures with similar statistical characteristics to observed
 historical data. Temperatures are generated using a combination
 of daily and half-hourly temperature models which account for
 intra-day and intra-year seasonality, as well as short- and
 long-term serial correlations. Details of the model estimation
 are given as well as a description of the synthetic generation.},
-  Journal                  = {Environmetrics},
-  Keywords                 = {arma models; fourier series; seasonal block-bootstrap; synthetic;
-temperature data; time series}
+  journal = {Environmetrics},
+  keywords = {arma models; fourier series; seasonal block-bootstrap; synthetic;
+temperature data; time series},
+}
+
+@Article{pollen07,
+  title = {Do levels of airborne grass pollen influence asthma hospital
+admissions?},
+  author = {Bircan Erbas and Jiun-Horng Chang and Shyamali C Dharmage and Eng Kok Ong and Rob J Hyndman and Ed Newbigin and Michael J Abramson},
+  year = {2007},
+  month = {nov},
+  number = {11},
+  pages = {1641--1647},
+  url = {dx.doi.org/10.1111/j.1365-2222.2007.02818.x},
+  volume = {37},
+  abstract = {The effects of environmental factors and ambient concentrations
+of grass pollen on allergic asthma are yet to be established.},
+  journal = {Clinical and Experimental Allergy},
+  keywords = {air pollution; Air Pollution: adverse effects; Air Pollution:
+analysis; Allergic; ambient pollen; asthma; Asthma: epidemiology;
+Asthma: etiology; Australia; Australia: epidemiology;
+Hospitalization; Hospitalization: statistics \& numerical data;
+Humans; non-linearity; Poaceae; Poaceae: immunology; Pollen;
+Pollen: immunology; Regression Analysis; Rhinitis; Seasonal;
+Seasonal: complications; statistical models},
 }
 
 @Article{EHG07,
-  Title                    = {Forecasting age-specific breast cancer mortality using functional
+  title = {Forecasting age-specific breast cancer mortality using functional
 data models},
-  Author                   = {Erbas, Bircan and Hyndman, Rob J and Gertig, Dorota M},
-  Year                     = {2007},
-  Month                    = jan,
-  Number                   = {2},
-  Pages                    = {458--470},
-  Url                      = {dx.doi.org/10.1002/sim.2306},
-  Volume                   = {26},
-
-  Abstract                 = {Accurate estimates of future age-specific incidence and mortality
+  author = {Bircan Erbas and Rob J Hyndman and Dorota M Gertig},
+  year = {2007},
+  month = {jan},
+  number = {2},
+  pages = {458--470},
+  url = {dx.doi.org/10.1002/sim.2306},
+  volume = {26},
+  abstract = {Accurate estimates of future age-specific incidence and mortality
 are critical for allocation of resources to breast cancer control
 programmes and evaluation of screening programmes. The purpose of
 this study is to apply functional data analysis techniques to
@@ -1452,89 +1375,26 @@ important covariates such as hormone replacement therapy and
 interventions to represent mammographic screening. This would be
 particularly useful for evaluating the impact of screening on
 mortality and incidence from breast cancer.},
-  Journal                  = {Statistics in Medicine},
-  Keywords                 = {80 and over; Aged; Australia; Australia: epidemiology; breast
+  journal = {Statistics in Medicine},
+  keywords = {80 and over; Aged; Australia; Australia: epidemiology; breast
 cancer; Breast Neoplasms; Breast Neoplasms: epidemiology; Breast
 Neoplasms: mortality; Data Interpretation; exponential smoothing;
 Female; forecasting; Forecasting: methods; functional data
 analysis; Humans; Incidence; Middle Aged; Models; mortality;
-Statistical}
-}
-
-@Unpublished{GSI,
-  Title                    = {A state space model for exponential smoothing with group
-seasonality},
-  Author                   = {Ouwehand, Pim and Hyndman, Rob J and de Kok, Ton G and van
-Donselaar, Karel H},
-  Year                     = {2007},
-  HowPublished             = {Working paper 07/07. Department of Econometrics \& Business
-Statistics, Monash University},
-
-  Institution              = {Department of Econometrics \& Business Statistics, Monash
-University}
-}
-
-@Article{HU07,
-  Title                    = {Robust forecasting of mortality and fertility rates: A
-functional data approach},
-  Author                   = {Hyndman, Rob J and Ullah, Shahid},
-  Year                     = {2007},
-  Month                    = jun,
-  Number                   = {10},
-  Pages                    = {4942--4956},
-  Url                      = {dx.doi.org/10.1016/j.csda.2006.07.028},
-  Volume                   = {51},
-
-  Annote                   = {NOTE: My research does not involve {"}smoothing
-data/observations{"}, {"}outliers{"}, and {"}robustness{"}. Here
-need to pay the attention on finding evenly spaced points which
-are very closeby inorder to avoid missing any data of the
-dataset. Then get a matris as M*n where M is the number of
-points and n is the sample size. (CHECK THIS OUT THIS
-SECTION!!!) Lightly read sections 2, 3, and 4. 1. A new
-forecasting method is proposed for forecasting age-specific
-mortalitiy and fertility rates which is robust, allows for
-smooth functions of age, and provides a modelling framework that
-is easily adapted to allow for constraints and other
-information. The model is a generalization of the Lee-Carter
-(LC) model. 2. The methodology can be applied to time series
-data observed discretely and possibly with error. The
-methodology is applied to French mortality and Australian
-fertility data, and the forecasts obtained are shown to be
-superior to those from the LC method and served of its variants.},
-  Journal                  = {Computational Statistics \& Data Analysis},
-  Keywords                 = {fertility forecasting; functional data; mortality forecasting;
-nonparametric smoothing; principal components; robustness},
-  Publisher                = {Elsevier}
-}
-
-@Article{KSH07,
-  Title                    = {Half-life estimation based on the bias-corrected bootstrap: A
-highest density region approach},
-  Author                   = {Kim, Jae H and Silvapulle, Param and Hyndman, Rob J},
-  Year                     = {2007},
-  Number                   = {7},
-  Pages                    = {3418--3432},
-  Url                      = {d.wanfangdata.com.cn/NSTLQK_NSTL_QK13687843.aspx},
-  Volume                   = {51},
-
-  Journal                  = {Computational Statistics \& Data Analysis},
-  Publisher                = {万方数据资源系统}
+Statistical},
 }
 
 @Article{NPS07,
-  Title                    = {Measurement of changes in antihypertensive drug utilisation
+  title = {Measurement of changes in antihypertensive drug utilisation
 following primary care educational interventions},
-  Author                   = {Horn, Fiona E and Mandryk, John A and Mackson, Judith M and
-Wutzke, Sonia E and Weekes, Lynn M and Hyndman, Rob J},
-  Year                     = {2007},
-  Month                    = mar,
-  Number                   = {3},
-  Pages                    = {297--308},
-  Url                      = {dx.doi.org/10.1002/pds.1243},
-  Volume                   = {16},
-
-  Abstract                 = {PURPOSE: To measure changes in drug utilisation following a
+  author = {Fiona E Horn and John A Mandryk and Judith M Mackson and Sonia E Wutzke and Lynn M Weekes and Rob J Hyndman},
+  year = {2007},
+  month = {mar},
+  number = {3},
+  pages = {297--308},
+  url = {dx.doi.org/10.1002/pds.1243},
+  volume = {16},
+  abstract = {PURPOSE: To measure changes in drug utilisation following a
 national general practice education program aimed at improving
 prescribing for hypertension. METHODS: A series of nationally
 implemented, multifaceted educational interventions using social
@@ -1569,8 +1429,8 @@ improving prescribing for hypertension. Lessons learned will be
 applied in evaluation of future NPS programs and are also
 applicable to analysis of other interventions aimed at
 influencing prescribing behaviour.},
-  Journal                  = {Pharmacoepidemiology and Drug Safety},
-  Keywords                 = {Adrenergic beta-Antagonists; Adrenergic beta-Antagonists:
+  journal = {Pharmacoepidemiology and Drug Safety},
+  keywords = {Adrenergic beta-Antagonists; Adrenergic beta-Antagonists:
 therapeutic use; Antihypertensive Agents; Antihypertensive
 Agents: therapeutic use; Australia; Continuing; Drug Utilization;
 Drug Utilization: statistics \& numerical data; Education;
@@ -1578,134 +1438,105 @@ Humans; Hypertension; Hypertension: drug therapy; Medical;
 Physician's Practice Patterns; Physician's Practice Patterns:
 statistics \& numeri; Primary Health Care; Regression Analysis;
 Social Marketing; Sodium Chloride Symporter Inhibitors; Sodium
-Chloride Symporter Inhibitors: therapeutic}
-}
-
-@Article{pollen07,
-  Title                    = {Do levels of airborne grass pollen influence asthma hospital
-admissions?},
-  Author                   = {Erbas, Bircan and Chang, Jiun-Horng and Dharmage, Shyamali C and
-Ong, Eng Kok and Hyndman, Rob J and Newbigin, Ed and Abramson,
-Michael J},
-  Year                     = {2007},
-  Month                    = nov,
-  Number                   = {11},
-  Pages                    = {1641--1647},
-  Url                      = {dx.doi.org/10.1111/j.1365-2222.2007.02818.x},
-  Volume                   = {37},
-
-  Abstract                 = {The effects of environmental factors and ambient concentrations
-of grass pollen on allergic asthma are yet to be established.},
-  Journal                  = {Clinical and Experimental Allergy},
-  Keywords                 = {air pollution; Air Pollution: adverse effects; Air Pollution:
-analysis; Allergic; ambient pollen; asthma; Asthma: epidemiology;
-Asthma: etiology; Australia; Australia: epidemiology;
-Hospitalization; Hospitalization: statistics \& numerical data;
-Humans; non-linearity; Poaceae; Poaceae: immunology; Pollen;
-Pollen: immunology; Regression Analysis; Rhinitis; Seasonal;
-Seasonal: complications; statistical models}
-}
-
-@Article{shortseasonal,
-  Title                    = {Minimum sample size requirements for seasonal forecasting models},
-  Author                   = {Hyndman, Rob J and Kostenko, Andrey V},
-  Year                     = {2007},
-  Pages                    = {12--15},
-  Volume                   = {6},
-
-  Journal                  = {Foresight: the International Journal of Applied Forecasting}
+Chloride Symporter Inhibitors: therapeutic},
 }
 
 @Book{Times,
-  Title                    = {The Times: a chronology of the Bible},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {2007},
-  Publisher                = {Christadelphian Scripture Study Service},
-  Url                      = {bethelbooks.com/times},
-
-  Annote                   = {(2nd ed., 1991, 1st ed., 1989, Bethel Publications)}
+  title = {The Times: a chronology of the Bible},
+  author = {Rob J Hyndman},
+  year = {2007},
+  publisher = {Christadelphian Scripture Study Service},
+  url = {bethelbooks.com/times},
+  annote = {(2nd ed., 1991, 1st ed., 1989, Bethel Publications)},
 }
 
-@Unpublished{HA06,
-  Title                    = {Some nonlinear exponential smoothing models are unstable},
-  Author                   = {Hyndman, Rob J and Akram, Muhammad},
-  Year                     = {2006},
-  HowPublished             = {Working paper 03/06. Monash Econometrics and Business
-Statistics Working Papers},
-  Url                      = {cms-public.buseco.monash.edu.au/ebs/pubs/wpapers/2006/wp3-06.pdf},
-
-  Institution              = {Department of Econometrics \& Business Statistics, Monash University},
-  Number                   = {January},
-  Publisher                = {Monash University, Department of Econometrics and Business
-Statistics}
+@Article{shortseasonal,
+  title = {Minimum sample size requirements for seasonal forecasting models},
+  author = {Rob J Hyndman and Andrey V Kostenko},
+  year = {2007},
+  pages = {12--15},
+  volume = {6},
+  journal = {Foresight: the International Journal of Applied Forecasting},
 }
 
-@Unpublished{hetero06,
-  Title                    = {Local linear multivariate regression with variable bandwidth
-in the presence of heteroscedasticity},
-  Author                   = {Ye, Azhong and Hyndman, Rob J and Li, Zinai},
-  Year                     = {2006},
-  HowPublished             = {Working paper 08/06. Department of Econometrics \& Business
+@Article{HU07,
+  title = {Robust forecasting of mortality and fertility rates: A
+functional data approach},
+  author = {Rob J Hyndman and Shahid Ullah},
+  year = {2007},
+  month = {jun},
+  number = {10},
+  pages = {4942--4956},
+  url = {dx.doi.org/10.1016/j.csda.2006.07.028},
+  volume = {51},
+  annote = {NOTE: My research does not involve {"}smoothing
+data/observations{"}, {"}outliers{"}, and {"}robustness{"}. Here
+need to pay the attention on finding evenly spaced points which
+are very closeby inorder to avoid missing any data of the
+dataset. Then get a matris as M*n where M is the number of
+points and n is the sample size. (CHECK THIS OUT THIS
+SECTION!!!) Lightly read sections 2, 3, and 4. 1. A new
+forecasting method is proposed for forecasting age-specific
+mortalitiy and fertility rates which is robust, allows for
+smooth functions of age, and provides a modelling framework that
+is easily adapted to allow for constraints and other
+information. The model is a generalization of the Lee-Carter
+(LC) model. 2. The methodology can be applied to time series
+data observed discretely and possibly with error. The
+methodology is applied to French mortality and Australian
+fertility data, and the forecasts obtained are shown to be
+superior to those from the LC method and served of its variants.},
+  journal = {Computational Statistics \& Data Analysis},
+  keywords = {fertility forecasting; functional data; mortality forecasting;
+nonparametric smoothing; principal components; robustness},
+  publisher = {Elsevier},
+}
+
+@Article{KSH07,
+  title = {Half-life estimation based on the bias-corrected bootstrap: A
+highest density region approach},
+  author = {Jae H Kim and Param Silvapulle and Rob J Hyndman},
+  year = {2007},
+  number = {7},
+  pages = {3418--3432},
+  url = {d.wanfangdata.com.cn/NSTLQK_NSTL_QK13687843.aspx},
+  volume = {51},
+  journal = {Computational Statistics \& Data Analysis},
+  publisher = {万方数据资源系统},
+}
+
+@Unpublished{GSI,
+  title = {A state space model for exponential smoothing with group
+seasonality},
+  author = {Pim Ouwehand and Rob J Hyndman and Ton G {de Kok} and Karel H {van Donselaar}},
+  year = {2007},
+  howpublished = {Working paper 07/07. Department of Econometrics \& Business
 Statistics, Monash University},
-  Url                      = {robjhyndman.com/papers/hetero.pdf}
+  institution = {Department of Econometrics \& Business Statistics, Monash
+University},
 }
 
-@Article{HK06,
-  Title                    = {Another look at measures of forecast accuracy},
-  Author                   = {Hyndman, Rob J and Koehler, Anne B},
-  Year                     = {2006},
-  Number                   = {4},
-  Pages                    = {679--688},
-  Url                      = {dx.doi.org/10.1016/j.ijforecast.2006.03.001},
-  Volume                   = {22},
-
-  Abstract                 = {We discuss and compare measures of accuracy of univariate time
-series forecasts. The methods used in the M-competition as
-well as the M3-competition, and many of the measures
-recommended by previous authors on this topic, are found to be
-degenerate in commonly occurring situations. Instead, we
-propose that the mean absolute scaled error become the
-standard measure for comparing forecast accuracy across
-multiple time series.},
-  Institution              = {Department of Econometrics \& Business Statistics, Monash University},
-  Journal                  = {International Journal of Forecasting},
-  Keywords                 = {forecast accuracy; forecast error measures; forecast
-evaluation; m competition; m-competition; mean; mean absolute
-scaled error},
-  Publisher                = {Elsevier}
-}
-
-@Article{Hyndman06,
-  Title                    = {Another look at forecast-accuracy metrics for intermittent demand},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {2006},
-  Pages                    = {43--46},
-  Volume                   = {4},
-
-  Journal                  = {Foresight: the International Journal of Applied Forecasting}
-}
-
-@Book{Hyndman2006-xs,
-  Title                    = {Getting to Know the Bible Better},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {2006},
-  Publisher                = {Dandenong Bible Education Centre},
-  Url                      = {robjhyndman.com/musings/gtktbb/},
-
-  Annote                   = {(Previous edition published as ``Bible reading for beginners'',
-2004)}
+@Article{LCcomparison,
+  title = {{Lee-Carter} mortality forecasting : a multi-country comparison of
+variants and extensions},
+  author = {Heather Booth and Rob J Hyndman and Leonie Tickle and Piet {de Jong}},
+  year = {2006},
+  number = {9},
+  pages = {289--310},
+  url = {dx.doi.org/10.4054/DemRes.2006.15.9},
+  volume = {15},
+  journal = {Demographic Research},
 }
 
 @Article{ijf25,
-  Title                    = {25 years of time series forecasting},
-  Author                   = {de Gooijer, Jan G and Hyndman, Rob J},
-  Year                     = {2006},
-  Number                   = {3},
-  Pages                    = {443--473},
-  Url                      = {dx.doi.org/10.1016/j.ijforecast.2006.01.001},
-  Volume                   = {22},
-
-  Abstract                 = {We review the past 25 years of research into time series
+  title = {25 years of time series forecasting},
+  author = {Jan G {de Gooijer} and Rob J Hyndman},
+  year = {2006},
+  number = {3},
+  pages = {443--473},
+  url = {dx.doi.org/10.1016/j.ijforecast.2006.01.001},
+  volume = {22},
+  abstract = {We review the past 25 years of research into time series
 forecasting. In this silver jubilee issue, we naturally highlight
 results published in journals managed by the International
 Institute of Forecasters (Journal of Forecasting 1982-1985 and
@@ -1717,85 +1548,110 @@ published elsewhere during this period. Enormous progress has
 been made in many areas, but we find that there are a large
 number of topics in need of further development. We conclude with
 comments on possible future research directions in this field.},
-  Journal                  = {International Journal of Forecasting},
-  Keywords                 = {accuracy measures; arch; arima; combining; count data; densities;
+  journal = {International Journal of Forecasting},
+  keywords = {accuracy measures; arch; arima; combining; count data; densities;
 exponential smoothing; kalman filter; long memory; multivariate;
 neural nets; nonlinearity; prediction intervals; regart;
 regime-switching; robustness; seasonality; state space;
-structural models; transfer function; univariate; var}
+structural models; transfer function; univariate; var},
+}
+
+@Article{Hyndman06,
+  title = {Another look at forecast-accuracy metrics for intermittent demand},
+  author = {Rob J Hyndman},
+  year = {2006},
+  pages = {43--46},
+  volume = {4},
+  journal = {Foresight: the International Journal of Applied Forecasting},
+}
+
+@Book{Hyndman2006-xs,
+  title = {Getting to Know the Bible Better},
+  author = {Rob J Hyndman},
+  year = {2006},
+  publisher = {Dandenong Bible Education Centre},
+  url = {robjhyndman.com/musings/gtktbb/},
+  annote = {(Previous edition published as ``Bible reading for beginners'',
+2004)},
+}
+
+@Unpublished{HA06,
+  title = {Some nonlinear exponential smoothing models are unstable},
+  author = {Rob J Hyndman and Muhammad Akram},
+  year = {2006},
+  howpublished = {Working paper 03/06. Monash Econometrics and Business
+Statistics Working Papers},
+  url = {cms-public.buseco.monash.edu.au/ebs/pubs/wpapers/2006/wp3-06.pdf},
+  institution = {Department of Econometrics \& Business Statistics, Monash University},
+  number = {January},
+  publisher = {Monash University, Department of Econometrics and Business
+Statistics},
+}
+
+@Article{HK06,
+  title = {Another look at measures of forecast accuracy},
+  author = {Rob J Hyndman and Anne B Koehler},
+  year = {2006},
+  number = {4},
+  pages = {679--688},
+  url = {dx.doi.org/10.1016/j.ijforecast.2006.03.001},
+  volume = {22},
+  abstract = {We discuss and compare measures of accuracy of univariate time
+series forecasts. The methods used in the M-competition as
+well as the M3-competition, and many of the measures
+recommended by previous authors on this topic, are found to be
+degenerate in commonly occurring situations. Instead, we
+propose that the mean absolute scaled error become the
+standard measure for comparing forecast accuracy across
+multiple time series.},
+  institution = {Department of Econometrics \& Business Statistics, Monash University},
+  journal = {International Journal of Forecasting},
+  keywords = {forecast accuracy; forecast error measures; forecast
+evaluation; m competition; m-competition; mean; mean absolute
+scaled error},
+  publisher = {Elsevier},
 }
 
 @Article{IJFeditorial06,
-  Title                    = {Twenty-five years of forecasting},
-  Author                   = {Hyndman, Rob J and Ord, J K},
-  Year                     = {2006},
-  Number                   = {3},
-  Pages                    = {413--414},
-  Url                      = {dx.doi.org/10.1016/j.ijforecast.2006.06.001},
-  Volume                   = {22},
-
-  Journal                  = {International Journal of Forecasting},
-  Keywords                 = {editorial}
+  title = {Twenty-five years of forecasting},
+  author = {Rob J Hyndman and J K Ord},
+  year = {2006},
+  number = {3},
+  pages = {413--414},
+  url = {dx.doi.org/10.1016/j.ijforecast.2006.06.001},
+  volume = {22},
+  journal = {International Journal of Forecasting},
+  keywords = {editorial},
 }
 
 @Article{KH06,
-  Title                    = {A note on the categorization of demand patterns},
-  Author                   = {Kostenko, Andrey V and Hyndman, Rob J},
-  Year                     = {2006},
-  Month                    = oct,
-  Number                   = {10},
-  Pages                    = {1256--1257},
-  Url                      = {dx.doi.org/10.1057/palgrave.jors.2602211},
-  Volume                   = {57},
-
-  Journal                  = {The Journal of the Operational Research Society},
-  Keywords                 = {categorization; characteris-; consequently; demand time series
+  title = {A note on the categorization of demand patterns},
+  author = {Andrey V Kostenko and Rob J Hyndman},
+  year = {2006},
+  month = {oct},
+  number = {10},
+  pages = {1256--1257},
+  url = {dx.doi.org/10.1057/palgrave.jors.2602211},
+  volume = {57},
+  journal = {The Journal of the Operational Research Society},
+  keywords = {categorization; characteris-; consequently; demand time series
 are; discrete categories in order; forecasting; forecasting
 method for a; intermittent demand; inventory control; particular
 product depends on; product; s demand history; sometimes divided
 into several; the accuracy of a; tics exhibited by the; to assign
-the best}
-}
-
-@Article{LCcomparison,
-  Title                    = {{Lee-Carter} mortality forecasting : a multi-country comparison of
-variants and extensions},
-  Author                   = {Booth, Heather and Hyndman, Rob J and Tickle, Leonie and de Jong,
-Piet},
-  Year                     = {2006},
-  Number                   = {9},
-  Pages                    = {289--310},
-  Url                      = {dx.doi.org/10.4054/DemRes.2006.15.9},
-  Volume                   = {15},
-
-  Journal                  = {Demographic Research}
-}
-
-@Article{MH06,
-  Title                    = {The accuracy of television network rating forecasts: the effects
-of data aggregation and alternative models},
-  Author                   = {Meyer, Denny and Hyndman, Rob J},
-  Year                     = {2006},
-  Number                   = {3},
-  Pages                    = {147--155},
-  Volume                   = {1},
-
-  Journal                  = {Model Assisted Statistics and Applications}
+the best},
 }
 
 @Article{NPS06,
-  Title                    = {Measuring change in prescription drug utilization in Australia},
-  Author                   = {Mandryk, John A and Mackson, Judith M and Horn, Fiona E and
-Wutzke, Sonia E and Badcock, Caro-Anne and Hyndman, Rob J and
-Weekes, Lynn M},
-  Year                     = {2006},
-  Month                    = jul,
-  Number                   = {7},
-  Pages                    = {477--484},
-  Url                      = {dx.doi.org/10.1002/pds.1247},
-  Volume                   = {15},
-
-  Abstract                 = {PURPOSE: The National Prescribing Service Ltd (NPS) aims to
+  title = {Measuring change in prescription drug utilization in Australia},
+  author = {John A Mandryk and Judith M Mackson and Fiona E Horn and Sonia E Wutzke and Caro-Anne Badcock and Rob J Hyndman and Lynn M Weekes},
+  year = {2006},
+  month = {jul},
+  number = {7},
+  pages = {477--484},
+  url = {dx.doi.org/10.1002/pds.1247},
+  volume = {15},
+  abstract = {PURPOSE: The National Prescribing Service Ltd (NPS) aims to
 improve prescribing and use of medicines consistent with
 evidence-based best practice. This report compares two
 statistical methods used to determine whether multiple
@@ -1826,85 +1682,112 @@ NPS interventions, but raise questions about what is the best way
 to model drug utilization, particularly regarding whether to
 include all intervention terms when they belong to an extended
 roll-out of related interventions.},
-  Journal                  = {Pharmacoepidemiology and Drug Safety},
-  Keywords                 = {Australia; Drug Prescriptions; Drug Utilization; Drug
+  journal = {Pharmacoepidemiology and Drug Safety},
+  keywords = {Australia; Drug Prescriptions; Drug Utilization; Drug
 Utilization: trends; Family; Humans; Linear Models; Physicians;
-Seasons}
+Seasons},
+}
+
+@Article{MH06,
+  title = {The accuracy of television network rating forecasts: the effects
+of data aggregation and alternative models},
+  author = {Denny Meyer and Rob J Hyndman},
+  year = {2006},
+  number = {3},
+  pages = {147--155},
+  volume = {1},
+  journal = {Model Assisted Statistics and Applications},
 }
 
 @Article{WSH06,
-  Title                    = {Characteristic-based clustering for time series data},
-  Author                   = {Wang, Xiaozhe and Smith-Miles, Kate A and Hyndman, Rob J},
-  Year                     = {2006},
-  Month                    = may,
-  Number                   = {3},
-  Pages                    = {335--364},
-  Url                      = {dx.doi.org/10.1007/s10618-005-0039-x},
-  Volume                   = {13},
-
-  Journal                  = {Data Mining and Knowledge Discovery}
+  title = {Characteristic-based clustering for time series data},
+  author = {Xiaozhe Wang and Kate A Smith-Miles and Rob J Hyndman},
+  year = {2006},
+  month = {may},
+  number = {3},
+  pages = {335--364},
+  url = {dx.doi.org/10.1007/s10618-005-0039-x},
+  volume = {13},
+  journal = {Data Mining and Knowledge Discovery},
 }
 
 @Article{YH06,
-  Title                    = {Projection pursuit estimator for multivariate conditional
+  title = {Projection pursuit estimator for multivariate conditional
 densities (Chinese)},
-  Author                   = {Ye, Azhong and Hyndman, Rob J},
-  Year                     = {2006},
-  Number                   = {6},
-  Pages                    = {794--797},
-  Volume                   = {34},
+  author = {Azhong Ye and Rob J Hyndman},
+  year = {2006},
+  number = {6},
+  pages = {794--797},
+  volume = {34},
+  journal = {J. Fuzhou Univ. Nat. Sci. Ed.},
+}
 
-  Journal                  = {J. Fuzhou Univ. Nat. Sci. Ed.}
+@Unpublished{hetero06,
+  title = {Local linear multivariate regression with variable bandwidth
+in the presence of heteroscedasticity},
+  author = {Azhong Ye and Rob J Hyndman and Zinai Li},
+  year = {2006},
+  howpublished = {Working paper 08/06. Department of Econometrics \& Business
+Statistics, Monash University},
+  url = {robjhyndman.com/papers/hetero.pdf},
 }
 
 @Article{ZKH06,
-  Title                    = {A Bayesian approach to bandwidth selection for multivariate
+  title = {A Bayesian approach to bandwidth selection for multivariate
 kernel density estimation},
-  Author                   = {Zhang, Xibin and King, Maxwell L and Hyndman, Rob J},
-  Year                     = {2006},
-  Month                    = jul,
-  Number                   = {11},
-  Pages                    = {3009--3031},
-  Url                      = {dx.doi.org/10.1016/j.csda.2005.06.019},
-  Volume                   = {50},
-
-  Journal                  = {Computational Statistics \& Data Analysis},
-  Keywords                 = {61 3 99052449; 61 3 99058039; algorithms; au; buseco;
+  author = {Xibin Zhang and Maxwell L King and Rob J Hyndman},
+  year = {2006},
+  month = {jul},
+  number = {11},
+  pages = {3009--3031},
+  url = {dx.doi.org/10.1016/j.csda.2005.06.019},
+  volume = {50},
+  journal = {Computational Statistics \& Data Analysis},
+  keywords = {61 3 99052449; 61 3 99058039; algorithms; au; buseco;
 corresponding author; cross-validation; e-mail address; edu; fax;
 king; kullback; kullback-leibler information; l; leibler
 information; m; max; mean integrated squared er-; mean integrated
 squared errors; monash; monte carlo kernel likelihood; rors;
-sampling; sampling algorithms; tel}
+sampling; sampling algorithms; tel},
 }
 
 @Article{BHK05,
-  Title                    = {Empirical information criteria for time series forecasting
+  title = {Empirical information criteria for time series forecasting
 model selection},
-  Author                   = {Billah, Md Baki and Hyndman, Rob J and Koehler, Anne B},
-  Year                     = {2005},
-  Month                    = oct,
-  Number                   = {10},
-  Pages                    = {831--840},
-  Url                      = {dx.doi.org/10.1080/00949650410001687208},
-  Volume                   = {75},
+  author = {Md Baki Billah and Rob J Hyndman and Anne B Koehler},
+  year = {2005},
+  month = {oct},
+  number = {10},
+  pages = {831--840},
+  url = {dx.doi.org/10.1080/00949650410001687208},
+  volume = {75},
+  institution = {Department of Econometrics \& Business Statistics, Monash University},
+  journal = {Journal of Statistical Computation and Simulation},
+  keywords = {exponential smoothing; forecasting; information criteria; m3
+competition; model},
+}
 
-  Institution              = {Department of Econometrics \& Business Statistics, Monash University},
-  Journal                  = {Journal of Statistical Computation and Simulation},
-  Keywords                 = {exponential smoothing; forecasting; information criteria; m3
-competition; model}
+@Article{EH05a,
+  title = {Book review of ``Data analysis and graphics using R: an
+example-based approach'' (Maindonald and Braun, 2003)},
+  author = {Bircan Erbas and Rob J Hyndman},
+  year = {2005},
+  number = {2},
+  pages = {206--208},
+  volume = {22},
+  journal = {Journal of Population Research},
 }
 
 @Article{EH05,
-  Title                    = {Sensitivity of the estimated air pollution-respiratory
+  title = {Sensitivity of the estimated air pollution-respiratory
 admissions relationship to statistical model choice},
-  Author                   = {Erbas, Bircan and Hyndman, Rob J},
-  Year                     = {2005},
-  Number                   = {6},
-  Pages                    = {437--448},
-  Url                      = {dx.doi.org/10.1080/09603120500289192},
-  Volume                   = {15},
-
-  Abstract                 = {The objective of this study was to demonstrate the
+  author = {Bircan Erbas and Rob J Hyndman},
+  year = {2005},
+  number = {6},
+  pages = {437--448},
+  url = {dx.doi.org/10.1080/09603120500289192},
+  volume = {15},
+  abstract = {The objective of this study was to demonstrate the
 methodological shortcomings of currently available analytical
 methods for single-city time series data. We analyzed daily
 Chronic Obstructive Pulmonary Disease (COPD) and daily asthma
@@ -1929,112 +1812,93 @@ greater complexity than any of the commonly-used existing models
 allow. Consequently, single-city studies should use several
 statistical models to demonstrate the stability of estimated
 effects.},
-  Journal                  = {International Journal of Environmental Health Research},
-  Keywords                 = {Air Pollution; Air Pollution: adverse effects; Asthma; Asthma:
+  journal = {International Journal of Environmental Health Research},
+  keywords = {Air Pollution; Air Pollution: adverse effects; Asthma; Asthma:
 epidemiology; Asthma: etiology; Asthma: therapy; Chronic
 Obstructive; Chronic Obstructive: epidemiology; Chronic
 Obstructive: etiology; Chronic Obstructive: therapy; Cities;
 Forecasting; Humans; Models; Patient Admission; Patient
 Admission: statistics \& numerical data; Pulmonary Disease;
 Sensitivity and Specificity; Statistical},
-  Publisher                = {万方数据资源系统}
+  publisher = {万方数据资源系统},
 }
 
-@Article{EH05a,
-  Title                    = {Book review of ``Data analysis and graphics using R: an
-example-based approach'' (Maindonald and Braun, 2003)},
-  Author                   = {Erbas, Bircan and Hyndman, Rob J},
-  Year                     = {2005},
-  Number                   = {2},
-  Pages                    = {206--208},
-  Volume                   = {22},
-
-  Journal                  = {Journal of Population Research}
-}
-
-@Article{HKOS05,
-  Title                    = {Prediction intervals for exponential smoothing using two new
-classes of state space models},
-  Author                   = {Hyndman, Rob J and Koehler, Anne B and Ord, J K and Snyder, Ralph
-D},
-  Year                     = {2005},
-  Month                    = jan,
-  Number                   = {1},
-  Pages                    = {17--37},
-  Url                      = {dx.doi.org/10.1002/for.938},
-  Volume                   = {24},
-
-  Journal                  = {Journal of Forecasting}
+@Article{IJFeditorial05,
+  title = {Editorial},
+  author = {Rob J Hyndman},
+  year = {2005},
+  number = {1},
+  pages = {1},
+  url = {dx.doi.org/10.1016/j.ijforecast.2004.11.004},
+  volume = {21},
+  journal = {International Journal of Forecasting},
 }
 
 @Article{HKPB05,
-  Title                    = {Local linear forecasts using cubic smoothing splines},
-  Author                   = {Hyndman, Rob J and King, Maxwell L and Pitrun, Ivet and Billah,
-Md Baki},
-  Year                     = {2005},
-  Month                    = mar,
-  Number                   = {1},
-  Pages                    = {87--99},
-  Url                      = {dx.doi.org/10.1111/j.1467-842X.2005.00374.x},
-  Volume                   = {47},
-
-  Journal                  = {Australian \& New Zealand Journal of Statistics},
-  Keywords                 = {arima models; c13; c14; c22; c53; exponential smoothing; holt;
+  title = {Local linear forecasts using cubic smoothing splines},
+  author = {Rob J Hyndman and Maxwell L King and Ivet Pitrun and Md Baki Billah},
+  year = {2005},
+  month = {mar},
+  number = {1},
+  pages = {87--99},
+  url = {dx.doi.org/10.1111/j.1467-842X.2005.00374.x},
+  volume = {47},
+  journal = {Australian \& New Zealand Journal of Statistics},
+  keywords = {arima models; c13; c14; c22; c53; exponential smoothing; holt;
 Holt's local; Holt's local linear forecasts; hood estimation;
 jel classi cation numbers; jel classification numbers; maximum
 likeli-; maximum likelihood estimation; non-parametric
 regression; nonparametric regression; s local linear forecasts;
 smoothing splines; space model; state; state space model;
 state-space model; stochastic trends},
-  Publisher                = {John Wiley \& Sons}
+  publisher = {John Wiley \& Sons},
 }
 
-@Article{IJFeditorial05,
-  Title                    = {Editorial},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {2005},
-  Number                   = {1},
-  Pages                    = {1},
-  Url                      = {dx.doi.org/10.1016/j.ijforecast.2004.11.004},
-  Volume                   = {21},
-
-  Journal                  = {International Journal of Forecasting}
+@Article{HKOS05,
+  title = {Prediction intervals for exponential smoothing using two new
+classes of state space models},
+  author = {Rob J Hyndman and Anne B Koehler and J K Ord and Ralph?D Snyder},
+  year = {2005},
+  month = {jan},
+  number = {1},
+  pages = {17--37},
+  url = {dx.doi.org/10.1002/for.938},
+  volume = {24},
+  journal = {Journal of Forecasting},
 }
 
-@Inproceedings{ISI05,
-  Title                    = {Robust forecasting of mortality and fertility rates: A
+@InProceedings{ISI05,
+  title = {Robust forecasting of mortality and fertility rates: A
 functional data approach},
-  Author                   = {Hyndman, Rob J and Ullah, Shahid},
-  Booktitle                = {Proceedings, 55th session of the International Statistical
+  author = {Rob J Hyndman and Shahid Ullah},
+  booktitle = {Proceedings, 55th session of the International Statistical
 Institute},
-  Year                     = {2005},
-  Publisher                = {Sydney, Australia, April 2005}
+  year = {2005},
+  publisher = {Sydney, Australia, April 2005},
 }
 
 @Unpublished{OSKHL05,
-  Title                    = {Time series forecasting: the case for the single source of
+  title = {Time series forecasting: the case for the single source of
 error state space approach},
-  Author                   = {Ord, J K and Snyder, Ralph D and Koehler, Anne B and Hyndman, Rob J and Leeds, Mark},
-  Year                     = {2005},
-  HowPublished             = {Working paper 07/05, Department of Econometrics \& Business
+  author = {J K Ord and Ralph D Snyder and Anne B Koehler and Rob J Hyndman and Mark Leeds},
+  year = {2005},
+  howpublished = {Working paper 07/05, Department of Econometrics \& Business
 Statistics, Monash University},
-  Url                      = {robjhyndman.com/papers/SSOE.pdf},
-
-  Institution              = {Department of Econometrics \& Business Statistics, Monash University},
-  Number                   = {7/05}
+  url = {robjhyndman.com/papers/SSOE.pdf},
+  institution = {Department of Econometrics \& Business Statistics, Monash University},
+  number = {7/05},
 }
 
 @Article{SH05,
-  Title                    = {Stochastic models underlying Croston's method for intermittent
+  title = {Stochastic models underlying Croston's method for intermittent
 demand forecasting},
-  Author                   = {Shenstone, Lydia and Hyndman, Rob J},
-  Year                     = {2005},
-  Number                   = {6},
-  Pages                    = {389--402},
-  Url                      = {dx.doi.org/10.1002/for.963},
-  Volume                   = {24},
-
-  Abstract                 = {Croston's method is widely used to predict inventory demand when
+  author = {Lydia Shenstone and Rob J Hyndman},
+  year = {2005},
+  number = {6},
+  pages = {389--402},
+  url = {dx.doi.org/10.1002/for.963},
+  volume = {24},
+  abstract = {Croston's method is widely used to predict inventory demand when
 it is intermittent. However, it is an ad hoc method with no
 properly formulated underlying stochastic model. In this paper,
 we explore possible models underlying Croston's method and three
@@ -2043,104 +1907,121 @@ inconsistent with the properties of intermittent demand data.
 However, we find that the point forecasts and prediction
 intervals based on such underlying models may still be useful.
 },
-  Journal                  = {Journal of Forecasting},
-  Keywords                 = {Croston's method, exponential smoothing, forecasting,
+  journal = {Journal of Forecasting},
+  keywords = {Croston's method, exponential smoothing, forecasting,
 intermittent demand, prediction intervals},
-  Publisher                = {John Wiley \& Sons, Ltd.}
+  publisher = {John Wiley \& Sons, Ltd.},
 }
 
-@Inproceedings{WSH05,
-  Title                    = {Dimension reduction for clustering time series using global
+@InProceedings{WSH05,
+  title = {Dimension reduction for clustering time series using global
 characteristics},
-  Author                   = {Wang, Xiaozhe and Smith-Miles, Kate A and Hyndman, Rob J},
-  Booktitle                = {Lecture Notes in Computer Science, Vol.3516. Proceedings,
+  author = {Xiaozhe Wang and Kate A Smith-Miles and Rob J Hyndman},
+  booktitle = {Lecture Notes in Computer Science, Vol.3516. Proceedings,
 Computational Science -- {ICCS} 2005: 5th International
 Conference},
-  Year                     = {2005},
-  Pages                    = {792--795},
-  Publisher                = {Springer},
-  Volume                   = {3516},
-
-  Address                  = {22-25 May 2005. Atlanta, GA, USA}
+  year = {2005},
+  pages = {792--795},
+  publisher = {Springer},
+  volume = {3516},
+  address = {22-25 May 2005. Atlanta, GA, USA},
 }
 
 @Article{HHF04,
-  Title                    = {Nonparametric confidence intervals for receiver operating
+  title = {Nonparametric confidence intervals for receiver operating
 characteristic curves},
-  Author                   = {Hall, Peter G and Hyndman, Rob J and Fan, Yanan},
-  Year                     = {2004},
-  Number                   = {3},
-  Pages                    = {743--750},
-  Url                      = {biomet.oxfordjournals.org/cgi/content/abstract/91/3/743},
-  Volume                   = {91},
-
-  Annote                   = {This paper is included chiefly because of the innovative
+  author = {Peter G Hall and Rob J Hyndman and Yanan Fan},
+  year = {2004},
+  number = {3},
+  pages = {743--750},
+  url = {biomet.oxfordjournals.org/cgi/content/abstract/91/3/743},
+  volume = {91},
+  annote = {This paper is included chiefly because of the innovative
 mathematics that was necessary to derive confi- dence intervals
 when computing ROC curves. Citations 18/22. A*.},
-  Journal                  = {Biometrika},
-  Keywords                 = {Bandwidth selection; binary classification; Kernel; Kernel
+  journal = {Biometrika},
+  keywords = {Bandwidth selection; binary classification; Kernel; Kernel
 estimator; receiver operating characteristic curve},
-  Publisher                = {Biometrika Trust}
-}
-
-@Article{Hyndman04,
-  Title                    = {The interaction between trend and seasonality},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {2004},
-  Month                    = oct,
-  Number                   = {4},
-  Pages                    = {561--563},
-  Url                      = {dx.doi.org/10.1016/j.ijforecast.2004.03.005},
-  Volume                   = {20},
-
-  Journal                  = {International Journal of Forecasting}
+  publisher = {Biometrika Trust},
 }
 
 @Book{Hyndman2004-jx,
-  Title                    = {The Bible Readers' Handbook},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {2004},
-  Publisher                = {Dandenong Bible Education Centre},
-  Url                      = {robjhyndman.com/musings/handbook/}
+  title = {The Bible Readers' Handbook},
+  author = {Rob J Hyndman},
+  year = {2004},
+  publisher = {Dandenong Bible Education Centre},
+  url = {robjhyndman.com/musings/handbook/},
+}
+
+@Article{Hyndman04,
+  title = {The interaction between trend and seasonality},
+  author = {Rob J Hyndman},
+  year = {2004},
+  month = {oct},
+  number = {4},
+  pages = {561--563},
+  url = {dx.doi.org/10.1016/j.ijforecast.2004.03.005},
+  volume = {20},
+  journal = {International Journal of Forecasting},
 }
 
 @Article{SHW04,
-  Title                    = {Spline interpolation for demographic variables: the monotonicity
+  title = {Spline interpolation for demographic variables: the monotonicity
 problem},
-  Author                   = {Smith, Len and Hyndman, Rob J and Wood, Simon N},
-  Year                     = {2004},
-  Number                   = {1},
-  Pages                    = {95--98},
-  Volume                   = {21},
-
-  Journal                  = {Journal of Population Research}
+  author = {Len Smith and Rob J Hyndman and Simon N Wood},
+  year = {2004},
+  number = {1},
+  pages = {95--98},
+  volume = {21},
+  journal = {Journal of Population Research},
 }
 
 @Article{SKHO04,
-  Title                    = {Exponential smoothing models: means and variances for lead-time
+  title = {Exponential smoothing models: means and variances for lead-time
 demand},
-  Author                   = {Snyder, Ralph D and Koehler, Anne B and Hyndman, Rob J and Keith
-Ord, J},
-  Year                     = {2004},
-  Number                   = {2},
-  Pages                    = {444--455},
-  Volume                   = {158},
-
-  Journal                  = {European Journal of Operational Research}
+  author = {Ralph D Snyder and Anne B Koehler and Rob J Hyndman and J {Keith?Ord}},
+  year = {2004},
+  number = {2},
+  pages = {444--455},
+  volume = {158},
+  journal = {European Journal of Operational Research},
 }
 
+@Article{HH03,
+  title = {Improved methods for bandwidth selection when estimating {ROC}
+curves},
+  author = {Peter G Hall and Rob J Hyndman},
+  year = {2003},
+  month = {aug},
+  number = {2},
+  pages = {181--189},
+  url = {dx.doi.org/10.1016/S0167-7152(03)00150-0},
+  volume = {64},
+  journal = {Statistics \& Probability Letters},
+  keywords = {bandwidth selection; binary classification; kernel estimator;
+mise; roc},
+  publisher = {Elsevier},
+}
+
+@Book{Hyndman2003-xr,
+  title = {Bible Teaching on Managing Your Money},
+  author = {Rob J Hyndman},
+  year = {2003},
+  publisher = {Printland publishers},
+  url = {robjhyndman.com/musings/money/},
+  annote = {(Translated into various Indian languages)},
+}
 
 @Article{HB03,
-  Title                    = {Unmasking the Theta method},
-  Author                   = {Hyndman, Rob J and Billah, Md Baki},
-  Year                     = {2003},
-  Month                    = jun,
-  Number                   = {2},
-  Pages                    = {287--290},
-  Url                      = {dx.doi.org/10.1016/S0169-2070(01)00143-1},
-  Volume                   = {19},
-
-  Abstract                 = {The `Theta method' of forecasting performed particularly well in
+  title = {Unmasking the Theta method},
+  author = {Rob J Hyndman and Md Baki Billah},
+  year = {2003},
+  month = {jun},
+  number = {2},
+  pages = {287--290},
+  url = {dx.doi.org/10.1016/S0169-2070(01)00143-1},
+  volume = {19},
+  abstract = {The `Theta method' of forecasting performed particularly well in
 the M3-competition and is therefore of interest to forecast
 practitioners. The original description of the method given by
 Assimakopoulos and Nikolopoulos [International Journal of
@@ -2148,642 +2029,565 @@ Forecasting 16 (2000) 521] involves several pages of algebraic
 manipulation. We show that the method can be expressed much more
 simply and that the forecasts obtained are equivalent to simple
 exponential smoothing with drift.},
-  Journal                  = {International Journal of Forecasting},
-  Keywords                 = {exponential smoothing; forecasting competitions; regart; S;
+  journal = {International Journal of Forecasting},
+  keywords = {exponential smoothing; forecasting competitions; regart; S;
 state space models},
-  Publisher                = {Elsevier}
-}
-
-@Article{HH03,
-  Title                    = {Improved methods for bandwidth selection when estimating {ROC}
-curves},
-  Author                   = {Hall, Peter G and Hyndman, Rob J},
-  Year                     = {2003},
-  Month                    = aug,
-  Number                   = {2},
-  Pages                    = {181--189},
-  Url                      = {dx.doi.org/10.1016/S0167-7152(03)00150-0},
-  Volume                   = {64},
-
-  Journal                  = {Statistics \& Probability Letters},
-  Keywords                 = {bandwidth selection; binary classification; kernel estimator;
-mise; roc},
-  Publisher                = {Elsevier}
-}
-
-@Book{Hyndman2003-xr,
-  Title                    = {Bible Teaching on Managing Your Money},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {2003},
-  Publisher                = {Printland publishers},
-  Url                      = {robjhyndman.com/musings/money/},
-
-  Annote                   = {(Translated into various Indian languages)}
+  publisher = {Elsevier},
 }
 
 @Article{RLH03,
-  Title                    = {Normative data for the Rosner test of visual analysis skills on
+  title = {Normative data for the Rosner test of visual analysis skills on
 an Australian population},
-  Author                   = {Rateau, Fran\c{c}oise and Laumonier, Bastien and Hyndman, Rob J},
-  Year                     = {2003},
-  Month                    = nov,
-  Number                   = {6},
-  Pages                    = {431--436},
-  Volume                   = {80},
-
-  Journal                  = {Optometry and Vision Science},
-  Keywords                 = {Australia; Humans; Reference Values; Vision Tests; Vision Tests:
-standards; Visual Perception; Visual Perception: physiology}
+  author = {Fran{\c c}oise Rateau and Bastien Laumonier and Rob J Hyndman},
+  year = {2003},
+  month = {nov},
+  number = {6},
+  pages = {431--436},
+  volume = {80},
+  journal = {Optometry and Vision Science},
+  keywords = {Australia; Humans; Reference Values; Vision Tests; Vision Tests:
+standards; Visual Perception; Visual Perception: physiology},
 }
 
 @Article{CHW02,
-  Title                    = {Mixed model-based hazard estimation},
-  Author                   = {Cai, Tianxi and Hyndman, Rob J and Wand, Matthew P},
-  Year                     = {2002},
-  Number                   = {4},
-  Pages                    = {784--798},
-  Url                      = {dx.doi.org/10.1198/106186002862},
-  Volume                   = {11},
-
-  Journal                  = {Journal of Computational and Graphical Statistics},
-  Keywords                 = {Nonparametric regression; nonparametricregression; Restricted
+  title = {Mixed model-based hazard estimation},
+  author = {Tianxi Cai and Rob J Hyndman and Matthew P Wand},
+  year = {2002},
+  number = {4},
+  pages = {784--798},
+  url = {dx.doi.org/10.1198/106186002862},
+  volume = {11},
+  journal = {Journal of Computational and Graphical Statistics},
+  keywords = {Nonparametric regression; nonparametricregression; Restricted
 maximum likel; restricted maximum likelihood; survival analysis;
 variance components},
-  Publisher                = {ASA}
+  publisher = {ASA},
+}
+
+@InCollection{ISGMS02c,
+  title = {{ARIMA} processes},
+  author = {Rob J Hyndman},
+  booktitle = {The Informed Student Guide to Management Science},
+  editor = {Hans Daellenbach and Robert Flood},
+  year = {2002},
+  pages = {27--28},
+  publisher = {Cengage Learning Business Press},
+  journal = {The Informed Student Guide to Management Science},
+}
+
+@InCollection{ISGMS02b,
+  title = {{Box-Jenkins} modelling},
+  author = {Rob J Hyndman},
+  booktitle = {The Informed Student Guide to Management Science},
+  editor = {Hans Daellenbach and Robert Flood},
+  year = {2002},
+  pages = {42--43},
+  publisher = {Cengage Learning Business Press},
+  journal = {The Informed Student Guide to Management Science},
 }
 
 @Article{HKSG02,
-  Title                    = {A state space framework for automatic forecasting using
+  title = {A state space framework for automatic forecasting using
 exponential smoothing methods},
-  Author                   = {Hyndman, Rob J and Koehler, Anne B and Snyder, Ralph D and Grose,
-Simone},
-  Year                     = {2002},
-  Number                   = {3},
-  Pages                    = {439--454},
-  Volume                   = {18},
+  author = {Rob J Hyndman and Anne B Koehler and Ralph D Snyder and Simone Grose},
+  year = {2002},
+  number = {3},
+  pages = {439--454},
+  volume = {18},
+  journal = {International Journal of Forecasting},
+  keywords = {Prediction intervals; State space models},
+}
 
-  Journal                  = {International Journal of Forecasting},
-  Keywords                 = {Prediction intervals; State space models}
+@InCollection{IGSMS02a,
+  title = {Kalman Filter},
+  author = {Rob J Hyndman and Ralph D Snyder},
+  booktitle = {The Informed Student Guide to Management Science},
+  editor = {Hans Daellenbach and Robert Flood},
+  year = {2002},
+  pages = {162},
+  publisher = {Cengage Learning Business Press},
+  journal = {The Informed Student Guide to Management Science},
 }
 
 @Article{HY02,
-  Title                    = {Nonparametric estimation and symmetry tests for conditional
+  title = {Nonparametric estimation and symmetry tests for conditional
 density functions},
-  Author                   = {Hyndman, Rob J and Yao, Qiwei},
-  Year                     = {2002},
-  Number                   = {3},
-  Pages                    = {259--278},
-  Url                      = {dx.doi.org/10.1080/10485250212374},
-  Volume                   = {14},
-
-  Journal                  = {Journal of Nonparametric Statistics},
-  Keywords                 = {bandwidth selection; bootstrap; conditioning; density estimation;
-kernel; smoothing; symmetry tests}
-}
-
-@Incollection{IGSMS02a,
-  Title                    = {Kalman Filter},
-  Author                   = {Hyndman, Rob J and Snyder, Ralph D},
-  Booktitle                = {The Informed Student Guide to Management Science},
-  Editor                   = {Daellenbach, Hans and Flood, Robert},
-  Year                     = {2002},
-  Pages                    = {162},
-  Publisher                = {Cengage Learning Business Press},
-
-  Journal                  = {The Informed Student Guide to Management Science}
-}
-
-@Incollection{ISGMS02b,
-  Title                    = {{Box-Jenkins} modelling},
-  Author                   = {Hyndman, Rob J},
-  Booktitle                = {The Informed Student Guide to Management Science},
-  Editor                   = {Daellenbach, Hans and Flood, Robert},
-  Year                     = {2002},
-  Pages                    = {42--43},
-  Publisher                = {Cengage Learning Business Press},
-
-  Journal                  = {The Informed Student Guide to Management Science}
-}
-
-@Incollection{ISGMS02c,
-  Title                    = {{ARIMA} processes},
-  Author                   = {Hyndman, Rob J},
-  Booktitle                = {The Informed Student Guide to Management Science},
-  Editor                   = {Daellenbach, Hans and Flood, Robert},
-  Year                     = {2002},
-  Pages                    = {27--28},
-  Publisher                = {Cengage Learning Business Press},
-
-  Journal                  = {The Informed Student Guide to Management Science}
+  author = {Rob J Hyndman and Qiwei Yao},
+  year = {2002},
+  number = {3},
+  pages = {259--278},
+  url = {dx.doi.org/10.1080/10485250212374},
+  volume = {14},
+  journal = {Journal of Nonparametric Statistics},
+  keywords = {bandwidth selection; bootstrap; conditioning; density estimation;
+kernel; smoothing; symmetry tests},
 }
 
 @Article{RH02,
-  Title                    = {Using {R} to teach econometrics},
-  Author                   = {Racine, Jeffrey Scott and Hyndman, Rob J},
-  Year                     = {2002},
-  Month                    = mar,
-  Number                   = {2},
-  Pages                    = {175--189},
-  Url                      = {dx.doi.org/10.1002/jae.657},
-  Volume                   = {17},
-
-  Journal                  = {Journal of Applied Econometrics}
+  title = {Using {R} to teach econometrics},
+  author = {Jeffrey Scott Racine and Rob J Hyndman},
+  year = {2002},
+  month = {mar},
+  number = {2},
+  pages = {175--189},
+  url = {dx.doi.org/10.1002/jae.657},
+  volume = {17},
+  journal = {Journal of Applied Econometrics},
 }
 
 @Article{BH01,
-  Title                    = {Bandwidth selection for kernel conditional density estimation},
-  Author                   = {Bashtannyk, David M and Hyndman, Rob J},
-  Year                     = {2001},
-  Number                   = {3},
-  Pages                    = {279--298},
-  Url                      = {dx.doi.org/10.1016/S0167-9473(00)00046-3},
-  Volume                   = {36},
-
-  Journal                  = {Computational Statistics \& Data Analysis},
-  Keywords                 = {bandwidth selection; conditioning; density estimation; kernel
+  title = {Bandwidth selection for kernel conditional density estimation},
+  author = {David M Bashtannyk and Rob J Hyndman},
+  year = {2001},
+  number = {3},
+  pages = {279--298},
+  url = {dx.doi.org/10.1016/S0167-9473(00)00046-3},
+  volume = {36},
+  journal = {Computational Statistics \& Data Analysis},
+  keywords = {bandwidth selection; conditioning; density estimation; kernel
 smoothing},
-  Publisher                = {Elsevier}
+  publisher = {Elsevier},
 }
 
 @Article{EH01,
-  Title                    = {Data visualisation for time series in environmental epidemiology},
-  Author                   = {Erbas, Bircan and Hyndman, Rob J},
-  Year                     = {2001},
-  Month                    = nov,
-  Number                   = {6},
-  Pages                    = {433--443},
-  Url                      = {dx.doi.org/10.1080/135952201317225462},
-  Volume                   = {6},
+  title = {Data visualisation for time series in environmental epidemiology},
+  author = {Bircan Erbas and Rob J Hyndman},
+  year = {2001},
+  month = {nov},
+  number = {6},
+  pages = {433--443},
+  url = {dx.doi.org/10.1080/135952201317225462},
+  volume = {6},
+  journal = {Journal of Epidemiology and Biostatistics},
+  keywords = {additive models; environmental epidemiology; graphical methods;
+nonparametric smoothing seasonality},
+}
 
-  Journal                  = {Journal of Epidemiology and Biostatistics},
-  Keywords                 = {additive models; environmental epidemiology; graphical methods;
-nonparametric smoothing seasonality}
+@InProceedings{IWSM01,
+  title = {Statistical methodological issues in studies of air pollution
+and respiratory disease},
+  author = {Bircan Erbas and Rob J Hyndman},
+  booktitle = {New Trends in Statistical Modelling: Proceedings of the 16th
+International Workshop on Statistical Modelling},
+  editor = {Bjarke Klein and Lars Korsholm},
+  year = {2001},
+  pages = {179--186},
+  publisher = {University of Southern Denmark, Denmark. July 2001},
+  keywords = {Autocorrelation; generalized additive models; respiratory
+disease; Seasonal adjustment},
 }
 
 @Article{Hyndman01,
-  Title                    = {It's time to move from ``what'' to ``why''},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {2001},
-  Number                   = {4},
-  Pages                    = {567--570},
-  Volume                   = {17},
-
-  Journal                  = {International Journal of Forecasting},
-  Keywords                 = {commentaries on the M3-competition}
-}
-
-@Inproceedings{IWSM01,
-  Title                    = {Statistical methodological issues in studies of air pollution
-and respiratory disease},
-  Author                   = {Erbas, Bircan and Hyndman, Rob J},
-  Booktitle                = {New Trends in Statistical Modelling: Proceedings of the 16th
-International Workshop on Statistical Modelling},
-  Editor                   = {Klein, Bjarke and Korsholm, Lars},
-  Year                     = {2001},
-  Pages                    = {179--186},
-  Publisher                = {University of Southern Denmark, Denmark. July 2001},
-
-  Keywords                 = {Autocorrelation; generalized additive models; respiratory
-disease; Seasonal adjustment}
+  title = {It's time to move from ``what'' to ``why''},
+  author = {Rob J Hyndman},
+  year = {2001},
+  number = {4},
+  pages = {567--570},
+  volume = {17},
+  journal = {International Journal of Forecasting},
+  keywords = {commentaries on the M3-competition},
 }
 
 @Article{lemmings,
-  Title                    = {Cycles and synchrony in the Collared Lemming (Dicrostonyx
+  title = {Cycles and synchrony in the Collared Lemming (Dicrostonyx
 groenlandicus) in Arctic North America},
-  Author                   = {Predavec, Martin and Krebs, Charles J and Danell, Kjell and
-Hyndman, Rob J},
-  Year                     = {2001},
-  Number                   = {2},
-  Pages                    = {216--224},
-  Url                      = {dx.doi.org/10.1007/s004420000516},
-  Volume                   = {126},
-
-  Journal                  = {Oecologia},
-  Keywords                 = {dicrostonyx; lemming cycle; synchrony}
-}
-
-@Article{BR00,
-  Title                    = {Nonparametric Econometrics by A. Pagan and A. Ullah (Cambridge
-University Press, Cambridge, {UK}, 1999), pp.xviii+424},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {2000},
-  Pages                    = {309--311},
-  Volume                   = {76},
-
-  Journal                  = {The Economic Record}
+  author = {Martin Predavec and Charles J Krebs and Kjell Danell and Rob J Hyndman},
+  year = {2001},
+  number = {2},
+  pages = {216--224},
+  url = {dx.doi.org/10.1007/s004420000516},
+  volume = {126},
+  journal = {Oecologia},
+  keywords = {dicrostonyx; lemming cycle; synchrony},
 }
 
 @Unpublished{EH00,
-  Title                    = {Seasonal adjustment methods for the analysis of respiratory disease in environmental epidemiology},
-  Author                   = {Erbas, Bircan and Hyndman, Rob J},
-  Year                     = {2000},
-  Url                      = {robjhyndman.com/papers/bircan2.pdf}
+  title = {Seasonal adjustment methods for the analysis of respiratory disease in environmental epidemiology},
+  author = {Bircan Erbas and Rob J Hyndman},
+  year = {2000},
+  url = {robjhyndman.com/papers/bircan2.pdf},
 }
 
 @Article{FHV00,
-  Title                    = {Residual diagnostic plots for checking for model
+  title = {Residual diagnostic plots for checking for model
 mis-specification in time series regression},
-  Author                   = {Fraccaro, Richard and Hyndman, Rob J and Veevers, Alan},
-  Year                     = {2000},
-  Number                   = {4},
-  Pages                    = {463--477},
-  Volume                   = {42},
-
-  Journal                  = {Australian \& New Zealand Journal of Statistics},
-  Keywords                 = {autocorrelation; conditional residuals; generalised least
+  author = {Richard Fraccaro and Rob J Hyndman and Alan Veevers},
+  year = {2000},
+  number = {4},
+  pages = {463--477},
+  volume = {42},
+  journal = {Australian \& New Zealand Journal of Statistics},
+  keywords = {autocorrelation; conditional residuals; generalised least
 squares; generalized least squares; marginal; marginal residuals;
 mean shifts; model mis-speci cation; model mis-specification;
 model transformation; nostics; orthogonal resid-; orthogonal
 residuals; residual diag-; residual diagnostics; residual plots;
-residuals; time series regression; uals}
+residuals; time series regression; uals},
 }
 
 @Article{GHTT00,
-  Title                    = {{Non-Gaussian} conditional linear {AR(1}) models},
-  Author                   = {Grunwald, Gary K and Hyndman, Rob J and Tedesco, Leanna M and
-Tweedie, Richard L},
-  Year                     = {2000},
-  Month                    = dec,
-  Number                   = {4},
-  Pages                    = {479--495},
-  Url                      = {dx.doi.org/10.1111/1467-842X.00143},
-  Volume                   = {42},
-
-  Journal                  = {Australian \& New Zealand Journal of Statistics},
-  Keywords                 = {autoregression; data analysis; exponential time series; gamma
+  title = {{Non-Gaussian} conditional linear {AR(1}) models},
+  author = {Gary K Grunwald and Rob J Hyndman and Leanna M Tedesco and Richard L Tweedie},
+  year = {2000},
+  month = {dec},
+  number = {4},
+  pages = {479--495},
+  url = {dx.doi.org/10.1111/1467-842X.00143},
+  volume = {42},
+  journal = {Australian \& New Zealand Journal of Statistics},
+  keywords = {autoregression; data analysis; exponential time series; gamma
 time series; non-gaussian; Non-Gaussian time series; poisson time
-series; time series}
+series; time series},
 }
 
-@Article{HG00,
-  Title                    = {Generalized additive modelling of mixed distribution Markov
-models with application to Melbourne's rainfall},
-  Author                   = {Hyndman, Rob J and Grunwald, Gary K},
-  Year                     = {2000},
-  Month                    = jun,
-  Number                   = {2},
-  Pages                    = {145--158},
-  Url                      = {dx.doi.org/10.1111/1467-842X.00115},
-  Volume                   = {42},
-
-  Journal                  = {Australian \& New Zealand Journal of Statistics},
-  Keywords                 = {binary time series; droughts; dry spells; gamma ti; gamma time
-series; generalized additive model; generalized linear model;
-markov model; mixture distribution; non-gaussian time series;
-southern; southern oscillation index}
+@Article{BR00,
+  title = {Nonparametric Econometrics by A. Pagan and A. Ullah (Cambridge
+University Press, Cambridge, {UK}, 1999), pp.xviii+424},
+  author = {Rob J Hyndman},
+  year = {2000},
+  pages = {309--311},
+  volume = {76},
+  journal = {The Economic Record},
 }
 
 @Book{Hyndman2000-oo,
-  Title                    = {The Story of the Bible},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {2000},
-  Publisher                = {Bethel Publications},
-  Url                      = {robjhyndman.com/musings/story},
-
-  Annote                   = {(Previous edition, 1998)}
+  title = {The Story of the Bible},
+  author = {Rob J Hyndman},
+  year = {2000},
+  publisher = {Bethel Publications},
+  url = {robjhyndman.com/musings/story},
+  annote = {(Previous edition, 1998)},
 }
 
-@Article{BR99a,
-  Title                    = {Book review of ``Statistically speaking: a dictionary of
-quotations'' (Gaither and {Cavazos-Gaither}, 1996)},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {1999},
-  Number                   = {3},
-  Pages                    = {380--382},
-  Volume                   = {41},
-
-  Journal                  = {Australian \& New Zealand Journal of Statistics}
+@Article{HG00,
+  title = {Generalized additive modelling of mixed distribution Markov
+models with application to Melbourne's rainfall},
+  author = {Rob J Hyndman and Gary K Grunwald},
+  year = {2000},
+  month = {jun},
+  number = {2},
+  pages = {145--158},
+  url = {dx.doi.org/10.1111/1467-842X.00115},
+  volume = {42},
+  journal = {Australian \& New Zealand Journal of Statistics},
+  keywords = {binary time series; droughts; dry spells; gamma ti; gamma time
+series; generalized additive model; generalized linear model;
+markov model; mixture distribution; non-gaussian time series;
+southern; southern oscillation index},
 }
 
 @Article{BR99b,
-  Title                    = {Book review of ``A primer of mathematical writing'' (Krantz, 1997)
+  title = {Book review of ``A primer of mathematical writing'' (Krantz, 1997)
 and ``Handbook of writing for the mathematical sciences'' (Higham,
 1998)},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {1999},
-  Number                   = {2},
-  Pages                    = {252--253},
-  Volume                   = {41},
-
-  Journal                  = {Australian \& New Zealand Journal of Statistics}
+  author = {Rob J Hyndman},
+  year = {1999},
+  number = {2},
+  pages = {252--253},
+  volume = {41},
+  journal = {Australian \& New Zealand Journal of Statistics},
 }
 
 @Article{BR99c,
-  Title                    = {Book review of ``Chance encounters: a first course in data
+  title = {Book review of ``Chance encounters: a first course in data
 analysis and inference'' (Wild and Seber, 2000)},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {1999},
-  Number                   = {4},
-  Pages                    = {493--495},
-  Volume                   = {41},
-
-  Journal                  = {Australian \& New Zealand Journal of Statistics}
+  author = {Rob J Hyndman},
+  year = {1999},
+  number = {4},
+  pages = {493--495},
+  volume = {41},
+  journal = {Australian \& New Zealand Journal of Statistics},
 }
 
-@Inproceedings{ESAM99,
-  Title                    = {Nonparametric additive regression models for binary time
+@Article{BR99a,
+  title = {Book review of ``Statistically speaking: a dictionary of
+quotations'' (Gaither and {Cavazos-Gaither}, 1996)},
+  author = {Rob J Hyndman},
+  year = {1999},
+  number = {3},
+  pages = {380--382},
+  volume = {41},
+  journal = {Australian \& New Zealand Journal of Statistics},
+}
+
+@InProceedings{ESAM99,
+  title = {Nonparametric additive regression models for binary time
 series},
-  Author                   = {Hyndman, Rob J},
-  Booktitle                = {Proceedings, 1999 Australasian Meeting of the Econometric
+  author = {Rob J Hyndman},
+  booktitle = {Proceedings, 1999 Australasian Meeting of the Econometric
 Society.},
-  Year                     = {1999},
-
-  Address                  = {7-9 July 2009. University of Technology, Sydney}
-}
-
-@Article{BR98a,
-  Title                    = {Book review of ``Smoothing methods in statistics'' (Simonoff,
-1996)},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {1998},
-  Number                   = {2},
-  Pages                    = {251--252},
-  Volume                   = {40},
-
-  Journal                  = {Australian \& New Zealand Journal of Statistics}
-}
-
-@Article{BR98b,
-  Title                    = {Book review of ``Leading personalities in the statistical
-sciences: from the seventeenth century to the present'' (Kotz and
-Johnson, 1998)},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {1998},
-  Number                   = {3},
-  Pages                    = {382--383},
-  Volume                   = {40},
-
-  Journal                  = {Australian \& New Zealand Journal of Statistics}
+  year = {1999},
+  address = {7-9 July 2009. University of Technology, Sydney},
 }
 
 @Article{GH98,
-  Title                    = {Smoothing non-Gaussian time series with autoregressive structure},
-  Author                   = {Grunwald, Gary K and Hyndman, Rob J},
-  Year                     = {1998},
-  Pages                    = {171--191},
-  Volume                   = {28},
+  title = {Smoothing non-Gaussian time series with autoregressive structure},
+  author = {Gary K Grunwald and Rob J Hyndman},
+  year = {1998},
+  pages = {171--191},
+  volume = {28},
+  journal = {Computational Statistics and Data Analysis},
+  keywords = {Akaike information criterion; Exponential family; Penalized
+likelihood},
+}
 
-  Journal                  = {Computational Statistics and Data Analysis},
-  Keywords                 = {Akaike information criterion; Exponential family; Penalized
-likelihood}
+@Article{BR98b,
+  title = {Book review of ``Leading personalities in the statistical
+sciences: from the seventeenth century to the present'' (Kotz and
+Johnson, 1998)},
+  author = {Rob J Hyndman},
+  year = {1998},
+  number = {3},
+  pages = {382--383},
+  volume = {40},
+  journal = {Australian \& New Zealand Journal of Statistics},
+}
+
+@Article{BR98a,
+  title = {Book review of ``Smoothing methods in statistics'' (Simonoff,
+1996)},
+  author = {Rob J Hyndman},
+  year = {1998},
+  number = {2},
+  pages = {251--252},
+  volume = {40},
+  journal = {Australian \& New Zealand Journal of Statistics},
 }
 
 @Book{Hyndman1998-mk,
-  Title                    = {Learn to Read the Bible Effectively},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {1998},
-  Publisher                = {Bethel Publications},
-
-  Annote                   = {(Previous editions, 1989, 1992, 1996. Also available in
-Hungarian)}
+  title = {Learn to Read the Bible Effectively},
+  author = {Rob J Hyndman},
+  year = {1998},
+  publisher = {Bethel Publications},
+  annote = {(Previous editions, 1989, 1992, 1996. Also available in
+Hungarian)},
 }
 
 @Book{MWH3,
-  Title                    = {Forecasting: methods and applications},
-  Author                   = {Makridakis, Spyros G and Wheelwright, Steven C and Hyndman, Rob
-J},
-  Year                     = {1998},
-  Edition                  = {3rd},
-  Publisher                = {John Wiley and Sons},
-  Url                      = {robjhyndman.com/forecasting/},
-
-  Address                  = {New York},
-  Annote                   = {Forecasting: methods and applications},
-  Keywords                 = {BIBLIOGRAPHY - FORECASTING; BUSINESS CYCLE - PREDICTION;
+  title = {Forecasting: methods and applications},
+  author = {Spyros G Makridakis and Steven C Wheelwright and Rob?J Hyndman},
+  year = {1998},
+  edition = {3rd},
+  publisher = {John Wiley and Sons},
+  url = {robjhyndman.com/forecasting/},
+  address = {New York},
+  annote = {Forecasting: methods and applications},
+  keywords = {BIBLIOGRAPHY - FORECASTING; BUSINESS CYCLE - PREDICTION;
 FORECASTING - PRACTICE; FORECASTING - TEXT; FORECASTING - USAGE;
 TECHNOLOGICAL FORECASTING; TIME SERIES - TEXT; USE- CORPORATE
-PLANNING}
+PLANNING},
 }
 
 @Article{GHH97,
-  Title                    = {Some properties and generalizations of non-negative Bayesian time
+  title = {Some properties and generalizations of non-negative Bayesian time
 series models},
-  Author                   = {Grunwald, Gary K and Hamza, Kais and Hyndman, Rob J},
-  Year                     = {1997},
-  Number                   = {3},
-  Pages                    = {615--626},
-  Volume                   = {59},
-
-  Journal                  = {Journal of the Royal Statistical Society. Series B},
-  Keywords                 = {Bayesian forecasting; Exponential family; Exponentially weighted
-moving average}
+  author = {Gary K Grunwald and Kais Hamza and Rob J Hyndman},
+  year = {1997},
+  number = {3},
+  pages = {615--626},
+  volume = {59},
+  journal = {Journal of the Royal Statistical Society. Series B},
+  keywords = {Bayesian forecasting; Exponential family; Exponentially weighted
+moving average},
 }
 
 @Article{HW97,
-  Title                    = {Nonparametric autocovariance function estimation},
-  Author                   = {Hyndman, Rob J and Wand, Matthew P},
-  Year                     = {1997},
-  Number                   = {3},
-  Pages                    = {313--324},
-  Volume                   = {39},
-
-  Journal                  = {The Australian Journal of Statistics},
-  Keywords                 = {bandwidth; correlated errors; kernel smoothing; local polynomial;
+  title = {Nonparametric autocovariance function estimation},
+  author = {Rob J Hyndman and Matthew P Wand},
+  year = {1997},
+  number = {3},
+  pages = {313--324},
+  volume = {39},
+  journal = {The Australian Journal of Statistics},
+  keywords = {bandwidth; correlated errors; kernel smoothing; local polynomial;
 non-stationary model; Nonparametric regress; Nonparametric
-regression; parametric regression; time series}
+regression; parametric regression; time series},
 }
 
 @Article{LFSH97,
-  Title                    = {The pricing and trading of options using a hybrid neural network
+  title = {The pricing and trading of options using a hybrid neural network
 model with historical volatility},
-  Author                   = {Lajbcygier, Paul and Flitman, Andrew and Swan, A and Hyndman, Rob
-J},
-  Year                     = {1997},
-  Pages                    = {27--41},
-  Volume                   = {5},
-
-  Journal                  = {NeuroVe\$t Journal}
-}
-
-@Article{BR96,
-  Title                    = {Book review of ``Kernel smoothing'' (Wand and Jones, 1995)},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {1996},
-  Pages                    = {677--678},
-  Volume                   = {23},
-
-  Journal                  = {Journal of Applied Statistics}
+  author = {Paul Lajbcygier and Andrew Flitman and A Swan and Rob?J Hyndman},
+  year = {1997},
+  pages = {27--41},
+  volume = {5},
+  journal = {NeuroVe\$t Journal},
 }
 
 @Unpublished{GHT96,
-  Title                    = {A unified view of linear {AR}(1) models},
-  Author                   = {Grunwald, Gary K and Hyndman, Rob J and Tedesco, Leanna M},
-  Year                     = {1996},
-  Url                      = {robjhyndman.com/papers/ar1.pdf},
-
-  Keywords                 = {autoregression; data analysis; exponential time series; gamma time series; non-gaussian time series; poisson time; series}
+  title = {A unified view of linear {AR}(1) models},
+  author = {Gary K Grunwald and Rob J Hyndman and Leanna M Tedesco},
+  year = {1996},
+  url = {robjhyndman.com/papers/ar1.pdf},
+  keywords = {autoregression; data analysis; exponential time series; gamma time series; non-gaussian time series; poisson time; series},
 }
 
-@Article{HBG96,
-  Title                    = {Estimating and visualizing conditional densities},
-  Author                   = {Hyndman, Rob J and Bashtannyk, David M and Grunwald, Gary K},
-  Year                     = {1996},
-  Number                   = {4},
-  Pages                    = {315--336},
-  Volume                   = {5},
-
-  Journal                  = {Journal of Computational and Graphical Statistics},
-  Keywords                 = {Bandwidth; Conditional density; Data visualization; Density
-estimation; Kernel smoothing; Nonparametric regression}
+@Article{BR96,
+  title = {Book review of ``Kernel smoothing'' (Wand and Jones, 1995)},
+  author = {Rob J Hyndman},
+  year = {1996},
+  pages = {677--678},
+  volume = {23},
+  journal = {Journal of Applied Statistics},
 }
 
 @Article{HDR96,
-  Title                    = {Computing and graphing highest density regions},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {1996},
-  Number                   = {2},
-  Pages                    = {120--126},
-  Url                      = {www.jstor.org/stable/2684423
+  title = {Computing and graphing highest density regions},
+  author = {Rob J Hyndman},
+  year = {1996},
+  number = {2},
+  pages = {120--126},
+  url = {www.jstor.org/stable/2684423
 www.questia.com/PM.qst?a=o&amp;se=gglsc&amp;d=5000444075},
-  Volume                   = {50},
-
-  Journal                  = {The American Statistician},
-  Keywords                 = {Boxplot; Density estimation; Graphical summary; Highest density
+  volume = {50},
+  journal = {The American Statistician},
+  keywords = {Boxplot; Density estimation; Graphical summary; Highest density
 regions},
-  Publisher                = {American Statistical Association}
+  publisher = {American Statistical Association},
+}
+
+@Article{HBG96,
+  title = {Estimating and visualizing conditional densities},
+  author = {Rob J Hyndman and David M Bashtannyk and Gary K Grunwald},
+  year = {1996},
+  number = {4},
+  pages = {315--336},
+  volume = {5},
+  journal = {Journal of Computational and Graphical Statistics},
+  keywords = {Bandwidth; Conditional density; Data visualization; Density
+estimation; Kernel smoothing; Nonparametric regression},
 }
 
 @Article{HF96,
-  Title                    = {Sample quantiles in statistical packages},
-  Author                   = {Hyndman, Rob J and Fan, Yanan},
-  Year                     = {1996},
-  Number                   = {4},
-  Pages                    = {361--365},
-  Volume                   = {50},
-
-  Journal                  = {The American Statistician},
-  Keywords                 = {Percentiles; Quartiles; Sam; Sample quantiles; Software;
-Statistical computer packages; Statistical computing}
+  title = {Sample quantiles in statistical packages},
+  author = {Rob J Hyndman and Yanan Fan},
+  year = {1996},
+  number = {4},
+  pages = {361--365},
+  volume = {50},
+  journal = {The American Statistician},
+  keywords = {Percentiles; Quartiles; Sam; Sample quantiles; Software;
+Statistical computer packages; Statistical computing},
 }
 
-@Inbook{AGH95,
-  Title                    = {Information technology in research},
-  Author                   = {Axford, Rita L and Grunwald, Gary K and Hyndman, Rob J},
-  Year                     = {1995},
-  Editor                   = {Hovenga, E and Kidd, M and Cesnik, B},
-  Publisher                = {Churchill Livingstone},
-
-  booktitle                  = {Health informatics: an overview}
+@InBook{AGH95,
+  title = {Information technology in research},
+  author = {Rita L Axford and Gary K Grunwald and Rob J Hyndman},
+  year = {1995},
+  editor = {E Hovenga and M Kidd and B Cesnik},
+  publisher = {Churchill Livingstone},
+  booktitle = {Health informatics: an overview},
 }
 
 @Article{HDRF95,
-  Title                    = {Highest-density forecast regions for nonlinear and non-normal
+  title = {Highest-density forecast regions for nonlinear and non-normal
 time series models},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {1995},
-  Number                   = {5},
-  Pages                    = {431--441},
-  Url                      = {dx.doi.org/10.1002/for.3980140503},
-  Volume                   = {14},
-
-  Journal                  = {Journal of Forecasting},
-  Keywords                 = {density regions; forecast intervals; forecast regions are
+  author = {Rob J Hyndman},
+  year = {1995},
+  number = {5},
+  pages = {431--441},
+  url = {dx.doi.org/10.1002/for.3980140503},
+  volume = {14},
+  journal = {Journal of Forecasting},
+  keywords = {density regions; forecast intervals; forecast regions are
 crucial; highest; in a simple way; non-linear time series;
 non-normal time series; the accuracy; threshold models; to
-practical forecasting-they convey}
+practical forecasting-they convey},
 }
 
 @Unpublished{sturges95,
-  Title                    = {The problem with Sturges' rule for constructing histograms},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {1995},
-  Url                      = {robjhyndman.com/papers/sturges}
-}
-
-@Article{Hyndman94,
-  Title                    = {Approximations and boundary conditions for continuous-time
-threshold autoregressive processes},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {1994},
-  Number                   = {4},
-  Pages                    = {1103--1109},
-  Url                      = {www.jstor.org/stable/3215333},
-  Volume                   = {31},
-
-  Journal                  = {Journal of Applied Probability},
-  Keywords                 = {Stochastic differential equation},
-  Publisher                = {JSTOR}
+  title = {The problem with Sturges' rule for constructing histograms},
+  author = {Rob J Hyndman},
+  year = {1995},
+  url = {robjhyndman.com/papers/sturges},
 }
 
 @Book{ITSM94,
-  Title                    = {{ITSM} for Windows: a users guide to time series modelling and
+  title = {{ITSM} for Windows: a users guide to time series modelling and
 forecasting},
-  Author                   = {Brockwell, Peter J and Davis, Richard A and Hyndman, Rob J},
-  Year                     = {1994},
-  Publisher                = {Springer-Verlag},
+  author = {Peter J Brockwell and Richard A Davis and Rob J Hyndman},
+  year = {1994},
+  publisher = {Springer-Verlag},
+  address = {New York},
+}
 
-  Address                  = {New York}
+@Article{Hyndman94,
+  title = {Approximations and boundary conditions for continuous-time
+threshold autoregressive processes},
+  author = {Rob J Hyndman},
+  year = {1994},
+  number = {4},
+  pages = {1103--1109},
+  url = {www.jstor.org/stable/3215333},
+  volume = {31},
+  journal = {Journal of Applied Probability},
+  keywords = {Stochastic differential equation},
+  publisher = {JSTOR},
 }
 
 @Article{YW93,
-  Title                    = {{Yule-Walker} estimates for continuous-time autoregressive models},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {1993},
-  Number                   = {3},
-  Pages                    = {281--296},
-  Url                      = {dx.doi.org/10.1111/j.1467-9892.1993.tb00145.x},
-  Volume                   = {14},
-
-  Journal                  = {Journal of Time Series Analysis}
+  title = {{Yule-Walker} estimates for continuous-time autoregressive models},
+  author = {Rob J Hyndman},
+  year = {1993},
+  number = {3},
+  pages = {281--296},
+  url = {dx.doi.org/10.1111/j.1467-9892.1993.tb00145.x},
+  volume = {14},
+  journal = {Journal of Time Series Analysis},
 }
 
 @Article{BH92,
-  Title                    = {On continuous-time threshold autoregression},
-  Author                   = {Brockwell, Peter J and Hyndman, Rob J},
-  Year                     = {1992},
-  Number                   = {2},
-  Pages                    = {157--173},
-  Url                      = {linkinghub.elsevier.com/retrieve/pii/016920709290116Q},
-  Volume                   = {8},
-
-  Journal                  = {International Journal of Forecasting},
-  Keywords                 = {Forecasting; Nonlinear time series},
-  Publisher                = {Elsevier}
+  title = {On continuous-time threshold autoregression},
+  author = {Peter J Brockwell and Rob J Hyndman},
+  year = {1992},
+  number = {2},
+  pages = {157--173},
+  url = {linkinghub.elsevier.com/retrieve/pii/016920709290116Q},
+  volume = {8},
+  journal = {International Journal of Forecasting},
+  keywords = {Forecasting; Nonlinear time series},
+  publisher = {Elsevier},
 }
 
-@Phdthesis{phd,
-  Title                    = {Continuous-time threshold autoregressive modelling},
-  Author                   = {Hyndman, Rob J},
-  Institution              = {The University of Melbourne},
-  Year                     = {1992},
-
-  School                   = {The University of Melbourne}
-}
-
-@Article{BHG91,
-  Title                    = {Continuous time threshold autoregressive models},
-  Author                   = {Brockwell, Peter J and Hyndman, Rob J and Grunwald, Gary K},
-  Year                     = {1991},
-  Pages                    = {401--410},
-  Volume                   = {1},
-
-  Journal                  = {Statistica Sinica}
+@PhdThesis{phd,
+  title = {Continuous-time threshold autoregressive modelling},
+  author = {Rob J Hyndman},
+  institution = {The University of Melbourne},
+  year = {1992},
+  school = {The University of Melbourne},
 }
 
 @Book{ITSM91,
-  Title                    = {{ITSM}: an interactive time series modelling package for the
+  title = {{ITSM}: an interactive time series modelling package for the
 {PC}},
-  Author                   = {Brockwell, Peter J and Davis, Richard A and Hyndman, Rob J},
-  Year                     = {1991},
-  Publisher                = {Springer-Verlag},
+  author = {Peter J Brockwell and Richard A Davis and Rob J Hyndman},
+  year = {1991},
+  publisher = {Springer-Verlag},
+  address = {New York},
+}
 
-  Address                  = {New York}
+@Article{BHG91,
+  title = {Continuous time threshold autoregressive models},
+  author = {Peter J Brockwell and Rob J Hyndman and Gary K Grunwald},
+  year = {1991},
+  pages = {401--410},
+  volume = {1},
+  journal = {Statistica Sinica},
 }
 
 @Unpublished{Hyndman1990-wj,
-  Title                    = {An algorithm for constructing highest density regions},
-  Author                   = {Hyndman, Rob J},
-  Year                     = {1990},
-
-  Annote                   = {Unpublished manuscript available from the author}
+  title = {An algorithm for constructing highest density regions},
+  author = {Rob J Hyndman},
+  year = {1990},
+  annote = {Unpublished manuscript available from the author},
 }
 
-@Inproceedings{NAGS86,
-  Title                    = {Calculating the odds},
-  Author                   = {Hyndman, Rob J},
-  Booktitle                = {Faces of gambling, Proceedings of the second national conference
+@InProceedings{NAGS86,
+  title = {Calculating the odds},
+  author = {Rob J Hyndman},
+  booktitle = {Faces of gambling, Proceedings of the second national conference
 of the National Association for Gambling Studies (1986)},
-  Editor                   = {Walker, Michael},
-  Year                     = {1987},
-  Pages                    = {139--152}
+  editor = {Michael Walker},
+  year = {1987},
+  pages = {139--152},
 }
