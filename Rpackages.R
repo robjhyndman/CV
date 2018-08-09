@@ -5,7 +5,10 @@ getbibentry <- function(pkg)
   if(!is.list(meta))
   {
     if(is.na(meta))
-      stop(paste(pkg,"not found"))
+    {
+      install.packages(pkg)
+      meta <- suppressWarnings(packageDescription(pkg))
+    }
   }
   # Check if CRAN version exists
   url <- paste("https://CRAN.R-project.org/web/packages/",
@@ -38,6 +41,9 @@ getbibentry <- function(pkg)
   # Add J to my name
   meta$Author <- gsub("Rob Hyndman","Rob J Hyndman",meta$Author)
 
+  # Fix Souhaib's name
+  meta$Author <- gsub("Ben Taieb", "Ben~Taieb", meta$Author)
+  
   # Replace R Core Team with {R Core Team}
   meta$Author <- gsub("R Core Team","{R Core Team}",meta$Author)
 
@@ -95,5 +101,9 @@ write.bib(
     "thief",
     "tscompdata",
     "tsfeatures",
-    "tsibble"))
+    "tsibble",
+    "tsibbledata",
+    "tsibblestats",
+    "fable"
+    ))
 
