@@ -36,7 +36,6 @@
   volume = {16},
   number = {3},
   pages = {18-25},
-  keywords = {Big Data;Data analysis;Data models;Data visualization;Phasor measurement units;Principal component analysis;Probability distribution;Smart meters},
   doi = {10.1109/MPE.2018.2801441},
   month = {May},
 }
@@ -291,6 +290,16 @@ decomposition and {Box-Cox} transformation},
   url = {robjhyndman.com/publications/participation-rates/},
 }
 
+@TechReport{kdd2015,
+  title = {Probabilistic time series forecasting with boosted additive models: an application to smart meter data},
+  author = {Souhaib Ben~Taieb and Raphael Huser and Rob J Hyndman and Marc G Genton},
+  institution = {Department of Econometrics \& Business Statistics, Monash University},
+  year = {2015},
+  number = {12/15},
+  type = {Working paper},
+  url = {robjhyndman.com/publications/kdd2015},
+}
+
 @TechReport{str,
   title = {STR: A seasonal-trend decomposition procedure based on regression},
   author = {Alexander Dokumentov and Rob J Hyndman},
@@ -382,11 +391,6 @@ decomposition and {Box-Cox} transformation},
   pages = {3371-3381},
   url = {robjhyndman.com/lagphase},
   volume = {17},
-  abstract = {Abstract We present a new method for estimating the length of the
-invasion lag phase from simple time series of counts of herbarium
-records. This is based on annual rather than cumulative data , a
-generalized linear model incorporating a log link for overall
-collection ...},
   journal = {Biological Invasions},
 }
 
@@ -398,16 +402,6 @@ collection ...},
   publisher = {Atlantic City, NJ, USA. 14--17 November 2015},
 }
 
-@TechReport{kdd2015,
-  title = {Probabilistic time series forecasting with boosted additive models: an application to smart meter data},
-  author = {Souhaib Ben~Taieb and Raphael Huser and Rob J Hyndman and Marc G Genton},
-  institution = {Department of Econometrics \& Business Statistics, Monash University},
-  year = {2015},
-  number = {12/15},
-  type = {Working paper},
-  url = {robjhyndman.com/publications/kdd2015},
-}
-
 @Article{gefcom,
   title = {A gradient boosting approach to the Kaggle load forecasting
 competition},
@@ -417,8 +411,6 @@ competition},
   pages = {382--394},
   volume = {30},
   journal = {International Journal of Forecasting},
-  keywords = {additive models; gradient boosting; kaggle competition; machine
-learning; multi-step forecasting; short-term load forecasting},
 }
 
 @InProceedings{boostingar,
@@ -520,13 +512,6 @@ time series},
   year = {2013},
   howpublished = {Vignette published on CRAN},
   url = {CRAN.R-project.org/web/packages/hts/vignettes/hts.pdf},
-  abstract = {This paper describes several methods that are currently
-available in the hts package, for forecasting hierarchical
-time series. The methods included are: top-down, buttom-up,
-middle-out and optimal combination. The implementation of
-these methods is illustrated by using regional infant
-mortality counts in Australia.},
-  keywords = {bottom-up; middle-out; optimal combination; top-down},
 }
 
 @Article{HBY13,
@@ -538,21 +523,6 @@ functional time series models},
   pages = {261--283},
   url = {dx.doi.org/10.1007/s13524-012-0145-5},
   volume = {50},
-  abstract = {When independence is assumed, forecasts of mortality for
-subpopulations are almost always divergent in the long term.
-We propose a method for coherent forecasting of mortality
-rates for two or more subpopulations, based on functional
-principal components models of simple and interpretable
-functions of rates. The product-ratio functional forecasting
-method models and forecasts the geometric mean of
-subpopulation rates and the ratio of subpopulation rates to
-product rates. Coherence is imposed by constraining the
-forecast ratio function through stationary time series models.
-The method is applied to sex-specific data for Sweden and
-state-specific data for Australia. Based on out-of-sample
-forecasts, the coherent forecasts are at least as accurate in
-overall terms as comparable independent forecasts, and
-forecast accuracy is homogenized across subpopulations.},
   affiliation = {Department of Econometrics and Business Statistics, Monash
 University, Clayton, VIC 3800, Australia.
 rob.hyndman@monash.edu},
@@ -590,8 +560,6 @@ hospitalization : The {MAPCAH} study},
   url = {dx.doi.org/10.4172/2155-6180.S7-018},
   volume = {S7},
   journal = {Journal of Biometrics \& Biostatistics},
-  keywords = {asthma; case crossover design; infections; internal validity;
-respiratory viral; Respiratory viral infections},
 }
 
 @Article{EUHSA12,
@@ -603,31 +571,7 @@ respiratory viral; Respiratory viral infections},
   pages = {17},
   url = {dx.doi.org/10.1186/1471-2288-12-17},
   volume = {12},
-  abstract = {ABSTRACT: BACKGROUND: Chronic Obstructive Pulmonary Disease
-(COPD) is currently the fifth leading cause of death in
-Australia, and there are marked differences in mortality trends
-between men and women. In this study, we have sought to model
-and forecast age related changes in COPD mortality over time for
-men and women separately over the period 2006-2025. METHODS:
-Annual COPD death rates in Australia from 1922 to 2005 for age
-groups (50-54, 55-59, 60-64, 65-69, 70-74, 75-79, 80-84, 85+)
-were used. Functional time series models of age-specific COPD
-mortality rates for men and women were used, and forecasts of
-mortality rates were modelled separately for men and women.
-RESULTS: Functional time series models with four basis functions
-were fitted to each population separately. Twenty-year forecasts
-were computed, and indicated an overall decline. This decline
-may be slower for women than for men. By age, we expect similar
-rates of decline in men over time. In contrast, for women,
-forecasts for the age group 75-79 years suggest less of a
-decline over time compared to younger age groups. CONCLUSIONS:
-By using a new method to predict age-specific trends in COPD
-mortality over time, this study provides important insights into
-at-risk age groups for men and women separately, which has
-implications for policy and program development.},
   journal = {BMC Medical Research Methodology},
-  keywords = {copd mortality; forecasting; functional data analysis; tobacco
-consumption},
   publisher = {BioMed Central Ltd},
 }
 
@@ -640,20 +584,7 @@ model},
   pages = {134--141},
   url = {dx.doi.org/10.1109/TPWRS.2011.2162082},
   volume = {27},
-  abstract = {Short-term load forecasting is an essential instrument in power
-system planning, operation, and control. Many operating decisions
-are based on load forecasts, such as dispatch scheduling of
-generating capacity, reliability analysis, and maintenance
-planning for the generators. Overestimation of electricity demand
-will cause a conservative operation, which leads to the start-up
-of too many units or excessive energy purchase, thereby supplying
-an unnecessary level of reserve. On the other hand,
-underestimation may result in a risky operation, with
-insufficient preparation of spinning reserve, causing the system
-to operate in a vulnerable region to the disturbance.},
   journal = {IEEE Transactions on Power Systems},
-  keywords = {Additive model; forecast distribution; short-term load
-forecasting; time series},
 }
 
 @Article{AH11,
@@ -666,8 +597,6 @@ forecasting; time series},
   url = {dx.doi.org/10.1016/j.ijforecast.2011.03.002},
   volume = {27},
   journal = {International Journal of Forecasting},
-  keywords = {kaggle; online competition; public leaderboard; revising
-forecasts; tourism},
   publisher = {Elsevier B.V.},
 }
 
@@ -681,53 +610,19 @@ forecasts; tourism},
   url = {dx.doi.org/10.1016/j.ijforecast.2010.04.009},
   volume = {27},
   journal = {International Journal of Forecasting},
-  keywords = {arima; autoregressive; distributed lag model; dynamic
-regression; exponential smoothing; state space model; time
-varying parameter model; vector autoregression},
   publisher = {Elsevier B.V.},
 }
 
 @Article{Carta2011,
   title = {Method for optimizing coating properties based on an evolutionary
 algorithm approach},
-  author = {Davide Carta and Laura Villanova and Stefano Costacurta and Alessandro Patelli and Irene Poli and Simone Vezz\`{u} and Paolo Scopece and Fabio Lisi and Kate Smith-Miles and Rob J Hyndman and Anita J Hill and Paolo Falcaro},
+  author = {Davide Carta and Laura Villanova and Stefano Costacurta and Alessandro Patelli and Irene Poli and Simone Vezz{\a`u} and Paolo Scopece and Fabio Lisi and Kate Smith-Miles and Rob J Hyndman and Anita J Hill and Paolo Falcaro},
   year = {2011},
   month = {aug},
   number = {16},
   pages = {6373--6380},
   url = {dx.doi.org/10.1021/ac201337e},
   volume = {83},
-  abstract = {In industry as well as many areas of scientific research, data
-collected often contain a number of responses of interest for a
-chosen set of exploratory variables. Optimization of such
-multivariable multiresponse systems is a challenge well suited to
-genetic algorithms as global optimization tools. One such example
-is the optimization of coating surfaces with the required
-absolute and relative sensitivity for detecting analytes using
-devices such as sensor arrays. High-throughput synthesis and
-screening methods can be used to accelerate materials discovery
-and optimization; however, an important practical consideration
-for successful optimization of materials for arrays and other
-applications is the ability to generate adequate information from
-a minimum number of experiments. Here we present a case study to
-evaluate the efficiency of a novel evolutionary model-based
-multiresponse approach (EMMA) that enables the optimization of a
-coating while minimizing the number of experiments. EMMA plans
-the experiments and simultaneously models the material
-properties. We illustrate this novel procedure for materials
-optimization by testing the algorithm on a sol-gel synthetic
-route for production and optimization of a well studied
-amino-methyl-silane coating. The response variables of the
-coating have been optimized based on application criteria for
-micro- and macro-array surfaces. Spotting performance has been
-monitored using a fluorescent dye molecule for demonstration
-purposes and measured using a laser scanner. Optimization is
-achieved by exploring less than 2\% of the possible experiments,
-resulting in identification of the most influential compositional
-variables. Use of EMMA to optimize control factors of a product
-or process is illustrated, and the proposed approach is shown to
-be a promising tool for simultaneously optimizing and modeling
-multivariable multiresponse systems.},
   journal = {Analytical Chemistry},
 }
 
@@ -740,28 +635,7 @@ exponential smoothing},
   pages = {1513--1527},
   url = {dx.doi.org/10.1198/jasa.2011.tm09771},
   volume = {106},
-  abstract = {An innovations state space modeling framework is introduced for
-forecasting complex seasonal time series such as those with
-multiple seasonal periods, high-frequency seasonality,
-non-integer seasonality, and dual-calendar effects. The new
-framework incorporates Box--Cox transformations, Fourier
-representations with time varying coefficients, and ARMA error
-correction. Likelihood evaluation and analytical expressions for
-point forecasts and interval predictions under the assumption of
-Gaussian errors are derived, leading to a simple, comprehensive
-approach to forecasting complex seasonal time series. A key
-feature of the framework is that it relies on a new method that
-greatly reduces the computational burden in the maximum
-likelihood estimation. The modeling framework is useful for a
-broad range of applications, its versatility being illustrated in
-three empirical studies. In addition, the proposed trigonometric
-formulation is presented as a means of decomposing complex
-seasonal time series, and it is shown that this decomposition
-leads to the identification and extraction of seasonal components
-which are otherwise not apparent in the time series plot itself.},
   journal = {Journal of the American Statistical Association},
-  keywords = {fourier series; prediction intervals; seasonality; state space
-models; time series decomposition; Time series decomposition.},
 }
 
 @Article{FH10b,
@@ -773,7 +647,6 @@ models; time series decomposition; Time series decomposition.},
   url = {dx.doi.org/10.1016/j.enpol.2011.03.080},
   volume = {39},
   journal = {Energy Policy},
-  keywords = {Electricity demand; Price elasticity; Time series},
   publisher = {Elsevier},
 }
 
@@ -784,10 +657,6 @@ models; time series decomposition; Time series decomposition.},
   number = {1},
   pages = {69--71},
   volume = {3},
-  abstract = {Giving a UseR! talk at the the inter- national R user conference
-is a balancing act in which you have to try to impart some new
-ideas, provide sufficient background and keep the au- dience
-interested, all in a very short period of time.},
   journal = {The R journal},
 }
 
@@ -801,7 +670,6 @@ interested, all in a very short period of time.},
   url = {dx.doi.org/10.1016/j.csda.2011.03.006},
   volume = {55},
   journal = {Computational Statistics \& Data Analysis},
-  keywords = {bottom-up forecasting},
   publisher = {Citeseer},
 }
 
@@ -857,9 +725,6 @@ expectancy : a comparison of ten principal component methods},
   url = {dx.doi.org/10.4054/DemRes.2011.25.5},
   volume = {25},
   journal = {Demographic Research},
-  keywords = {demography; fertility; forecasting; forecasting time series;
-interval forecasts; lee-carter method; life expectancy; mortality
-forecasting; principal components analysis},
 }
 
 @Article{SH11,
@@ -870,27 +735,7 @@ forecasting; principal components analysis},
   pages = {1310--1324},
   url = {dx.doi.org/10.1016/j.matcom.2010.04.027},
   volume = {81},
-  abstract = {We present a nonparametric method to forecast a seasonal
-univariate time series, and propose four dynamic updating methods
-to improve point forecast accuracy. Our methods consider a
-seasonal univariate time series as a functional time series. We
-propose first to reduce the dimensionality by applying functional
-principal component analysis to the historical observations, and
-then to use univariate time series forecasting and functional
-principal component regression techniques. When data in the most
-recent year are partially observed, we improve point forecast
-accuracy using dynamic updating methods. We also introduce a
-nonparametric approach to construct prediction intervals of
-updated forecasts, and compare the empirical coverage probability
-with an existing parametric method. Our approaches are
-data-driven and computationally fast, and hence they are feasible
-to be applied in real time high frequency dynamic updating. The
-methods are demonstrated using monthly sea surface temperatures
-from 1950 to 2008.},
   journal = {Mathematics and Computers in Simulation},
-  keywords = {Functional principal component analysis; Functional time series;
-Ordinary least squares; Penalized least squares; Ridge
-regression; Sea surface temperatures; Seasonal time series},
 }
 
 @Article{tourismeditorial11,
@@ -913,25 +758,7 @@ simple approach to multivariate forecasting},
   number = {4},
   pages = {353--374},
   volume = {10},
-  abstract = {The vector innovations structural time series framework is
-proposed as a way of modelling a set of related time series. As
-with all multivariate approaches, the aim is to exploit potential
-inter- series dependencies to improve the fit and forecasts. The
-model is based around an unobserved vector of components
-representing features such as the level and slope of each time
-series. Equations that describe the evolution of these components
-through time are used to represent the inter-temporal
-dependencies. The approach is illustrated on a bivariate dataset
-comprising Australian exchange rates of the UK pound and US
-dollar. The forecasting accuracy of the new modelling framework
-is compared to other common uni- and multivariate approaches in
-an experiment using time series from a large macroeconomic
-database.},
   journal = {Statistical Modelling},
-  keywords = {exponential smoothing; forecast comparison; multivariate time
-se-; multivariate time series; ries; state space model; vector
-autoregression; vector innovations structural time; vector
-innovations structural time series model},
 }
 
 @Article{EAGE+10,
@@ -945,8 +772,6 @@ States and {England-Wales}},
   url = {dx.doi.org/10.2188/jea.JE20090072},
   volume = {20},
   journal = {Journal of Epidemiology},
-  keywords = {breast cancer; forecasting; functional-data-analysis models;
-mortality trends},
 }
 
 @InProceedings{FH10,
@@ -1110,8 +935,6 @@ white and black {US} women},
   url = {dx.doi.org/10.1111/j.1467-842X.2009.00555.x},
   volume = {51},
   journal = {Australian \& New Zealand Journal of Statistics},
-  keywords = {exponential smoothing; forecasting; positive-valued processes;
-seasonality; space models; state; time series},
 }
 
 @Article{hiertourism,
@@ -1124,9 +947,6 @@ seasonality; space models; state; time series},
   url = {dx.doi.org/10.1016/j.ijforecast.2008.07.004},
   volume = {25},
   journal = {International Journal of Forecasting},
-  keywords = {australia; down method; exponential smoothing; hierarchical
-forecasting; innovations state space models; method; optimal
-combination forecasts; top-; top-down; tourism demand},
 }
 
 @Article{dSHS09,
@@ -1139,9 +959,6 @@ decomposition},
   url = {www.sciencedirect.com/science/article/pii/S0264999309000698},
   volume = {26},
   journal = {Economic Modelling},
-  keywords = {beveridge-nelson decomposition; common components; model;
-multivariate time series; series model; vector innovations
-structural time},
   publisher = {Elsevier},
 }
 
@@ -1155,7 +972,6 @@ structural time},
   url = {dx.doi.org/10.1016/j.jkss.2009.06.002},
   volume = {38},
   journal = {Journal of the Korean Statistical Society},
-  keywords = {demographic forecasting},
   publisher = {Elsevier B.V.},
 }
 
@@ -1168,19 +984,7 @@ structural time},
   pages = {518--525},
   url = {dx.doi.org/10.1016/j.ijforecast.2009.05.026},
   volume = {25},
-  abstract = {Statistical process control (SPC) has evolved beyond its
-classical applications in manufacturing to monitoring economic
-and social phenomena. This extension has required the
-consideration of autocorrelated and possibly non-stationary time
-series. Less attention has been paid to the possibility that the
-variance of the process may also change over time. In this paper
-we use the innovations state space modeling framework to develop
-conditionally heteroscedastic models. We provide examples to show
-that the incorrect use of homoscedastic models may lead to
-erroneous decisions about the nature of the process.},
   journal = {International Journal of Forecasting},
-  keywords = {Control charts; GARCH; Heteroscedasticity; Innovations; State
-space; Statistical process control},
 }
 
 @InProceedings{SH09,
@@ -1203,8 +1007,6 @@ the characteristics of univariate time series},
   url = {dx.doi.org/10.1016/j.neucom.2008.10.017},
   volume = {72},
   journal = {Neurocomputing},
-  keywords = {clustering; data characteristics; forecasting methods selection;
-rule induction; univariate time series},
 }
 
 @Article{austourism,
@@ -1228,8 +1030,6 @@ rule induction; univariate time series},
   url = {dx.doi.org/10.1016/j.ejor.2007.08.024},
   volume = {191},
   journal = {European Journal of Operational Research},
-  keywords = {exponential smoothing; forecasting; seasonality; state space
-models; time series},
 }
 
 @Article{HAA08,
@@ -1242,10 +1042,6 @@ models; time series},
   url = {dx.doi.org/10.1007/s10463-006-0109-x},
   volume = {60},
   journal = {Annals of the Institute of Statistical Mathematics},
-  keywords = {akram; bility; business statistics; department of econometrics
-and; exponential smoothing; hyndman; invertibility; j; m;
-observability; parameter; parameter space; r; reachability;
-space; sta-; stability; state space models; structural models},
 }
 
 @Article{HB08,
@@ -1267,19 +1063,7 @@ mortality, fertility and migration},
   pages = {1--22},
   url = {ideas.repec.org/a/jss/jstsof/27i03.html},
   volume = {26},
-  abstract = {Automatic forecasts of large numbers of univariate time series
-are often needed in business and other contexts. We describe two
-automatic forecasting algorithms that have been implemented in
-the forecast package for R. The first is based on innovations
-state space models that underly exponential smoothing methods.
-The second is a step-wise algorithm for forecasting with ARIMA
-models. The algorithms are applicable to both seasonal and
-non-seasonal data, and are compared and illustrated using four
-real time series. We also briefly describe some of the other
-functionality available in the forecast package.},
   journal = {Journal of Statistical Software},
-  keywords = {arima models; automatic forecasting; exponential smoothing;
-prediction inter-; r; state space models; time series; vals},
   publisher = {American Statistical Association},
 }
 
@@ -1320,16 +1104,7 @@ prediction inter-; r; state space models; time series; vals},
   pages = {818--835},
   url = {dx.doi.org/10.1002/env.905},
   volume = {19},
-  abstract = {We present tools to generate synthetic sequences of half-hourly
-temperatures with similar statistical characteristics to observed
-historical data. Temperatures are generated using a combination
-of daily and half-hourly temperature models which account for
-intra-day and intra-year seasonality, as well as short- and
-long-term serial correlations. Details of the model estimation
-are given as well as a description of the synthetic generation.},
   journal = {Environmetrics},
-  keywords = {arma models; fourier series; seasonal block-bootstrap; synthetic;
-temperature data; time series},
 }
 
 @Article{pollen07,
@@ -1342,16 +1117,7 @@ admissions?},
   pages = {1641--1647},
   url = {dx.doi.org/10.1111/j.1365-2222.2007.02818.x},
   volume = {37},
-  abstract = {The effects of environmental factors and ambient concentrations
-of grass pollen on allergic asthma are yet to be established.},
   journal = {Clinical and Experimental Allergy},
-  keywords = {air pollution; Air Pollution: adverse effects; Air Pollution:
-analysis; Allergic; ambient pollen; asthma; Asthma: epidemiology;
-Asthma: etiology; Australia; Australia: epidemiology;
-Hospitalization; Hospitalization: statistics \& numerical data;
-Humans; non-linearity; Poaceae; Poaceae: immunology; Pollen;
-Pollen: immunology; Regression Analysis; Rhinitis; Seasonal;
-Seasonal: complications; statistical models},
 }
 
 @Article{EHG07,
@@ -1364,44 +1130,7 @@ data models},
   pages = {458--470},
   url = {dx.doi.org/10.1002/sim.2306},
   volume = {26},
-  abstract = {Accurate estimates of future age-specific incidence and mortality
-are critical for allocation of resources to breast cancer control
-programmes and evaluation of screening programmes. The purpose of
-this study is to apply functional data analysis techniques to
-model age-specific breast cancer mortality time trends, and
-forecast entire age-specific mortality functions using a
-state-space approach. We use annual unadjusted breast cancer
-mortality rates in Australia, from 1921 to 2001 in 5 year age
-groups (45 to 85+). We use functional data analysis techniques
-where mortality and incidence are modelled as curves with age as
-a functional covariate varying by time. Data are smoothed using
-non-parametric smoothing methods then decomposed (using principal
-components analysis) to estimate basis functions that represent
-the functional curve. Period effects from the fitted coefficients
-are forecast then multiplied by the basis functions, resulting in
-a forecast mortality curve with prediction intervals. To
-forecast, we adopt a state-space approach and an automatic
-modelling framework for selecting among exponential smoothing
-methods.Overall, breast cancer mortality rates in Australia
-remained relatively stable from 1960 to the late 1990s, but have
-declined over the last few years. A set of four basis functions
-minimized the mean integrated squared forecasting error and
-account for 99.3 per cent of variation around the mean mortality
-curve. Twenty year forecasts suggest a continuing decline, but at
-a slower rate, and stabilizing beyond 2010. Forecasts show a
-decline in all age groups with the greatest decline in older
-women. The proposed methods have the potential to incorporate
-important covariates such as hormone replacement therapy and
-interventions to represent mammographic screening. This would be
-particularly useful for evaluating the impact of screening on
-mortality and incidence from breast cancer.},
   journal = {Statistics in Medicine},
-  keywords = {80 and over; Aged; Australia; Australia: epidemiology; breast
-cancer; Breast Neoplasms; Breast Neoplasms: epidemiology; Breast
-Neoplasms: mortality; Data Interpretation; exponential smoothing;
-Female; forecasting; Forecasting: methods; functional data
-analysis; Humans; Incidence; Middle Aged; Models; mortality;
-Statistical},
 }
 
 @Article{NPS07,
@@ -1414,51 +1143,7 @@ following primary care educational interventions},
   pages = {297--308},
   url = {dx.doi.org/10.1002/pds.1243},
   volume = {16},
-  abstract = {PURPOSE: To measure changes in drug utilisation following a
-national general practice education program aimed at improving
-prescribing for hypertension. METHODS: A series of nationally
-implemented, multifaceted educational interventions using social
-marketing principles focusing on prescribing for hypertension,
-was commenced in October 1999, and repeated in September 2001 and
-August 2003. The target group was all primary care prescribers in
-Australia and interventions were both active (voluntary) and
-passive. Newsletter and prescribing feedback was mailed in
-October 1999, September 2001 (newsletter only) and August 2003.
-Approximately a third of general practitioners (GPs) in Australia
-undertook at least one active educational activity (clinical
-audit, educational visit or case study) during the period October
-1999-April 2004. National dispensing data from 1996 to 2004 were
-analysed using time series methodology with a decay term for
-intervention effect, to assess trends in prescribing of various
-classes of antihypertensives. In particular, the program aimed to
-increase the prescribing of thiazide diuretics and beta blockers.
-RESULTS: Consistent with key intervention messages, the program
-achieved an increase in low-dose thiazide and beta blocker
-prescribing. The rate of prescribing of low-dose thiazides
-doubled from 1.1 per 1000 consultations in October 1999 to 2.4
-per 1000 in October 2003. Beta-blocker utilisation showed a more
-modest but significant increase over the time of the study, with
-the change in observed versus expected rate of prescribing
-increasing by 8\% by April 2004. Therapeutic options for treating
-hypertension changed markedly in the time of the study with the
-advent of ACE inhibitor/Angiotensin II receptor antagonists and
-thiazide combination products. It is important, therefore, to
-interpret the results in light of these changes. CONCLUSION: A
-national education program aimed at GPs was successful in
-improving prescribing for hypertension. Lessons learned will be
-applied in evaluation of future NPS programs and are also
-applicable to analysis of other interventions aimed at
-influencing prescribing behaviour.},
   journal = {Pharmacoepidemiology and Drug Safety},
-  keywords = {Adrenergic beta-Antagonists; Adrenergic beta-Antagonists:
-therapeutic use; Antihypertensive Agents; Antihypertensive
-Agents: therapeutic use; Australia; Continuing; Drug Utilization;
-Drug Utilization: statistics \& numerical data; Education;
-Humans; Hypertension; Hypertension: drug therapy; Medical;
-Physician's Practice Patterns; Physician's Practice Patterns:
-statistics \& numeri; Primary Health Care; Regression Analysis;
-Social Marketing; Sodium Chloride Symporter Inhibitors; Sodium
-Chloride Symporter Inhibitors: therapeutic},
 }
 
 @Book{Times,
@@ -1489,27 +1174,7 @@ functional data approach},
   pages = {4942--4956},
   url = {dx.doi.org/10.1016/j.csda.2006.07.028},
   volume = {51},
-  annote = {NOTE: My research does not involve {"}smoothing
-data/observations{"}, {"}outliers{"}, and {"}robustness{"}. Here
-need to pay the attention on finding evenly spaced points which
-are very closeby inorder to avoid missing any data of the
-dataset. Then get a matris as M*n where M is the number of
-points and n is the sample size. (CHECK THIS OUT THIS
-SECTION!!!) Lightly read sections 2, 3, and 4. 1. A new
-forecasting method is proposed for forecasting age-specific
-mortalitiy and fertility rates which is robust, allows for
-smooth functions of age, and provides a modelling framework that
-is easily adapted to allow for constraints and other
-information. The model is a generalization of the Lee-Carter
-(LC) model. 2. The methodology can be applied to time series
-data observed discretely and possibly with error. The
-methodology is applied to French mortality and Australian
-fertility data, and the forecasts obtained are shown to be
-superior to those from the LC method and served of its variants.},
   journal = {Computational Statistics \& Data Analysis},
-  keywords = {fertility forecasting; functional data; mortality forecasting;
-nonparametric smoothing; principal components; robustness},
-  publisher = {Elsevier},
 }
 
 @Article{KSH07,
@@ -1523,7 +1188,7 @@ highest density region approach},
   journal = {Computational Statistics \& Data Analysis},
 }
 
-@techreport{GSI,
+@TechReport{GSI,
   title = {A state space model for exponential smoothing with group
 seasonality},
   author = {Pim Ouwehand and Rob J Hyndman and Ton G {de Kok} and Karel H {van Donselaar}},
@@ -1554,24 +1219,7 @@ variants and extensions},
   pages = {443--473},
   url = {dx.doi.org/10.1016/j.ijforecast.2006.01.001},
   volume = {22},
-  abstract = {We review the past 25 years of research into time series
-forecasting. In this silver jubilee issue, we naturally highlight
-results published in journals managed by the International
-Institute of Forecasters (Journal of Forecasting 1982-1985 and
-International Journal of Forecasting 1985-2005). During this
-period, over one third of all papers published in these journals
-concerned time series forecasting. We also review highly
-influential works on time series forecasting that have been
-published elsewhere during this period. Enormous progress has
-been made in many areas, but we find that there are a large
-number of topics in need of further development. We conclude with
-comments on possible future research directions in this field.},
   journal = {International Journal of Forecasting},
-  keywords = {accuracy measures; arch; arima; combining; count data; densities;
-exponential smoothing; kalman filter; long memory; multivariate;
-neural nets; nonlinearity; prediction intervals; regart;
-regime-switching; robustness; seasonality; state space;
-structural models; transfer function; univariate; var},
 }
 
 @Article{Hyndman06,
@@ -1614,19 +1262,8 @@ Statistics},
   pages = {679--688},
   url = {dx.doi.org/10.1016/j.ijforecast.2006.03.001},
   volume = {22},
-  abstract = {We discuss and compare measures of accuracy of univariate time
-series forecasts. The methods used in the M-competition as
-well as the M3-competition, and many of the measures
-recommended by previous authors on this topic, are found to be
-degenerate in commonly occurring situations. Instead, we
-propose that the mean absolute scaled error become the
-standard measure for comparing forecast accuracy across
-multiple time series.},
   institution = {Department of Econometrics \& Business Statistics, Monash University},
   journal = {International Journal of Forecasting},
-  keywords = {forecast accuracy; forecast error measures; forecast
-evaluation; m competition; m-competition; mean; mean absolute
-scaled error},
   publisher = {Elsevier},
 }
 
@@ -1639,7 +1276,6 @@ scaled error},
   url = {dx.doi.org/10.1016/j.ijforecast.2006.06.001},
   volume = {22},
   journal = {International Journal of Forecasting},
-  keywords = {editorial},
 }
 
 @Article{KH06,
@@ -1652,12 +1288,6 @@ scaled error},
   url = {dx.doi.org/10.1057/palgrave.jors.2602211},
   volume = {57},
   journal = {The Journal of the Operational Research Society},
-  keywords = {categorization; characteris-; consequently; demand time series
-are; discrete categories in order; forecasting; forecasting
-method for a; intermittent demand; inventory control; particular
-product depends on; product; s demand history; sometimes divided
-into several; the accuracy of a; tics exhibited by the; to assign
-the best},
 }
 
 @Article{NPS06,
@@ -1669,41 +1299,7 @@ the best},
   pages = {477--484},
   url = {dx.doi.org/10.1002/pds.1247},
   volume = {15},
-  abstract = {PURPOSE: The National Prescribing Service Ltd (NPS) aims to
-improve prescribing and use of medicines consistent with
-evidence-based best practice. This report compares two
-statistical methods used to determine whether multiple
-educational interventions influenced antibiotic prescription in
-Australia. METHODS: Monthly data (July 1996 to June 2003) were
-obtained from a national claims database. The outcome measures
-were the median number of antibiotic prescriptions per 1000
-consultations for each general practitioner (GP) each month, and
-the mean proportion (across GPs) of each subgroup of antibiotics
-(e.g. roxithromycin) out of nine antibiotics having primary use
-for upper respiratory tract infection. Two approaches were used
-to investigate shifts in prescribing: augmented regression, which
-included seasonality, autocorrelation and one intervention; and
-seasonally adjusted piecewise linear dynamic regression, which
-removed seasonality prior to modelling, included several
-interventions, GP participation and autocorrelated errors. Both
-methods are variations of piecewise linear regression modelling.
-RESULTS: Both approaches described a similar decrease in rates,
-with a non-significant change after the first intervention. The
-inclusion of more interventions and GP participation made no
-difference. Using roxithromycin as an example of the analyses of
-proportions, both approaches implied that after the first
-intervention the proportion decreased significantly. The
-statistical significance of this intervention disappears when
-other interventions are included. CONCLUSIONS: The two analyses
-provide results which agree regarding the possible impact of the
-NPS interventions, but raise questions about what is the best way
-to model drug utilization, particularly regarding whether to
-include all intervention terms when they belong to an extended
-roll-out of related interventions.},
   journal = {Pharmacoepidemiology and Drug Safety},
-  keywords = {Australia; Drug Prescriptions; Drug Utilization; Drug
-Utilization: trends; Family; Humans; Linear Models; Physicians;
-Seasons},
 }
 
 @Article{MH06,
@@ -1761,12 +1357,6 @@ kernel density estimation},
   url = {dx.doi.org/10.1016/j.csda.2005.06.019},
   volume = {50},
   journal = {Computational Statistics \& Data Analysis},
-  keywords = {61 3 99052449; 61 3 99058039; algorithms; au; buseco;
-corresponding author; cross-validation; e-mail address; edu; fax;
-king; kullback; kullback-leibler information; l; leibler
-information; m; max; mean integrated squared er-; mean integrated
-squared errors; monash; monte carlo kernel likelihood; rors;
-sampling; sampling algorithms; tel},
 }
 
 @Article{BHK05,
@@ -1781,8 +1371,6 @@ model selection},
   volume = {75},
   institution = {Department of Econometrics \& Business Statistics, Monash University},
   journal = {Journal of Statistical Computation and Simulation},
-  keywords = {exponential smoothing; forecasting; information criteria; m3
-competition; model},
 }
 
 @Article{EH05a,
@@ -1805,39 +1393,7 @@ admissions relationship to statistical model choice},
   pages = {437--448},
   url = {dx.doi.org/10.1080/09603120500289192},
   volume = {15},
-  abstract = {The objective of this study was to demonstrate the
-methodological shortcomings of currently available analytical
-methods for single-city time series data. We analyzed daily
-Chronic Obstructive Pulmonary Disease (COPD) and daily asthma
-hospital admissions in Melbourne, Australia from July 1989 to
-December 1992. Air pollution data comprised nitrogen dioxide,
-ozone and sulphur dioxide and air particles index consistent
-with particulates between 0.1 and 1 microm in aerodynamic
-diameter. Statistical analyses were performed using generalized
-linear models, generalized additive models, Poisson
-autoregressive models and transitional regression models. The
-estimated effect of nitrogen dioxide on COPD hospital admissions
-was similar across the different statistical models, RR = 1.06
-(95\% CI 1.01-1.11). Similarly the estimated effect of nitrogen
-dioxide on asthma hospital admissions was also consistent, RR =
-1.05 (95\% CI 1.01-1.09). However, the effects of ozone, air
-particles index and sulphur dioxide were highly sensitive to
-model specification for both COPD and asthma hospital
-admissions. In single-city studies of air pollution and
-respiratory disease, very different conclusions can be drawn
-from competing models. Furthermore, real time series data have
-greater complexity than any of the commonly-used existing models
-allow. Consequently, single-city studies should use several
-statistical models to demonstrate the stability of estimated
-effects.},
   journal = {International Journal of Environmental Health Research},
-  keywords = {Air Pollution; Air Pollution: adverse effects; Asthma; Asthma:
-epidemiology; Asthma: etiology; Asthma: therapy; Chronic
-Obstructive; Chronic Obstructive: epidemiology; Chronic
-Obstructive: etiology; Chronic Obstructive: therapy; Cities;
-Forecasting; Humans; Models; Patient Admission; Patient
-Admission: statistics \& numerical data; Pulmonary Disease;
-Sensitivity and Specificity; Statistical},
   publisher = {万方数据资源系统},
 }
 
@@ -1862,13 +1418,6 @@ Sensitivity and Specificity; Statistical},
   url = {dx.doi.org/10.1111/j.1467-842X.2005.00374.x},
   volume = {47},
   journal = {Australian \& New Zealand Journal of Statistics},
-  keywords = {arima models; c13; c14; c22; c53; exponential smoothing; holt;
-Holt's local; Holt's local linear forecasts; hood estimation;
-jel classi cation numbers; jel classification numbers; maximum
-likeli-; maximum likelihood estimation; non-parametric
-regression; nonparametric regression; s local linear forecasts;
-smoothing splines; space model; state; state space model;
-state-space model; stochastic trends},
   publisher = {John Wiley \& Sons},
 }
 
@@ -1916,18 +1465,7 @@ demand forecasting},
   pages = {389--402},
   url = {dx.doi.org/10.1002/for.963},
   volume = {24},
-  abstract = {Croston's method is widely used to predict inventory demand when
-it is intermittent. However, it is an ad hoc method with no
-properly formulated underlying stochastic model. In this paper,
-we explore possible models underlying Croston's method and three
-related methods, and we show that any underlying model will be
-inconsistent with the properties of intermittent demand data.
-However, we find that the point forecasts and prediction
-intervals based on such underlying models may still be useful.
-},
   journal = {Journal of Forecasting},
-  keywords = {Croston's method, exponential smoothing, forecasting,
-intermittent demand, prediction intervals},
   publisher = {John Wiley \& Sons, Ltd.},
 }
 
@@ -1958,8 +1496,6 @@ characteristic curves},
 mathematics that was necessary to derive confi- dence intervals
 when computing ROC curves. Citations 18/22. A*.},
   journal = {Biometrika},
-  keywords = {Bandwidth selection; binary classification; Kernel; Kernel
-estimator; receiver operating characteristic curve},
   publisher = {Biometrika Trust},
 }
 
@@ -2016,8 +1552,6 @@ curves},
   url = {dx.doi.org/10.1016/S0167-7152(03)00150-0},
   volume = {64},
   journal = {Statistics \& Probability Letters},
-  keywords = {bandwidth selection; binary classification; kernel estimator;
-mise; roc},
   publisher = {Elsevier},
 }
 
@@ -2039,17 +1573,7 @@ mise; roc},
   pages = {287--290},
   url = {dx.doi.org/10.1016/S0169-2070(01)00143-1},
   volume = {19},
-  abstract = {The `Theta method' of forecasting performed particularly well in
-the M3-competition and is therefore of interest to forecast
-practitioners. The original description of the method given by
-Assimakopoulos and Nikolopoulos [International Journal of
-Forecasting 16 (2000) 521] involves several pages of algebraic
-manipulation. We show that the method can be expressed much more
-simply and that the forecasts obtained are equivalent to simple
-exponential smoothing with drift.},
   journal = {International Journal of Forecasting},
-  keywords = {exponential smoothing; forecasting competitions; regart; S;
-state space models},
   publisher = {Elsevier},
 }
 
@@ -2063,8 +1587,6 @@ an Australian population},
   pages = {431--436},
   volume = {80},
   journal = {Optometry and Vision Science},
-  keywords = {Australia; Humans; Reference Values; Vision Tests; Vision Tests:
-standards; Visual Perception; Visual Perception: physiology},
 }
 
 @Article{CHW02,
@@ -2076,9 +1598,6 @@ standards; Visual Perception; Visual Perception: physiology},
   url = {dx.doi.org/10.1198/106186002862},
   volume = {11},
   journal = {Journal of Computational and Graphical Statistics},
-  keywords = {Nonparametric regression; nonparametricregression; Restricted
-maximum likel; restricted maximum likelihood; survival analysis;
-variance components},
   publisher = {ASA},
 }
 
@@ -2113,7 +1632,6 @@ exponential smoothing methods},
   pages = {439--454},
   volume = {18},
   journal = {International Journal of Forecasting},
-  keywords = {Prediction intervals; State space models},
 }
 
 @InCollection{IGSMS02a,
@@ -2137,8 +1655,6 @@ density functions},
   url = {dx.doi.org/10.1080/10485250212374},
   volume = {14},
   journal = {Journal of Nonparametric Statistics},
-  keywords = {bandwidth selection; bootstrap; conditioning; density estimation;
-kernel; smoothing; symmetry tests},
 }
 
 @Article{RH02,
@@ -2162,8 +1678,6 @@ kernel; smoothing; symmetry tests},
   url = {dx.doi.org/10.1016/S0167-9473(00)00046-3},
   volume = {36},
   journal = {Computational Statistics \& Data Analysis},
-  keywords = {bandwidth selection; conditioning; density estimation; kernel
-smoothing},
   publisher = {Elsevier},
 }
 
@@ -2177,8 +1691,6 @@ smoothing},
   url = {dx.doi.org/10.1080/135952201317225462},
   volume = {6},
   journal = {Journal of Epidemiology and Biostatistics},
-  keywords = {additive models; environmental epidemiology; graphical methods;
-nonparametric smoothing seasonality},
 }
 
 @InProceedings{IWSM01,
@@ -2191,8 +1703,6 @@ International Workshop on Statistical Modelling},
   year = {2001},
   pages = {179--186},
   publisher = {University of Southern Denmark, Denmark. July 2001},
-  keywords = {Autocorrelation; generalized additive models; respiratory
-disease; Seasonal adjustment},
 }
 
 @Article{Hyndman01,
@@ -2203,7 +1713,6 @@ disease; Seasonal adjustment},
   pages = {567--570},
   volume = {17},
   journal = {International Journal of Forecasting},
-  keywords = {commentaries on the M3-competition},
 }
 
 @Article{lemmings,
@@ -2216,7 +1725,6 @@ groenlandicus) in Arctic North America},
   url = {dx.doi.org/10.1007/s004420000516},
   volume = {126},
   journal = {Oecologia},
-  keywords = {dicrostonyx; lemming cycle; synchrony},
 }
 
 @Unpublished{EH00,
@@ -2235,12 +1743,6 @@ mis-specification in time series regression},
   pages = {463--477},
   volume = {42},
   journal = {Australian \& New Zealand Journal of Statistics},
-  keywords = {autocorrelation; conditional residuals; generalised least
-squares; generalized least squares; marginal; marginal residuals;
-mean shifts; model mis-speci cation; model mis-specification;
-model transformation; nostics; orthogonal resid-; orthogonal
-residuals; residual diag-; residual diagnostics; residual plots;
-residuals; time series regression; uals},
 }
 
 @Article{GHTT00,
@@ -2253,9 +1755,6 @@ residuals; time series regression; uals},
   url = {dx.doi.org/10.1111/1467-842X.00143},
   volume = {42},
   journal = {Australian \& New Zealand Journal of Statistics},
-  keywords = {autoregression; data analysis; exponential time series; gamma
-time series; non-gaussian; Non-Gaussian time series; poisson time
-series; time series},
 }
 
 @Article{BR00,
@@ -2288,10 +1787,6 @@ models with application to Melbourne's rainfall},
   url = {dx.doi.org/10.1111/1467-842X.00115},
   volume = {42},
   journal = {Australian \& New Zealand Journal of Statistics},
-  keywords = {binary time series; droughts; dry spells; gamma ti; gamma time
-series; generalized additive model; generalized linear model;
-markov model; mixture distribution; non-gaussian time series;
-southern; southern oscillation index},
 }
 
 @Article{BR99b,
@@ -2345,8 +1840,6 @@ Society.},
   pages = {171--191},
   volume = {28},
   journal = {Computational Statistics and Data Analysis},
-  keywords = {Akaike information criterion; Exponential family; Penalized
-likelihood},
 }
 
 @Article{BR98b,
@@ -2390,10 +1883,6 @@ Hungarian)},
   url = {robjhyndman.com/forecasting/},
   address = {New York},
   annote = {Forecasting: methods and applications},
-  keywords = {BIBLIOGRAPHY - FORECASTING; BUSINESS CYCLE - PREDICTION;
-FORECASTING - PRACTICE; FORECASTING - TEXT; FORECASTING - USAGE;
-TECHNOLOGICAL FORECASTING; TIME SERIES - TEXT; USE- CORPORATE
-PLANNING},
 }
 
 @Article{GHH97,
@@ -2405,8 +1894,6 @@ series models},
   pages = {615--626},
   volume = {59},
   journal = {Journal of the Royal Statistical Society. Series B},
-  keywords = {Bayesian forecasting; Exponential family; Exponentially weighted
-moving average},
 }
 
 @Article{HW97,
@@ -2417,9 +1904,6 @@ moving average},
   pages = {313--324},
   volume = {39},
   journal = {The Australian Journal of Statistics},
-  keywords = {bandwidth; correlated errors; kernel smoothing; local polynomial;
-non-stationary model; Nonparametric regress; Nonparametric
-regression; parametric regression; time series},
 }
 
 @Article{LFSH97,
@@ -2437,7 +1921,6 @@ model with historical volatility},
   author = {Gary K Grunwald and Rob J Hyndman and Leanna M Tedesco},
   year = {1996},
   url = {robjhyndman.com/papers/ar1.pdf},
-  keywords = {autoregression; data analysis; exponential time series; gamma time series; non-gaussian time series; poisson time; series},
 }
 
 @Article{BR96,
@@ -2459,8 +1942,6 @@ model with historical volatility},
 www.questia.com/PM.qst?a=o&amp;se=gglsc&amp;d=5000444075},
   volume = {50},
   journal = {The American Statistician},
-  keywords = {Boxplot; Density estimation; Graphical summary; Highest density
-regions},
   publisher = {American Statistical Association},
 }
 
@@ -2472,8 +1953,6 @@ regions},
   pages = {315--336},
   volume = {5},
   journal = {Journal of Computational and Graphical Statistics},
-  keywords = {Bandwidth; Conditional density; Data visualization; Density
-estimation; Kernel smoothing; Nonparametric regression},
 }
 
 @Article{HF96,
@@ -2484,8 +1963,6 @@ estimation; Kernel smoothing; Nonparametric regression},
   pages = {361--365},
   volume = {50},
   journal = {The American Statistician},
-  keywords = {Percentiles; Quartiles; Sam; Sample quantiles; Software;
-Statistical computer packages; Statistical computing},
 }
 
 @InBook{AGH95,
@@ -2507,10 +1984,6 @@ time series models},
   url = {dx.doi.org/10.1002/for.3980140503},
   volume = {14},
   journal = {Journal of Forecasting},
-  keywords = {density regions; forecast intervals; forecast regions are
-crucial; highest; in a simple way; non-linear time series;
-non-normal time series; the accuracy; threshold models; to
-practical forecasting-they convey},
 }
 
 @Unpublished{sturges95,
@@ -2539,7 +2012,6 @@ threshold autoregressive processes},
   url = {www.jstor.org/stable/3215333},
   volume = {31},
   journal = {Journal of Applied Probability},
-  keywords = {Stochastic differential equation},
   publisher = {JSTOR},
 }
 
@@ -2563,7 +2035,6 @@ threshold autoregressive processes},
   url = {linkinghub.elsevier.com/retrieve/pii/016920709290116Q},
   volume = {8},
   journal = {International Journal of Forecasting},
-  keywords = {Forecasting; Nonlinear time series},
   publisher = {Elsevier},
 }
 
