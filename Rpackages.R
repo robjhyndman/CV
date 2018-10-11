@@ -92,6 +92,7 @@ write.bib(
     "hts",
     "Mcomp",
     "MEFM",
+    "MonashEBSTemplates",
     "ozdata",
     "rainbow",
     "rmarkdown",
