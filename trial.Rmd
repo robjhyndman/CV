@@ -1,0 +1,74 @@
+---
+name: Rob J Hyndman
+address: "Department of Econometrics & Business Statistics,
+Monash University, VIC 3800, Australia."
+twitter: "@robjhyndman"
+email: Rob.Hyndman@monash.edu
+github: robjhyndman
+www: robjhyndman.com
+phone: +61 3 9905 5141
+date: "`r format(Sys.time(), '%B %Y')`"
+bibliography: [rjhpubs.bib, rjhreports.bib, Rpackages.bib]
+output:
+  bookdown::pdf_document2:
+    template: rjhcv.tex
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(huxtable)
+library(fontawesome)
+opts_chunk$set(
+  echo = FALSE, warning = FALSE, message = FALSE, comment = "#>",
+  fig.path = 'figure/', cache.path = 'cache/', fig.align = 'center',
+  fig.width = 12, fig.height = 4, fig.show = 'hold',
+  cache = TRUE, external = TRUE, dev = 'svglite', dev.args = list(bg = "transparent")
+)
+baretable <- function(tbl, ...) {
+	  tbl %>%
+	  xtable::xtable() %>%
+    print(include.colnames=FALSE,
+  	      include.rownames=FALSE,
+  	      hline.after=NULL,
+  	      comment=FALSE,
+  	      latex.environments=NULL)
+}
+```
+
+# Education and qualifications
+
+```{r degrees, results='asis'}
+tribble(
+	  ~Year, ~Degree, ~Institution,
+  	1998L, "B.Sc.(Hons)", "University of Melbourne",
+  	1992L, "Ph.D.", "University of Melbourne",
+  	2000L, "A.Stat.", "Statistical Society of Australia"
+  ) %>%
+  baretable()
+```
+
+
+# Recent and current positions
+
+```{r positions, results='asis'}
+tribble(
+		~Years, ~Position,
+    "2019", "Head of Department, Department of Econometrics & Business Statistics, Monash University",
+    "2003", "Professor of Statistics, Department of Econometrics & Business Statistics, Monash University",
+    "2005--2018", "Director, International Institute of Forecasters",
+    "2005--2018", "Editor-in-Chief, International Journal of Forecasting",
+    "2011", "Editor, *Journal of Statistical Software*"
+  ) %>%
+  baretable()
+```
+
+
+# Research
+
+ * Since 1991 I have authored \ref{sumpapers} papers, chapters or books on statistical topics. A list of these appears on pages \pageref{papersstart}--\pageref{papersend}.
+ * My current research involves the analysis of large collections of time series, and includes visualization, forecasting, reconciliation and modelling. Applications include electricity demand and smart-meter data, security sensors, manufacturing data and retail sales.
+ * I currently supervise six PhD students and two post-doctoral research fellows. I have previously supervised another 22 PhD students and 3 Masters students.
+ * I publish a blog on research issues [robjhyndman.com/hyndsight/](https://robjhyndman.com/hyndsight/) which receives an average of about 2000 pageviews per day.
+ * I have produced \ref{sumsoftware} R packages as a result of my research. These are listed on pages~\pageref{sumreports}--\pageref{sumsoftware}.
