@@ -29,7 +29,7 @@ $endif$
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
 \PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
-\usepackage[unicode=true]{hyperref}
+\usepackage[unicode=true,hidelinks]{hyperref}
 \urlstyle{same}  % don't use monospace font for urls
 $if(verbatim-in-note)$
 \VerbatimFootnotes % allows verbatim text in footnotes
@@ -309,7 +309,7 @@ $endfor$
 $if(www)$\\\faicon{home} & $www$$endif$%
 $if(phone)$\\\faicon{phone} & $phone$$endif$%
 $if(email)$\\\faicon{envelope} & $email$$endif$%
-$if(twitter)$\\\faicon{twitter} & $twitter$$endif$%
+$if(twitter)$\\\faicon{twitter} & @$twitter$$endif$%
 $if(github)$\\\faicon{github} & $github$$endif$%
 }
 
