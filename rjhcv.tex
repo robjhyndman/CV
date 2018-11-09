@@ -235,18 +235,15 @@ $endfor$
 %\makeatother
 
 % Bibliography categories
-\def\makebibcategory#1#2{\DeclareBibliographyCategory{#1}\defbibheading{#1}{\section*{#2}}}
-\makebibcategory{books}{Books}
-\makebibcategory{papers}{Refereed research papers}
-\makebibcategory{chapters}{Book chapters}
-\makebibcategory{conferences}{Papers in refereed conference proceedings}
-\makebibcategory{techreports}{Unpublished working papers}
-\makebibcategory{bookreviews}{Book reviews}
-\makebibcategory{editorials}{Editorials}
-\makebibcategory{phd}{PhD thesis}
-\makebibcategory{subpapers}{Submitted papers}
-\makebibcategory{curpapers}{Current projects}
-\makebibcategory{software}{Software (R packages)}
+\DeclareBibliographyCategory{cat1}
+\DeclareBibliographyCategory{cat2}
+\DeclareBibliographyCategory{cat3}
+\DeclareBibliographyCategory{cat4}
+\DeclareBibliographyCategory{cat5}
+\DeclareBibliographyCategory{cat6}
+\DeclareBibliographyCategory{cat7}
+\DeclareBibliographyCategory{cat8}
+\DeclareBibliographyCategory{cat9}
 
 \setlength{\bibitemsep}{2.3pt}
 \setlength{\bibhang}{.9cm}
@@ -277,7 +274,7 @@ $for(bibliography)$
 $endfor$
 
 % Add all papers in the bib file.
-\nocite{*}
+%\nocite{*}
 
 % Make nicer bullets
 
@@ -344,8 +341,6 @@ $include-before$
 $endfor$
 
 $body$
-
-\printbibliography
 
 $for(include-after)$
 $include-after$

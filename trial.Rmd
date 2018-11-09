@@ -16,12 +16,13 @@ output:
 ---
 
 ```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(tidyverse)
-library(knitr)
-library(kableExtra)
-library(fontawesome)
-library(pander)
-opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(RefManageR)
+rjh <- ReadBib("rjhpubs.bib", check=FALSE)
+types <- as_tibble(rjh) %>% pull(bibtype)
+books <- paste(unlist(rjh[types=="Book"]$key),sep="")
+papers <- paste(unlist(rjh[types=="Article"]$key),sep="")
 baretable <- function(tbl, digits=0, ...) {
   tbl %>%
 	  xtable::xtable(digits=digits) %>%
@@ -32,6 +33,16 @@ baretable <- function(tbl, digits=0, ...) {
   	      latex.environments=NULL,
           floating=FALSE,
           sanitize.text.function = function(x) {x})
+}
+printbibliography <- function(
+			categories=c("Book","Article"),
+			titles=c("Books","Refereed journal papers")) {
+	cat1 <- paste(unlist(rjh[types==categories[1]]$key),sep="")
+	cat(paste("\\defbibheading{cat1}{\\section*{",titles[1],"}}",sep=""))
+  cat(paste("\\addtocategory{cat1}{",paste(cat1,",",sep="",collapse=""),"}",sep=""))
+	cat("\\begin{publications}")
+	cat("\\printbib{cat1}",sep="")
+	cat("\\end{publications}")
 }
 ```
 
@@ -198,9 +209,8 @@ I have acquired (in most cases jointly) about $5 million in external research gr
 
 # Publications
 
-```{r books}
-library(RefManageR)
-rjh <- ReadBib("rjhpubs.bib", check="warn")
-rjh
+```{r, results='asis'}
+printbibliography()
 ```
+
 
