@@ -74,29 +74,15 @@ tribble(
 2016 & KNAW Visiting Professor, TU/Eindhoven, Netherlands.\\
 2010 & Dean's Award for excellence in innovation and external collaboration, Monash University.\\
 2010 & HP Innovation Research Award.\\
-%2009--2010 & Entry in \emph{Great minds of the 21st century}, 1st--4th editions.\\
 2008 & Dean's award for excellence in research, Monash University.\\
 2008 & Vice-Chancellor's award for postgraduate supervisor of the year, Monash University.\\
 2007 & Knibbs Lecturer, Statistical Society of Australia (ACT branch).\\
 2007 & Moran Medal for Statistical Science, Australian Academy of Science.\\
 2006 & Belz Lecturer, Statistical Society of Australia (Victorian branch).\\
-%2003 & Entry in \textit{One thousand great intellectuals}, 1st edition.\\
-%2002-- & Entry in \textit{Who's Who in Finance and Business}, from 33rd edition.\\
-%2001--2008 & Entry in \textit{2000 Outstanding Intellectuals of the 21st Century}, 1st--5th editions.\\
-%2001--2003 & Entry in \textit{International Directory of Distinguished Leadership}, 9th--11th editions.\\
-%2001-- & Entry in \textit{Who's Who in Science and Engineering}, from 6th edition.\\
-%2001 & Entry in \textit{Who's Who in the 21st Century}, 1st edition.\\
-%2000 & Entry in \textit{Outstanding People of the 20th Century}, 2nd edition.\\
-%2000-- & Entry in \textit{Cambridge Dictionary of International Biography}, from 28th edition.\\
-%2000-- & Entry in \textit{Who's Who in Asia and the Pacific Nations}, from 4th edition.\\
-%1998-- & Entry in Marquis \textit{Who's Who in the World}, from 15th edition.\\
 1998 & Award for excellence in teaching, Monash Science Society\\
-%1997 & Citation of excellence by ANBAR for Hyndman (1995)\\
 1990 & Finalist, Channel Ten Young Achiever Awards\\
 1988 & Dwights Prize in Statistics, University of Melbourne\\
-%1988 & First Class Science Faculty Honours, University of Melbourne\\
 1987 & Norma McArthur Prize in Statistics, University of Melbourne\\
-%1987 & First Class Science Faculty Honours, University of Melbourne\\
 1986 & Second Maurice H.\ Belz Prize in Statistics, University of Melbourne
 \end{tabular}
 
@@ -121,7 +107,7 @@ Member, Statistical Society of Australia.
 
 I have acquired (in most cases jointly) about $5 million in external research grants since 2000. External research grants over $20,000 are listed below.
 
-{\def\next{\\\\[-0.2cm]}\fontsize{10}{12pt}\selectfont
+\def\next{\\\\[-0.2cm]}
 \begin{tabular}{@{}lP{13.3cm}r@{}}
 \toprule
 2000 & R.J. Hyndman. ``Forecasting Telstra market share''. \emph{Funding from Telstra Australia.} &\$31,000
@@ -144,23 +130,77 @@ I have acquired (in most cases jointly) about $5 million in external research gr
 \next
 2009--2011 & Erbas, B., Abramson, M., Tang, M., Allen, K., Newbigin, E., Dharmage, S., Hyndman, R.J. ``The impact of outdoor aeroallergen exposure on asthma exacerbations in children and adolescents''. \emph{Funding from the National Health and Medical Research Council.} &\$454,550
 \next
-2010--2011 & R.J. Hyndman. ``New methods for hierarchical forecasting with application to HP business forecasting''. \emph{Funding from the HP Labs Innovation Research Program}. &US\$27,800
+2010--2011 & R.J. Hyndman. ``New methods for hierarchical forecasting with application to HP business forecasting''. *Funding from the HP Labs Innovation Research Program*. &US\$27,800
 \next
 2011--2015 & R.J. Hyndman, ``Energy demand forecasting''. \emph{Funding from the Australian Energy Market Operator.} &\$1,106,900
 \next
 2011--2013 & R.J. Hyndman and S. Fan, ``Development of electricity peak demand and energy forecasts for the SWIS''. \emph{Funding from the Independent Market Operator (Western Australia)}. &\$93,450
 \next
-2013--2016 & K.A. Smith-Miles, R.J. Hyndman, L. Villanova and M. Kah. ``Optimising experimental design for robust product development: a cast study for high-efficiency energy generation''. \emph{ARC Linkage Grant with Ceramic Fuel Cells Ltd}. & \$362,389
+2013--2016 & K.A. Smith-Miles, R.J. Hyndman, L. Villanova and M. Kah. ``Optimising experimental design for robust product development: a cast study for high-efficiency energy generation''. *ARC Linkage Grant with Ceramic Fuel Cells Ltd*. & \$362,389
 \next
-2014--2017 & A.N. Panagiotelis, G. Athanasopoulos, R.J. Hyndman, F. Vahid. ``Macroeconomic forecasting in a `Big Data' world''. \emph{ARC Discovery Grant}.& \$451,034
+2014--2017 & A.N. Panagiotelis, G. Athanasopoulos, R.J. Hyndman, F. Vahid. ``Macroeconomic forecasting in a `Big Data' world''. *ARC Discovery Grant*.& \$451,034
 \next
-2017--2018 & R.J. Hyndman, S. Ben Taieb, C. Bergmeir. ``Demand forecasting for large-scale dynamic hierarchies in a big data environment'' \emph{Funding from Huawei Innovation Research Program} & \$86,586
+2017--2018 & R.J. Hyndman, S. Ben Taieb, C. Bergmeir. ``Demand forecasting for large-scale dynamic hierarchies in a big data environment'' *Funding from Huawei Innovation Research Program* & \$86,586
 \next
 2017--2019&  R.J. Hyndman, D. Cook, P. Toscas. ``RiskLab Projects: Econometrics''. \emph{RiskLab at Data61}. & \$151,200
 \next
-2017--2019 & K.A. Smith-Miles, R.J. Hyndman, M. Munoz Acosta, J. Katsifolis. ``Intruder Alert! Detecting and classifying events in noisy time series''. \emph{ARC Linkage Grant}. & \$204,000
+2017--2019 & K.A. Smith-Miles, R.J. Hyndman, M. Munoz Acosta, J. Katsifolis. ``Intruder Alert! Detecting and classifying events in noisy time series''. *ARC Linkage Grant*. & \$204,000
 \next
-2017--2021 & Hall, P., Bartlett, P., Bean, N., Burrage, K., DeGier, J., Delaigle, A., Forrester, P., Geweke, J., Kohn, R., Kroese, D., Mengersen, K., Pettit, A., Pollett, P., Roughan, M., Ryan, L., Taylor, P., Turner, I., Wand, M., Garoni, T., Smith-Miles, K. A., Caley, M., Churches, T., Elazar, D., Gupta, A., Harch, B., Tam, S., Weegberg, K., Willinger, W. \& Hyndman, R.J. \emph{ARC Centre of Excellence for Mathematical and Statistical Frontiers} & \$554,329
+2017--2021 & Hall, P., Bartlett, P., Bean, N., Burrage, K., DeGier, J., Delaigle, A., Forrester, P., Geweke, J., Kohn, R., Kroese, D., Mengersen, K., Pettit, A., Pollett, P., Roughan, M., Ryan, L., Taylor, P., Turner, I., Wand, M., Garoni, T., Smith-Miles, K. A., Caley, M., Churches, T., Elazar, D., Gupta, A., Harch, B., Tam, S., Weegberg, K., Willinger, W. \& Hyndman, R.J. *ARC Centre of Excellence for Mathematical and Statistical Frontiers* & \$554,329
 \\
 \bottomrule
-\end{tabular}}
+\end{tabular}
+
+# Major invited talks
+
+  * Belz lecture, *Forecasting and the importance of being uncertain*, Statistical Society of Australia, Melbourne, October 2006.
+  * Knibbs lecture, *Population forecasting and the importance of being uncertain*, Statistical Society of Australia, Melbourne, November 2007.
+  * Invited speaker, *Forecasting functional time series*, Australian Frontiers of Science, Canberra, February 2008.
+  * Keynote speaker, *Extreme Forecasting*, International Symposium on Forecasting, Hong Kong, June 2009.
+  * Workshop leader, *Statistical Forecasting: Principles and Practice*, Swiss Statistical Society, Kandersteg, June 2011.
+  * Invited speaker, *Advances in automatic time series forecasting*, Australian Statistics Conference, Adelaide, July 2012.
+  * Keynote speaker, *Man vs Wild Data*, Young Statisticians Conference, Melbourne, February 2013.
+  * Keynote speaker, *Forecasting without forecasters*, {International Symposium on Forecasting}, Seoul, June 2013.
+  * Keynote speaker, *Automatic time series forecasting*,  ``New Trends on Intelligent Systems and Soft Computing 2014'', University of Granada, Spain, February 2014.
+  * Workshop leader, *State space models for time series*, Australian Bureau of Statistics, May 2014.
+  * Keynote speaker, *Challenges in forecasting peak electricity demand*, Energy Forum, Valais, Switzerland, June 2014.
+  * Workshop leader, *Functional time series in demography*, Humboldt University, Berlin, June 2014.
+  * Workshop leader, *Forecasting: principles and practice*, University of Western Australia, September 2014.
+  * Invited speaker, *Visualization and forecasting of big time series data*,   ACEMS Big data workshop, QUT, February 2015.
+  * Keynote speaker,  *Exploring the boundaries of predictability: what can we forecast, and when should we give up?*, Yahoo Big Thinkers, June 2015.
+  * Keynote speaker, *Forecasting big time series data using R*, Chinese R conference, Nanchang, October 2015.
+  * Keynote speaker, *Forecasting large collections of related time series*, German Statistical Week, Augsburg, September 2016.
+  * Invited speaker, International Symposium on Energy Analytics, Cairns, June 2017.
+  * Keynote speaker, ICML Time Series Workshop, Sydney, August 2017.
+  * Keynote speaker, Beijing Workshop on Forecasting, November 2017.
+  * Workshop leader, *Forecasting: principles and practice*, New York City, June 2018.
+  * Monash master class, *Forecasting the future of the power industry: What can you learn from smart meter data?*, Melbourne, September 2018.
+
+
+# Teaching
+
+  * Student evaluations for the undergraduate subject "Applied forecasting for business and economics" in 2018 rated my teaching at 4.82 out of 5.
+  * In 1998, I received the award for "Excellence in teaching" by the Monash Science Society. This is awarded by the students of the Science faculty.
+  * I am author of an innovative textbook with George Athanasopoulos entitled *Forecasting: principles and practice* ([`OTexts.org/fpp2/`](https://OTexts.org/fpp2)) which is available online and free of charge. The website has an average of 11400 pageviews per day.
+
+# Consulting
+
+  * Since 1986, I have worked with several hundred different clients in Australia, the United States, Saudi Arabia, Israel, India, Russia, Switzerland, and the Netherlands. I have produced \ref{sumreports} written consulting reports, listed on pages~\pageref{consulting}--\pageref{sumreports}.
+  * Six times I have provided expert witness in litigation cases.
+
+# Advisory boards
+
+  * Member of the Scaling committee, Victorian Tertiary Admissions Centre. This committee is responsible for producing the ATAR for VCE students.
+  * Member of the Interstate Transfer Index Technical Group for the Australasian Conference of Tertiary Admissions Centres.
+  * Member of the Aboriginal and Torres Strait Islander Statistical and Technical Advisory Group for the Australian Institute of Health and Welfare.
+  * Member of the Methodology Advisory Committee for the Australian Bureau of Statistics.
+
+
+# Publications
+
+```{r books}
+library(RefManageR)
+rjh <- ReadBib("rjhpubs.bib", check="warn")
+rjh
+```
+
