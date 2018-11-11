@@ -3,15 +3,18 @@ name: Rob J Hyndman
 address: "Department of Econometrics & Business Statistics, Monash University, VIC 3800, Australia."
 www: robjhyndman.com
 phone: +61 3 9905 5141
-email: Rob.Hyndman@monash.edu
+email: "Rob.Hyndman@monash.edu"
 twitter: robjhyndman
 github: robjhyndman
 date: "`r format(Sys.time(), '%B %Y')`"
 bibliography: [rjhpubs.bib,rjhreports.bib,Rpackages.bib]
 geometry: "left=1.75cm,right=1.75cm,top=2.2cm,bottom=2cm"
+headcolor: "000088"
+fontfamily: carlito
+fontfamilyoptions: "sfdefault,lf,t"
 output:
   bookdown::pdf_document2:
-    template: rjhcv.tex
+    template: CVtemplate.tex
     citation_package: biblatex
     keep_tex: yes
 ---
@@ -20,12 +23,14 @@ output:
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(tidyverse)
 library(RefManageR)
-# Read any bib files
-pubs <- ReadBib("rjhpubs.bib", check = FALSE)
-reports <- ReadBib("rjhreports.bib", check = FALSE)
+source("Rpackages.R")
+```
+
+```{r Rpackages, eval=FALSE}
 # Construct bib file for R packages
-mypackages <- c(
-   "addb",
+write_packages_bib(
+  pkglist = c(
+    "addb",
     "anomalous",
     "bfast",
     "binb",
@@ -59,60 +64,15 @@ mypackages <- c(
     "tsibble",
     "tsibbledata",
     "tsibblestats",
-    "fable"
-    )
-#write.bib(mypackages, "Rpackages.bib")
+    "fable"),
+  file="Rpackages.bib")
+```
+
+```{r bibfiles}
+# Read any bib files
+pubs <- ReadBib("rjhpubs.bib", check = FALSE)
+reports <- ReadBib("rjhreports.bib", check = FALSE)
 packages <- ReadBib("Rpackages.bib", check = FALSE)
-# Function to produce very basic table, no lines or headings
-baretable <- function(tbl, digits = 0, colnames=FALSE, rownames=FALSE, ...) {
-  tbl %>%
-    xtable::xtable(digits = digits) %>%
-    print(
-      include.colnames = colnames,
-      include.rownames = rownames,
-      hline.after = NULL,
-      comment = FALSE,
-      latex.environments = NULL,
-      floating = FALSE,
-      sanitize.text.function = function(x) {
-        x
-      }
-    )
-}
-# Global variable to count number of times printbibliography has been called
-...calls <- 0L
-# Main function for printing bibliography section
-# category is a character vector of bib types
-# title is the section heading
-printbibliography <- function(bib,
-                              category = c("Article"),
-                              title = "Refereed journal papers",
-                              sorting = "ynt",
-                              startlabel = NULL,
-                              endlabel = NULL) {
-  ...calls <<- ...calls + 1L
-  if (...calls > 15) {
-    stop("Sorry, I'm out of memory")
-  }
-  types <- as_tibble(bib) %>% pull(bibtype)
-  bibsubset <- bib[types %in% category]
-  items <- paste(unlist(bibsubset$key), sep = "")
-  bibname <- paste("bib", ...calls, sep = "")
-  cat("\n\\defbibheading{", bibname, "}{\\subsection*{", title, "}}",
-    ifelse(!is.null(startlabel), paste("\\label{", startlabel, "}", sep = ""), ""),
-    sep = ""
-  )
-  cat("\n\\addtocategory{", bibname, "}{",
-    paste(items, ",", sep = "", collapse = "\n"),
-    "}",
-    sep = ""
-  )
-  cat("\n\\newrefcontext[sorting=", sorting, "]\\setcounter{papers}{0}\\pagebreak[3]", sep = "")
-  cat("\n\\printbibliography[category=", bibname, ",heading=", bibname, "]\\setcounter{papers}{0}\n", sep = "")
-  if (!is.null(endlabel)) {
-    cat("\\label{", endlabel, "}", sep = "")
-  }
-}
 ```
 
 # Education and qualifications
@@ -127,20 +87,40 @@ tribble(
   baretable()
 ```
 
-# Recent and current positions
+# Employment history
+
+```{r employment, results='asis'}
+tribble(
+  ~Start, ~End, ~Position,
+  1985, 1992, "\\textbf{Statistical consultant}, Department of Statistics, University of Melbourne",
+  1993, 1994, "\\textbf{Lecturer}, Department of Statistics, University of Melbourne",
+  1995, 1996, "\\textbf{Lecturer}, Department of Mathematics and Statistics, Monash University",
+  1997, 1998, "\\textbf{Senior Lecturer}, Department of Mathematics and Statistics, Monash University",
+  1998, 2000, "\\textbf{Senior Lecturer}, Department of Econometrics \\& Business Statistics, Monash University",
+  2001, 2003, "\\textbf{Associate Professor}, Department of Econometrics \\& Business Statistics, Monash University",
+  2003, NA, "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University",
+  2019, NA, "\\textbf{Head}, Department of Econometrics \\& Business Statistics, Monash University",
+) %>%
+  arrange(-Start) %>%
+  #filter(Start > 2000) %>%
+  mutate(End = replace_na(End, "")) %>%
+  mutate(Year = paste(Start, "--", End, sep = "")) %>%
+  select(Year, Position) %>%
+  baretable()
+```
+
+
+# Other positions
 
 ```{r positions, results='asis'}
 tribble(
   ~Start, ~End, ~Position,
-  2019, NA, "\\textbf{Head}, Department of Econometrics \\& Business Statistics, Monash University",
-  2011, NA, "\\textbf{Editor}, \\textit{Journal of Statistical Software}",
-  2005, 2018, "\\textbf{Editor-in-Chief}, \\textit{International Journal of Forecasting}",
+  2001, 2004, "\\textbf{Theory and Methods Editor}, \\emph{Australian \\& New Zealand Journal of Statistics}",
   2005, 2018, "\\textbf{Director}, International Institute of Forecasters",
-  2003, NA, "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University",
-  2001, 2003, "\\textbf{Associate Professor}, Department of Econometrics \\& Business Statistics, Monash University",
-  1999, 2000, "\\textbf{Senior Lecturer}, Department of Econometrics \\& Business Statistics, Monash University",
-  1995, 1997, "\\textbf{Lecturer}, Department of Mathematics, Monash University"
+  2005, 2018, "\\textbf{Editor-in-Chief}, \\textit{International Journal of Forecasting}",
+  2011, NA, "\\textbf{Editor}, \\textit{Journal of Statistical Software}",
 ) %>%
+  arrange(-Start) %>%
   filter(Start > 2000) %>%
   mutate(End = replace_na(End, "")) %>%
   mutate(Year = paste(Start, "--", End, sep = "")) %>%
@@ -170,20 +150,21 @@ tribble(
   baretable()
 ```
 
-# Membership of associations
+# Current memberships
 
- * Elected Member, International Statistical Institute
- * Member, International Institute of Forecasters
- * Member, International Association for Statistical Computing
- * Member, Statistical Society of Australia
+  * Elected Member, International Statistical Institute
+  * Member, International Institute of Forecasters
+  * Member, International Association for Statistical Computing
+  * Member, Statistical Society of Australia
+  * Member, International Society for Business and Industrial Statistics
 
 # Research
 
- * Since 1991 I have authored `r length(pubs)` papers, chapters or books on statistical topics. A list of these appears on pages \pageref{papersstart}--\pageref{papersend}.
- * My current research involves the analysis of large collections of time series, and includes visualization, forecasting, reconciliation and modelling. Applications include electricity demand and smart-meter data, security sensors, manufacturing data and retail sales.
- * I currently supervise six PhD students and two post-doctoral research fellows. I have previously supervised another 22 PhD students and 3 Masters students.
- * I publish the [*Hyndsight*](https://robjhyndman.com/hyndsight) blog on research issues which receives an average of about 2000 pageviews per day.
- * I have produced `r length(packages)` R packages as a result of my research. These are listed on pages \pageref{packagestart}--\pageref{packageend}.
+  * Since 1991 I have authored `r length(pubs)` papers, chapters or books on statistical topics. A list of these appears on pages \pageref{papersstart}--\pageref{papersend}.
+  * My current research involves the analysis of large collections of time series, and includes visualization, forecasting, reconciliation and modelling. Applications include electricity demand and smart-meter data, security sensors, manufacturing data and retail sales.
+  * I currently supervise six PhD students and two post-doctoral research fellows. I have previously supervised another 22 PhD students and 3 Masters students.
+  * I publish the [*Hyndsight*](https://robjhyndman.com/hyndsight) blog on research issues which receives an average of about 2000 pageviews per day.
+  * I have produced `r length(packages)` R packages as a result of my research. These are listed on pages \pageref{packagestart}--\pageref{packageend}.
 
 \newpage
 
@@ -275,17 +256,18 @@ I have acquired (in most cases jointly) about $5 million in external research gr
 
 # Advisory boards
 
-  * Member of the Scaling committee, Victorian Tertiary Admissions Centre. This committee is responsible for producing the ATAR for VCE students.
-  * Member of the Interstate Transfer Index Technical Group for the Australasian Conference of Tertiary Admissions Centres.
-  * Member of the Aboriginal and Torres Strait Islander Statistical and Technical Advisory Group for the Australian Institute of Health and Welfare.
-  * Member of the Methodology Advisory Committee for the Australian Bureau of Statistics.
+  * Member of the Scaling committee, Victorian Tertiary Admissions Centre (1994--). This committee is responsible for producing the ATAR for VCE students.
+  * Member of the Interstate Transfer Index Technical Group for the Australasian Conference of Tertiary Admissions Centres (2003--).
+  * Member of the Aboriginal and Torres Strait Islander Statistical and Technical Advisory Group for the Australian Institute of Health and Welfare (2017--).
+  * Member of the Methodology Advisory Committee for the Australian Bureau of Statistics (2010--2018).
 
-# Publications 
+\newpage
 
-```{r, results='asis'}
-rjh <- c(pubs, reports, packages)
+# Publications
+
+```{r publist, results='asis'}
 # Find editorials
-editorials <- rjh$key %in% c(
+editorials <- pubs$key %in% c(
   "hyndman2015new",
   "hyndman2015change",
   "IJFeditorial13",
@@ -295,21 +277,21 @@ editorials <- rjh$key %in% c(
   "IJFeditorial06",
   "IJFeditorial05"
 )
-printbibliography(rjh, "PhdThesis", "PhD thesis", startlabel = "papersstart")
-printbibliography(rjh, "Book", "Books")
+printbibliography(pubs, "PhdThesis", "PhD thesis", startlabel = "papersstart")
+printbibliography(pubs, "Book", "Books")
 # Normal articles excluding editorials
-printbibliography(rjh[!editorials], "Article", "Refereed research papers")
-printbibliography(rjh, c("InBook", "InCollection"), "Book chapters")
-printbibliography(rjh, "InProceedings", "Papers in refereed conference proceedings")
-printbibliography(rjh, c("TechReport", "Unpublished"), "Working papers under revision or review")
-printbibliography(rjh, "Review", "Book reviews")
+printbibliography(pubs[!editorials], "Article", "Refereed research papers")
+printbibliography(pubs, c("InBook", "InCollection"), "Book chapters")
+printbibliography(pubs, "InProceedings", "Papers in refereed conference proceedings")
+printbibliography(pubs, c("TechReport", "Unpublished"), "Working papers under revision or review")
+printbibliography(pubs, "Review", "Book reviews")
 # Now the editorials
-printbibliography(rjh[editorials], "Article", "Editorials", endlabel = "papersend")
-printbibliography(rjh, "Report", "Statistical consulting reports",
+printbibliography(pubs[editorials], "Article", "Editorials", endlabel = "papersend")
+printbibliography(reports, "Report", "Statistical consulting reports",
   startlabel = "consultingstart", endlabel = "consultingend"
 )
 # Sort R packages by title, then year.
-printbibliography(rjh, "Manual", "Software (R packages)",
+printbibliography(packages, "Manual", "Software (R packages)",
   sorting = "ty",
   startlabel = "packagestart", endlabel = "packageend"
 )

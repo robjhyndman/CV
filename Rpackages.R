@@ -1,3 +1,55 @@
+# Global variable to count number of times printbibliography has been called
+...calls <- 0L
+# Main function for printing bibliography section
+# category is a character vector of bib types
+# title is the section heading
+printbibliography <- function(bib,
+                              category = c("Article"),
+                              title = "Refereed journal papers",
+                              sorting = "ynt",
+                              startlabel = NULL,
+                              endlabel = NULL) {
+  ...calls <<- ...calls + 1L
+  if (...calls > 15) {
+    stop("Sorry, I'm out of memory")
+  }
+  types <- as_tibble(bib) %>% pull(bibtype)
+  bibsubset <- bib[types %in% category]
+  items <- paste(unlist(bibsubset$key), sep = "")
+  bibname <- paste("bib", ...calls, sep = "")
+  cat("\n\\defbibheading{", bibname, "}{\\subsection*{", title, "}}",
+    ifelse(!is.null(startlabel), paste("\\label{", startlabel, "}", sep = ""), ""),
+    sep = ""
+  )
+  cat("\n\\addtocategory{", bibname, "}{",
+    paste(items, ",", sep = "", collapse = "\n"),
+    "}",
+    sep = ""
+  )
+  cat("\n\\newrefcontext[sorting=", sorting, "]\\setcounter{papers}{0}\\pagebreak[3]", sep = "")
+  cat("\n\\printbibliography[category=", bibname, ",heading=", bibname, "]\\setcounter{papers}{0}\n", sep = "")
+  if (!is.null(endlabel)) {
+    cat("\\label{", endlabel, "}", sep = "")
+  }
+}
+
+# Function to produce very basic table, no lines or headings
+baretable <- function(tbl, digits = 0, colnames=FALSE, rownames=FALSE, ...) {
+  tbl %>%
+    xtable::xtable(digits = digits) %>%
+    print(
+      include.colnames = colnames,
+      include.rownames = rownames,
+      hline.after = NULL,
+      comment = FALSE,
+      latex.environments = NULL,
+      floating = FALSE,
+      sanitize.text.function = function(x) {
+        x
+      }
+    )
+}
+
 getbibentry <- function(pkg)
 {
   # Grab locally stored package info
@@ -60,14 +112,14 @@ getbibentry <- function(pkg)
   return(rref)
 }
 
-write.bib <- function(pkglist, filename)
+write_packages_bib <- function(pkglist, file)
 {
-  fh <- file(filename, open = "w+")
+  fh <- file(file, open = "w+")
   on.exit( if( isOpen(fh) ) close(fh) )
   for(i in seq_along(pkglist))
   {
     bibs <- getbibentry(pkglist[i])
     writeLines(toBibtex(bibs), fh)
   }
-  message(paste("OK\nResults written to",filename))
+  message(paste("OK\nResults written to",file))
 }

@@ -2,8 +2,15 @@
 $if(fontfamily)$
 \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
 $else$
-\usepackage[sfdefault,lf,t]{carlito}
 \usepackage[scaled=0.86]{DejaVuSansMono}
+$endif$
+
+% Change color to blue
+\usepackage{color,xcolor}
+$if(headcolor)$
+\definecolor{headcolor}{HTML}{$headcolor$}
+$else$
+\definecolor{headcolor}{HTML}{990000}
 $endif$
 
 \usepackage{ifxetex,ifluatex}
@@ -30,7 +37,7 @@ $endif$
 }{}
 \PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
 \usepackage[unicode=true,hidelinks]{hyperref}
-%\urlstyle{same}  % don't use monospace font for urls
+\urlstyle{same}  % don't use monospace font for urls
 $if(verbatim-in-note)$
 \VerbatimFootnotes % allows verbatim text in footnotes
 $endif$
@@ -139,14 +146,11 @@ $endfor$
 
 \usepackage{paralist,ragged2e,datetime}
 \usepackage[hyphens]{url}
-\usepackage{fancyhdr,enumitem,color,pifont}
+\usepackage{fancyhdr,enumitem,pifont}
 \usepackage[compact,small,sf,bf]{titlesec}
 \usepackage{array}
 % Define ragged right columns within tables
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
-
-% Color of headings
-\def\headcolor{\color[rgb]{0.6,0,0}}
 
 \RaggedRight
 \sloppy
@@ -171,7 +175,7 @@ $endfor$
 \def\maketitle{
 \thispagestyle{plain}
 \vspace*{-1.4cm}
-\shadebox[0.9]{17.2cm}{\sf\headcolor\hfil
+\shadebox[0.9]{17.2cm}{\sf\color{headcolor}\hfil
 \hbox to 17cm{\begin{tabular}{P{7.4cm}}
 \\[-0.3cm]
 \LARGE\textbf{\@name}\\[0.3cm]
@@ -188,9 +192,9 @@ $endfor$
 
 % Section headings
 \titlelabel{}
-\titlespacing{\section}{0pt}{2ex}{1ex}
-\titleformat*{\section}{\headcolor\large\sf\bfseries}
-\titleformat*{\subsection}{\headcolor\sf\bfseries}
+\titlespacing{\section}{0pt}{1.5ex}{0.5ex}
+\titleformat*{\section}{\color{headcolor}\large\sf\bfseries}
+\titleformat*{\subsection}{\color{headcolor}\sf\bfseries}
 \titlespacing{\subsection}{0pt}{1ex}{0.5ex}
 
 % Miscellaneous dimensions
@@ -291,12 +295,6 @@ $endif$
 \usepackage[T1]{fontenc}
 %\usepackage[t1,scale=0.86]{sourcecodepro}
 
-% Change color to blue
-\def\headcolor{\color[rgb]{0,0,0.5}}
-
-% Space before section headings
-\titlespacing{\section}{0pt}{3ex}{1ex}
-
 \name{$name$}
 
 \info{\faicon{map-marker} & $address$%
@@ -307,17 +305,6 @@ $if(twitter)$\\\faicon{twitter} & @$twitter$$endif$%
 $if(github)$\\\faicon{github} & $github$$endif$%
 }
 
-%$if(bibliography)$\bibliography{$bibliography$}$endif$
-
-\DeclareSourcemap{
-  \maps[datatype=bibtex, overwrite]{
-    \map{
-      \step[fieldset=month, null]
-    }
-  }
-}
-
-% Use useprefix because of Ashton de Silva
 \ExecuteBibliographyOptions{useprefix=true}
 
 \renewcommand{\bibfont}{\normalfont\fontsize{10}{12.4}\sffamily}
