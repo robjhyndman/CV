@@ -30,7 +30,7 @@ $endif$
 }{}
 \PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
 \usepackage[unicode=true,hidelinks]{hyperref}
-\urlstyle{same}  % don't use monospace font for urls
+%\urlstyle{same}  % don't use monospace font for urls
 $if(verbatim-in-note)$
 \VerbatimFootnotes % allows verbatim text in footnotes
 $endif$
@@ -159,9 +159,6 @@ $endfor$
 \cfoot{}
 \def\headrule{{\color[gray]{0.4}\hrule\@height\headrulewidth\@width\headwidth \vskip-\headrulewidth}}
 \makeatother
-% Date format
-\newdateformat{rjh}{\monthname~\THEYEAR}
-\rjh
 
 % Header box
 \makeatletter
@@ -193,6 +190,7 @@ $endfor$
 \titlelabel{}
 \titlespacing{\section}{0pt}{2ex}{1ex}
 \titleformat*{\section}{\headcolor\large\sf\bfseries}
+\titleformat*{\subsection}{\headcolor\sf\bfseries}
 \titlespacing{\subsection}{0pt}{1ex}{0.5ex}
 
 % Miscellaneous dimensions
@@ -235,17 +233,23 @@ $endfor$
 %\makeatother
 
 % Bibliography categories
-\DeclareBibliographyCategory{cat1}
-\DeclareBibliographyCategory{cat2}
-\DeclareBibliographyCategory{cat3}
-\DeclareBibliographyCategory{cat4}
-\DeclareBibliographyCategory{cat5}
-\DeclareBibliographyCategory{cat6}
-\DeclareBibliographyCategory{cat7}
-\DeclareBibliographyCategory{cat8}
-\DeclareBibliographyCategory{cat9}
+\DeclareBibliographyCategory{bib1}
+\DeclareBibliographyCategory{bib2}
+\DeclareBibliographyCategory{bib3}
+\DeclareBibliographyCategory{bib4}
+\DeclareBibliographyCategory{bib5}
+\DeclareBibliographyCategory{bib6}
+\DeclareBibliographyCategory{bib7}
+\DeclareBibliographyCategory{bib8}
+\DeclareBibliographyCategory{bib9}
+\DeclareBibliographyCategory{bib10}
+\DeclareBibliographyCategory{bib11}
+\DeclareBibliographyCategory{bib12}
+\DeclareBibliographyCategory{bib13}
+\DeclareBibliographyCategory{bib14}
+\DeclareBibliographyCategory{bib15}
 
-\setlength{\bibitemsep}{2.3pt}
+\setlength{\bibitemsep}{1.8pt}
 \setlength{\bibhang}{.9cm}
 %\renewcommand{\bibfont}{\fontsize{12}{14}}
 
@@ -258,23 +262,16 @@ $endfor$
 {\endlist}
 {\bibitem}
 
-\newenvironment{publications}{\label{papersstart}\vspace*{0.2cm}
-\titlespacing{\section}{0pt}{1.5ex}{1ex}\itemsep=0.00cm
-}{\label{papersend}\addtocounter{sumpapers}{-1}\refstepcounter{sumpapers}\label{sumpapers}}
-
-\def\printbib#1{\printbibliography[category=#1,heading=#1]\lastref{sumpapers}}
 \renewcommand{\bibfont}{\normalfont\fontsize{10}{12.4}\rmfamily}
 % Counters for keeping track of papers
-\newcounter{papers}\setcounter{papers}{0}
-\newcounter{sumpapers}\setcounter{sumpapers}{0}
-\def\lastref#1{\addtocounter{#1}{\value{papers}}\setcounter{papers}{0}}
+\newcounter{papers}
 
-$for(bibliography)$
-\addbibresource{$bibliography$}
-$endfor$
+$if(bibliography)$
+\bibliography{$for(bibliography)$$bibliography$,$endfor$}
+$endif$
 
 % Add all papers in the bib file.
-%\nocite{*}
+\nocite{*}
 
 % Make nicer bullets
 
@@ -310,7 +307,7 @@ $if(twitter)$\\\faicon{twitter} & @$twitter$$endif$%
 $if(github)$\\\faicon{github} & $github$$endif$%
 }
 
-$if(bibliography)$\bibliography{$bibliography$}$endif$
+%$if(bibliography)$\bibliography{$bibliography$}$endif$
 
 \DeclareSourcemap{
   \maps[datatype=bibtex, overwrite]{

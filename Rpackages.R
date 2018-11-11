@@ -43,7 +43,7 @@ getbibentry <- function(pkg)
 
   # Fix Souhaib's name
   meta$Author <- gsub("Ben Taieb", "Ben~Taieb", meta$Author)
-  
+
   # Replace R Core Team with {R Core Team}
   meta$Author <- gsub("R Core Team","{R Core Team}",meta$Author)
 
@@ -60,53 +60,14 @@ getbibentry <- function(pkg)
   return(rref)
 }
 
-write.bib <- function(pkglist)
+write.bib <- function(pkglist, filename)
 {
-  fh <- file("Rpackages.bib", open = "w+")
+  fh <- file(filename, open = "w+")
   on.exit( if( isOpen(fh) ) close(fh) )
   for(i in seq_along(pkglist))
   {
     bibs <- getbibentry(pkglist[i])
     writeLines(toBibtex(bibs), fh)
   }
-  message("OK\nResults written to Rpackages.bib")
+  message(paste("OK\nResults written to",filename))
 }
-
-write.bib(
-  c("addb",
-    "anomalous",
-    "bfast",
-    "binb",
-    "cricketdata",
-    "demography",
-    "eechidna",
-    "emma",
-    "expsmooth",
-    "fds",
-    "fma",
-    "forecast",
-    "fpp",
-    "fpp2",
-    "ftsa",
-    "hdrcde",
-    "hts",
-    "Mcomp",
-    "MEFM",
-    "MonashEBSTemplates",
-    "ozdata",
-    "rainbow",
-    "rmarkdown",
-    "robets",
-    "smoothAPC",
-    "stR",
-    "sugrrants",
-    "thief",
-    "tscompdata",
-    "tsfeatures",
-    "tsgeneration",
-    "tsibble",
-    "tsibbledata",
-    "tsibblestats",
-    "fable"
-    ))
-
