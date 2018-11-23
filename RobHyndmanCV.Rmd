@@ -8,14 +8,9 @@ twitter: robjhyndman
 github: robjhyndman
 date: "`r format(Sys.time(), '%B %Y')`"
 bibliography: [rjhpubs.bib,rjhreports.bib,Rpackages.bib]
-geometry: "left=1.75cm,right=1.75cm,top=2.2cm,bottom=2cm"
 headcolor: "000088"
-fontfamily: carlito
-fontfamilyoptions: "sfdefault,lf,t"
 output:
-  bookdown::pdf_document2:
-    template: CVtemplate.tex
-    citation_package: biblatex
+  vitae::hyndman:
     keep_tex: yes
 ---
 
@@ -50,6 +45,7 @@ write_packages_bib(
     "Mcomp",
     "MEFM",
     "MonashEBSTemplates",
+    "ozbabynames",
     "ozdata",
     "rainbow",
     "rmarkdown",

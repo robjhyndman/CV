@@ -1,4 +1,8 @@
+%% Template for a CV
+%% Author: Rob J Hyndman
+
 \documentclass[10pt,a4paper,]{article}
+\usepackage[scaled=0.86]{DejaVuSansMono}
 \usepackage[sfdefault,lf,t]{carlito}
 
 % Change color to blue
@@ -10,7 +14,15 @@
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{csquotes}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
@@ -21,7 +33,8 @@
 \PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
 \usepackage[unicode=true,hidelinks]{hyperref}
 \urlstyle{same}  % don't use monospace font for urls
-\usepackage[left=1.75cm,right=1.75cm,top=2.2cm,bottom=2cm]{geometry}
+\usepackage{geometry}
+\geometry{left=1.75cm,right=1.75cm,top=2.2cm,bottom=2cm}
 
 \usepackage{longtable,booktabs}
 % Fix footnotes in tables (requires footnote package)
@@ -68,25 +81,32 @@
 \makeatother
 
 % Header box
+\usepackage{tabularx}
+
 \makeatletter
 \def\name#1{\def\@name{#1}}
 \def\info#1{\def\@info{#1}}
 \makeatother
 \newcommand{\shadebox}[3][.9]{\fcolorbox[gray]{0}{#1}{\parbox{#2}{#3}}}
 
+\usepackage{calc}
+\newlength{\headerboxwidth}
+\setlength{\headerboxwidth}{\textwidth}
+\addtolength{\headerboxwidth}{0.2cm}
 \makeatletter
 \def\maketitle{
 \thispagestyle{plain}
 \vspace*{-1.4cm}
-\shadebox[0.9]{17.2cm}{\sf\color{headcolor}\hfil
-\hbox to 17cm{\begin{tabular}{P{7.4cm}}
+\shadebox[0.9]{\headerboxwidth}{\sf\color{headcolor}\hfil
+\hbox to \textwidth{\begin{tabular}{l}
 \\[-0.3cm]
-\LARGE\textbf{\@name}\\[0.3cm]
-\Large\textbf{Curriculum Vitae}\\[0.6cm]
+\LARGE\textbf{\@name}
+\\[0.7cm]
+\normalsize\textbf{Curriculum Vitae}\\
 \normalsize November 2018
 \end{tabular}
 \hfill\hbox{\fontsize{9}{12}\sf
-\begin{tabular}{@{}rP{7.5cm}@{}}
+\begin{tabular}{@{}rp{6.5cm}@{}}
 \@info
 \end{tabular}}}\hfil
 }
@@ -198,13 +218,18 @@
 
 \name{Rob J Hyndman}
 
-\info{\faicon{map-marker} & Department of Econometrics \& Business Statistics, Monash University,
-VIC 3800, Australia.%
-\\\faicon{home} & robjhyndman.com%
+
+
+\info{\faicon{map-marker} & \begin{minipage}[t]{6.5cm}\raggedright Department of Econometrics \& Business Statistics, Monash University,
+VIC 3800, Australia.\end{minipage}\\[-0.3cm]%
+\\\faicon{home} & \href{http://robjhyndman.com}{robjhyndman.com}%
 \\\faicon{phone} & +61 3 9905 5141%
 \\\faicon{envelope} & \href{mailto:Rob.Hyndman@monash.edu}{\nolinkurl{Rob.Hyndman@monash.edu}}%
-\\\faicon{twitter} & @robjhyndman%
-\\\faicon{github} & robjhyndman%
+\\\faicon{twitter} & \href{https://twitter.com/robjhyndman}{@robjhyndman}%
+\\\faicon{github} & \href{https://github.com/robjhyndman}{robjhyndman}%
+%
+%
+%
 }
 
 \ExecuteBibliographyOptions{useprefix=true}
@@ -212,6 +237,19 @@ VIC 3800, Australia.%
 \renewcommand{\bibfont}{\normalfont\fontsize{10}{12.4}\sffamily}
 %\usepackage{inconsolata}
 
+
+
+% Templates for detailed entries
+% Arguments: what when with where why
+\usepackage{etoolbox}
+\def\detaileditem#1#2#3#4#5{
+#2 & #1 & #3 & #4\\\ifx#5\empty\else\multicolumn{4}{p{\textwidth}}{\begin{minipage}{\textwidth}\renewcommand{\labelitemi}{{\footnotesize\ding{228}}}\begin{itemize}#5\end{itemize}\end{minipage}}\\\fi}
+\def\detailedsection#1{\begin{tabular}{lp{6cm}p{6cm}p{3cm}}#1\end{tabular}}
+
+% Templates for brief entries
+% Arguments: what when with
+\def\briefitem#1#2#3{#2 & #1 & #3 \\}
+\def\briefsection#1{\begin{tabular}{lp{6cm}p{10cm}}#1\end{tabular}}
 
 \begin{document}
 \maketitle
@@ -401,9 +439,9 @@ listed below.
   Keynote speaker, \emph{Forecasting without forecasters}, International
   Symposium on Forecasting, Seoul, June 2013.
 \item
-  Keynote speaker, \emph{Automatic time series forecasting},
-  \enquote{New Trends on Intelligent Systems and Soft Computing 2014},
-  University of Granada, Spain, February 2014.
+  Keynote speaker, \emph{Automatic time series forecasting}, ``New
+  Trends on Intelligent Systems and Soft Computing 2014'', University of
+  Granada, Spain, February 2014.
 \item
   Workshop leader, \emph{State space models for time series}, Australian
   Bureau of Statistics, May 2014.
@@ -451,13 +489,13 @@ listed below.
 \begin{itemize}
 \tightlist
 \item
-  Student evaluations for the undergraduate subject \enquote{Applied
-  forecasting for business and economics} in 2018 rated my teaching at
+  Student evaluations for the undergraduate subject ``Applied
+  forecasting for business and economics'' in 2018 rated my teaching at
   4.82 out of 5.
 \item
-  In 1998, I received the award for \enquote{Excellence in teaching} by
-  the Monash Science Society. This is awarded by the students of the
-  Science faculty.
+  In 1998, I received the award for ``Excellence in teaching'' by the
+  Monash Science Society. This is awarded by the students of the Science
+  faculty.
 \item
   I am author of an innovative textbook with George Athanasopoulos
   entitled \emph{Forecasting: principles and practice}
