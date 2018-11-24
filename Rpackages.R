@@ -118,8 +118,11 @@ write_packages_bib <- function(pkglist, file)
   on.exit( if( isOpen(fh) ) close(fh) )
   for(i in seq_along(pkglist))
   {
-    bibs <- getbibentry(pkglist[i])
-    writeLines(toBibtex(bibs), fh)
+    bibs <- try(getbibentry(pkglist[i]))
+    if("try-error" %in% class(bibs))
+      stop(paste("Package not found:",pkglist[i]))
+    else
+      writeLines(toBibtex(bibs), fh)
   }
   message(paste("OK\nResults written to",file))
 }

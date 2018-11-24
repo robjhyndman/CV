@@ -1,6 +1,6 @@
 ---
 name: Rob J Hyndman
-address: "Department of Econometrics & Business Statistics, Monash University, VIC 3800, Australia."
+address: "Department of Econometrics & Business Statistics,\\tabularnewline Monash University, VIC 3800, Australia."
 www: robjhyndman.com
 phone: +61 3 9905 5141
 email: "Rob.Hyndman@monash.edu"
@@ -46,7 +46,7 @@ write_packages_bib(
     "MEFM",
     "MonashEBSTemplates",
     "ozbabynames",
-    "ozdata",
+    #"ozdata",
     "rainbow",
     "rmarkdown",
     "robets",
@@ -60,7 +60,8 @@ write_packages_bib(
     "tsibble",
     "tsibbledata",
     "tsibblestats",
-    "fable"),
+    "fable",
+    "vitae"),
   file="Rpackages.bib")
 ```
 
@@ -127,7 +128,7 @@ tribble(
 # Honours and awards
 
 ```{r awards, results='asis'}
-tribble(
+awards <- tribble(
   ~Year, ~Award,
   2016, "KNAW Visiting Professor, TU/Eindhoven, Netherlands",
   2010, "Dean's Award for excellence in innovation and external collaboration, Monash University",
@@ -143,6 +144,7 @@ tribble(
   1987, "Norma McArthur Prize in Statistics, University of Melbourne",
   1986, "Second Maurice H.\ Belz Prize in Statistics, University of Melbourne"
 ) %>%
+  filter(!grepl("HP Innovation", Award)) %>%
   baretable()
 ```
 

@@ -92,13 +92,13 @@
 \usepackage{calc}
 \newlength{\headerboxwidth}
 \setlength{\headerboxwidth}{\textwidth}
-\addtolength{\headerboxwidth}{0.2cm}
+%\addtolength{\headerboxwidth}{0.2cm}
 \makeatletter
 \def\maketitle{
 \thispagestyle{plain}
 \vspace*{-1.4cm}
 \shadebox[0.9]{\headerboxwidth}{\sf\color{headcolor}\hfil
-\hbox to \textwidth{\begin{tabular}{l}
+\hbox to 0.98\textwidth{\begin{tabular}{l}
 \\[-0.3cm]
 \LARGE\textbf{\@name}
 \\[0.7cm]
@@ -106,7 +106,7 @@
 \normalsize November 2018
 \end{tabular}
 \hfill\hbox{\fontsize{9}{12}\sf
-\begin{tabular}{@{}rp{6.5cm}@{}}
+\begin{tabular}{@{}rl@{}}
 \@info
 \end{tabular}}}\hfil
 }
@@ -217,16 +217,15 @@
 %\usepackage[t1,scale=0.86]{sourcecodepro}
 
 \name{Rob J Hyndman}
-
-
-
-\info{\faicon{map-marker} & \begin{minipage}[t]{6.5cm}\raggedright Department of Econometrics \& Business Statistics, Monash University,
-VIC 3800, Australia.\end{minipage}\\[-0.3cm]%
-\\\faicon{home} & \href{http://robjhyndman.com}{robjhyndman.com}%
-\\\faicon{phone} & +61 3 9905 5141%
-\\\faicon{envelope} & \href{mailto:Rob.Hyndman@monash.edu}{\nolinkurl{Rob.Hyndman@monash.edu}}%
-\\\faicon{twitter} & \href{https://twitter.com/robjhyndman}{@robjhyndman}%
-\\\faicon{github} & \href{https://github.com/robjhyndman}{robjhyndman}%
+\def\imagetop#1{\vtop{\null\hbox{#1}}}
+\info{%
+\raisebox{-0.05cm}{\imagetop{\faicon{map-marker}}} & \imagetop{\begin{tabular}{@{}l@{}}Department of Econometrics \& Business Statistics,\tabularnewline Monash
+University, VIC 3800, Australia.\end{tabular}}\\
+\faicon{home} & \href{http://robjhyndman.com}{robjhyndman.com}\\%
+\faicon{phone} & +61 3 9905 5141\\%
+\faicon{envelope} & \href{mailto:Rob.Hyndman@monash.edu}{\nolinkurl{Rob.Hyndman@monash.edu}}\\%
+\faicon{twitter} & \href{https://twitter.com/robjhyndman}{@robjhyndman}\\%
+\faicon{github} & \href{https://github.com/robjhyndman}{robjhyndman}\\%
 %
 %
 %
@@ -242,14 +241,26 @@ VIC 3800, Australia.\end{minipage}\\[-0.3cm]%
 % Templates for detailed entries
 % Arguments: what when with where why
 \usepackage{etoolbox}
+
+% Templates for detailed entries
+% Arguments: what when with where why
 \def\detaileditem#1#2#3#4#5{
-#2 & #1 & #3 & #4\\\ifx#5\empty\else\multicolumn{4}{p{\textwidth}}{\begin{minipage}{\textwidth}\renewcommand{\labelitemi}{{\footnotesize\ding{228}}}\begin{itemize}#5\end{itemize}\end{minipage}}\\\fi}
-\def\detailedsection#1{\begin{tabular}{lp{6cm}p{6cm}p{3cm}}#1\end{tabular}}
+#2 & \parbox[t]{0.85\textwidth}{%
+      \textbf{#1}\hfill{\footnotesize #3}\\
+      \ifx#4\empty\else#4\par\fi%
+      \ifx#5\empty\else{%
+        \begin{minipage}{0.7\textwidth}%
+        \begin{itemize}#5\end{itemize}%
+        \end{minipage}}\fi%
+      \vspace{\parsep}}\\}
+\def\detailedsection#1{\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}#1\end{tabular*}}
 
 % Templates for brief entries
 % Arguments: what when with
-\def\briefitem#1#2#3{#2 & #1 & #3 \\}
-\def\briefsection#1{\begin{tabular}{lp{6cm}p{10cm}}#1\end{tabular}}
+\def\briefitem#1#2#3{
+#2 & \parbox[t]{0.85\textwidth}{%
+      \textbf{#1}\\{\footnotesize #3}}\\}
+\def\briefsection#1{\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}#1\end{tabular*}}
 
 \begin{document}
 \maketitle
@@ -295,7 +306,6 @@ qualifications}\label{education-and-qualifications}}
 \begin{tabular}{rl}
   2016 & KNAW Visiting Professor, TU/Eindhoven, Netherlands \\ 
   2010 & Dean's Award for excellence in innovation and external collaboration, Monash University \\ 
-  2010 & HP Innovation Research Award \\ 
   2008 & Dean's award for excellence in research, Monash University \\ 
   2008 & Vice-Chancellor's award for postgraduate supervisor of the year, Monash University \\ 
   2007 & Knibbs Lecturer, Statistical Society of Australia (ACT branch) \\ 
@@ -349,7 +359,7 @@ qualifications}\label{education-and-qualifications}}
   research issues which receives an average of about 2000 pageviews per
   day.
 \item
-  I have produced 35 R packages as a result of my research. These are
+  I have produced 36 R packages as a result of my research. These are
   listed on pages \pageref{packagestart}--\pageref{packageend}.
 \end{itemize}
 
@@ -1026,7 +1036,7 @@ Rhts,
 RMcomp,
 RMEFM,
 RMonashEBSTemplates,
-Rozdata,
+Rozbabynames,
 Rrainbow,
 Rrmarkdown,
 Rrobets,
@@ -1040,7 +1050,8 @@ Rtsgeneration,
 Rtsibble,
 Rtsibbledata,
 Rtsibblestats,
-Rfable,}
+Rfable,
+Rvitae,}
 \newrefcontext[sorting=ty]\setcounter{papers}{0}\pagebreak[3]\printbibliography[category=bib10,heading=bib10]\setcounter{papers}{0}
 \label{packageend}
 
