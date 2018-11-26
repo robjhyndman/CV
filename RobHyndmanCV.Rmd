@@ -171,19 +171,28 @@ awards <- tribble(
 
 ```{r grants}
 grants <- readxl::read_xls("Grant_income.xls")
+grants %>%
+  group_by(Source) %>%
+  summarise(
+    Start = min(Start, na.rm=TRUE),
+    End = max(End, na.rm=TRUE),
+    #Research = ifelse(any(Research=="Y"), "Y", "N"),
+    Amount = sum(Amount))
+
+
 # Combine ESIPC, WesternPower, AEMO, Vencorp
 #peakdemand <- grants %>%
 #  filter_at(
-#    vars(Project), 
+#    vars(Project),
 #    any_vars(grepl("ESIPC|Vencorp|Westernpower|AEMO",.)))
 # Combine Tourism Australia grants
 tourism <- grants %>%
   filter_at(
-    vars(Source), 
+    vars(Source),
     any_vars(grepl("Tourism Australia",.)))
 grants <- grants %>%
   filter_at(
-    vars(Source), 
+    vars(Source),
     any_vars(!grepl("Tourism Australia",.))) %>%
   bind_rows(
 #    summarise(peakdemand,
@@ -213,7 +222,7 @@ grants %>%
   filter(Amount > 19999, Research=="Y") %>%
   mutate(
     Time = paste0(Start, ifelse(is.na(End),"",paste0("--",End))),
-    Entry = paste(People, ". ``", Title, "''. ", 
+    Entry = paste(People, ". ``", Title, "''. ",
                   "\\emph{Funding from ", Source,"}",
                   sep=""),
     Amount = paste("\\$",prettyNum(Amount, big.mark=","), sep="")
