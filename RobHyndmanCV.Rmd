@@ -172,25 +172,41 @@ awards <- tribble(
 ```{r grants}
 grants <- readxl::read_xls("Grant_income.xls")
 # Combine ESIPC, WesternPower, AEMO, Vencorp
-peakdemand <- grants %>%
+#peakdemand <- grants %>%
+#  filter_at(
+#    vars(Project), 
+#    any_vars(grepl("ESIPC|Vencorp|Westernpower|AEMO",.)))
+# Combine Tourism Australia grants
+tourism <- grants %>%
   filter_at(
-    vars(Project), 
-    any_vars(grepl("ESIPC|Vencorp|Westernpower|AEMO",.)))
+    vars(Source), 
+    any_vars(grepl("Tourism Australia",.)))
 grants <- grants %>%
   filter_at(
-    vars(Project), 
-    any_vars(!grepl("ESIPC|Vencorp|Westernpower|AEMO",.))) %>%
-  bind_rows(summarise(peakdemand,
-    Project = "AEMO, ESPIC, Vencorp, Westernpower",
-    Start = min(Start),
-    End = max(End, na.rm=TRUE),
-    Amount = sum(Amount)
-  ))
-grants
+    vars(Source), 
+    any_vars(!grepl("Tourism Australia",.))) %>%
+  bind_rows(
+#    summarise(peakdemand,
+#      Source = "AEMO, ESPIC, Vencorp, Westernpower",
+#      People = "RJ Hyndman, S Fan",
+#      Title = "Peak demand forecasting",
+#      Research = "Y",
+#      Start = min(Start),
+#      End = max(End, na.rm=TRUE),
+#      Amount = sum(Amount)),
+    summarise(tourism,
+      Source = "Tourism Australia",
+      People = "RJ Hyndman, G Athanasopoulos",
+      Title = "Tourism forecasting",
+      Start = min(Start, na.rm=TRUE),
+      End = max(End, na.rm=TRUE),
+      Research = "Y",
+      Amount = sum(Amount))) %>%
+  arrange(Start, End)
 ```
 
 
-I have acquired (in most cases jointly) about $`r sum(grants[,"Amount"], na.rm=TRUE)/1e6` million in external research grants since 2000. External research grants over $20,000 are listed below.\vspace*{0.2cm}
+I have acquired (in most cases jointly) about $`r round(sum(grants[,"Amount"], na.rm=TRUE)/1e6,1)` million in external research grants since 2000. External research grants over $20,000 are listed below.\vspace*{0.2cm}
 
 ```{r grantstable, results='asis'}
 grants %>%
@@ -198,7 +214,7 @@ grants %>%
   mutate(
     Time = paste0(Start, ifelse(is.na(End),"",paste0("--",End))),
     Entry = paste(People, ". ``", Title, "''. ", 
-                  "\\emph{Funding from ", Project,"}",
+                  "\\emph{Funding from ", Source,"}",
                   sep=""),
     Amount = paste("\\$",prettyNum(Amount, big.mark=","), sep="")
   ) %>%
