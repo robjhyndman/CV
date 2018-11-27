@@ -9,11 +9,7 @@ github: robjhyndman
 date: "`r format(Sys.time(), '%B %Y')`"
 bibliography: [rjhpubs.bib,rjhreports.bib,Rpackages.bib]
 headcolor: "000088"
-output:
-  vitae::hyndman:
-    keep_tex: yes
-    includes:
-      in_header: preamble.tex
+output: vitae::hyndman
 ---
 
 ```{r setup, include=FALSE}
@@ -174,7 +170,7 @@ grants <- read_csv("Grant_income.csv")
 sumgrants <- grants %>%
   pull(Amount) %>%
   c(100000) %>%
-  sum(na.rm=TRUE) 
+  sum(na.rm=TRUE)
 ```
 
 I have acquired (in most cases jointly) about $`r sprintf("%2.1f", sumgrants/1e6)` million in external research grants since 2000. External research grants over $20,000 are listed below.\vspace*{0.2cm}
