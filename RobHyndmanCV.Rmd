@@ -170,15 +170,18 @@ awards <- tribble(
 # Grants
 
 ```{r grants}
-grants <- readxl::read_xls("Grant_income.xls")
+grants <- read_csv("Grant_income.csv")
+sumgrants <- grants %>%
+  pull(Amount) %>%
+  c(100000) %>%
+  sum(na.rm=TRUE) 
 ```
 
-
-I have acquired (in most cases jointly) about $`r round(sum(grants[,"Amount"], na.rm=TRUE)/1e6,1)` million in external research grants since 2000. External research grants over $20,000 are listed below.\vspace*{0.2cm}
+I have acquired (in most cases jointly) about $`r sprintf("%2.1f", sumgrants/1e6)` million in external research grants since 2000. External research grants over $20,000 are listed below.\vspace*{0.2cm}
 
 ```{r grantstable, results='asis'}
 grants %>%
-  filter(Amount > 19999, Research=="Y") %>%
+  filter(Amount > 19999, Type=="Research") %>%
   mutate(
     Time = paste0(Start, ifelse(is.na(End),"",paste0("--",End))),
     Entry = paste(People, ". ``", Title, "''. ",
@@ -186,7 +189,7 @@ grants %>%
                   sep=""),
     Amount = paste("\\$",prettyNum(Amount, big.mark=","), sep="")
   ) %>%
-  arrange(Time) %>%
+  arrange(Time, desc(Amount)) %>%
   select(Time, Entry, Amount) %>%
   baretable(align='llp{13.3cm}r',
             hline.after=c(0,NROW(.)),
@@ -195,52 +198,6 @@ grants %>%
               pos=as.list(seq(NROW(.))),
               command=rep("\\\\[-0.2cm]",NROW(.))))
 ```
-
-\def\next{\\\\[-0.2cm]}
-\begin{tabular}{@{}lP{13.3cm}r@{}}
-\toprule
-2000 & R.J. Hyndman. ``Forecasting Telstra market share''. \emph{Funding from Telstra Australia.} &\$31,000
-\next
-2000 & R.J. Hyndman. ``Electricity demand forecasting''. \emph{Funding from TXU.} & \$27,933
-\next
-2001--2002 & R.J. Hyndman. ``Injury management pilot evaluation''. \emph{Funding from Workcover NSW.} &\$42,182
-\next
-2002 & R.J. Hyndman. ``Evaluation of PBS Forward Estimates methodology''. \emph{Funding from Department of Health and Ageing.} &\$55,341
-\next
-2004--2008 & R.J. Hyndman. ``Analysis of NPS interventions''. \emph{Funding from the National Prescribing Service.} &\$120,000
-\next
-2004--2006 & G.M. Martin, R.D. Snyder and R.J. Hyndman. ``New approaches to the analysis of count time series''. \emph{Funding from the Australian Research Council.} &\$172,317
-\next
-2006--2010 & R.J. Hyndman and G. Athanasopoulos. ``Tourism Forecasting''. \emph{Funding from Tourism Australia and the Sustainable Tourism Cooperative Research Centre.} &\$312,017
-\next
-2007--2010 & R.J. Hyndman, ``Peak energy demand forecasting''. \emph{Funding from the Electricity Supply Industry Planning Council, Victorian Energy Corporation, Western Power and the Australian Energy Market Operator.} &\$606,995
-\next
-2008 & R.J. Hyndman. ``PBS Forecasting Model Review''. \emph{Funding from the Commonwealth Department of Health and Ageing.} &\$46,514
-\next
-2009--2011 & Erbas, B., Abramson, M., Tang, M., Allen, K., Newbigin, E., Dharmage, S., Hyndman, R.J. ``The impact of outdoor aeroallergen exposure on asthma exacerbations in children and adolescents''. \emph{Funding from the National Health and Medical Research Council.} &\$454,550
-\next
-2010--2011 & R.J. Hyndman. ``New methods for hierarchical forecasting with application to HP business forecasting''. *Funding from the HP Labs Innovation Research Program*. &US\$27,800
-\next
-2011--2015 & R.J. Hyndman, ``Energy demand forecasting''. \emph{Funding from the Australian Energy Market Operator.} &\$1,106,900
-\next
-2011--2013 & R.J. Hyndman and S. Fan, ``Development of electricity peak demand and energy forecasts for the SWIS''. \emph{Funding from the Independent Market Operator (Western Australia)}. &\$93,450
-\next
-2013--2016 & K.A. Smith-Miles, R.J. Hyndman, L. Villanova and M. Kah. ``Optimising experimental design for robust product development: a cast study for high-efficiency energy generation''. *ARC Linkage Grant with Ceramic Fuel Cells Ltd*. & \$362,389
-\next
-2014--2017 & A.N. Panagiotelis, G. Athanasopoulos, R.J. Hyndman, F. Vahid. ``Macroeconomic forecasting in a `Big Data' world''. *ARC Discovery Grant*.& \$451,034
-\next
-2017--2018 & R.J. Hyndman, S. Ben Taieb, C. Bergmeir. ``Demand forecasting for large-scale dynamic hierarchies in a big data environment'' *Funding from Huawei Innovation Research Program* & \$86,586
-\next
-2017--2019& R.J. Hyndman, D. Cook, P. Toscas. ``RiskLab Projects: Econometrics''. \emph{RiskLab at Data61}. & \$151,200
-\next
-2017--2019 & K.A. Smith-Miles, R.J. Hyndman, M. Munoz Acosta, J. Katsifolis. ``Intruder Alert! Detecting and classifying events in noisy time series''. *ARC Linkage Grant*. & \$204,000
-\next
-2017--2021 & Hall, P., Bartlett, P., Bean, N., Burrage, K., DeGier, J., Delaigle, A., Forrester, P., Geweke, J., Kohn, R., Kroese, D., Mengersen, K., Pettit, A., Pollett, P., Roughan, M., Ryan, L., Taylor, P., Turner, I., Wand, M., Garoni, T., Smith-Miles, K. A., Caley, M., Churches, T., Elazar, D., Gupta, A., Harch, B., Tam, S., Weegberg, K., Willinger, W. \& Hyndman, R.J. *ARC Centre of Excellence for Mathematical and Statistical Frontiers* & \$554,329
-\\
-\bottomrule
-\end{tabular}
-
-\newpage
 
 # Major invited talks
 
