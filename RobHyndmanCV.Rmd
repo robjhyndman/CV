@@ -9,6 +9,9 @@ github: robjhyndman
 date: "`r format(Sys.time(), '%B %Y')`"
 headcolor: "000088"
 output: vitae::hyndman
+header_includes:
+  - \ExecuteBibliographyOptions{useprefix=true}
+  - renewcommand{\bibfont}{\normalfont\fontsize{10}{12.4}\sffamily}
 ---
 
 ```{r setup, include=FALSE}
