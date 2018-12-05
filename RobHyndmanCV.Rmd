@@ -7,7 +7,6 @@ email: "Rob.Hyndman@monash.edu"
 twitter: robjhyndman
 github: robjhyndman
 date: "`r format(Sys.time(), '%B %Y')`"
-bibliography: [rjhpubs.bib,rjhreports.bib,Rpackages.bib]
 headcolor: "000088"
 output: vitae::hyndman
 ---
@@ -242,9 +241,9 @@ grants %>%
 
 # Publications
 
-```{r publist, results='asis'}
+```{r publist}
 # Find editorials
-editorials <- pubs$key %in% c(
+editorials <- c(
   "hyndman2015new",
   "hyndman2015change",
   "IJFeditorial13",
@@ -254,22 +253,29 @@ editorials <- pubs$key %in% c(
   "IJFeditorial06",
   "IJFeditorial05"
 )
-print_bibliography(pubs, "PhdThesis", "PhD thesis", startlabel = "papersstart")
-print_bibliography(pubs, "Book", "Books")
+bibliography_entries("rjhpubs.bib", "PhD thesis", startlabel = "papersstart") %>% 
+  filter(bibtype == "PhdThesis")
+bibliography_entries("rjhpubs.bib", "Books") %>% 
+  filter(bibtype == "Book")
 # Normal articles excluding editorials
-print_bibliography(pubs[!editorials], "Article", "Refereed research papers")
-print_bibliography(pubs, c("InBook", "InCollection"), "Book chapters")
-print_bibliography(pubs, "InProceedings", "Papers in refereed conference proceedings")
-print_bibliography(pubs, c("TechReport", "Unpublished"), "Working papers under revision or review")
-print_bibliography(pubs, "Review", "Book reviews")
+bibliography_entries("rjhpubs.bib", "Refereed research papers") %>% 
+  filter(bibtype == "Article", !(key %in% editorials))
+bibliography_entries("rjhpubs.bib", "Book chapters") %>% 
+  filter(bibtype %in% c("InBook", "InCollection"))
+bibliography_entries("rjhpubs.bib", "Papers in refereed conference proceedings") %>% 
+  filter(bibtype == "InProceedings")
+bibliography_entries("rjhpubs.bib", "Working papers under revision or review") %>% 
+  filter(bibtype %in% c("TechReport", "Unpublished"))
+bibliography_entries("rjhpubs.bib", "Book reviews") %>% 
+  filter(bibtype == "Review")
 # Now the editorials
-print_bibliography(pubs[editorials], "Article", "Editorials", endlabel = "papersend")
-print_bibliography(reports, "Report", "Statistical consulting reports",
+bibliography_entries("rjhpubs.bib", "Editorials", endlabel = "papersend") %>% 
+  filter(bibtype == "Article", key %in% editorials)
+bibliography_entries("rjhreports.bib", "Statistical consulting reports",
   startlabel = "consultingstart", endlabel = "consultingend"
 )
 # Sort R packages by title, then year.
-print_bibliography(packages, "Manual", "Software (R packages)",
-  sorting = "ty",
-  startlabel = "packagestart", endlabel = "packageend"
+bibliography_entries("Rpackages.bib", "Software (R packages)",
+  sorting = "ty", startlabel = "packagestart", endlabel = "packageend"
 )
 ```
