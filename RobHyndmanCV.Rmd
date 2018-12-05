@@ -100,8 +100,8 @@ tribble(
   arrange(-Start) %>%
   #filter(Start > 2000) %>%
   mutate(End = replace_na(End, "")) %>%
-  mutate(Year = paste(Start, "--", End, sep = "")) %>%
-  select(Year, Position) %>%
+  mutate(Years = paste(Start, "--", End, sep = "")) %>%
+  select(Years, Position) %>%
   baretable()
 ```
 
@@ -253,23 +253,23 @@ editorials <- c(
   "IJFeditorial06",
   "IJFeditorial05"
 )
-bibliography_entries("rjhpubs.bib", "PhD thesis", startlabel = "papersstart") %>% 
+bibliography_entries("rjhpubs.bib", "PhD thesis", startlabel = "papersstart") %>%
   filter(bibtype == "PhdThesis")
-bibliography_entries("rjhpubs.bib", "Books") %>% 
+bibliography_entries("rjhpubs.bib", "Books") %>%
   filter(bibtype == "Book")
 # Normal articles excluding editorials
-bibliography_entries("rjhpubs.bib", "Refereed research papers") %>% 
+bibliography_entries("rjhpubs.bib", "Refereed research papers") %>%
   filter(bibtype == "Article", !(key %in% editorials))
-bibliography_entries("rjhpubs.bib", "Book chapters") %>% 
+bibliography_entries("rjhpubs.bib", "Book chapters") %>%
   filter(bibtype %in% c("InBook", "InCollection"))
-bibliography_entries("rjhpubs.bib", "Papers in refereed conference proceedings") %>% 
+bibliography_entries("rjhpubs.bib", "Papers in refereed conference proceedings") %>%
   filter(bibtype == "InProceedings")
-bibliography_entries("rjhpubs.bib", "Working papers under revision or review") %>% 
+bibliography_entries("rjhpubs.bib", "Working papers under revision or review") %>%
   filter(bibtype %in% c("TechReport", "Unpublished"))
-bibliography_entries("rjhpubs.bib", "Book reviews") %>% 
+bibliography_entries("rjhpubs.bib", "Book reviews") %>%
   filter(bibtype == "Review")
 # Now the editorials
-bibliography_entries("rjhpubs.bib", "Editorials", endlabel = "papersend") %>% 
+bibliography_entries("rjhpubs.bib", "Editorials", endlabel = "papersend") %>%
   filter(bibtype == "Article", key %in% editorials)
 bibliography_entries("rjhreports.bib", "Statistical consulting reports",
   startlabel = "consultingstart", endlabel = "consultingend"
