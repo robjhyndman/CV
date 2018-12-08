@@ -11,8 +11,10 @@ write_packages_bib <- function(pkglist, file)
     bibs <- try(getbibentry(pkglist[i]))
     if("try-error" %in% class(bibs))
       stop(paste("Package not found:",pkglist[i]))
-    else
+    else {
+      cat("\n Writing",pkglist[i])
       writeLines(toBibtex(bibs), fh)
+    }
   }
   message(paste("OK\nResults written to",file))
 }
