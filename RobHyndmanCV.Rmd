@@ -57,6 +57,7 @@ write_packages_bib(
     "sugrrants",
     "thief",
     "tscompdata",
+    "tsdl",
     "tsfeatures",
     "tsgeneration",
     "tsibble",
