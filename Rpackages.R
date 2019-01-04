@@ -70,7 +70,21 @@ getbibentry <- function(pkg)
   # Replace R Core Team with {R Core Team}
   meta$Author <- gsub("R Core Team","{R Core Team}",meta$Author)
 
-    # Create bibentry
+  # Replace AEC
+  meta$Author <- gsub("Commonwealth of Australia AEC","{Commonwealth of Australia AEC}",meta$Author)
+
+  # Turn contributions into note (for demography)
+  if(grepl("with contributions", meta$Author)) {
+    author_split <- str_split(meta$Author, "with contributions ")
+    meta$Author <- author_split[[1]][1]
+    meta$Note <- paste0("with contributions ",author_split[[1]][2])
+    meta$Note <- gsub('^\\.|\\.$', '', meta$Note)
+    meta$Note <- gsub('(^[a-z])','\\U\\1', meta$Note, perl=TRUE)
+  }
+  else
+    meta$Note <- NULL
+
+  # Create bibentry
   rref <- bibentry(
     bibtype="Manual",
     title=paste(meta$Package,": ",meta$Title, sep=""),
@@ -78,7 +92,8 @@ getbibentry <- function(pkg)
     author = meta$Author,
     url = strsplit(meta$URL,",")[[1]][1],
     version = meta$Version,
-    key = paste("R",meta$Package,sep="")
+    key = paste("R",meta$Package,sep=""),
+    note = meta$Note
   )
   return(rref)
 }
