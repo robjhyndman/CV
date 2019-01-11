@@ -256,29 +256,78 @@ editorials <- c(
   "IJFeditorial06",
   "IJFeditorial05"
 )
-bibliography_entries("rjhpubs.bib", "PhD thesis", startlabel = "papersstart") %>%
+```
+
+## PhD thesis
+```{r thesis}
+bibliography_entries("rjhpubs.bib", startlabel = "papersstart") %>%
   filter(bibtype == "PhdThesis")
-bibliography_entries("rjhpubs.bib", "Books") %>%
-  filter(bibtype == "Book")
+```
+
+## Books
+```{r books}
+bibliography_entries("rjhpubs.bib") %>%
+  filter(bibtype == "Book") %>% 
+  arrange(year)
+```
+
+## Refereed research papers
+```{r research-papers}
 # Normal articles excluding editorials
-bibliography_entries("rjhpubs.bib", "Refereed research papers") %>%
-  filter(bibtype == "Article", !(key %in% editorials))
-bibliography_entries("rjhpubs.bib", "Book chapters") %>%
-  filter(bibtype %in% c("InBook", "InCollection"))
-bibliography_entries("rjhpubs.bib", "Papers in refereed conference proceedings") %>%
-  filter(bibtype == "InProceedings")
-bibliography_entries("rjhpubs.bib", "Working papers under revision or review") %>%
-  filter(bibtype %in% c("TechReport", "Unpublished"))
-bibliography_entries("rjhpubs.bib", "Book reviews") %>%
-  filter(bibtype == "Review")
+bibliography_entries("rjhpubs.bib") %>%
+  filter(bibtype == "Article", !(key %in% editorials)) %>% 
+  arrange(year)
+```
+
+## Book chapters
+```{r book-chapters}
+bibliography_entries("rjhpubs.bib") %>%
+  filter(bibtype %in% c("InBook", "InCollection")) %>% 
+  arrange(year)
+```
+
+## Papers in refereed conference proceedings
+```{r papers-in-proceedings}
+bibliography_entries("rjhpubs.bib") %>%
+  filter(bibtype == "InProceedings") %>% 
+  arrange(year)
+```
+
+## Working papers under revision or review
+```{r working-papers}
+bibliography_entries("rjhpubs.bib") %>%
+  filter(bibtype %in% c("TechReport", "Unpublished")) %>% 
+  arrange(year)
+```
+
+## Book reviews
+```{r book-reviews}
+bibliography_entries("rjhpubs.bib") %>%
+  filter(bibtype == "Review") %>% 
+  arrange(year)
+```
+
+## Editorials
+```{r editorials}
 # Now the editorials
-bibliography_entries("rjhpubs.bib", "Editorials", endlabel = "papersend") %>%
-  filter(bibtype == "Article", key %in% editorials)
-bibliography_entries("rjhreports.bib", "Statistical consulting reports",
+bibliography_entries("rjhpubs.bib", endlabel = "papersend") %>%
+  filter(bibtype == "Article", key %in% editorials) %>% 
+  arrange(year)
+```
+
+## Statistical consulting reports
+```{r statistical-consulting}
+bibliography_entries("rjhreports.bib",
   startlabel = "consultingstart", endlabel = "consultingend"
-)
+) %>% 
+  arrange(year)
+```
+
+## Software (R packages)
+```{r r-packages}
 # Sort R packages by title, then year.
-bibliography_entries("Rpackages.bib", "Software (R packages)",
-  sorting = "ty", startlabel = "packagestart", endlabel = "packageend"
-)
+bibliography_entries("Rpackages.bib",
+  startlabel = "packagestart", endlabel = "packageend"
+) %>% 
+  arrange(title, year)
 ```
