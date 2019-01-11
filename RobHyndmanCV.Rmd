@@ -267,60 +267,60 @@ bibliography_entries("rjhpubs.bib", startlabel = "papersstart") %>%
 ## Books
 ```{r books}
 bibliography_entries("rjhpubs.bib") %>%
-  filter(bibtype == "Book") %>% 
-  arrange(year)
+  filter(bibtype == "Book") %>%
+  arrange(year, author)
 ```
 
 ## Refereed research papers
 ```{r research-papers}
 # Normal articles excluding editorials
 bibliography_entries("rjhpubs.bib") %>%
-  filter(bibtype == "Article", !(key %in% editorials)) %>% 
-  arrange(year)
+  filter(bibtype == "Article", !(key %in% editorials)) %>%
+  arrange(year, author)
 ```
 
 ## Book chapters
 ```{r book-chapters}
 bibliography_entries("rjhpubs.bib") %>%
-  filter(bibtype %in% c("InBook", "InCollection")) %>% 
-  arrange(year)
+  filter(bibtype %in% c("InBook", "InCollection")) %>%
+  arrange(year, author)
 ```
 
 ## Papers in refereed conference proceedings
 ```{r papers-in-proceedings}
 bibliography_entries("rjhpubs.bib") %>%
-  filter(bibtype == "InProceedings") %>% 
-  arrange(year)
+  filter(bibtype == "InProceedings") %>%
+  arrange(year, author)
 ```
 
 ## Working papers under revision or review
 ```{r working-papers}
 bibliography_entries("rjhpubs.bib") %>%
-  filter(bibtype %in% c("TechReport", "Unpublished")) %>% 
-  arrange(year)
+  filter(bibtype %in% c("TechReport", "Unpublished")) %>%
+  arrange(year, author)
 ```
 
 ## Book reviews
 ```{r book-reviews}
 bibliography_entries("rjhpubs.bib") %>%
-  filter(bibtype == "Review") %>% 
-  arrange(year)
+  filter(bibtype == "Review") %>%
+  arrange(year, author)
 ```
 
 ## Editorials
 ```{r editorials}
 # Now the editorials
 bibliography_entries("rjhpubs.bib", endlabel = "papersend") %>%
-  filter(bibtype == "Article", key %in% editorials) %>% 
-  arrange(year)
+  filter(bibtype == "Article", key %in% editorials) %>%
+  arrange(year, author)
 ```
 
 ## Statistical consulting reports
 ```{r statistical-consulting}
 bibliography_entries("rjhreports.bib",
   startlabel = "consultingstart", endlabel = "consultingend"
-) %>% 
-  arrange(year)
+) %>%
+  arrange(year, author)
 ```
 
 ## Software (R packages)
@@ -328,6 +328,6 @@ bibliography_entries("rjhreports.bib",
 # Sort R packages by title, then year.
 bibliography_entries("Rpackages.bib",
   startlabel = "packagestart", endlabel = "packageend"
-) %>% 
+) %>%
   arrange(title, year)
 ```
