@@ -80,7 +80,7 @@ packages <- ReadBib("Rpackages.bib", check = FALSE)
 ```{r degrees, results='asis'}
 tribble(
   ~Year, ~Degree, ~Institution,
-  1998, "B.Sc.(Hons)", "University of Melbourne",
+  1988, "B.Sc.(Hons)", "University of Melbourne",
   1992, "Ph.D.", "University of Melbourne",
   2000, "A.Stat.", "Statistical Society of Australia"
 ) %>%
