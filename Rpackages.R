@@ -75,7 +75,7 @@ getbibentry <- function(pkg)
 
   # Turn contributions into note (for demography)
   if(grepl("with contributions", meta$Author)) {
-    author_split <- str_split(meta$Author, "with contributions ")
+    author_split <- stringr::str_split(meta$Author, "with contributions ")
     meta$Author <- author_split[[1]][1]
     meta$Note <- paste0("with contributions ",author_split[[1]][2])
     meta$Note <- gsub('^\\.|\\.$', '', meta$Note)
