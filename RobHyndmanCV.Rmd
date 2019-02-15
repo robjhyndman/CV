@@ -62,7 +62,7 @@ write_packages_bib(
     "tsgeneration",
     "tsibble",
     "tsibbledata",
-    "tsibblestats",
+    "feasts",
     "fable",
     "vitae"),
   file="Rpackages.bib")
