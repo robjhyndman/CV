@@ -1,4 +1,4 @@
-devtools::install_github("ropensci/RefManageR")
+#devtools::install_github("ropensci/RefManageR")
 library(RefManageR)
 
 rjh <- ReadBib("rjhpubs.bib", check="warn")

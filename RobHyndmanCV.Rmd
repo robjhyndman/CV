@@ -197,6 +197,8 @@ grants %>%
               command=rep("\\\\[-0.2cm]",NROW(.))))
 ```
 
+\newpage
+
 # Major invited talks
 
   * Belz lecture, *Forecasting and the importance of being uncertain*, Statistical Society of Australia, Melbourne, October 2006.
@@ -221,6 +223,7 @@ grants %>%
   * Keynote speaker, Beijing Workshop on Forecasting, November 2017.
   * Workshop leader, *Forecasting: principles and practice*, New York City, June 2018.
   * Monash master class, *Forecasting the future of the power industry: What can you learn from smart meter data?*, Melbourne, September 2018.
+  * ISI short course, *High-dimensional time series analysis*, Kuala Lumpur, August 2019.
 
 # Teaching
 
@@ -236,8 +239,8 @@ grants %>%
 # Advisory boards
 
   * Member of the Scaling committee, Victorian Tertiary Admissions Centre (1994--). This committee is responsible for producing the ATAR for VCE students.
-  * Member of the Interstate Transfer Index Technical Group for the Australasian Conference of Tertiary Admissions Centres (2003--).
-  * Member of the Aboriginal and Torres Strait Islander Statistical and Technical Advisory Group for the Australian Institute of Health and Welfare (2017--).
+  * Member of the ATAR Technical Group for the Australasian Conference of Tertiary Admissions Centres (2003--).
+  * Member of the Indigenous Statistical and Information Advisory Group for the Australian Institute of Health and Welfare (2017--).
   * Member of the Methodology Advisory Committee for the Australian Bureau of Statistics (2010--2018).
 
 \newpage
@@ -299,6 +302,8 @@ bibliography_entries("rjhpubs.bib") %>%
   filter(bibtype %in% c("TechReport", "Unpublished")) %>%
   arrange(year, author)
 ```
+
+\newpage
 
 ## Book reviews
 ```{r book-reviews}

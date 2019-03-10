@@ -1,13 +1,43 @@
-@techreport{tsibble,
-  author = {Earo Wang and Di Cook and Rob J Hyndman},
-  title = {A new tidy data structure to support exploration and modeling of temporal data},
-  year = 2019,
-  institution = {Department of Econometrics \& Business Statistics, Monash University},
-  type = {Working Paper},
-  url = {robjhyndman.com/publications/tsibble},
+@InBook{macrohts,
+  author = {George Athanasopoulos and Puwasala Gamakumara and Anastasios Panagiotelis and Rob J Hyndman and Mohamed Affan},
+  year = {2019},
+  title = {Hierarchical forecasting},
+  booktitle = {Macroeconomic forecasting in the age of big data},
+  editor = {P. Fuleky},
+  chapter = {23},
+  publisher = {Springer}
 }
 
-@techreport{oddwater,
+@Article{forecastingcompetitions,
+  author = {Rob J Hyndman},
+  title = {A brief history of forecasting competitions},
+  year = {2019},
+  url = {robjhyndman.com/publications/forecasting-competitions},
+  journal = {International Journal of Forecasting},
+  volume = {35},
+  note = {to appear},
+}
+
+@Article{ausmacrofcast,
+  title = {Macroeconomic forecasting for Australia using a large number of predictors},
+  author = {Bin Jiang and George Athanasopoulos and Rob J Hyndman and Anastasios Panagiotelis and Farshid Vahid},
+  year = {2019},
+  journal = {International Journal of Forecasting},
+  volume = {35},
+  note = {to appear},
+  url = {robjhyndman.com/publications/ausmacrofcast},
+}
+
+@Article{Water2,
+  title = {A framework for automated anomaly detection in high frequency water-quality data from in situ sensors},
+  author = {Catherine Leigh and Omar Alsibai and Rob J Hyndman and Sevvandi Kandanaarachchi and Olivia C King and James M McGree and Catherine Neelamraju and Jennifer Strauss and Priyanga Dilini Talagala and Ryan S Turner and Kerrie Mengersen and Erin E Peterson},
+  year = {2019},
+  url = {robjhyndman.com/publications/water-quality-2/},
+  journal = {Science of the Total Environment},
+  note = {to appear},
+}
+
+@TechReport{oddwater,
   title = {A feature-based framework for detecting technical outliers in water-quality data from in situ sensors},
   author = {Priyanga Dilini Talagala and Rob J Hyndman and Catherine Leigh and Kerrie Mengersen and Kate Smith-Miles},
   year = {2019},
@@ -17,24 +47,28 @@
   number = {19/01},
 }
 
-@techreport{forecastingcompetitions,
-  author = {Rob J Hyndman},
-  title = {A brief history of forecasting competitions},
-  year = 2018,
-  institution = {Department of Econometrics \& Business Statistics, Monash University},
-  type = {Working Paper},
-  number = {03/19},
-  url = {robjhyndman.com/publications/forecasting-competitions},
+@Article{oddstream,
+  author = {Priyanga Dilini Talagala and Rob J Hyndman and Kate Smith-Miles and Sevvandi Kandanaarachchi and Mario Andres Mu{\~n}oz},
+  year = {2019},
+  journal = {Journal of Computational and Graphical Statistics},
+  title = {Anomaly detection in streaming nonstationary temporal data},
+  url = {robjhyndman.com/publications/oddstream/},
 }
 
-@TechReport{earlyclassification,
-  author = {Sevvandi Kandanaarachchi and Rob J Hyndman and Kate Smith-Miles},
-  year = {2018},
-  title = {Early classification of spatio-temporal events using time-varying models},
+@Unpublished{ndisanomalies,
+  author = {Insha Ullah and Kerrie Mengersen and Rob J Hyndman and James McGree},
+  year = {2019},
+  title = {Detection of cybersecurity attacks through analysis of web browsing activities using principal component analysis},
+  url = {robjhyndman.com/publications/ndis-anomalies/},
+}
+
+@TechReport{tsibble,
+  author = {Earo Wang and Di Cook and Rob J Hyndman},
+  title = {A new tidy data structure to support exploration and modeling of temporal data},
+  year = {2019},
   institution = {Department of Econometrics \& Business Statistics, Monash University},
   type = {Working Paper},
-  number = {16/18},
-  url = {robjhyndman.com/publications/eventstream},
+  url = {robjhyndman.com/publications/tsibble},
 }
 
 @Article{tscv,
@@ -45,7 +79,7 @@
   pages = {70-83},
   journal = {Computational Statistics \& Data Analysis},
   url = {robjhyndman.com/publications/cv-time-series/},
-  doi = {10.1016/j.csda.2017.11.003}
+  doi = {10.1016/j.csda.2017.11.003},
 }
 
 @Article{bivarridges,
@@ -89,14 +123,14 @@
   doi = {10.1109/MPE.2018.2801441},
 }
 
-@article{ausmacrofcast,
-  title = {Macroeconomic forecasting for Australia using a large number of predictors},
-  author = {Bin Jiang and George Athanasopoulos and Rob J Hyndman and Anastasios Panagiotelis and Farshid Vahid},
-  year = {2019},
-  journal = {International Journal of Forecasting},
-  volume = 35,
-  note = "to appear",
-  url = {robjhyndman.com/publications/ausmacrofcast},
+@TechReport{earlyclassification,
+  author = {Sevvandi Kandanaarachchi and Rob J Hyndman and Kate Smith-Miles},
+  year = {2018},
+  title = {Early classification of spatio-temporal events using time-varying models},
+  institution = {Department of Econometrics \& Business Statistics, Monash University},
+  type = {Working Paper},
+  number = {16/18},
+  url = {robjhyndman.com/publications/eventstream},
 }
 
 @TechReport{normalizationoutliers,
@@ -119,15 +153,6 @@
   url = {robjhyndman.com/publications/tsgeneration/},
 }
 
-@article{Water2,
-  title = {A framework for automated anomaly detection in high frequency water-quality data from in situ sensors},
-  author = {Catherine Leigh and Omar Alsibai and Rob J Hyndman and Sevvandi Kandanaarachchi and Olivia C King and James M McGree and Catherine Neelamraju and Jennifer Strauss and Priyanga Dilini Talagala and Ryan S Turner and Kerrie Mengersen and Erin E Peterson},
-  year = {2019},
-  url = {robjhyndman.com/publications/water-quality-2/},
-  journal = {Science of the Total Environment},
-  note = {to appear}
-}
-
 @Unpublished{Water3,
   title = {Predicting sediment and nutrient concentrations in rivers using high frequency water quality surrogates},
   author = {Catherine Leigh and Sevvandi Kandanaarachchi and James M McGree and Rob J Hyndman and Omar Alsibai and Kerrie Mengersen and Erin E Peterson},
@@ -136,7 +161,7 @@
   archiveprefix = {arXiv},
   eprint = {1810.12499},
   year = {2018},
-  url = {robjhyndman.com/publications/water-quality/}
+  url = {robjhyndman.com/publications/water-quality/},
 }
 
 @TechReport{fforma,
@@ -157,17 +182,7 @@
   volume = {268},
   number = {2},
   pages = {545-554},
-  doi = {10.1016/j.ejor.2018.01.045}
-}
-
-@TechReport{oddstream,
-  author = {Priyanga Dilini Talagala and Rob J Hyndman and Kate Smith-Miles and Sevvandi Kandanaarachchi and Mario Andres Mu{\~n}oz},
-  year = {2018},
-  title = {Anomaly detection in streaming nonstationary temporal data},
-  institution = {Department of Econometrics \& Business Statistics, Monash University},
-  type = {Working Paper},
-  number = {4/18},
-  url = {robjhyndman.com/publications/oddstream/},
+  doi = {10.1016/j.ejor.2018.01.045},
 }
 
 @TechReport{fforms,
@@ -188,7 +203,7 @@
   number = {4},
   pages = {665--677},
   year = {2018},
-  doi = {10.1016/j.ijforecast.2018.03.009}
+  doi = {10.1016/j.ijforecast.2018.03.009},
 }
 
 @Article{mint,
@@ -197,7 +212,7 @@
   journal = {J American Statistical Association},
   year = {2018},
   note = {to appear},
-  doi = {10.1080/01621459.2018.1448825}
+  doi = {10.1080/01621459.2018.1448825},
 }
 
 @Article{temporal-hierarchies,
@@ -208,7 +223,7 @@
   pages = {60-74},
   volume = {262},
   journal = {European Journal of Operational Research},
-  doi = {10.1016/j.ejor.2017.02.046}
+  doi = {10.1016/j.ejor.2017.02.046},
 }
 
 @TechReport{ausmacrodata,
@@ -247,7 +262,7 @@
   issue = {9},
   pages = {1082-1084},
   journal = {Journal of the Operational Research Society},
-  doi = {10.1057/s41274-017-0218-3}
+  doi = {10.1057/s41274-017-0218-3},
 }
 
 @Article{m3pca,
@@ -677,7 +692,7 @@
 
 @Article{Carta2011,
   title = {Method for optimizing coating properties based on an evolutionary algorithm approach},
-  author = {Davide Carta and Laura Villanova and Stefano Costacurta and Alessandro Patelli and Irene Poli and Simone Vezzù and Paolo Scopece and Fabio Lisi and Kate Smith-Miles and Rob J Hyndman and Anita J Hill and Paolo Falcaro},
+  author = {Davide Carta and Laura Villanova and Stefano Costacurta and Alessandro Patelli and Irene Poli and Simone Vez {\a`u} and Paolo Scopece and Fabio Lisi and Kate Smith-Miles and Rob J Hyndman and Anita J Hill and Paolo Falcaro},
   year = {2011},
   number = {16},
   pages = {6373--6380},
