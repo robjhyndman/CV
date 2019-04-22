@@ -31,6 +31,7 @@ write_packages_bib(
     "anomalous",
     "bfast",
     "binb",
+    "compenginets",
     "cricketdata",
     "demography",
     "eechidna",
@@ -64,6 +65,7 @@ write_packages_bib(
     "tsibbledata",
     "feasts",
     "fable",
+    "fablelite",
     "vitae"),
   file="Rpackages.bib")
 ```
