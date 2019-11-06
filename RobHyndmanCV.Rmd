@@ -47,7 +47,10 @@ write_packages_bib(
     "forecast",
     "fpp",
     "fpp2",
+    "fpp3",
     "ftsa",
+    "gratis",
+    "gravitas",
     "hdrcde",
     "hts",
     "Mcomp",
@@ -65,7 +68,6 @@ write_packages_bib(
     "tscompdata",
     "tsdl",
     "tsfeatures",
-    "tsgeneration",
     "tsibble",
     "tsibbledata",
     "vitae"),
@@ -228,12 +230,14 @@ grants %>%
   * Workshop leader, *Forecasting: principles and practice*, New York City, June 2018.
   * Monash master class, *Forecasting the future of the power industry: What can you learn from smart meter data?*, Melbourne, September 2018.
   * ISI short course, *High-dimensional time series analysis*, Kuala Lumpur, August 2019.
+  * Workshop leader, *Tidy time series and forecasting in R*, rstudio::conf, San Francisco, January 2020.
+  * Keynote speaker, International Symposium on Forecasting, Rio de Janeiro, July 2020.
 
 # Teaching
 
   * In 2018, student evaluations for "Applied forecasting for business and economics" gave an average rating for my teaching of 4.82 out of 5, while all students rated "Advanced statistical modelling" at 5 out of 5.
   * In 1998, I received the award for "Excellence in teaching" by the Monash Science Society. This is awarded by the students of the Science faculty.
-  * I am author of an innovative textbook with George Athanasopoulos entitled *Forecasting: principles and practice* ([`OTexts.org/fpp2/`](https://OTexts.org/fpp2)) which is available online and free of charge. The website has an average of 11400 pageviews per day.
+  * I am author of an innovative textbook with George Athanasopoulos entitled *Forecasting: principles and practice* ([`OTexts.org/fpp2/`](https://OTexts.org/fpp2)) which is available online and free of charge. The website has an average of over 20000 pageviews per day.
 
 # Consulting
 
