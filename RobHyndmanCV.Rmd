@@ -290,6 +290,8 @@ bibliography_entries("rjhpubs.bib") %>%
   arrange(year, surnames)
 ```
 
+\newpage
+
 ## Book chapters
 ```{r book-chapters}
 bibliography_entries("rjhpubs.bib") %>%
