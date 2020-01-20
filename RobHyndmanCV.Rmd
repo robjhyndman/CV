@@ -11,9 +11,6 @@ headcolor: "000088"
 output:
   vitae::hyndman:
     keep_tex: yes
-header_includes:
-  - \ExecuteBibliographyOptions{useprefix=true}
-  - renewcommand{\bibfont}{\normalfont\fontsize{10}{12.4}\sffamily}
 ---
 
 ```{r setup, include=FALSE}
@@ -259,6 +256,8 @@ grants %>%
 
 # Publications
 
+\renewcommand{\bibfont}{\normalfont\fontsize{10}{11.8}\sffamily}
+
 ```{r publist}
 # Find editorials
 editorials <- c(
@@ -293,8 +292,6 @@ bibliography_entries("rjhpubs.bib") %>%
   filter(bibtype == "Article", !(key %in% editorials)) %>%
   arrange(year, surnames)
 ```
-
-\newpage
 
 ## Book chapters
 ```{r book-chapters}
