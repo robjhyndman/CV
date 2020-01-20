@@ -13,6 +13,8 @@ output:
     keep_tex: yes
 header-includes:
   - \geometry{left=1.8cm,right=1.8cm,top=1.9cm,bottom=1.4cm}
+  - \usepackage{graphicx}
+  - \graphicspath{{~}}
 ---
 
 ```{r setup, include=FALSE}
@@ -147,4 +149,4 @@ bibliography_entries("rjhpubs.bib") %>%
   arrange(year, surnames)
 ```
 
-\thispagestyle{empty}
+\thispagestyle{empty}\vspace*{-.31cm}\hspace*{14.5cm}\includegraphics[width=4cm]{Sig}\vspace*{-2cm}
