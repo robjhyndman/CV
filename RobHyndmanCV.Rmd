@@ -58,6 +58,7 @@ write_packages_bib(
     "ozbabynames",
     #"ozdata",
     "rainbow",
+    "rcademy",
     "rmarkdown",
     "robets",
     "seer",
