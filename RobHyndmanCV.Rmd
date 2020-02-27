@@ -169,9 +169,9 @@ awards <- tribble(
 
   * Since 1991 I have authored `r length(pubs)` papers, chapters or books on statistical topics (listed on pages \pageref{papersstart}--\pageref{papersend}).
   * My current research involves the analysis of large collections of time series, and includes visualization, forecasting, reconciliation, modelling and anomaly detection..
-  * I currently supervise four PhD students and two post-doctoral research fellows. I have previously supervised another 25 PhD students and 3 Masters students.
+  * I currently supervise five PhD students and one post-doctoral research fellow. I have previously supervised another 25 PhD students and 3 Masters students.
   * I publish the [*Hyndsight*](https://robjhyndman.com/hyndsight) blog on research issues which receives an average of about 2000 pageviews per day.
-  * I have produced `r length(packages)` R packages as a result of my research (listed on pages \pageref{packagestart}--\pageref{packageend}).
+  * I have produced `r length(packages)` R packages as a result of my research (listed on pages \pageref{packagestart}--\pageref{packageend}) which have been downloaded over 2 million times in the last 12 months.
 
 # Grants
 
