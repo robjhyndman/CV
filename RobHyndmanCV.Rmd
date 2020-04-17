@@ -13,6 +13,8 @@ output:
     keep_tex: yes
 ---
 
+\newcounter{bib}
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, cache = FALSE)
 library(tidyverse)
@@ -274,8 +276,9 @@ editorials <- c(
 ```
 
 ## PhD thesis
+\refstepcounter{bib}\label{papersstart}
 ```{r thesis}
-bibliography_entries("rjhpubs.bib", startlabel = "papersstart") %>%
+bibliography_entries("rjhpubs.bib") %>%
   filter(bibtype == "PhdThesis")
 ```
 
@@ -325,24 +328,27 @@ bibliography_entries("rjhpubs.bib") %>%
 ## Editorials
 ```{r editorials}
 # Now the editorials
-bibliography_entries("rjhpubs.bib", endlabel = "papersend") %>%
+bibliography_entries("rjhpubs.bib") %>%
   filter(bibtype == "Article", key %in% editorials) %>%
   arrange(year, surnames)
 ```
+\refstepcounter{bib}\label{papersend}
 
 ## Statistical consulting reports
+
+\refstepcounter{bib}\label{consultingstart}
 ```{r statistical-consulting}
-bibliography_entries("rjhreports.bib",
-  startlabel = "consultingstart", endlabel = "consultingend"
-) %>%
+bibliography_entries("rjhreports.bib") %>%
   arrange(year, surnames)
 ```
+\refstepcounter{bib}\label{consultingend}
 
 ## Software (R packages)
+
+\refstepcounter{bib}\label{packagestart}
 ```{r r-packages}
 # Sort R packages by title, then year.
-bibliography_entries("Rpackages.bib",
-  startlabel = "packagestart", endlabel = "packageend"
-) %>%
+bibliography_entries("Rpackages.bib") %>%
   arrange(title, year)
 ```
+\refstepcounter{bib}\label{packageend}
