@@ -73,6 +73,9 @@ getbibentry <- function(pkg)
   # Replace AEC
   meta$Author <- gsub("Commonwealth of Australia AEC","{Commonwealth of Australia AEC}",meta$Author)
 
+  # Remove comments in author fields
+  meta$Author <- gsub("\\([a-zA-Z0-9\\-\\s,&\\(\\)<>:/\\.]*\\)"," ",meta$Author, perl=TRUE)
+
   # Turn contributions into note (for demography)
   if(grepl("with contributions", meta$Author)) {
     author_split <- stringr::str_split(meta$Author, "with contributions ")
@@ -83,6 +86,7 @@ getbibentry <- function(pkg)
   }
   else
     meta$Note <- NULL
+
 
   # Create bibentry
   rref <- bibentry(
