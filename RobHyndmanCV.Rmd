@@ -26,56 +26,31 @@ source("baretable.R")
 ```{r Rpackages, eval=FALSE}
 # Construct bib file for R packages
 source("Rpackages.R")
-write_packages_bib(
-  pkglist = c(
+# CRAN packages
+pkglist <- c(
+  # CRAN packages
+  pkgsearch::ps("Hyndman",size = 100) %>%
+    filter(map_lgl(
+      package_data, ~ grepl("Hyndman", .x$Author, fixed = TRUE))
+    ) %>%
+    pull(package),
+    # github only packages
     "addb",
     "anomalous",
-    "bfast",
-    "binb",
     "compenginets",
     "cricketdata",
-    "demography",
-    "eechidna",
-    "emma",
-    "expsmooth",
-    "fable",
-    "fabletools",
-    "feasts",
-    "fds",
-    "fma",
-    "forecast",
-    "fpp",
-    "fpp2",
-    "fpp3",
-    "ftsa",
     "gratis",
-    "gravitas",
-    "hdrcde",
-    "hts",
-    "Mcomp",
     "MEFM",
     "MonashEBSTemplates",
-    "oddstream",
     "oddwater",
     "ozbabynames",
-    #"ozdata",
-    "rainbow",
     "rcademy",
-    "rmarkdown",
-    "robets",
-    "seer",
-    "smoothAPC",
-    "stR",
-    "stray",
-    "sugrrants",
-    "thief",
     "tscompdata",
-    "tsdl",
-    "tsfeatures",
-    "tsibble",
-    "tsibbledata",
-    "vitae"),
-  file="Rpackages.bib")
+    "tsdl"
+  ) %>%
+  unique() %>%
+  sort()
+write_packages_bib(pkglist, file="Rpackages.bib")
 ```
 
 ```{r bibfiles}
