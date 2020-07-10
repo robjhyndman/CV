@@ -224,3 +224,4 @@ TSWLatexianTemp*
 # Rpackages.bib generation
 Rpackages.Rout
 .RData
+.Rproj.user
