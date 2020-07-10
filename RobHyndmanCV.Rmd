@@ -21,37 +21,16 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, cache = FA
 library(tidyverse)
 library(RefManageR)
 library(vitae)
-source("baretable.R")
+source("functions.R")
 ```
 
 ```{r Rpackages, eval=FALSE}
-# Construct bib file for R packages
-source("Rpackages.R")
-# CRAN packages
-pkglist <- c(
-  # CRAN packages
-  pkgsearch::ps("Hyndman",size = 100) %>%
-    filter(map_lgl(
-      package_data, ~ grepl("Hyndman", .x$Author, fixed = TRUE))
-    ) %>%
-    pull(package),
-    # github only packages
-    "addb",
-    "anomalous",
-    "compenginets",
-    "cricketdata",
-    "gratis",
-    "MEFM",
-    "MonashEBSTemplates",
-    "oddwater",
-    "ozbabynames",
-    "rcademy",
-    "tscompdata",
-    "tsdl"
-  ) %>%
-  unique() %>%
-  sort()
-write_packages_bib(pkglist, file="Rpackages.bib")
+# Find installed or CRAN packages with Hyndman as an author
+rjhpkgs <- find_rjh_packages()
+# Remove some works in progress or not suitable for CV
+rjhpkgs <- rjhpkgs[!(rjhpkgs %in% c("indmortality2","informs"))]
+# Write bib file
+write_packages_bib(rjhpkgs, file="Rpackages.bib")
 ```
 
 ```{r bibfiles}
