@@ -1,45 +1,46 @@
 ﻿Source,Start,End,People,Title,Amount,Type
-Telstra Australia,2000,,RJ Hyndman,Forecasting Telstra market share,31000,Research
-DISR,2000,,RJ Hyndman,Econometric modelling of a new trade agreement,6000,Consulting
-Victorian Workcover Authority,2000,,RJ Hyndman,Factors affecting return to work after injury,19678,Research
-GAM,2000,,RJ Hyndman,GAMS with autocorrelation,9000,Internal
-TXU,2000,2001,RJ Hyndman,Forecasting monthly electricity demand,27933,Research
-WorkCover NSW,2001,2002,RJ Hyndman,Injury management pilot evaluation,42182,Research
-Monash small grant,2001,,RJ Hyndman,Count time series,15000,Internal
-SMURF,2001,2002,RJ Hyndman,Business and Economics Forecasting Unit,140000,Internal
-Commonwealth Department of Health and Ageing,2002,,RJ Hyndman,Evaluation of PBS forward estimates methodology,55341,Research
-Monash small grant,2002,,RJ Hyndman,Hierarchical time series,15000,Internal
-Australian Greenhouse Office,2002,,RJ Hyndman,Review of emissions projections methodology,11200,Research
-InvestorWeb,2003,,RJ Hyndman,Evaluation of investment risk profiler,18000,Research
-ARC Discovery Grant,2004,2006,"G Martin, RD Snyder, RJ Hyndman",New approaches to the analysis of count time series,172317,Research
-ARC Near-miss,2005,,"P Lajbcygier, RJ Hyndman",,30000,Internal
-National Prescribing Service,2004,2008,RJ Hyndman,Analysis of NPS interventions,120000,Research
-Commonwealth Department of Health and Ageing,2006,,RJ Hyndman,Review of EDQUM savings methodology,12727,Research
-ACT Board of Secondary Studies,2006,,RJ Hyndman,Review of ACT University Admission Index calculation,5091,Consulting
-Washington State Government,2006,,RJ Hyndman,Measuring forecasting accuracy in entitlement caseloads,6000,Research
-Tourism Australia,2006,2010,"RJ Hyndman, G Athanasopoulos",Tourism forecasting,312017,Research
-Electricity Supply Industry Planning Council,2007,,RJ Hyndman,Peak energy demand forecasting for South Australia,78045,Research
-Westernpower,2008,,RJ Hyndman,Forecasting long-term peak half-hourly electricity demand for Western Australia,42000,Research
-Victorian Energy Corporation,2008,2010,RJ Hyndman,The price elasticity of electricity demand in South Australia and Victoria,450000,Research
-Victorian Energy Corporation,2009,,RJ Hyndman,Forecasting long-term peak half-hourly electricity demand for Victoria,36950,Research
-Australian Institute of Health and Welfare,2009,,RJ Hyndman,An enhanced mortality database for estimating indigenous life expectancy: a feasibility study,10500,Research
-Darrell Lea,2009,,RJ Hyndman,Expert witness in Darrell Lea vs Cadbury,8750,Consulting
-Commonwealth Department of Health and Ageing,2008,,RJ Hyndman,PBS forecasting model review,46514,Research
-HP Labs Innovation Research Program,2010,,RJ Hyndman,New methods for hierarchical forecasting with application to HP business forecasting,27800,Research
-Australian Energy Market Operator,2011,2015,RJ Hyndman,Energy demand forecasting,864200,Research
-Australian Institute of Health and Welfare,2010,,RJ Hyndman,An enhanced mortality database for estimating indigenous life expectancy,10500,Research
-National Health and Medical Research Council,2009,2011,"B Erbas, M Abramson, M Tang, K Allen, E Newbigin, S Dharmage, RJ Hyndman",The impact of outdoor aeroallergen exposure on asthma exacerbations in children and adolescents,454550,Research
-Independent Market Operator (Western Australia),2011,2013,"RJ Hyndman, S Fan",Development of electricity peak demand and energy forecasts for the SWIS,93450,Research
-ARC Linkage Grant,2013,2016,"KA Smith-Miles, RJ Hyndman, L Villanova, M Kah",Optimising experimental design for robust product development: a cast study for high-efficiency energy generation,362389,Research
-Powercor,2014,,RJ Hyndman,Maximum demand forecasting for Citipower and Powercor,6000,Research
-ARC Discovery Grant,2014,2017,"AN Panagiotelis, G Athanasopoulos, RJ Hyndman, F Vahid",Macroeconomic forecasting in a “Big Data” world,451034,Research
-Australian Bureau of Statistics,2017,,RJ Hyndman,State space modelling workshop,4000,Research
-ARC Linkage Grant,2017,2019,"KA Smith-Miles, RJ Hyndman, M Munoz Acosta, J Katsifolis",Intruder Alert! Detecting and classifying events in noisy time series,204000,Research
-Huawei Innovation Research Program,2017,2018,"RJ Hyndman, S Ben Taieb, C Bergmeir",Demand forecasting for large-scale dynamic hierarchies in a big data environment,86586,Research
-RiskLab at Data61,2017,2019,"RJ Hyndman, D Cook",RiskLab Projects: Econometrics,151200,Research
-Australian Research Council,2017,2021,"N Bean, K Burrage, J de Gier, A Delaigle, P Forrester, T Garoni, RJ Hyndman, R Kohn, D Kroese, K Mengersen, A Pettit, P Pollet, M Roughan, L Ryan, S Sisson, K Smith-Miles, P Taylor, I Turner, M Wand, Y-G Wang",ARC Centre of Excellence for Mathematical and Statistical Frontiers,554329,Research
-Facebook,2019,,"RJ Hyndman, Christoph Bergmeir",DeepForecast: Leveraging forecasts on large scales of related time series,70000,Research
-Advisian,2019,2020,"C Bergmeir, F Vahid, RJ Hyndman",Application of advanced short term power generation forecasting technology for wind and solar farms,499753,Research
-ARC Linkage Grant,2019,2022,"K Mengersen, RJ Hyndman, E Petersen, J McGree, R Turner, P Maxwell, B Liquet, J Jones",Revolutionising water-quality monitoring in the information age,729855,Research
-ARC Discovery Grant,2020,2022,"G Martin, D Frazier, RJ Hyndman, W Maneesoonthorn",Loss-based Bayesian prediction,393000,Research
-Tourism Research Australia,2020,,"RJ Hyndman, G Athanasopoulos",Review of tourism forecasting in Australia,32400,Research
+Telstra Australia,2000,,Hyndman,Forecasting Telstra market share,31000,Research
+DISR,2000,,Hyndman,Econometric modelling of a new trade agreement,6000,Consulting
+Victorian Workcover Authority,2000,,Hyndman,Factors affecting return to work after injury,19678,Research
+GAM,2000,,Hyndman,GAMS with autocorrelation,9000,Internal
+TXU,2000,2001,Hyndman,Forecasting monthly electricity demand,27933,Research
+WorkCover NSW,2001,2002,Hyndman,Injury management pilot evaluation,42182,Research
+Monash small grant,2001,,Hyndman,Count time series,15000,Internal
+SMURF,2001,2002,Hyndman,Business and Economics Forecasting Unit,140000,Internal
+Commonwealth Department of Health and Ageing,2002,,Hyndman,Evaluation of PBS forward estimates methodology,55341,Research
+Monash small grant,2002,,Hyndman,Hierarchical time series,15000,Internal
+Australian Greenhouse Office,2002,,Hyndman,Review of emissions projections methodology,11200,Research
+InvestorWeb,2003,,Hyndman,Evaluation of investment risk profiler,18000,Research
+ARC Discovery Grant,2004,2006,"Martin, Snyder, Hyndman",New approaches to the analysis of count time series,172317,Research
+ARC Near-miss,2005,,"Lajbcygier, Hyndman",,30000,Internal
+National Prescribing Service,2004,2008,Hyndman,Analysis of NPS interventions,120000,Research
+Commonwealth Department of Health and Ageing,2006,,Hyndman,Review of EDQUM savings methodology,12727,Research
+ACT Board of Secondary Studies,2006,,Hyndman,Review of ACT University Admission Index calculation,5091,Consulting
+Washington State Government,2006,,Hyndman,Measuring forecasting accuracy in entitlement caseloads,6000,Research
+Tourism Australia,2006,2010,"Hyndman, Athanasopoulos",Tourism forecasting,312017,Research
+Electricity Supply Industry Planning Council,2007,,Hyndman,Peak energy demand forecasting for South Australia,78045,Research
+Westernpower,2008,,Hyndman,Forecasting long-term peak half-hourly electricity demand for Western Australia,42000,Research
+Victorian Energy Corporation,2008,2010,Hyndman,The price elasticity of electricity demand in South Australia and Victoria,450000,Research
+Victorian Energy Corporation,2009,,Hyndman,Forecasting long-term peak half-hourly electricity demand for Victoria,36950,Research
+Australian Institute of Health and Welfare,2009,,Hyndman,An enhanced mortality database for estimating indigenous life expectancy: a feasibility study,10500,Research
+Darrell Lea,2009,,Hyndman,Expert witness in Darrell Lea vs Cadbury,8750,Consulting
+Commonwealth Department of Health and Ageing,2008,,Hyndman,PBS forecasting model review,46514,Research
+HP Labs Innovation Research Program,2010,,Hyndman,New methods for hierarchical forecasting with application to HP business forecasting,27800,Research
+Australian Energy Market Operator,2011,2015,Hyndman,Energy demand forecasting,864200,Research
+Australian Institute of Health and Welfare,2010,,Hyndman,An enhanced mortality database for estimating indigenous life expectancy,10500,Research
+National Health and Medical Research Council,2009,2011,"Erbas, Abramson, Tang, Allen, Newbigin, Dharmage, Hyndman",The impact of outdoor aeroallergen exposure on asthma exacerbations in children and adolescents,454550,Research
+Independent Market Operator (Western Australia),2011,2013,"Hyndman, Fan",Development of electricity peak demand and energy forecasts for the SWIS,93450,Research
+ARC Linkage Grant,2013,2016,"Smith-Miles, Hyndman, Villanova,  Kah",Optimising experimental design for robust product development: a cast study for high-efficiency energy generation,362389,Research
+Powercor,2014,,Hyndman,Maximum demand forecasting for Citipower and Powercor,6000,Research
+ARC Discovery Grant,2014,2017,"Panagiotelis, Athanasopoulos, Hyndman,  Vahid",Macroeconomic forecasting in a “Big Data” world,451034,Research
+Australian Bureau of Statistics,2017,,Hyndman,State space modelling workshop,4000,Research
+ARC Linkage Grant,2017,2019,"Smith-Miles, Hyndman, Munoz Acosta,  Katsifolis",Intruder Alert! Detecting and classifying events in noisy time series,204000,Research
+Huawei Innovation Research Program,2017,2018,"Hyndman, Ben Taieb,  Bergmeir",Demand forecasting for large-scale dynamic hierarchies in a big data environment,86586,Research
+RiskLab at Data61,2017,2019,"Hyndman, Cook",RiskLab Projects: Econometrics,151200,Research
+Australian Research Council,2017,2021,"Bean, Burrage, de Gier,  Delaigle, Forrester, Garoni, Hyndman, Kohn, Kroese, Mengersen,  Pettit, Pollet, Roughan, Ryan, Sisson, Smith-Miles, Taylor, Turner,  Wand, Wang",ARC Centre of Excellence for Mathematical and Statistical Frontiers,20000000,Research
+Facebook,2019,,"Hyndman, Bergmeir",DeepForecast: Leveraging forecasts on large scales of related time series,70000,Research
+Advisian,2019,2020,"Bergmeir, Vahid, Hyndman",Application of advanced short term power generation forecasting technology for wind and solar farms,499753,Research
+ARC Linkage Grant,2019,2022,"Mengersen, Hyndman, Petersen, McGree, Turner, Maxwell, Liquet, Jones",Revolutionising water-quality monitoring in the information age,729855,Research
+ARC Discovery Grant,2020,2022,"Martin, Frazier, Hyndman,  Maneesoonthorn",Loss-based Bayesian prediction,393000,Research
+Tourism Research Australia,2020,,"Hyndman, Athanasopoulos",Review of tourism forecasting in Australia,32400,Research
+ARC Industrial Transformation Training Centre, 2020, 2024, "Smith-Miles, Stuckey, Taylor, Ernst, Aickelin, Garcia de la Banda,  Pearce, Wallace, Bondell, Hyndman, Alpcan, Thomas, Anjomshoa, Kirley, Tack, Costa, Fackrell, Zhang, Glazebrook, Branke, O'Sullivan, O'Shea,  Cheah, Meehan, Wetenhall, Bowly, Bridge, Faka, Mareels, Coleman,  Crook", "Optimisation Technologies, Integrated Methodologies, and Applications (OPTIMA)", 4861236, Research
