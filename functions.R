@@ -89,7 +89,10 @@ getbibentry <- function(pkg)
   # Replace AEC
   meta$Author <- gsub("Commonwealth of Australia AEC","{Commonwealth of Australia AEC}",meta$Author)
 
-  # Remove comments in author fields
+  # Replace ABS
+  meta$Author <- gsub("Australian Bureau of Statistics ABS","{Australian Bureau of Statistics ABS}",meta$Author)
+
+    # Remove comments in author fields
   meta$Author <- gsub("\\([a-zA-Z0-9\\-\\s,&\\(\\)<>:/\\.]*\\)"," ",meta$Author, perl=TRUE)
 
   # Turn contributions into note (for demography)
