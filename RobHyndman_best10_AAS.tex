@@ -1,0 +1,334 @@
+%% Template for a CV
+%% Author: Rob J Hyndman
+
+\documentclass[10pt,a4paper,]{article}
+\usepackage[scaled=0.86]{DejaVuSansMono}
+\usepackage[sfdefault,lf,t]{carlito}
+
+% Change color to blue
+\usepackage{color,xcolor}
+\definecolor{headcolor}{HTML}{000088}
+
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true,hidelinks]{hyperref}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{geometry}
+\geometry{left=1.75cm,right=1.75cm,top=2.2cm,bottom=2cm}
+
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{long table}}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+\date{July 2020}
+
+
+
+\usepackage{paralist,ragged2e,datetime}
+\usepackage[hyphens]{url}
+\usepackage{fancyhdr,enumitem,pifont}
+\usepackage[compact,small,sf,bf]{titlesec}
+
+\RaggedRight
+\sloppy
+
+% Header and footer
+\pagestyle{fancy}
+\makeatletter
+\lhead{\sf\textcolor[gray]{0.4}{Most significant publications: \@name}}
+\rhead{\sf\textcolor[gray]{0.4}{\thepage}}
+\cfoot{}
+\def\headrule{{\color[gray]{0.4}\hrule\@height\headrulewidth\@width\headwidth \vskip-\headrulewidth}}
+\makeatother
+
+% Header box
+\usepackage{tabularx}
+
+\makeatletter
+\def\name#1{\def\@name{#1}}
+\def\info#1{\def\@info{#1}}
+\makeatother
+\newcommand{\shadebox}[3][.9]{\fcolorbox[gray]{0}{#1}{\parbox{#2}{#3}}}
+
+\usepackage{calc}
+\newlength{\headerboxwidth}
+\setlength{\headerboxwidth}{\textwidth}
+%\addtolength{\headerboxwidth}{0.2cm}
+\makeatletter
+\def\maketitle{
+\thispagestyle{plain}
+\vspace*{-1.4cm}
+\shadebox[0.9]{\headerboxwidth}{\sf\color{headcolor}\hfil
+\hbox to 0.98\textwidth{\begin{tabular}{l}
+\\[-0.3cm]
+\LARGE\textbf{\@name}
+\\[0.7cm]
+\normalsize\textbf{Most significant publications}\\
+\normalsize July 2020
+\end{tabular}
+\hfill\hbox{\fontsize{9}{12}\sf
+\begin{tabular}{@{}rl@{}}
+\@info
+\end{tabular}}}\hfil
+}
+\vspace*{0.2cm}}
+\makeatother
+
+% Section headings
+\titlelabel{}
+\titlespacing{\section}{0pt}{1.5ex}{0.5ex}
+\titleformat*{\section}{\color{headcolor}\large\sf\bfseries}
+\titleformat*{\subsection}{\color{headcolor}\sf\bfseries}
+\titlespacing{\subsection}{0pt}{1ex}{0.5ex}
+
+% Miscellaneous dimensions
+\setlength{\parskip}{0ex}
+\setlength{\parindent}{0em}
+\setlength{\headheight}{15pt}
+\setlength{\tabcolsep}{0.15cm}
+\clubpenalty = 10000
+\widowpenalty = 10000
+\setlist{itemsep=1pt}
+\setdescription{labelwidth=1.2cm,leftmargin=1.5cm,labelindent=1.5cm,font=\rm}
+
+% Make nicer bullets
+\renewcommand{\labelitemi}{\ding{228}}
+
+\usepackage{booktabs,fontawesome}
+%\usepackage[t1,scale=0.86]{sourcecodepro}
+
+\name{Rob J Hyndman}
+\def\imagetop#1{\vtop{\null\hbox{#1}}}
+\info{%
+\raisebox{-0.05cm}{\imagetop{\faicon{map-marker}}} &  \imagetop{\begin{tabular}{@{}l@{}}Department of Econometrics \& Business Statistics,\tabularnewline Monash University, VIC 3800, Australia.\end{tabular}}\\ %
+\faicon{home} & \href{http://robjhyndman.com}{robjhyndman.com}\\% %
+\faicon{phone} & +61 3 9905 5141\\%
+\faicon{envelope} & \href{mailto:Rob.Hyndman@monash.edu}{\nolinkurl{Rob.Hyndman@monash.edu}}\\%
+\faicon{twitter} & \href{https://twitter.com/robjhyndman}{@robjhyndman}\\%
+\faicon{github} & \href{https://github.com/robjhyndman}{robjhyndman}\\%
+%
+%
+%
+}
+
+
+%\usepackage{inconsolata}
+
+
+
+% Templates for detailed entries
+% Arguments: what when with where why
+\usepackage{etoolbox}
+
+% Templates for detailed entries
+% Arguments: what when with where why
+\def\detaileditem#1#2#3#4#5{
+#2 & \parbox[t]{0.85\textwidth}{%
+      \textbf{#1}\hfill{\footnotesize #3}\\
+      \ifx#4\empty\else#4\par\fi%
+      \ifx#5\empty\else{%
+        \vspace{0.1cm}\begin{minipage}{0.7\textwidth}%
+        \begin{itemize}#5\end{itemize}%
+        \end{minipage}}\fi%
+      \vspace{\parsep}}\\}
+%\def\detailedsection#1{\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}#1\end{tabular*}}
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+\def\detailedsection#1{\begin{longtable}{@{\extracolsep{\fill}}ll}#1\end{longtable}}
+
+% Templates for brief entries
+% Arguments: what when with
+\def\briefitem#1#2#3{
+#2 & \parbox[t]{0.85\textwidth}{%
+      \textbf{#1}\\[-0.1cm]{\footnotesize #3}}\\[0.4cm]}
+%\def\briefsection#1{\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}#1\end{tabular*}}
+\def\briefsection#1{\begin{longtable}{@{\extracolsep{\fill}}ll}#1\end{longtable}}
+
+\def\endfirstpage{\newpage}
+
+\begin{document}
+\maketitle
+
+
+Ordered by year of publication. Citations are as given on Google scholar (on 30 July 2020).\vspace*{0.2cm}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  S Ben Taieb, JW Taylor, and RJ Hyndman. (2020) ``Hierarchical
+  Probabilistic Forecasting of Electricity Demand with Smart Meter Data''.
+  \emph{J American Statistical Association}. published online. Accepted 21
+  February 2020.
+
+  \begin{quote}     This paper combined hierarchical forecasting with probabilistic forecasts for the first time and applied the ideas to the important problem of electricity demand modelling. It is already attracting citations despite being online for only a few months. RJH provided some methodological expertise and knowledge of the associated literature. Contribution: 20\%.  Citations: 17.\end{quote}
+\end{enumerate}
+
+\vspace*{0.2cm}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  SL Wickramasuriya, G Athanasopoulos, and RJ Hyndman. (2019) ``Optimal
+  forecast reconciliation for hierarchical and grouped time series
+  through trace minimization''. \emph{J American Statistical Association}
+  114(526), 804-819.
+
+  \begin{quote}     This paper provided the theory behind optimal forecast reconciliation, showing why reconciliation works, and providing new insights into how it can be extended.  Although only published last year, it has already received many citations. RJH provided the methodological expertise and problem formulation. Contribution: 33\%.  Citations: 86.\end{quote}
+\end{enumerate}
+
+\vspace*{0.2cm}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  AM De Livera, RJ Hyndman, and RD Snyder. (2011) ``Forecasting time
+  series with complex seasonal patterns using exponential smoothing''. \emph{J
+  American Statistical Association} 106(496), 1513-1527.
+
+  \begin{quote}     This paper provided new tools for forecasting difficult seasonal patterns including multiple seasonality, asynchronous multiple calendars, and non-integer seasonality. It provides the theory behind the TBATS method of forecasting. RJH provided the methodological expertise, problem formulation and some of the data analysis. Contribution: 50\%.  Citations: 472.\end{quote}
+\end{enumerate}
+
+\vspace*{0.2cm}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  RJ Hyndman, RA Ahmed, G Athanasopoulos, and HL Shang. (2011) ``Optimal
+  combination forecasts for hierarchical time series''. \emph{Computational
+  Statistics \& Data Analysis} 55(9), 2579-2589.
+
+  \begin{quote}     This paper proposed a new approach to forecast reconciliation that has initiated a great deal of new work in the area, and is now widely used in practice. Wickramsuriya et al (2019) provides the theoretical support for the algorithm proposed here. RJH provided the methodological expertise, problem formulation and some of the implementation. Contribution: 60\%.  Citations: 281.\end{quote}
+\end{enumerate}
+
+\vspace*{0.2cm}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  RJ Hyndman and S Fan. (2010) ``Density forecasting for long-term peak
+  electricity demand''. \emph{IEEE Transactions on Power Systems} 25(2),
+  1142-1153.
+
+  \begin{quote}     This paper provided the first stochastic model for forecasting peak electricity demand up to several decades ahead. Variations of this model are now widely used in the electricity industry. One such variation won several prizes in the GEFCom2017 competition. RJH provided the methodological expertise, problem formulation and initial coding. Contribution: 75\%.  Citations: 309.\end{quote}
+\end{enumerate}
+
+\vspace*{0.2cm}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  J Verbesselt, RJ Hyndman, G Newnham, and D Culvenor. (2010) ``Detecting
+  trend and seasonal changes in satellite image time series''. \emph{Remote
+  Sensing of Environment} 114(1), 106-115.
+
+  \begin{quote}     This paper developed innovative new methods for identifying structural breaks in time series of images. The techniques are now widely used in remote sensing practice and underpin the BFAST algorithm. RJH provided the methodological expertise and some of the implementation. Contribution: 25\%.  Citations: 1028.\end{quote}
+\end{enumerate}
+
+\vspace*{0.2cm}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  RJ Hyndman and Y Khandakar. (2008) ``Automatic time series forecasting:
+  the forecast package for R''. \emph{Journal of Statistical Software} 26(3),
+  1-22.
+
+  \begin{quote}     This paper introduced the `auto.arima` algorithm for automated model selection using ARIMA models. It is now widely used for automatic forecasting in business and industry.  RJH provided the methodological expertise, problem formulation and the implementation. Contribution: 80\%.  Citations: 2228.\end{quote}
+\end{enumerate}
+
+\vspace*{0.2cm}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  RJ Hyndman and AB Koehler. (2006) ``Another look at measures of forecast
+  accuracy''. \emph{International Journal of Forecasting} 22(4), 679-688.
+
+  \begin{quote}     This paper proposed a new forecast accuracy measure (the MASE) which has quickly become a standard in forecasting studies. RJH provided the methodological expertise, problem formulation and the implementation. Contribution: 90\%.  Citations: 3231.\end{quote}
+\end{enumerate}
+
+\vspace*{0.2cm}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  RJ Hyndman, AB Koehler, RD Snyder, and S Grose. (2002) ``A state space
+  framework for automatic forecasting using exponential smoothing
+  methods''. \emph{International Journal of Forecasting} 18(3), 439-454.
+
+  \begin{quote}     This paper provided a framework for exponential smoothing, allowing automated model selection, likelihood-based estimation, etc. The algorithm developed is now widely used for automatic forecasting in business and industry. RJH provided the methodological expertise, problem formulation and some of the implementation. Contribution: 75\%.  Citations: 800.\end{quote}
+\end{enumerate}
+
+\vspace*{0.2cm}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  RJ Hyndman and Y Fan. (1996) ``Sample quantiles in statistical
+  packages''. \emph{The American Statistician} 50(4), 361-365.
+
+  \begin{quote}     This paper provided a framework for describing a wide range of sample quantile estimation methods. It is now the basis of quantile estimation routines in many different software packages as well as the Wikipedia article on sample quantiles.  RJH provided the methodological expertise, problem formulation and most of the implementation. Contribution: 80\%.  Citations: 898.\end{quote}
+\end{enumerate}
+
+\vspace*{0.2cm}
+
+\end{document}

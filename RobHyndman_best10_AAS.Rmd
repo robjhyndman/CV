@@ -1,0 +1,117 @@
+---
+name: Rob J Hyndman
+address: "Department of Econometrics & Business Statistics,\\tabularnewline Monash University, VIC 3800, Australia."
+www: robjhyndman.com
+phone: +61 3 9905 5141
+email: "Rob.Hyndman@monash.edu"
+twitter: robjhyndman
+github: robjhyndman
+date: "`r format(Sys.time(), '%B %Y')`"
+headcolor: "000088"
+keep_md: yes
+output:
+  vitae::hyndman:
+    keep_tex: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  cache = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  out.width = "100%"
+)
+library(tidyverse)
+library(gcite)
+library(RefManageR)
+library(fuzzyjoin)
+library(vitae)
+source("functions.R")
+source("mybibstyle.R")
+```
+
+# Ten career-best academic research outputs {-}
+
+Ordered by year of publication. Citations are as given on Google scholar (on `r format(Sys.time(), "%d %B %Y")`).\vspace*{0.2cm}
+
+```{r GScholar, include=FALSE}
+if(file.exists("gspapers.rds")) {
+  gspapers <- readRDS("gspapers.rds")
+} else {
+  # Grab all citation info, 100 per call
+  gspapers1 <- gcite_url(
+    url = "https://scholar.google.com.au/citations?user=vamErfkAAAAJ&hl=en",
+    cstart = 0, pagesize = 100
+  ) %>%
+    gcite_papers()
+  gspapers2 <- gcite_url(
+    url = "https://scholar.google.com.au/citations?user=vamErfkAAAAJ&hl=en",
+    cstart = 100, pagesize = 100
+  ) %>%
+    gcite_papers()
+  gspapers3 <- gcite_url(
+    url = "https://scholar.google.com.au/citations?user=vamErfkAAAAJ&hl=en",
+    cstart = 200, pagesize = 100
+  ) %>%
+    gcite_papers()
+  gspapers <- bind_rows(gspapers1, gspapers2, gspapers3) %>%
+    as_tibble()
+  saveRDS(gspapers, "gspapers.rds")
+}
+```
+
+```{r bibfile, include=FALSE, dependson='GScholar'}
+# Read bib file
+rjhpubs <- ReadBib("rjhpubs.bib", check = "error")
+
+# Join two tables using fuzzy matching on titles
+rjhtbl <- rjhpubs %>%
+  as.data.frame() %>%
+  rownames_to_column("key") %>%
+  as_tibble() %>%
+  stringdist_join(gspapers, by = "title", ignore_case=TRUE) %>%
+  rename(title = title.x) %>%
+  mutate(year = as.integer(year)) %>%
+  select(key, bibtype, title, author, year, n_citations)
+```
+
+
+```{r bestten, include=FALSE, dependson='bibfile'}
+bestten <- data.frame(comments=c(
+  smartmeterhts = "This paper combined hierarchical forecasting with probabilistic forecasts for the first time and applied the ideas to the important problem of electricity demand modelling. It is already attracting citations despite being online for only a few months. RJH provided some methodological expertise and knowledge of the associated literature. Contribution: 20\\%.",
+  mint = "This paper provided the theory behind optimal forecast reconciliation, showing why reconciliation works, and providing new insights into how it can be extended.  Although only published last year, it has already received many citations. RJH provided the methodological expertise and problem formulation. Contribution: 33\\%.",
+  HF10 = "This paper provided the first stochastic model for forecasting peak electricity demand up to several decades ahead. Variations of this model are now widely used in the electricity industry. One such variation won several prizes in the GEFCom2017 competition. RJH provided the methodological expertise, problem formulation and initial coding. Contribution: 75\\%.",
+  DHS11 = "This paper provided new tools for forecasting difficult seasonal patterns including multiple seasonality, asynchronous multiple calendars, and non-integer seasonality. It provides the theory behind the TBATS method of forecasting. RJH provided the methodological expertise, problem formulation and some of the data analysis. Contribution: 50\\%.",
+  hierarchical = "This paper proposed a new approach to forecast reconciliation that has initiated a great deal of new work in the area, and is now widely used in practice. Wickramsuriya et al (2019) provides the theoretical support for the algorithm proposed here. RJH provided the methodological expertise, problem formulation and some of the implementation. Contribution: 60\\%.",
+  VHNC10 = "This paper developed innovative new methods for identifying structural breaks in time series of images. The techniques are now widely used in remote sensing practice and underpin the BFAST algorithm. RJH provided the methodological expertise and some of the implementation. Contribution: 25\\%.",
+  HK06 = "This paper proposed a new forecast accuracy measure (the MASE) which has quickly become a standard in forecasting studies. RJH provided the methodological expertise, problem formulation and the implementation. Contribution: 90\\%.",
+  HK08 = "This paper introduced the `auto.arima` algorithm for automated model selection using ARIMA models. It is now widely used for automatic forecasting in business and industry.  RJH provided the methodological expertise, problem formulation and the implementation. Contribution: 80\\%.",
+  HKSG02 = "This paper provided a framework for exponential smoothing, allowing automated model selection, likelihood-based estimation, etc. The algorithm developed is now widely used for automatic forecasting in business and industry. RJH provided the methodological expertise, problem formulation and some of the implementation. Contribution: 75\\%.",
+  HF96 = "This paper provided a framework for describing a wide range of sample quantile estimation methods. It is now the basis of quantile estimation routines in many different software packages as well as the Wikipedia article on sample quantiles.  RJH provided the methodological expertise, problem formulation and most of the implementation. Contribution: 80\\%."
+
+)) %>%
+  rownames_to_column("key") %>%
+  left_join(rjhtbl, by='key') %>%
+  arrange(-year) %>%
+  mutate(author = str_replace(author, "~", " "))
+```
+
+```{r, echo=FALSE, results='asis', dependson='bestten'}
+for(j in seq(NROW(bestten))) {
+  k <- bestten[j,] %>% pull(key)
+  cat(j)
+  cat(". ")
+  print(rjhpubs[k, ])
+  cat("\\begin{quote}")
+  cmt <- filter(bestten, key==k) %>% pull(comments)
+  cat("     ")
+  cat(cmt)
+  cat("  Citations: ")
+  cites <- filter(rjhtbl, key==k) %>% pull(n_citations)
+  cat(cites)
+#  if(k=="VHNC10")
+#    cat("\\newpage")
+  cat(".\\end{quote}\n\n\\vspace*{0.2cm}")
+}
+```
