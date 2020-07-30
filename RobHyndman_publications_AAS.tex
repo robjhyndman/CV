@@ -1,0 +1,620 @@
+%% Template for a CV
+%% Author: Rob J Hyndman
+
+\documentclass[10pt,a4paper,]{article}
+\usepackage[scaled=0.86]{DejaVuSansMono}
+\usepackage[sfdefault,lf,t]{carlito}
+
+% Change color to blue
+\usepackage{color,xcolor}
+\definecolor{headcolor}{HTML}{000088}
+
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true,hidelinks]{hyperref}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{geometry}
+\geometry{left=1.75cm,right=1.75cm,top=2.2cm,bottom=2cm}
+
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{long table}}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+\date{July 2020}
+
+%%%% BIBLIOGRAPHY
+% Bibliography formatting
+
+\usepackage[sorting=ynt,citestyle=authoryear,bibstyle=authoryear-comp,defernumbers=true,maxnames=20,giveninits=true, bibencoding=utf8, terseinits=true, uniquename=init,dashed=false,doi=false,isbn=false,natbib=true,backend=biber]{biblatex}
+
+\DeclareFieldFormat{url}{\url{#1}}
+\DeclareFieldFormat[article]{pages}{#1}
+\DeclareFieldFormat[inproceedings]{pages}{\lowercase{pp.}#1}
+\DeclareFieldFormat[incollection]{pages}{\lowercase{pp.}#1}
+\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\DeclareFieldFormat[article]{title}{\MakeCapital{#1}}
+\DeclareFieldFormat[article]{url}{}
+\DeclareFieldFormat[inproceedings]{title}{#1}
+\DeclareFieldFormat{shorthandwidth}{#1}
+\DeclareFieldFormat{extradate}{}
+
+% No dot before number of articles
+\usepackage{xpatch}
+\xpatchbibmacro{volume+number+eid}{\setunit*{\adddot}}{}{}{}
+
+% Remove In: for an article.
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{%
+  \printtext{\bibstring{in}\intitlepunct}}}
+
+%\makeatletter
+%\DeclareDelimFormat[cbx@textcite]{nameyeardelim}{\addspace}
+%\makeatother
+
+\setlength{\bibitemsep}{1.8pt}
+\setlength{\bibhang}{.9cm}
+%\renewcommand{\bibfont}{\fontsize{12}{14}}
+
+\renewcommand*{\bibitem}{\addtocounter{papers}{1}\item \mbox{}\hskip-0.9cm\hbox to 0.9cm{\hfill\arabic{papers}.~\,}}
+\defbibenvironment{bibliography}
+{\list{}
+  {\setlength{\leftmargin}{\bibhang}%
+   \setlength{\itemsep}{\bibitemsep}%
+   \setlength{\parsep}{\bibparsep}}}
+{\endlist}
+{\bibitem}
+
+\renewcommand{\bibfont}{\normalfont\fontsize{10}{12.4}\selectfont}
+% Counters for keeping track of papers
+\newcounter{papers}
+
+\DeclareSortingTemplate{ty}{
+  \sort{
+    \field{title}
+  }
+  \sort{
+    \field{year}
+  }
+}
+\DeclareBibliographyCategory{bib-/home/robjhyndman/git/CV/rjhpubs.bib-5813312}
+\DeclareBibliographyCategory{bib-/home/robjhyndman/git/CV/rjhpubs.bib-5814140}
+\DeclareBibliographyCategory{bib-/home/robjhyndman/git/CV/rjhpubs.bib-5814934}
+\DeclareBibliographyCategory{bib-/home/robjhyndman/git/CV/rjhpubs.bib-5815668}
+\bibliography{/home/robjhyndman/git/CV/rjhpubs.bib}
+
+\usepackage{paralist,ragged2e,datetime}
+\usepackage[hyphens]{url}
+\usepackage{fancyhdr,enumitem,pifont}
+\usepackage[compact,small,sf,bf]{titlesec}
+
+\RaggedRight
+\sloppy
+
+% Header and footer
+\pagestyle{fancy}
+\makeatletter
+\lhead{\sf\textcolor[gray]{0.4}{Curriculum Vitae: \@name}}
+\rhead{\sf\textcolor[gray]{0.4}{\thepage}}
+\cfoot{}
+\def\headrule{{\color[gray]{0.4}\hrule\@height\headrulewidth\@width\headwidth \vskip-\headrulewidth}}
+\makeatother
+
+% Header box
+\usepackage{tabularx}
+
+\makeatletter
+\def\name#1{\def\@name{#1}}
+\def\info#1{\def\@info{#1}}
+\makeatother
+\newcommand{\shadebox}[3][.9]{\fcolorbox[gray]{0}{#1}{\parbox{#2}{#3}}}
+
+\usepackage{calc}
+\newlength{\headerboxwidth}
+\setlength{\headerboxwidth}{\textwidth}
+%\addtolength{\headerboxwidth}{0.2cm}
+\makeatletter
+\def\maketitle{
+\thispagestyle{plain}
+\vspace*{-1.4cm}
+\shadebox[0.9]{\headerboxwidth}{\sf\color{headcolor}\hfil
+\hbox to 0.98\textwidth{\begin{tabular}{l}
+\\[-0.3cm]
+\LARGE\textbf{\@name}
+\\[0.7cm]
+\normalsize\textbf{Publications List}\\
+\normalsize July 2020
+\end{tabular}
+\hfill\hbox{\fontsize{9}{12}\sf
+\begin{tabular}{@{}rl@{}}
+\@info
+\end{tabular}}}\hfil
+}
+\vspace*{0.2cm}}
+\makeatother
+
+% Section headings
+\titlelabel{}
+\titlespacing{\section}{0pt}{1.5ex}{0.5ex}
+\titleformat*{\section}{\color{headcolor}\large\sf\bfseries}
+\titleformat*{\subsection}{\color{headcolor}\sf\bfseries}
+\titlespacing{\subsection}{0pt}{1ex}{0.5ex}
+
+% Miscellaneous dimensions
+\setlength{\parskip}{0ex}
+\setlength{\parindent}{0em}
+\setlength{\headheight}{15pt}
+\setlength{\tabcolsep}{0.15cm}
+\clubpenalty = 10000
+\widowpenalty = 10000
+\setlist{itemsep=1pt}
+\setdescription{labelwidth=1.2cm,leftmargin=1.5cm,labelindent=1.5cm,font=\rm}
+
+% Make nicer bullets
+\renewcommand{\labelitemi}{\ding{228}}
+
+\usepackage{booktabs,fontawesome}
+%\usepackage[t1,scale=0.86]{sourcecodepro}
+
+\name{Rob J Hyndman}
+\def\imagetop#1{\vtop{\null\hbox{#1}}}
+\info{%
+\raisebox{-0.05cm}{\imagetop{\faicon{map-marker}}} &  \imagetop{\begin{tabular}{@{}l@{}}Department of Econometrics \& Business Statistics,\tabularnewline Monash University, VIC 3800, Australia.\end{tabular}}\\ %
+\faicon{home} & \href{http://robjhyndman.com}{robjhyndman.com}\\% %
+\faicon{phone} & +61 3 9905 5141\\%
+\faicon{envelope} & \href{mailto:Rob.Hyndman@monash.edu}{\nolinkurl{Rob.Hyndman@monash.edu}}\\%
+\faicon{twitter} & \href{https://twitter.com/robjhyndman}{@robjhyndman}\\%
+\faicon{github} & \href{https://github.com/robjhyndman}{robjhyndman}\\%
+%
+%
+%
+}
+
+
+%\usepackage{inconsolata}
+
+
+
+% Templates for detailed entries
+% Arguments: what when with where why
+\usepackage{etoolbox}
+
+% Templates for detailed entries
+% Arguments: what when with where why
+\def\detaileditem#1#2#3#4#5{
+#2 & \parbox[t]{0.85\textwidth}{%
+      \textbf{#1}\hfill{\footnotesize #3}\\
+      \ifx#4\empty\else#4\par\fi%
+      \ifx#5\empty\else{%
+        \vspace{0.1cm}\begin{minipage}{0.7\textwidth}%
+        \begin{itemize}#5\end{itemize}%
+        \end{minipage}}\fi%
+      \vspace{\parsep}}\\}
+%\def\detailedsection#1{\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}#1\end{tabular*}}
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+\def\detailedsection#1{\begin{longtable}{@{\extracolsep{\fill}}ll}#1\end{longtable}}
+
+% Templates for brief entries
+% Arguments: what when with
+\def\briefitem#1#2#3{
+#2 & \parbox[t]{0.85\textwidth}{%
+      \textbf{#1}\\[-0.1cm]{\footnotesize #3}}\\[0.4cm]}
+%\def\briefsection#1{\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}#1\end{tabular*}}
+\def\briefsection#1{\begin{longtable}{@{\extracolsep{\fill}}ll}#1\end{longtable}}
+
+\def\endfirstpage{\newpage}
+
+\begin{document}
+\maketitle
+
+
+\newcounter{bib}
+
+\hypertarget{books}{%
+\subsection{Books}\label{books}}
+
+\defbibheading{bib-/home/robjhyndman/git/CV/rjhpubs.bib-5813312}{}
+\addtocategory{bib-/home/robjhyndman/git/CV/rjhpubs.bib-5813312}{ITSM91,
+ITSM94,
+MWH3,
+expsmooth08,
+unbelievable,
+fpp2}
+\newrefcontext[sorting=none]\setcounter{papers}{0}\pagebreak[3]
+\printbibliography[category=bib-/home/robjhyndman/git/CV/rjhpubs.bib-5813312,heading=none]\setcounter{papers}{0}
+
+\nocite{ITSM91,
+ITSM94,
+MWH3,
+expsmooth08,
+unbelievable,
+fpp2}
+
+\hypertarget{scholarly-book-chapters}{%
+\subsection{Scholarly book chapters}\label{scholarly-book-chapters}}
+
+\defbibheading{bib-/home/robjhyndman/git/CV/rjhpubs.bib-5814140}{}
+\addtocategory{bib-/home/robjhyndman/git/CV/rjhpubs.bib-5814140}{AGH95,
+ISGMS02c,
+ISGMS02b,
+IGSMS02a,
+HS08,
+IESS10c,
+IESS10b,
+IESS10a,
+BHT14,
+saschapter2,
+saschapter,
+sampling-multiobjective-optimization,
+colorectal,
+macrohts}
+\newrefcontext[sorting=none]\setcounter{papers}{0}\pagebreak[3]
+\printbibliography[category=bib-/home/robjhyndman/git/CV/rjhpubs.bib-5814140,heading=none]\setcounter{papers}{0}
+
+\nocite{AGH95,
+ISGMS02c,
+ISGMS02b,
+IGSMS02a,
+HS08,
+IESS10c,
+IESS10b,
+IESS10a,
+BHT14,
+saschapter2,
+saschapter,
+sampling-multiobjective-optimization,
+colorectal,
+macrohts}
+
+\newpage
+
+\hypertarget{refereed-journal-articles}{%
+\subsection{Refereed journal articles}\label{refereed-journal-articles}}
+
+\defbibheading{bib-/home/robjhyndman/git/CV/rjhpubs.bib-5814934}{}
+\addtocategory{bib-/home/robjhyndman/git/CV/rjhpubs.bib-5814934}{BHG91,
+BH92,
+YW93,
+Hyndman94,
+HDRF95,
+HDR96,
+HBG96,
+HF96,
+GHH97,
+HW97,
+LFSH97,
+GH98,
+FHV00,
+GHTT00,
+HG00,
+BH01,
+EH01,
+Hyndman01,
+lemmings,
+CHW02,
+HKSG02,
+HY02,
+RH02,
+HH03,
+HB03,
+RLH03,
+HHF04,
+Hyndman04,
+SHW04,
+SKHO04,
+BHK05,
+EH05,
+HKPB05,
+HKOS05,
+SH05,
+LCcomparison,
+ijf25,
+Hyndman06,
+HK06,
+KH06,
+NPS06,
+MH06,
+WSH06,
+YH06,
+ZKH06,
+pollen07,
+EHG07,
+NPS07,
+shortseasonal,
+HU07,
+KSH07,
+austourism,
+Gould08,
+HAA08,
+HB08,
+HK08,
+MBH08,
+AHO09,
+hiertourism,
+dSHS09,
+HS09,
+OKSH09,
+WSH09,
+VISTS10,
+EAGE+10,
+HF10,
+HS10,
+KH10,
+VHNC10,
+VHZC10,
+YHE10,
+AH11,
+AHSW11,
+Carta2011,
+DHS11,
+FH10b,
+usertalk11,
+hierarchical,
+longrun,
+Pearce10b,
+Pearce10a,
+SBH11,
+SH11,
+mapcah12,
+EUHSA12,
+FH11,
+HBY13,
+gefcom,
+foresight14,
+fungal14,
+jaci2015,
+acfplots14,
+lagphase,
+smart-meter-quantiles,
+baggedETS,
+gefcom2014,
+fasthts,
+pearce2016exploring,
+temporal-hierarchies,
+fvanaive,
+m3pca,
+hfts,
+dynamicpareto,
+handguns,
+Tham2016,
+tscv,
+bivarridges,
+vizenergy,
+bagginguncertainty,
+crudeoil,
+Water2,
+Water3,
+ausmacrofcast,
+oddwater,
+mint,
+smartmeterhts,
+elections,
+forecastingcompetitions,
+earlyclassification,
+normalizationoutliers,
+tsgeneration,
+forecastingsofa,
+fforma,
+htsgeometry,
+oddstream,
+hospital-los,
+tsibble,
+calendarviz,
+nonnegmint}
+\newrefcontext[sorting=none]\setcounter{papers}{0}\pagebreak[3]
+\printbibliography[category=bib-/home/robjhyndman/git/CV/rjhpubs.bib-5814934,heading=none]\setcounter{papers}{0}
+
+\nocite{BHG91,
+BH92,
+YW93,
+Hyndman94,
+HDRF95,
+HDR96,
+HBG96,
+HF96,
+GHH97,
+HW97,
+LFSH97,
+GH98,
+FHV00,
+GHTT00,
+HG00,
+BH01,
+EH01,
+Hyndman01,
+lemmings,
+CHW02,
+HKSG02,
+HY02,
+RH02,
+HH03,
+HB03,
+RLH03,
+HHF04,
+Hyndman04,
+SHW04,
+SKHO04,
+BHK05,
+EH05,
+HKPB05,
+HKOS05,
+SH05,
+LCcomparison,
+ijf25,
+Hyndman06,
+HK06,
+KH06,
+NPS06,
+MH06,
+WSH06,
+YH06,
+ZKH06,
+pollen07,
+EHG07,
+NPS07,
+shortseasonal,
+HU07,
+KSH07,
+austourism,
+Gould08,
+HAA08,
+HB08,
+HK08,
+MBH08,
+AHO09,
+hiertourism,
+dSHS09,
+HS09,
+OKSH09,
+WSH09,
+VISTS10,
+EAGE+10,
+HF10,
+HS10,
+KH10,
+VHNC10,
+VHZC10,
+YHE10,
+AH11,
+AHSW11,
+Carta2011,
+DHS11,
+FH10b,
+usertalk11,
+hierarchical,
+longrun,
+Pearce10b,
+Pearce10a,
+SBH11,
+SH11,
+mapcah12,
+EUHSA12,
+FH11,
+HBY13,
+gefcom,
+foresight14,
+fungal14,
+jaci2015,
+acfplots14,
+lagphase,
+smart-meter-quantiles,
+baggedETS,
+gefcom2014,
+fasthts,
+pearce2016exploring,
+temporal-hierarchies,
+fvanaive,
+m3pca,
+hfts,
+dynamicpareto,
+handguns,
+Tham2016,
+tscv,
+bivarridges,
+vizenergy,
+bagginguncertainty,
+crudeoil,
+Water2,
+Water3,
+ausmacrofcast,
+oddwater,
+mint,
+smartmeterhts,
+elections,
+forecastingcompetitions,
+earlyclassification,
+normalizationoutliers,
+tsgeneration,
+forecastingsofa,
+fforma,
+htsgeometry,
+oddstream,
+hospital-los,
+tsibble,
+calendarviz,
+nonnegmint}
+
+\newpage
+
+\hypertarget{refereed-conference-proceedings}{%
+\subsection{Refereed conference proceedings}\label{refereed-conference-proceedings}}
+
+\defbibheading{bib-/home/robjhyndman/git/CV/rjhpubs.bib-5815668}{}
+\addtocategory{bib-/home/robjhyndman/git/CV/rjhpubs.bib-5815668}{NAGS86,
+ESAM99,
+IWSM01,
+ISI05,
+WSH05,
+SH09,
+FH10,
+Han10,
+laura1,
+boostingar,
+iwfos14,
+epic,
+cikm2015,
+probhts,
+hftliquidity,
+energy-savings}
+\newrefcontext[sorting=none]\setcounter{papers}{0}\pagebreak[3]
+\printbibliography[category=bib-/home/robjhyndman/git/CV/rjhpubs.bib-5815668,heading=none]\setcounter{papers}{0}
+
+\nocite{NAGS86,
+ESAM99,
+IWSM01,
+ISI05,
+WSH05,
+SH09,
+FH10,
+Han10,
+laura1,
+boostingar,
+iwfos14,
+epic,
+cikm2015,
+probhts,
+hftliquidity,
+energy-savings}
+
+\end{document}

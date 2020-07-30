@@ -5,6 +5,7 @@ baretable <- function(tbl, digits = 0,
                       hline.after=NULL,
                       size = getOption("xtable.size", NULL),
                       add.to.row =  getOption("xtable.add.to.row", NULL),
+                      longtable=FALSE,
                       ...) {
   tbl %>%
     xtable::xtable(digits = digits, ...) %>%
@@ -13,7 +14,7 @@ baretable <- function(tbl, digits = 0,
       include.rownames = include.rownames,
       hline.after = hline.after,
       comment = FALSE,
-      latex.environments = NULL,
+      tabular.environment = if_else(longtable,"longtable","tabular"),
       floating = FALSE,
       size=size,
       add.to.row=add.to.row,
