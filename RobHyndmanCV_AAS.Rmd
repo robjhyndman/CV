@@ -28,7 +28,6 @@ source("functions.R")
   * Citizenship: Australian
   * Residential address: 40 Stoda St, Heathmont, Victoria 3135
 
-
 # Current and previous appointments
 
 ```{r employment, results='asis'}
@@ -117,7 +116,7 @@ tribble(
 
 # Journal refereeing
 
-  I have reviewed hundreds of papers for about 80 different journals over the last 30 years.
+  I have reviewed hundreds of papers over the last 30 years. In the last five years I have reviewed about 10 papers per year for journals such as *Journal of the American Statistical Association*, *Journal of Computational & Graphical Statistics*, *Data Mining & Knowledge Discovery*, *Journal of Time Series Analysis*, *Journal of Business & Economic Statistics*, *International Journal of Forecasting*, *Demography*, *Energy Economics*, *Journal of the Operational Research Society*, *Australian & New Zealand Journal of Statistics*, *Insurance: Mathematics and Economics*, *Journal of the Royal Statistical Society*, *European Journal of Operations Research*, and others.
 
 # Editorial boards
 
@@ -187,27 +186,92 @@ grants %>%
 
 # Major conference presentations
 
-  * Keynote speaker, *Extreme Forecasting*, International Symposium on Forecasting, Hong Kong, June 2009.
-  * Workshop leader, *Statistical Forecasting: Principles and Practice*, Swiss Statistical Society, Kandersteg, June 2011.
-  * Keynote speaker, *Man vs Wild Data*, Young Statisticians Conference, Melbourne, February 2013.
-  * Keynote speaker, *Forecasting without forecasters*, International Symposium on Forecasting, Seoul, June 2013.
-  * Keynote speaker, *Automatic time series forecasting*, "New Trends on Intelligent Systems and Soft Computing 2014", University of Granada, Spain, February 2014.
+  * Keynote speaker, *Extreme Forecasting*, International Symposium on Forecasting, Hong Kong, Jun 2009.
+  * Workshop leader, *Statistical Forecasting: Principles and Practice*, Swiss Statistical Society, Kandersteg, Jun 2011.
+  * Keynote speaker, *Man vs Wild Data*, Young Statisticians Conference, Melbourne, Feb 2013.
+  * Keynote speaker, *Forecasting without forecasters*, International Symposium on Forecasting, Seoul, Jun 2013.
+  * Keynote speaker, *Automatic time series forecasting*, "New Trends on Intelligent Systems and Soft Computing 2014", University of Granada, Spain, Feb 2014.
   * Keynote speaker, *Challenges in forecasting peak electricity demand*, Energy Forum, Valais, Switzerland, June 2014.
-  * Workshop leader, *Functional time series in demography*, Humboldt University, Berlin, June 2014.
-  * Workshop leader, *Forecasting: principles and practice*, University of Western Australia, September 2014.
-  * Invited speaker, *Visualization and forecasting of big time series data*, ACEMS Big data workshop, QUT, February 2015.
-  * Keynote speaker, *Forecasting big time series data using R*, Chinese R conference, Nanchang, October 2015.
-  * Keynote speaker, *Forecasting large collections of related time series*, German Statistical Week, Augsburg, September 2016.
-  * Invited speaker, International Symposium on Energy Analytics, Cairns, June 2017.
-  * Keynote speaker, ICML Time Series Workshop, Sydney, August 2017.
-  * Keynote speaker, Beijing Workshop on Forecasting, November 2017.
-  * Workshop leader, *Forecasting: principles and practice*, New York City, June 2018.
-  * ISI short course, *High-dimensional time series analysis*, Kuala Lumpur, August 2019.
-  * Workshop leader, *Tidy time series and forecasting in R*, rstudio::conf, San Francisco, January 2020.
-  * Keynote speaker, International Symposium on Forecasting, October 2020.
+  * Workshop leader, *Functional time series in demography*, Humboldt University, Berlin, Jun 2014.
+  * Workshop leader, *Forecasting: principles and practice*, University of Western Australia, Sep 2014.
+  * Invited speaker, *Visualization and forecasting of big time series data*, ACEMS Big data workshop, QUT, Feb 2015.
+  * Keynote speaker, *Forecasting big time series data using R*, Chinese R conference, Nanchang, Oct 2015.
+  * Keynote speaker, *Forecasting large collections of related time series*, German Statistical Week, Augsburg, Sep 2016.
+  * Invited speaker, International Symposium on Energy Analytics, Cairns, Jun 2017.
+  * Keynote speaker, ICML Time Series Workshop, Sydney, Aug 2017.
+  * Keynote speaker, Beijing Workshop on Forecasting, Nov 2017.
+  * Workshop leader, *Forecasting: principles and practice*, New York City, Jun 2018.
+  * ISI short course, *High-dimensional time series analysis*, Kuala Lumpur, Aug 2019.
+  * Workshop leader, *Tidy time series and forecasting in R*, rstudio::conf, San Francisco, Jan 2020.
+  * Keynote speaker, International Symposium on Forecasting, Oct 2020.
 
 # Conference organization
 
   * General Chair, International Symposium on Forecasting, 2017
   * Program Chair, International Symposium on Forecasting, 2012.
   * Program Co-Chair, International Symposium on Forecasting, 2004.
+
+# R packages
+
+```{r Rpackages}
+# Find installed or CRAN packages with Hyndman as an author
+rjhpkgs <- find_rjh_packages()
+
+cran_meta <- function(x) {
+  df <- try(versions::available.versions(x), silent = TRUE)
+  if ("try-error" %in% class(df)) {
+    warning(paste(x, "package not on CRAN"))
+    return(NULL)
+  }
+  tibble(
+    package = x,
+    maintainer = maintainer(x),
+    first_release = tail(df[[1]]$date, 1) %>% as.Date(format = "%Y-%m-%d"),
+    last_release = head(df[[1]]$date, 1) %>% as.Date(format = "%Y-%m-%d"),
+    current_version = head(df[[1]]$version, 1)
+  ) %>%
+  mutate(
+    maintainer = str_trim(str_extract(maintainer, "[A-Za-z'\ ]*")),
+  )
+}
+cran_downloads <- function(x) {
+  # Compute monthly download counts
+  down <- cranlogs::cran_downloads(x, from = "2000-01-01") %>%
+    as_tibble() %>%
+    mutate(month = tsibble::yearmonth(date)) %>%
+    group_by(month) %>%
+    summarise(count = sum(count), package = x)
+  # Strip out initial zeros
+  first_nonzero <- down %>%
+    filter(count > 0) %>%
+    head(1)
+  if(NROW(first_nonzero) == 0L)
+    return(NULL)
+  else
+    filter(down, month >= first_nonzero$month)
+}
+
+downloads <- map_dfr(rjhpkgs, cran_downloads) %>%
+  mutate(month = tsibble::yearmonth(month))
+
+since2015 <- downloads %>%
+  filter(month >= tsibble::yearmonth("2015 Jan"))
+```
+
+I have coauthored `r length(rjhpkgs)` R packages in addition to my other research outputs. These provide implementations of many of my methodological research contributions and allow the translation of my research into practice. There have been `r round(sum(since2015$count)/1e6)` million downloads of my packages since 2015 (to 30 July 2020). The most downloaded packages for which I am the primary author are listed below.\vspace*{0.3cm}
+
+```{r}
+since2015 %>%
+  group_by(package) %>%
+  summarise(count = sum(count)) %>%
+  filter(!(package %in% c("rmarkdown","fracdiff","DescTools","tsibble"))) %>%
+  filter(count > 1e5) %>%
+  arrange(desc(count)) %>%
+  mutate(count = scales::comma(count)) %>%
+  knitr::kable(
+    booktabs=TRUE, 
+    col.names=c("Package","Downloads since 2015"),
+    linesep = "",
+    align = c("l", "r"),
+  )
+```
