@@ -251,3 +251,38 @@ dollars <- function(x) {
     unname(prettyNum(out, ",", preserve.width = "none", scientific = FALSE))
   ))
 }
+
+cran_meta <- function(x) {
+  df <- try(versions::available.versions(x), silent = TRUE)
+  if ("try-error" %in% class(df)) {
+    warning(paste(x, "package not on CRAN"))
+    return(NULL)
+  }
+  tibble(
+    package = x,
+    maintainer = maintainer(x),
+    first_release = tail(df[[1]]$date, 1) %>% as.Date(format = "%Y-%m-%d"),
+    last_release = head(df[[1]]$date, 1) %>% as.Date(format = "%Y-%m-%d"),
+    current_version = head(df[[1]]$version, 1)
+  ) %>%
+  mutate(
+    maintainer = str_trim(str_extract(maintainer, "[A-Za-z'\ ]*")),
+  )
+}
+cran_downloads <- function(x) {
+  # Compute monthly download counts
+  down <- cranlogs::cran_downloads(x, from = "2000-01-01") %>%
+    as_tibble() %>%
+    mutate(month = tsibble::yearmonth(date)) %>%
+    group_by(month) %>%
+    summarise(count = sum(count), package = x)
+  # Strip out initial zeros
+  first_nonzero <- down %>%
+    filter(count > 0) %>%
+    head(1)
+  if(NROW(first_nonzero) == 0L)
+    return(NULL)
+  else
+    filter(down, month >= first_nonzero$month)
+}
+

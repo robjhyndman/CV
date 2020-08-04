@@ -6,10 +6,9 @@ phone: +61 3 9905 5141
 email: "Rob.Hyndman@monash.edu"
 twitter: robjhyndman
 github: robjhyndman
-date: "`r format(Sys.time(), '%B %Y')`"
+date: "`r format(Sys.Date(), '%B %Y')`"
 headcolor: "000088"
-keep_md: yes
-output: 
+output:
   vitae::hyndman:
     keep_tex: yes
 ---
@@ -24,13 +23,18 @@ library(vitae)
 source("functions.R")
 ```
 
-```{r Rpackages, eval=FALSE}
+```{r Rpackages}
 # Find installed or CRAN packages with Hyndman as an author
 rjhpkgs <- find_rjh_packages()
 # Remove some works in progress or not suitable for CV
 rjhpkgs <- rjhpkgs[!(rjhpkgs %in% c("indmortality2","informs"))]
+# 
+downloads <- map_dfr(rjhpkgs, cran_downloads) %>%
+  mutate(month = tsibble::yearmonth(month))
+since2015 <- downloads %>%
+  filter(month >= tsibble::yearmonth("2015 Jan"))
 # Write bib file
-write_packages_bib(rjhpkgs, file="Rpackages.bib")
+#write_packages_bib(rjhpkgs, file="Rpackages.bib")
 ```
 
 ```{r bibfiles}
@@ -61,28 +65,40 @@ tribble(
   1993, 1994, "\\textbf{Lecturer}, Department of Statistics, University of Melbourne",
   1995, 1996, "\\textbf{Lecturer}, Department of Mathematics and Statistics, Monash University",
   1997, 1998, "\\textbf{Senior Lecturer}, Department of Mathematics and Statistics, Monash University",
+  1998, 1998, "\\textbf{Visiting Professor}, Department of Statistics, Colorado State University",
   1998, 2000, "\\textbf{Senior Lecturer}, Department of Econometrics \\& Business Statistics, Monash University",
   2001, 2003, "\\textbf{Associate Professor}, Department of Econometrics \\& Business Statistics, Monash University",
+  2002, 2002, "\\textbf{Visiting Senior Research Fellow}, Mathematical Sciences Institute, Australian National University",
   2003, NA, "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University",
-  2019, NA, "\\textbf{Head}, Department of Econometrics \\& Business Statistics, Monash University",
+  2016, 2016, "\\textbf{KNAW Visiting Professor}, TU/Eindhoven, Netherlands",
 ) %>%
   arrange(-Start) %>%
-  #filter(Start > 2000) %>%
   mutate(End = replace_na(End, "")) %>%
-  mutate(Years = paste(Start, "--", End, sep = "")) %>%
+  mutate(Years = if_else(End == Start,
+        as.character(Start),
+        paste(Start, "--", End, sep = ""),
+        paste(Start, "--", End, sep = ""))) %>%
   select(Years, Position) %>%
   baretable()
 ```
 
-# Other positions
+# Academic and research leadership
+
+  * **Head**, Department of Econometrics & Business Statistics, Monash University. 2019--
+  * **Director**, Business & Economic Forecasting Unit, Department of Econometrics & Business Statistics, Monash University. 2001--2017.
+  * **Director of Consulting**, Econometrics and Business Statistics, Monash University. 2000–-2014.
+  * **Director**, Monash University Statistical Consulting Service, 1997--1998.
+  * **Director**, Key Centre for Statistical Science (joint venture between Monash, Melbourne, La Trobe and RMIT universities), 1996--1998.
+
+# Editorial boards
 
 ```{r positions, results='asis'}
 tribble(
   ~Start, ~End, ~Position,
   2011, NA, "\\textbf{Editor}, \\textit{Journal of Statistical Software}",
-  2001, NA, "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}",
+  2019, NA, "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}",
   2005, 2018, "\\textbf{Editor-in-Chief}, \\textit{International Journal of Forecasting}",
-  2005, 2018, "\\textbf{Director}, International Institute of Forecasters",
+  2001, 2004, "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}",
   2001, 2004, "\\textbf{Theory and Methods Editor}, \\emph{Australian \\& New Zealand Journal of Statistics}",
 ) %>%
   mutate(End = replace_na(End, "")) %>%
@@ -91,19 +107,33 @@ tribble(
   baretable()
 ```
 
-# Honours and awards
+# Professional societies
+
+  * Member, Pearson Prize Committee, International Statistical Institute, 2017.
+  * Director, International Institute of Forecasters, 2005--2018.
+  * Member, Scientific Program Advisory Group, Statistical Society of Australia, 2001--2004
+  * Secretary, Victorian branch, Statistical Society of Australia, 1993--1995.
+  * Central Council member, Statistical Society of Australia, 1993--1996.
+
+# Current memberships
+
+  * Elected Member, International Statistical Institute
+  * Member, International Institute of Forecasters
+  * Member, International Association for Statistical Computing
+  * Member, Statistical Society of Australia
+  * Member, International Society for Business and Industrial Statistics
+
+# Awards and honours
 
 ```{r awards, results='asis'}
 awards <- tribble(
   ~Year, ~Award,
-  2016, "KNAW Visiting Professor, TU/Eindhoven, Netherlands",
+  2018, "Commendation for the Dean's Award for research impact",
   2010, "Dean's Award for excellence in innovation and external collaboration, Monash University",
   2010, "HP Innovation Research Award",
   2008, "Dean's award for excellence in research, Monash University",
   2008, "Vice-Chancellor's award for postgraduate supervisor of the year, Monash University",
-  2007, "Knibbs Lecturer, Statistical Society of Australia (ACT branch)",
   2007, "Moran Medal for Statistical Science, Australian Academy of Science",
-  2006, "Belz Lecturer, Statistical Society of Australia (Victorian branch)",
   1998, "Award for excellence in teaching, Monash Science Society",
   1990, "Finalist, Channel Ten Young Achiever Awards",
   1988, "Dwights Prize in Statistics, University of Melbourne",
@@ -114,21 +144,46 @@ awards <- tribble(
   baretable()
 ```
 
-# Current memberships
-
-  * Elected Member, International Statistical Institute
-  * Member, International Institute of Forecasters
-  * Member, International Association for Statistical Computing
-  * Member, Statistical Society of Australia
-  * Member, International Society for Business and Industrial Statistics
-
 # Research
 
   * Since 1991 I have authored `r NROW(pubs)` papers, chapters or books on statistical topics (listed on pages \pageref{papersstart}--\pageref{papersend}).
   * My current research involves the analysis of large collections of time series, and includes visualization, forecasting, reconciliation, modelling and anomaly detection..
   * I currently supervise five PhD students and two post-doctoral research fellow. I have previously supervised another 27 PhD students and 3 Masters students.
   * I publish the [*Hyndsight*](https://robjhyndman.com/hyndsight) blog on research issues which receives an average of about 2000 pageviews per day.
-  * I have produced `r NROW(packages)` R packages as a result of my research (listed on pages \pageref{packagestart}--\pageref{packageend}) which have been downloaded over 2 million times in the last 12 months.
+  * I have coauthored `r length(rjhpkgs)` R packages as a result of my research (listed on pages \pageref{packagestart}--\pageref{packageend}). There have been `r round(sum(since2015$count)/1e6)` million downloads of my packages since 2015 (to `r format(Sys.time(), "%e %B %Y")`). 
+
+# Public lectures
+
+  * Belz lecture, *Forecasting and the importance of being uncertain*, Statistical Society of Australia, Melbourne, October 2006.
+  * Knibbs lecture, *Population forecasting and the importance of being uncertain*, Statistical Society of Australia, Melbourne, November 2007.
+  * Invited speaker, *Forecasting functional time series*, Australian Frontiers of Science, Canberra, February 2008.
+  * Yahoo Big Thinkers lecture, *Exploring the boundaries of predictability: what can we forecast, and when should we give up?*, California, June 2015.
+  * Monash master class, *Forecasting the future of the power industry: What can you learn from smart meter data?*, Melbourne, September 2018.
+
+# Major conference presentations
+
+  * Keynote speaker, *Extreme Forecasting*, International Symposium on Forecasting, Hong Kong, June 2009.
+  * Workshop leader, *Statistical Forecasting: Principles and Practice*, Swiss Statistical Society, Kandersteg, June 2011.
+  * Invited speaker, *Advances in automatic time series forecasting*, Australian Statistics Conference, Adelaide, July 2012.
+  * Keynote speaker, *Man vs Wild Data*, Young Statisticians Conference, Melbourne, February 2013.
+  * Keynote speaker, *Forecasting without forecasters*, International Symposium on Forecasting, Seoul, June 2013.
+  * Keynote speaker, *Automatic time series forecasting*, "New Trends on Intelligent Systems and Soft Computing 2014", University of Granada, Spain, February 2014.
+  * Workshop leader, *State space models for time series*, Australian Bureau of Statistics, May 2014.
+  * Keynote speaker, *Challenges in forecasting peak electricity demand*, Energy Forum, Valais, Switzerland, June 2014.
+  * Workshop leader, *Functional time series in demography*, Humboldt University, Berlin, June 2014.
+  * Workshop leader, *Forecasting: principles and practice*, University of Western Australia, September 2014.
+  * Invited speaker, *Visualization and forecasting of big time series data*, ACEMS Big data workshop, QUT, February 2015.
+  * Keynote speaker, *Forecasting big time series data using R*, Chinese R conference, Nanchang, October 2015.
+  * Keynote speaker, *Forecasting large collections of related time series*, German Statistical Week, Augsburg, September 2016.
+  * Invited speaker, International Symposium on Energy Analytics, Cairns, June 2017.
+  * Keynote speaker, ICML Time Series Workshop, Sydney, August 2017.
+  * Keynote speaker, Beijing Workshop on Forecasting, November 2017.
+  * Workshop leader, *Forecasting: principles and practice*, New York City, June 2018.
+  * ISI short course, *High-dimensional time series analysis*, Kuala Lumpur, August 2019.
+  * Workshop leader, *Tidy time series and forecasting in R*, rstudio::conf, San Francisco, January 2020.
+  * Keynote speaker, International Symposium on Forecasting, Rio de Janeiro, July 2020.
+
+\newpage
 
 # Grants
 
@@ -164,37 +219,9 @@ grants %>%
 
 \newpage
 
-# Major invited talks
-
-  * Belz lecture, *Forecasting and the importance of being uncertain*, Statistical Society of Australia, Melbourne, October 2006.
-  * Knibbs lecture, *Population forecasting and the importance of being uncertain*, Statistical Society of Australia, Melbourne, November 2007.
-  * Invited speaker, *Forecasting functional time series*, Australian Frontiers of Science, Canberra, February 2008.
-  * Keynote speaker, *Extreme Forecasting*, International Symposium on Forecasting, Hong Kong, June 2009.
-  * Workshop leader, *Statistical Forecasting: Principles and Practice*, Swiss Statistical Society, Kandersteg, June 2011.
-  * Invited speaker, *Advances in automatic time series forecasting*, Australian Statistics Conference, Adelaide, July 2012.
-  * Keynote speaker, *Man vs Wild Data*, Young Statisticians Conference, Melbourne, February 2013.
-  * Keynote speaker, *Forecasting without forecasters*, International Symposium on Forecasting, Seoul, June 2013.
-  * Keynote speaker, *Automatic time series forecasting*, "New Trends on Intelligent Systems and Soft Computing 2014", University of Granada, Spain, February 2014.
-  * Workshop leader, *State space models for time series*, Australian Bureau of Statistics, May 2014.
-  * Keynote speaker, *Challenges in forecasting peak electricity demand*, Energy Forum, Valais, Switzerland, June 2014.
-  * Workshop leader, *Functional time series in demography*, Humboldt University, Berlin, June 2014.
-  * Workshop leader, *Forecasting: principles and practice*, University of Western Australia, September 2014.
-  * Invited speaker, *Visualization and forecasting of big time series data*, ACEMS Big data workshop, QUT, February 2015.
-  * Keynote speaker, *Exploring the boundaries of predictability: what can we forecast, and when should we give up?*, Yahoo Big Thinkers, June 2015.
-  * Keynote speaker, *Forecasting big time series data using R*, Chinese R conference, Nanchang, October 2015.
-  * Keynote speaker, *Forecasting large collections of related time series*, German Statistical Week, Augsburg, September 2016.
-  * Invited speaker, International Symposium on Energy Analytics, Cairns, June 2017.
-  * Keynote speaker, ICML Time Series Workshop, Sydney, August 2017.
-  * Keynote speaker, Beijing Workshop on Forecasting, November 2017.
-  * Workshop leader, *Forecasting: principles and practice*, New York City, June 2018.
-  * Monash master class, *Forecasting the future of the power industry: What can you learn from smart meter data?*, Melbourne, September 2018.
-  * ISI short course, *High-dimensional time series analysis*, Kuala Lumpur, August 2019.
-  * Workshop leader, *Tidy time series and forecasting in R*, rstudio::conf, San Francisco, January 2020.
-  * Keynote speaker, International Symposium on Forecasting, Rio de Janeiro, July 2020.
-
 # Teaching
 
-  * In 2018, student evaluations for "Applied forecasting for business and economics" gave an average rating for my teaching of 4.82 out of 5, while all students rated "Advanced statistical modelling" at 5 out of 5.
+  * In each of 2018, 2019 and 2020, student evaluations for "Applied forecasting for business and economics" gave an average rating for my teaching above 4.8 out of 5, while all students in 2018 rated "Advanced statistical modelling" at 5 out of 5. (I did not teach the latter subject in 2019 and 2020.)
   * In 1998, I received the award for "Excellence in teaching" by the Monash Science Society. This is awarded by the students of the Science faculty.
   * I am author of an innovative textbook with George Athanasopoulos entitled *Forecasting: principles and practice* ([`OTexts.org/fpp2/`](https://OTexts.org/fpp2)) which is available online and free of charge. The website has an average of over 20000 pageviews per day.
 
@@ -209,6 +236,13 @@ grants %>%
   * Member of the ATAR Technical Group for the Australasian Conference of Tertiary Admissions Centres (2003--).
   * Member of the Indigenous Statistical and Information Advisory Group for the Australian Institute of Health and Welfare (2017--).
   * Member of the Methodology Advisory Committee for the Australian Bureau of Statistics (2010--2018).
+
+# Conference organization
+
+  * General Chair, International Symposium on Forecasting, 2017
+  * Program Chair, International Symposium on Forecasting, 2012.
+  * Program Co-Chair, International Symposium on Forecasting, 2004.
+
 
 \newpage
 
@@ -232,7 +266,7 @@ editorials <- c(
 \refstepcounter{bib}\label{papersstart}
 
 ```{r thesis}
-pubs %>% 
+pubs %>%
   filter(bibtype == "PhdThesis")
 ```
 
@@ -307,7 +341,7 @@ reports %>% arrange(year, surnames)
 ## Software (R packages)
 \refstepcounter{bib}\label{packagestart}
 
-```{r r-packages}
+```{r r-packages-list}
 # Sort R packages by title, then year.
 packages %>% arrange(title, year)
 ```
