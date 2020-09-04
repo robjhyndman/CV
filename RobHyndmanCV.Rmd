@@ -25,10 +25,24 @@ source("functions.R")
 
 ```{r Rpackages}
 # Find installed or CRAN packages with Hyndman as an author
-rjhpkgs <- find_rjh_packages()
-# Remove some works in progress or not suitable for CV
-rjhpkgs <- rjhpkgs[!(rjhpkgs %in% c("indmortality2","informs"))]
-# 
+rjhpkgs <- c(find_rjh_packages(),
+  # Now add github-only packages
+    "addb",
+    "anomalous",
+    "compenginets",
+    "cricketdata",
+    "fasster",
+    "MEFM",
+    "MonashEBSTempaltes",
+    "oddwater",
+    "ozbabynames",
+    "rcademy",
+    "tscompdata",
+    "tsdl"
+    ) %>%
+  unique() %>% 
+  sort()
+
 downloads <- map_dfr(rjhpkgs, cran_downloads) %>%
   mutate(month = tsibble::yearmonth(month))
 since2015 <- downloads %>%

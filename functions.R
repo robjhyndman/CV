@@ -125,31 +125,12 @@ getbibentry <- function(pkg)
 # Return vector of package names authored by RJH
 # Input is a list of github packages in the form "package/repo"
 find_rjh_packages <- function() {
-  # First check installed packages
-  installed <- c(
-      fs::dir_ls("~/R/x86_64-pc-linux-gnu-library/4.0/"),
-      fs::dir_ls("/usr/local/lib/R/site-library"),
-      fs::dir_ls("/usr/lib/R/site-library")
-    ) %>%
-    stringr::str_extract("[a-zA-Z0-9\\-\\.]*$") %>%
-    tibble::as_tibble() %>%
-    rename(package = value) %>%
-    mutate(
-      meta = map(package, function(x){suppressWarnings(packageDescription(x))}),
-      hyndman = map_lgl(meta, function(x){grepl("Hyndman", x$Author, fixed=TRUE)})
-    ) %>%
-    filter(hyndman) %>%
-    pull(package)
-
-  # Now check CRAN packages
-  cran <- pkgsearch::ps("Hyndman", size = 100) %>%
+  # Return CRAN packages with Hyndman as author
+  pkgsearch::ps("Hyndman", size = 100) %>%
     filter(map_lgl(
       package_data, ~ grepl("Hyndman", .x$Author, fixed = TRUE))
     ) %>%
     pull(package)
-
-  # Combine lists
-  c(cran,installed) %>% unique() %>% sort()
 }
 
 
