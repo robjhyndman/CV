@@ -256,7 +256,7 @@ cran_downloads <- function(x) {
     as_tibble() %>%
     mutate(month = tsibble::yearmonth(date)) %>%
     group_by(month) %>%
-    summarise(count = sum(count), package = x)
+    summarise(count = sum(count), package = x, .groups="keep")
   # Strip out initial zeros
   first_nonzero <- down %>%
     filter(count > 0) %>%
