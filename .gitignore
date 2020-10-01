@@ -1,7 +1,7 @@
 RobHyndmanCV.md
 RobHyndmanCV.tex
 
-cache/*
+*_cache/*
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
