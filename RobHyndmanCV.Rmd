@@ -16,7 +16,12 @@ output:
 \newcounter{bib}
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, cache = FALSE)
+knitr::opts_chunk$set(
+  echo = FALSE, 
+  warning = FALSE, 
+  message = FALSE, 
+  cache = TRUE
+)
 library(tidyverse)
 library(RefManageR)
 library(vitae)
@@ -40,7 +45,7 @@ rjhpkgs <- c(find_rjh_packages(),
     "tscompdata",
     "tsdl"
     ) %>%
-  unique() %>% 
+  unique() %>%
   sort()
 
 downloads <- map_dfr(rjhpkgs, cran_downloads) %>%
@@ -164,12 +169,12 @@ awards <- tribble(
   * My current research involves the analysis of large collections of time series, and includes visualization, forecasting, reconciliation, modelling and anomaly detection..
   * I currently supervise five PhD students and two post-doctoral research fellow. I have previously supervised another 27 PhD students and 3 Masters students.
   * I publish the [*Hyndsight*](https://robjhyndman.com/hyndsight) blog on research issues which receives an average of about 2000 pageviews per day.
-  * I have coauthored `r length(rjhpkgs)` R packages as a result of my research (listed on pages \pageref{packagestart}--\pageref{packageend}). There have been `r round(sum(since2015$count)/1e6)` million downloads of my packages since 2015 (to `r format(Sys.time(), "%e %B %Y")`). 
+  * I have coauthored `r length(rjhpkgs)` R packages as a result of my research (listed on pages \pageref{packagestart}--\pageref{packageend}). There have been over `r round(sum(since2015$count)/1e6)` million downloads of my packages since 2015 (to `r format(Sys.time(), "%e %B %Y")`).
 
 # Public lectures
 
   * Belz lecture, *Forecasting and the importance of being uncertain*, Statistical Society of Australia, Melbourne, October 2006.
-  * Knibbs lecture, *Population forecasting and the importance of being uncertain*, Statistical Society of Australia, Melbourne, November 2007.
+  * Knibbs lecture, *Population forecasting and the importance of being uncertain*, Statistical Society of Australia, Canberra, November 2007.
   * Invited speaker, *Forecasting functional time series*, Australian Frontiers of Science, Canberra, February 2008.
   * Yahoo Big Thinkers lecture, *Exploring the boundaries of predictability: what can we forecast, and when should we give up?*, California, June 2015.
   * Monash master class, *Forecasting the future of the power industry: What can you learn from smart meter data?*, Melbourne, September 2018.
@@ -321,7 +326,7 @@ pubs %>%
 
 ```{r working-papers}
 pubs %>%
-  filter(bibtype %in% c("TechReport", "Unpublished")) %>%
+  filter(bibtype %in% c("TechReport", "Misc", "Unpublished")) %>%
   arrange(year, surnames)
 ```
 
