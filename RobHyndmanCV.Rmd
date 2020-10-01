@@ -8,9 +8,7 @@ twitter: robjhyndman
 github: robjhyndman
 date: "`r format(Sys.Date(), '%B %Y')`"
 headcolor: "000088"
-output:
-  vitae::hyndman:
-    keep_tex: yes
+output: vitae::hyndman
 ---
 
 \newcounter{bib}
