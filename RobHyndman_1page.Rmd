@@ -129,7 +129,7 @@ editorials <- c(
 )
 ```
 
-\renewcommand{\bibfont}{\normalfont\fontsize{10}{11.7}\sffamily}
+\newcommand{\bibfont}{\normalfont\fontsize{10}{11.7}\sffamily}
 
 
 # Books (since 2018)
