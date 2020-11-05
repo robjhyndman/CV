@@ -284,15 +284,15 @@ editorials <- c(
 
 ```{r thesis}
 pubs %>%
-  filter(bibtype == "PhdThesis")
+  filter(type == "thesis")
 ```
 
 ## Books
 
 ```{r books}
 pubs %>%
-  filter(bibtype == "Book") %>%
-  arrange(year, surnames)
+  filter(type == "book") %>%
+  arrange(issued, author$family)
 ```
 
 ## Refereed research papers
@@ -300,40 +300,40 @@ pubs %>%
 ```{r research-papers}
 # Normal articles excluding editorials
 pubs %>%
-  filter(bibtype == "Article", !(key %in% editorials)) %>%
-  arrange(year, surnames)
+  filter(type == "article-journal", !(id %in% editorials)) %>%
+  arrange(issued, author$family)
 ```
 
 ## Book chapters
 
 ```{r book-chapters}
 pubs %>%
-  filter(bibtype %in% c("InBook", "InCollection")) %>%
-  arrange(year, surnames)
+  filter(type %in% c("chapter")) %>%
+  arrange(issued, author$family)
 ```
 
 ## Papers in refereed conference proceedings
 
 ```{r papers-in-proceedings}
 pubs %>%
-  filter(bibtype == "InProceedings") %>%
-  arrange(year, surnames)
+  filter(type == "paper-conference") %>%
+  arrange(issued, author$family)
 ```
 
 ## Working papers under revision or review
 
 ```{r working-papers}
 pubs %>%
-  filter(bibtype %in% c("TechReport", "Misc", "Unpublished")) %>%
-  arrange(year, surnames)
+  filter(type %in% c("report", "manuscript")) %>%
+  arrange(issued, author$family)
 ```
 
 ## Book reviews
 
 ```{r book-reviews}
 pubs %>%
-  filter(bibtype == "Review") %>%
-  arrange(year, surnames)
+  filter(type == "review") %>%
+  arrange(issued, author$family)
 ```
 
 ## Editorials
@@ -341,8 +341,8 @@ pubs %>%
 ```{r editorials}
 # Now the editorials
 pubs %>%
-  filter(bibtype == "Article", key %in% editorials) %>%
-  arrange(year, surnames)
+  filter(type == "article-journal", id %in% editorials) %>%
+  arrange(issued, author$family)
 ```
 \refstepcounter{bib}\label{papersend}
 
@@ -350,7 +350,7 @@ pubs %>%
 \refstepcounter{bib}\label{consultingstart}
 
 ```{r statistical-consulting}
-reports %>% arrange(year, surnames)
+reports %>% arrange(issued, author$family)
 ```
 
 \refstepcounter{bib}\label{consultingend}
@@ -360,7 +360,7 @@ reports %>% arrange(year, surnames)
 
 ```{r r-packages-list}
 # Sort R packages by title, then year.
-packages %>% arrange(title, year)
+packages %>% arrange(title, issued)
 ```
 
 \refstepcounter{bib}\label{packageend}
