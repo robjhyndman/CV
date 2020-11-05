@@ -8,6 +8,7 @@ twitter: robjhyndman
 github: robjhyndman
 date: "`r format(Sys.Date(), '%B %Y')`"
 headcolor: "000088"
+csl: numeric-apa-cv.csl
 output: vitae::hyndman
 ---
 
