@@ -9,6 +9,7 @@ github: robjhyndman
 date: "`r format(Sys.time(), '%B %Y')`"
 headcolor: "000088"
 keep_md: yes
+csl: numeric-apa-cv.csl
 output:
   vitae::hyndman:
     keep_tex: yes
@@ -269,7 +270,7 @@ since2015 %>%
   arrange(desc(count)) %>%
   mutate(count = scales::comma(count)) %>%
   knitr::kable(
-    booktabs=TRUE, 
+    booktabs=TRUE,
     col.names=c("Package","Downloads since 2015"),
     linesep = "",
     align = c("l", "r"),

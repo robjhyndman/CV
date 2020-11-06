@@ -8,6 +8,7 @@ twitter: robjhyndman
 github: robjhyndman
 date: "`r format(Sys.time(), '%B %Y')`"
 headcolor: "000088"
+csl: numeric-apa-cv.csl
 keep_md: yes
 output:
   vitae::hyndman:
