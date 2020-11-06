@@ -82,7 +82,7 @@ getbibentry <- function(pkg)
   meta$Author <- gsub("Rob Hyndman","Rob J Hyndman",meta$Author)
 
   # Fix Souhaib's name
-  meta$Author <- gsub("Ben Taieb", "Ben~Taieb", meta$Author)
+  meta$Author <- gsub("Ben Taieb", "{Ben~Taieb}", meta$Author)
 
   # Replace R Core Team with {R Core Team}
   meta$Author <- gsub("R Core Team","{R Core Team}",meta$Author)

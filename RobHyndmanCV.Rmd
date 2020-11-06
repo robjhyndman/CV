@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
   echo = FALSE, 
   warning = FALSE, 
   message = FALSE, 
-  cache = TRUE
+  cache = FALSE
 )
 library(tidyverse)
 library(RefManageR)
@@ -52,7 +52,7 @@ downloads <- map_dfr(rjhpkgs, cran_downloads) %>%
 since2015 <- downloads %>%
   filter(month >= tsibble::yearmonth("2015 Jan"))
 # Write bib file
-#write_packages_bib(rjhpkgs, file="Rpackages.bib")
+write_packages_bib(rjhpkgs, file="Rpackages.bib")
 ```
 
 ```{r bibfiles}
@@ -260,7 +260,6 @@ grants %>%
   * General Chair, International Symposium on Forecasting, 2017
   * Program Chair, International Symposium on Forecasting, 2012.
   * Program Co-Chair, International Symposium on Forecasting, 2004.
-
 
 \newpage
 
