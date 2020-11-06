@@ -361,7 +361,7 @@ reports %>% arrange(issued, author$family)
 
 ```{r r-packages-list}
 # Sort R packages by title, then year.
-packages %>% arrange(title, issued)
+packages %>% arrange(id, issued)
 ```
 
 \refstepcounter{bib}\label{packageend}
