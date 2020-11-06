@@ -8,6 +8,7 @@ twitter: robjhyndman
 github: robjhyndman
 date: "`r format(Sys.time(), '%B %Y')`"
 headcolor: "000088"
+csl: numeric-apa-cv.csl
 keep_md: yes
 output:
   vitae::hyndman:
@@ -187,8 +188,8 @@ I have coauthored `r length(rjhpkgs)` R packages as a result of my research. The
 
 ```{r books}
 bibliography_entries("rjhpubs.bib") %>%
-  filter(key %in% c("fpp2","MWH3","expsmooth08")) %>%
-  arrange(year, surnames)
+  filter(id %in% c("fpp2","MWH3","expsmooth08")) %>%
+  arrange(issued, author$family)
 ```
 
 # Selected papers
