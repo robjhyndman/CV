@@ -111,7 +111,7 @@ getbibentry <- function(pkg)
   # Create bibentry
   rref <- bibentry(
     bibtype="Manual",
-    title=paste(meta$Package,": ",meta$Title, sep=""),
+    title=paste("{",meta$Package,"}: ",meta$Title, sep=""),
     year=meta$Year,
     author = meta$Author,
     url = strsplit(meta$URL,",")[[1]][1],

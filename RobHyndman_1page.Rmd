@@ -8,6 +8,7 @@ twitter: robjhyndman
 github: robjhyndman
 date: "`r format(Sys.time(), '%B %Y')`"
 headcolor: "000088"
+csl: numeric-apa-cv.csl
 output:
   vitae::hyndman:
     keep_tex: yes
@@ -22,7 +23,7 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, cache = FA
 library(tidyverse)
 library(RefManageR)
 library(vitae)
-source("baretable.R")
+source("functions.R")
 ```
 
 
@@ -129,15 +130,15 @@ editorials <- c(
 )
 ```
 
-\renewcommand{\bibfont}{\normalfont\fontsize{10}{11.7}\sffamily}
+\newcommand{\bibfont}{\normalfont\fontsize{10}{11.7}\sffamily}
 
 
 # Books (since 2018)
 
 ```{r books}
 bibliography_entries("rjhpubs.bib") %>%
-  filter(bibtype == "Book", year > 2015) %>%
-  arrange(year, surnames)
+  filter(type == "book", issued > 2015) %>%
+  arrange(issued, author$family)
 ```
 
 # Research papers (since 2018)
@@ -145,8 +146,8 @@ bibliography_entries("rjhpubs.bib") %>%
 ```{r research-papers}
 # Normal articles excluding editorials
 bibliography_entries("rjhpubs.bib") %>%
-  filter(bibtype == "Article", !(key %in% editorials), year >= 2018) %>%
-  arrange(year, surnames)
+  filter(type == "article-journal", !(id %in% editorials), issued >= 2018) %>%
+  arrange(issued, author$family)
 ```
 
 \thispagestyle{empty}\vspace*{-.31cm}\hspace*{14.5cm}\includegraphics[width=4cm]{Sig}\vspace*{-2cm}
