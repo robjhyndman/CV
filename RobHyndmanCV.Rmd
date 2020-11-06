@@ -325,7 +325,7 @@ pubs %>%
 
 ```{r working-papers}
 pubs %>%
-  filter(type %in% c("report", "manuscript")) %>%
+  filter(type %in% c("report", "manuscript") | is.na(type)) %>%
   arrange(issued, author$family)
 ```
 
