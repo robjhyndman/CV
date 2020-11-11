@@ -39,7 +39,7 @@ write_packages_bib <- function(pkglist, file)
     if("try-error" %in% class(bibs))
       stop(paste("Package not found:",pkglist[i]))
     else {
-      cat("\n Writing",pkglist[i])
+      message("Writing",pkglist[i])
       writeLines(toBibtex(bibs), fh)
     }
   }
@@ -77,6 +77,9 @@ getbibentry <- function(pkg)
 
   # Fix any & in title
   meta$Title <- gsub("&","\\\\&",meta$Title)
+
+  # Keep title case
+  meta$Title <- paste0("{",meta$Title,"}")
 
   # Add J to my name
   meta$Author <- gsub("Rob Hyndman","Rob J Hyndman",meta$Author)
