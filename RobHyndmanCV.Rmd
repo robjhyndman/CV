@@ -42,30 +42,34 @@ grants <- read_csv("Grant_income.csv")
 
 ```{r degrees, results='asis'}
 tribble(
-  ~Degree, ~Institution, ~Year, 
-  "B.Sc.(Hons)", "University of Melbourne", 1988,
-  "Ph.D.", "University of Melbourne", 1992,
-  "A.Stat.", "Statistical Society of Australia", 2000
-) %>%
+    ~Degree, ~Institution, ~Year, 
+    "B.Sc.(Hons)", "University of Melbourne", 1988,
+    "Ph.D.", "University of Melbourne", 1992,
+    "A.Stat.", "Statistical Society of Australia", 2000
+  ) %>%
   baretable()
 ```
+
+# Fellowships
+
+  * Fellow of the Academy of the Social Sciences in Australia (elected 2020).
 
 # Employment history
 
 ```{r employment, results='asis'}
 tribble(
-  ~Start, ~End, ~Position,
-  1985, 1992, "\\textbf{Statistical consultant}, Department of Statistics, University of Melbourne",
-  1993, 1994, "\\textbf{Lecturer}, Department of Statistics, University of Melbourne",
-  1995, 1996, "\\textbf{Lecturer}, Department of Mathematics and Statistics, Monash University",
-  1997, 1998, "\\textbf{Senior Lecturer}, Department of Mathematics and Statistics, Monash University",
-  1998, 1998, "\\textbf{Visiting Professor}, Department of Statistics, Colorado State University",
-  1998, 2000, "\\textbf{Senior Lecturer}, Department of Econometrics \\& Business Statistics, Monash University",
-  2001, 2003, "\\textbf{Associate Professor}, Department of Econometrics \\& Business Statistics, Monash University",
-  2002, 2002, "\\textbf{Visiting Senior Research Fellow}, Mathematical Sciences Institute, Australian National University",
-  2003, NA, "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University",
-  2016, 2016, "\\textbf{KNAW Visiting Professor}, TU/Eindhoven, Netherlands",
-) %>%
+    ~Start, ~End, ~Position,
+    1985, 1992, "\\textbf{Statistical consultant}, Department of Statistics, University of Melbourne",
+    1993, 1994, "\\textbf{Lecturer}, Department of Statistics, University of Melbourne",
+    1995, 1996, "\\textbf{Lecturer}, Department of Mathematics and Statistics, Monash University",
+    1997, 1998, "\\textbf{Senior Lecturer}, Department of Mathematics and Statistics, Monash University",
+    1998, 1998, "\\textbf{Visiting Professor}, Department of Statistics, Colorado State University",
+    1998, 2000, "\\textbf{Senior Lecturer}, Department of Econometrics \\& Business Statistics, Monash University",
+    2001, 2003, "\\textbf{Associate Professor}, Department of Econometrics \\& Business Statistics, Monash University",
+    2002, 2002, "\\textbf{Visiting Senior Research Fellow}, Mathematical Sciences Institute, Australian National University",
+    2003, NA, "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University",
+    2016, 2016, "\\textbf{KNAW Visiting Professor}, TU/Eindhoven, Netherlands",
+  ) %>%
   arrange(-Start) %>%
   mutate(End = replace_na(End, "")) %>%
   mutate(Years = if_else(End == Start,
@@ -80,31 +84,29 @@ tribble(
 
   * **Head**, Department of Econometrics & Business Statistics, Monash University. 2019--
   * **Director**, Business & Economic Forecasting Unit, Department of Econometrics & Business Statistics, Monash University. 2001--2017.
-  * **Director of Consulting**, Econometrics and Business Statistics, Monash University. 2000–-2014.
+  * **Director of Consulting**, Econometrics and Business Statistics, Monash University. 2000--2014.
   * **Director**, Monash University Statistical Consulting Service, 1997--1998.
   * **Director**, Key Centre for Statistical Science (joint venture between Monash, Melbourne, La Trobe and RMIT universities), 1996--1998.
-
-# Fellowships
-
-  * Fellow of the Academy of the Social Sciences in Australia (elected 2020).
 
 # Awards and honours
 
 ```{r awards, results='asis'}
-awards <- tribble(
-  ~Year, ~Award,
-  2018, "Commendation for the Dean's Award for research impact",
-  2010, "Dean's Award for excellence in innovation and external collaboration, Monash University",
-  2010, "HP Innovation Research Award",
-  2008, "Dean's award for excellence in research, Monash University",
-  2008, "Vice-Chancellor's award for postgraduate supervisor of the year, Monash University",
-  2007, "Moran Medal for Statistical Science, Australian Academy of Science",
-  1998, "Award for excellence in teaching, Monash Science Society",
-  1990, "Finalist, Channel Ten Young Achiever Awards",
-  1988, "Dwights Prize in Statistics, University of Melbourne",
-  1987, "Norma McArthur Prize in Statistics, University of Melbourne",
-  1986, "Second Maurice H.\ Belz Prize in Statistics, University of Melbourne"
-) %>%
+tribble(
+    ~Year, ~Award,
+    2020, "MSA Teaching Excellence Award for Business and Economics",
+    2020, "Dean's Award for Innovation in Learning and Teaching",
+    2018, "Commendation for the Dean's Award for Research Impact",
+    2010, "Dean's Award for Excellence in Innovation and External Collaboration, Monash University",
+    2010, "HP Innovation Research Award",
+    2008, "Dean's award for Excellence in Research, Monash University",
+    2008, "Vice-Chancellor's Award for Postgraduate Supervisor of the year, Monash University",
+    2007, "Moran Medal for Statistical Science, Australian Academy of Science",
+    1998, "Award for excellence in teaching, Monash Science Society",
+    1990, "Finalist, Channel Ten Young Achiever Awards",
+    1988, "Dwights Prize in Statistics, University of Melbourne",
+    1987, "Norma McArthur Prize in Statistics, University of Melbourne",
+    1986, "Second Maurice H.\ Belz Prize in Statistics, University of Melbourne"
+  ) %>%
   filter(!grepl("HP Innovation", Award)) %>%
   baretable()
 ```
@@ -113,18 +115,20 @@ awards <- tribble(
 
 ```{r positions, results='asis'}
 tribble(
-  ~Start, ~End, ~Position,
-  2011, NA, "\\textbf{Editor}, \\textit{Journal of Statistical Software}",
-  2019, NA, "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}",
-  2005, 2018, "\\textbf{Editor-in-Chief}, \\textit{International Journal of Forecasting}",
-  2001, 2004, "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}",
-  2001, 2004, "\\textbf{Theory and Methods Editor}, \\emph{Australian \\& New Zealand Journal of Statistics}",
-) %>%
+    ~Start, ~End, ~Position,
+    2011, NA, "\\textbf{Editor}, \\textit{Journal of Statistical Software}",
+    2019, NA, "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}",
+    2005, 2018, "\\textbf{Editor-in-Chief}, \\textit{International Journal of Forecasting}",
+    2001, 2004, "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}",
+    2001, 2004, "\\textbf{Theory and Methods Editor}, \\emph{Australian \\& New Zealand Journal of Statistics}",
+  ) %>%
   mutate(End = replace_na(End, "")) %>%
   mutate(Year = paste(Start, "--", End, sep = "")) %>%
   select(Year, Position) %>%
   baretable()
 ```
+
+\newpage
 
 # Society memberships
 
@@ -219,7 +223,7 @@ grants %>%
 # Teaching
 
   * In each of 2018, 2019 and 2020, student evaluations for "Applied forecasting for business and economics" gave an average rating for my teaching above 4.8 out of 5, while all students in 2018 rated "Advanced statistical modelling" at 5 out of 5. (I did not teach the latter subject in 2019 and 2020.)
-  * In 1998, I received the award for "Excellence in teaching" by the Monash Science Society. This is awarded by the students of the Science faculty.
+  * In 1998 and 2020, I received the "Excellence in teaching" award from the Monash Student Association.
   * I am author of an innovative textbook with George Athanasopoulos entitled *Forecasting: principles and practice* ([`OTexts.org/fpp2/`](https://OTexts.org/fpp2)) which is available online and free of charge. The website has an average of over 20000 pageviews per day.
 
 # Consulting
