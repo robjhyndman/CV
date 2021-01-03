@@ -39,7 +39,7 @@ write_packages_bib <- function(pkglist, file)
     if("try-error" %in% class(bibs))
       stop(paste("Package not found:",pkglist[i]))
     else {
-      message("Writing",pkglist[i])
+      message("Writing ",pkglist[i])
       writeLines(toBibtex(bibs), fh)
     }
   }

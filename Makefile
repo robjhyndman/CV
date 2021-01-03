@@ -4,5 +4,6 @@ compile:
 	Rscript -e 'rmarkdown::render("RobHyndmanCV.Rmd")'
 
 clean:
-	rm RobHyndmanCV.pdf
+	rm -rf RobHyndmanCV.pdf
+	rm -rf Rpackages.bib
 	latexmk -c

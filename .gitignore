@@ -228,3 +228,6 @@ TSWLatexianTemp*
 Rpackages.Rout
 .RData
 .Rproj.user
+*.rds
+
+
