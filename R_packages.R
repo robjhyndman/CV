@@ -1,23 +1,24 @@
 library(tidyverse)
 library(RefManageR)
+source("functions.R")
 
 # # Install packages I've authored in order to get latest version information
-# cran_packages <- find_rjh_packages()
-# github_packages <- c(
-#   "robjhyndman/addb",
-#   "robjhyndman/anomalous",
-#   "robjhyndman/compenginets",
-#   "ropenscilabs/cricketdata",
-#   "mitchelloharawild/fasster",
-#   "robjhyndman/MEFM-package",
-#   "robjhyndman/MonashEBSTemplates",
-#   "pridiltal/oddwater",
-#   "ropenscilabs/ozbabynames",
-#   "ropenscilabs/rcademy",
-#   "robjhyndman/tscompdata",
-#   "FinYang/tsdl"
-# )
-#
+cran_packages <- find_rjh_packages()
+github_packages <- c(
+   "robjhyndman/addb",
+   "robjhyndman/anomalous",
+   "robjhyndman/compenginets",
+   "ropenscilabs/cricketdata",
+   "mitchelloharawild/fasster",
+   "robjhyndman/MEFM-package",
+   "robjhyndman/MonashEBSTemplates",
+   "pridiltal/oddwater",
+   "ropenscilabs/ozbabynames",
+   "ropenscilabs/rcademy",
+   "robjhyndman/tscompdata",
+   "FinYang/tsdl"
+)
+
 #remotes::install_cran(cran_packages)
 #remotes::install_github(github_packages)
 
