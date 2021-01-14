@@ -1,6 +1,26 @@
 library(tidyverse)
 library(RefManageR)
 
+# # Install packages I've authored in order to get latest version information
+# cran_packages <- find_rjh_packages()
+# github_packages <- c(
+#   "robjhyndman/addb",
+#   "robjhyndman/anomalous",
+#   "robjhyndman/compenginets",
+#   "ropenscilabs/cricketdata",
+#   "mitchelloharawild/fasster",
+#   "robjhyndman/MEFM-package",
+#   "robjhyndman/MonashEBSTemplates",
+#   "pridiltal/oddwater",
+#   "ropenscilabs/ozbabynames",
+#   "ropenscilabs/rcademy",
+#   "robjhyndman/tscompdata",
+#   "FinYang/tsdl"
+# )
+#
+#remotes::install_cran(cran_packages)
+#remotes::install_github(github_packages)
+
 # Check if this has been run in last hour
 recent_run <- fs::file_exists("Rpackages.bib")
 if(recent_run) {
@@ -11,7 +31,7 @@ if(recent_run) {
 if(!recent_run)
 {
   # Find installed or CRAN packages with Hyndman as an author
-  rjhpkgs <- c(find_rjh_packages(),
+  rjhpkgs <- c(cran_packages,
       # Now add github-only packages
       "addb",
       "anomalous",
