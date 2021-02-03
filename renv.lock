@@ -18,10 +18,10 @@
     },
     "DBI": {
       "Package": "DBI",
-      "Version": "1.1.0",
+      "Version": "1.1.1",
       "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "4744be45519d675af66c28478720fce5"
+      "Repository": "RSPM",
+      "Hash": "030aaec5bc6553f35347cbb1e70b1a17"
     },
     "MASS": {
       "Package": "MASS",
@@ -32,10 +32,10 @@
     },
     "Matrix": {
       "Package": "Matrix",
-      "Version": "1.2-18",
+      "Version": "1.3-2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "08588806cba69f04797dab50627428ed"
+      "Hash": "ff280503079ad8623d3c4b1519b24ea2"
     },
     "NLP": {
       "Package": "NLP",
@@ -128,10 +128,10 @@
     },
     "broom": {
       "Package": "broom",
-      "Version": "0.7.3",
+      "Version": "0.7.4",
       "Source": "Repository",
-      "Repository": "RSPM",
-      "Hash": "5581a5ddc8fe2ac5e0d092ec2de4c4ae"
+      "Repository": "CRAN",
+      "Hash": "3cca8477943a8e840c3eb64a25fef9d2"
     },
     "callr": {
       "Package": "callr",
@@ -149,10 +149,10 @@
     },
     "cli": {
       "Package": "cli",
-      "Version": "2.2.0",
+      "Version": "2.3.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "3ef298932294b775fa0a3eeaa3a645b0"
+      "Hash": "26fb4f0871c8e5b84d77f6dc22f2ee0a"
     },
     "clipr": {
       "Package": "clipr",
@@ -170,10 +170,10 @@
     },
     "cpp11": {
       "Package": "cpp11",
-      "Version": "0.2.5",
+      "Version": "0.2.6",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "8b9a10255e862eb99e38fa8b0caa6c0d"
+      "Hash": "f08909ebdad90b19d8d3930da4220564"
     },
     "cranlogs": {
       "Package": "cranlogs",
@@ -184,10 +184,10 @@
     },
     "crayon": {
       "Package": "crayon",
-      "Version": "1.3.4",
+      "Version": "1.4.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "0d57bc8e27b7ba9e45dba825ebc0de6b"
+      "Hash": "fcff9126a4928a96c94e3df85b024899"
     },
     "curl": {
       "Package": "curl",
@@ -233,10 +233,10 @@
     },
     "dplyr": {
       "Package": "dplyr",
-      "Version": "1.0.3",
+      "Version": "1.0.4",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "365f8c3650ab95582e600f160fd5fb88"
+      "Hash": "01c82e3b053eb7660a8ace8d932265b8"
     },
     "ellipsis": {
       "Package": "ellipsis",
@@ -268,10 +268,10 @@
     },
     "forcats": {
       "Package": "forcats",
-      "Version": "0.5.0",
+      "Version": "0.5.1",
       "Source": "Repository",
-      "Repository": "RSPM",
-      "Hash": "1cb4279e697650f0bd78cd3601ee7576"
+      "Repository": "CRAN",
+      "Hash": "81c3244cab67468aac4c60550832655d"
     },
     "fs": {
       "Package": "fs",
@@ -401,10 +401,10 @@
     },
     "knitr": {
       "Package": "knitr",
-      "Version": "1.30",
+      "Version": "1.31",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "eed7ee0d02eee88d53881cdc92457c62"
+      "Hash": "c3994c036d19fc22c5e2a209c8298bfb"
     },
     "labeling": {
       "Package": "labeling",
@@ -478,10 +478,10 @@
     },
     "nlme": {
       "Package": "nlme",
-      "Version": "3.1-150",
+      "Version": "3.1-151",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "82e52d2c6e674764ffb122d084afa96b"
+      "Hash": "42c8ba2b6a32a6bf0874e93e3bd86a43"
     },
     "openssl": {
       "Package": "openssl",
@@ -625,10 +625,10 @@
     },
     "reprex": {
       "Package": "reprex",
-      "Version": "0.3.0",
+      "Version": "1.0.0",
       "Source": "Repository",
       "Repository": "RSPM",
-      "Hash": "b06bfb3504cc8a4579fd5567646f745b"
+      "Hash": "cb4d6f77f163b8d685833f2a59e7cb4c"
     },
     "rlang": {
       "Package": "rlang",
@@ -730,10 +730,10 @@
     },
     "tibble": {
       "Package": "tibble",
-      "Version": "3.0.5",
+      "Version": "3.0.6",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "a1958587eb651a02273d685fff3819b1"
+      "Hash": "9c6c10e594f32096ede0c7d373ccbddd"
     },
     "tidyr": {
       "Package": "tidyr",
@@ -807,15 +807,15 @@
     },
     "vitae": {
       "Package": "vitae",
-      "Version": "0.3.0.9000",
+      "Version": "0.4.1",
       "Source": "GitHub",
       "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "vitae",
       "RemoteUsername": "mitchelloharawild",
+      "RemoteRepo": "vitae",
       "RemoteRef": "HEAD",
-      "RemoteSha": "725005ac7c4e414b968bf8751608c29ec93128cd",
-      "Hash": "a3ce2f07347fc74d464ba43f66ff6ec9"
+      "RemoteSha": "7c427cb383a949f01c73375cbd3978e77a787f9c",
+      "RemoteHost": "api.github.com",
+      "Hash": "b383e43b848f5547d09e2d5efbd63d91"
     },
     "waldo": {
       "Package": "waldo",
@@ -823,13 +823,6 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "181d1a31b1ba2009ef20926f2ee0570c"
-    },
-    "whisker": {
-      "Package": "whisker",
-      "Version": "0.4",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Hash": "ca970b96d894e90397ed20637a0c1bbe"
     },
     "withr": {
       "Package": "withr",
