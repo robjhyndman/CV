@@ -16,7 +16,8 @@ github_packages <- c(
    "ropenscilabs/ozbabynames",
    "ropenscilabs/rcademy",
    "robjhyndman/tscompdata",
-   "FinYang/tsdl"
+   "FinYang/tsdl",
+   "sevvandi/lookout"
 )
 
 #remotes::install_cran(cran_packages)
@@ -39,6 +40,7 @@ if(!recent_run)
       "compenginets",
       "cricketdata",
       "fasster",
+      "lookout",
       "MEFM",
       "MonashEBSTemplates",
       "oddwater",
