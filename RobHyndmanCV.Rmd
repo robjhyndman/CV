@@ -197,7 +197,7 @@ sumgrants <- grants %>%
   sum(na.rm=TRUE)
 ```
 
-I have acquired (in most cases jointly) about $`r sprintf("%2.1f", sumgrants/1e6)` million in external research grants since 2000. External research grants over $50,000 are listed below.\vspace*{0.2cm}
+I have acquired (in most cases jointly) about $`r sprintf("%2.1f", sumgrants/1e6)` million in external research grants since 2000. External research grants over $50,000 are listed below.\vspace*{0.2cm}\enlargethispage*{0.5cm}
 
 ```{r grantstable, results='asis'}
 grants %>%
