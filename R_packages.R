@@ -4,6 +4,7 @@ source("functions.R")
 
 # # Install packages I've authored in order to get latest version information
 cran_packages <- find_rjh_packages()
+cran_packages <- cran_packages[cran_packages != "vitae"]
 github_packages <- c(
    "robjhyndman/addb",
    "robjhyndman/anomalous",
@@ -17,7 +18,7 @@ github_packages <- c(
    "ropenscilabs/rcademy",
    "robjhyndman/tscompdata",
    "FinYang/tsdl",
-   "sevvandi/lookout"
+   "mitchelloharawild/vitae"
 )
 
 #remotes::install_cran(cran_packages)
@@ -35,22 +36,12 @@ if(!recent_run)
   # Find installed or CRAN packages with Hyndman as an author
   rjhpkgs <- c(cran_packages,
       # Now add github-only packages
-      "addb",
-      "anomalous",
-      "compenginets",
-      "cricketdata",
-      "fasster",
-      "lookout",
-      "MEFM",
-      "MonashEBSTemplates",
-      "oddwater",
-      "ozbabynames",
-      "rcademy",
-      "tscompdata",
-      "tsdl"
+      stringr::str_split(github_packages,"/") %>%
+        purrr::map_chr(function(u)u[2])
     ) %>%
     unique() %>%
     sort()
+  rjhpkgs[rjhpkgs=="MEFM-package"] <- "MEFM"
 
   downloads <- map_dfr(rjhpkgs, cran_downloads) %>%
     mutate(month = tsibble::yearmonth(month))
