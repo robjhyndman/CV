@@ -2,59 +2,60 @@ library(tidyverse)
 library(RefManageR)
 source("functions.R")
 
-# # Install packages I've authored in order to get latest version information
-cran_packages <- find_rjh_packages()
-cran_packages <- cran_packages[cran_packages != "vitae"]
-github_packages <- c(
-   "robjhyndman/addb",
-   "robjhyndman/anomalous",
-   "robjhyndman/compenginets",
-   "ropenscilabs/cricketdata",
-   "mitchelloharawild/fasster",
-   "robjhyndman/MEFM-package",
-   "robjhyndman/MonashEBSTemplates",
-   "pridiltal/oddwater",
-   "ropenscilabs/ozbabynames",
-   "ropenscilabs/rcademy",
-   "robjhyndman/tscompdata",
-   "FinYang/tsdl",
-   "mitchelloharawild/vitae"
+# Github packages I've coauthored
+github <- c(
+  "AU-BURGr/ozdata",
+  "earowang/hts",
+  "earowang/sugrrants",
+  "eddelbuettel/binb",
+  "FinYang/tsdl",
+  "jforbes14/eechidna",
+  "mitchelloharawild/fasster",
+  "mitchelloharawild/vitae",
+  "pridiltal/oddstream",
+  "pridiltal/oddwater",
+  "pridiltal/stray",
+  "robjhyndman/addb",
+  "robjhyndman/anomalous",
+  "robjhyndman/compenginets",
+  "robjhyndman/demography",
+  "robjhyndman/expsmooth",
+  "robjhyndman/fma",
+  "robjhyndman/forecast",
+  "robjhyndman/fpp",
+  "robjhyndman/fpp2-package",
+  "robjhyndman/fpp3-package",
+  "robjhyndman/hdrcde",
+  "robjhyndman/Mcomp",
+  "robjhyndman/MEFM-package",
+  "robjhyndman/MonashEBSTemplates",
+  "robjhyndman/thief",
+  "robjhyndman/tscompdata",
+  "robjhyndman/tsfeatures",
+  "ropenscilabs/cricketdata",
+  "ropenscilabs/ozbabynames",
+  "ropenscilabs/rcademy",
+  "sayani07/gravitas",
+  "sevvandi/lookout",
+  "thiyangt/seer",
+  "tidyverts/fable",
+  "tidyverts/fabletools",
+  "tidyverts/feasts",
+  "tidyverts/tsibble",
+  "tidyverts/tsibbledata",
+  "verbe039/bfast",
+  "ykang/gratis"
 )
+rjhpackages <- get_rjh_packages(github)
 
-#remotes::install_cran(cran_packages)
-#remotes::install_github(github_packages)
-
-# Check if this has been run in last hour
+# Check if this has been run today
+# Inefficient as it gets the emta data all over again. Need
+# to update get_rjh_packages to include the required meta data and
+# pass whole object to write_bib function
 recent_run <- fs::file_exists("Rpackages.bib")
 if(recent_run) {
-  if(Sys.time() > fs::file_info("Rpackages.bib")$modification_time + 3600)
+  if(Sys.Date() > anytime::anydate(fs::file_info("Rpackages.bib")$modification_time))
     recent_run <- FALSE
 }
-
 if(!recent_run)
-{
-  # Find installed or CRAN packages with Hyndman as an author
-  rjhpkgs <- c(cran_packages,
-      # Now add github-only packages
-      stringr::str_split(github_packages,"/") %>%
-        purrr::map_chr(function(u)u[2])
-    ) %>%
-    unique() %>%
-    sort()
-  rjhpkgs[rjhpkgs=="MEFM-package"] <- "MEFM"
-
-  downloads <- map_dfr(rjhpkgs, cran_downloads) %>%
-    mutate(month = tsibble::yearmonth(month))
-  since2015 <- downloads %>%
-    filter(month >= tsibble::yearmonth("2015 Jan"))
-  # Write bib file
-  write_packages_bib(rjhpkgs, file="Rpackages.bib")
-  # Save rds files
-  saveRDS(rjhpkgs, "rjhpkgs.rds")
-  saveRDS(since2015, "since2015.rds")
-} else {
-  # Read rds files
-  rjhpkgs <- readRDS("rjhpkgs.rds")
-  since2015 <- readRDS("since2015.rds")
-  message("Run recently")
-}
+  write_packages_bib(packages$package, file="Rpackages.bib")

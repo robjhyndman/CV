@@ -1,5 +1,4 @@
 # Function to produce very basic table, no lines or headings
-
 baretable <- function(tbl, digits = 0,
                       include.colnames = FALSE, include.rownames = FALSE,
                       hline.after = NULL,
@@ -22,6 +21,100 @@ baretable <- function(tbl, digits = 0,
         x
       }
     )
+}
+
+# Return CRAN packages with Hyndman as author
+rjh_cran_packages <- function() {
+  pkgsearch::ps("Hyndman", size = 100) %>%
+    filter(purrr::map_lgl(
+      package_data, ~ grepl("Hyndman", .x$Author, fixed = TRUE)
+    )) %>%
+    select(package) %>%
+    mutate(on_cran = TRUE)
+}
+
+get_rjh_packages <- function(github) {
+  # Check if this has been run in last day
+  recent_run <- fs::file_exists(here::here("packages.rds"))
+  if(recent_run) {
+    info <- fs::file_info(here::here("packages.rds"))
+    recent_run <- (Sys.Date() == anytime::anydate(info$modification_time))
+  }
+  if(recent_run)
+    return(readRDS(here::here("packages.rds")))
+
+  packages <- tibble(github = github) %>%
+    # Extract packages from github repos
+    mutate(
+      package = stringr::str_extract(github,"/[a-zA-Z0-9\\-]*"),
+      package = stringr::str_remove(package,"/"),
+      package = stringr::str_extract(package,"[a-zA-Z0-9]*")
+    ) %>%
+    # Add in CRAN packages
+    full_join(rjh_cran_packages(), by="package") %>%
+    replace_na(list(on_cran = FALSE))
+
+  # Compute monthly downloads
+  downloads <- packages %>%
+    filter(on_cran) %>%
+    pull(package) %>%
+    cranlogs::cran_downloads(from = "2015-01-01") %>%
+    as_tibble() %>%
+    mutate(month = tsibble::yearmonth(date)) %>%
+    group_by(package) %>%
+    summarise(count = sum(count), .groups = "drop")
+
+  # CRAN package meta data
+  cran_meta <- packages %>%
+    filter(on_cran) %>%
+    get_meta(cran=TRUE)
+
+  # Github package meta data (need to install packages)
+  packages %>%
+    filter(!on_cran) %>%
+    pull(github) %>%
+    remotes::install_github()
+  github_meta <- packages %>%
+    filter(!on_cran) %>%
+    get_meta(cran=FALSE)
+
+  # Add downloads and titles to packages
+  packages <- packages %>%
+    left_join(downloads, by="package") %>%
+    left_join(
+      bind_rows(cran_meta, github_meta),
+      by="package"
+    )
+
+  # Add URLs
+  packages <- packages %>%
+    mutate(
+      github_url = if_else(is.na(github), NA_character_,
+                           paste0("https://github.com/",github)),
+      cran_url = if_else(!on_cran, NA_character_,
+                         paste0("https://cloud.r-project.org/package=",package)),
+      url = if_else(!is.na(url), url,
+                    if_else(!is.na(github), github_url, cran_url))
+    )
+
+  # Save result and return it
+  saveRDS(packages, file=here::here("packages.rds"))
+  return(packages)
+}
+
+# Get meta data for vector of package names
+get_meta <- function(packages, cran=TRUE) {
+  get_meta_fn <- ifelse(cran, pkgsearch::cran_package, packageDescription)
+  #description <-
+  title <- url <- rep(NA_character_, NROW(packages))
+  for(i in seq_along(packages$package)) {
+    meta <- get_meta_fn(packages$package[i])
+    title[i] <- meta$Title
+    #description[i] <- meta$Description
+    if(!is.null(meta$URL))
+      url[i] <- (str_split(meta$URL,",") %>% unlist())[1]
+  }
+  tibble(package=packages$package, url=url, title=title)
 }
 
 # Create bib file for R packages
@@ -116,17 +209,6 @@ getbibentry <- function(pkg) {
     key = paste("R", meta$Package, sep = ""),
     note = meta$Note
   )
-}
-
-# Return vector of package names authored by RJH
-# Input is a list of github packages in the form "package/repo"
-find_rjh_packages <- function() {
-  # Return CRAN packages with Hyndman as author
-  pkgsearch::ps("Hyndman", size = 100) %>%
-    filter(map_lgl(
-      package_data, ~ grepl("Hyndman", .x$Author, fixed = TRUE)
-    )) %>%
-    pull(package)
 }
 
 # An Rscript that takes a bib file as input and return a tibble containing
