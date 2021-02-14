@@ -25,10 +25,10 @@
     },
     "MASS": {
       "Package": "MASS",
-      "Version": "7.3-53",
+      "Version": "7.3-53.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "d1bc1c8e9c0ace57ec9ffea01021d45f"
+      "Hash": "4ef21dd0348b9abb7f8bd1d77e4cd0c3"
     },
     "Matrix": {
       "Package": "Matrix",
@@ -184,10 +184,10 @@
     },
     "crayon": {
       "Package": "crayon",
-      "Version": "1.4.0",
+      "Version": "1.4.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "fcff9126a4928a96c94e3df85b024899"
+      "Hash": "e75525c55c70e5f4f78c9960a4b402e9"
     },
     "curl": {
       "Package": "curl",
@@ -205,10 +205,10 @@
     },
     "dbplyr": {
       "Package": "dbplyr",
-      "Version": "2.0.0",
+      "Version": "2.1.0",
       "Source": "Repository",
       "Repository": "RSPM",
-      "Hash": "714005206038b1dda74cb1de85029a20"
+      "Hash": "f30247ffeeebe8d9842dc68fe63e043b"
     },
     "desc": {
       "Package": "desc",
@@ -350,6 +350,13 @@
       "Repository": "RSPM",
       "Hash": "221d0ad75dfa03ebf17b1a4cc5c31dfc"
     },
+    "here": {
+      "Package": "here",
+      "Version": "1.0.1",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "24b224366f9c2e7534d2344d10d59211"
+    },
     "highr": {
       "Package": "highr",
       "Version": "0.8",
@@ -457,10 +464,10 @@
     },
     "mime": {
       "Package": "mime",
-      "Version": "0.9",
+      "Version": "0.10",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "e87a35ec73b157552814869f45a63aa3"
+      "Hash": "26fa77e707223e1ce042b2b5d09993dc"
     },
     "modelr": {
       "Package": "modelr",
@@ -478,10 +485,10 @@
     },
     "nlme": {
       "Package": "nlme",
-      "Version": "3.1-151",
+      "Version": "3.1-152",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "42c8ba2b6a32a6bf0874e93e3bd86a43"
+      "Hash": "35de1ce639f20b5e10f7f46260730c65"
     },
     "openssl": {
       "Package": "openssl",
@@ -616,6 +623,13 @@
       "Repository": "CRAN",
       "Hash": "76c9e04c712a05848ae7a23d2f170a40"
     },
+    "remotes": {
+      "Package": "remotes",
+      "Version": "2.2.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "430a0908aee75b1fcba0e62857cab0ce"
+    },
     "renv": {
       "Package": "renv",
       "Version": "0.12.5",
@@ -723,10 +737,10 @@
     },
     "testthat": {
       "Package": "testthat",
-      "Version": "3.0.1",
+      "Version": "3.0.2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "17826764cb92d8b5aae6619896e5a161"
+      "Hash": "495e0434d9305716b6a87031570ce109"
     },
     "tibble": {
       "Package": "tibble",
@@ -810,19 +824,19 @@
       "Version": "0.4.1",
       "Source": "GitHub",
       "RemoteType": "github",
-      "RemoteUsername": "mitchelloharawild",
-      "RemoteRepo": "vitae",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "7c427cb383a949f01c73375cbd3978e77a787f9c",
       "RemoteHost": "api.github.com",
-      "Hash": "b383e43b848f5547d09e2d5efbd63d91"
+      "RemoteRepo": "vitae",
+      "RemoteUsername": "mitchelloharawild",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "3fe2a6d3d8fe2058187c514f0631c3ee7eb39ca3",
+      "Hash": "1f783f9cbd210f53d0c230b573384adf"
     },
     "waldo": {
       "Package": "waldo",
-      "Version": "0.2.3",
+      "Version": "0.2.4",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "181d1a31b1ba2009ef20926f2ee0570c"
+      "Hash": "29df52c781e572c967f90de9713423c4"
     },
     "withr": {
       "Package": "withr",
@@ -840,10 +854,10 @@
     },
     "xfun": {
       "Package": "xfun",
-      "Version": "0.20",
+      "Version": "0.21",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "d7222684dc02327871e3b1da0aba7089"
+      "Hash": "f3ddcca198959a42e8cb6b06c30d4f1e"
     },
     "xml2": {
       "Package": "xml2",
