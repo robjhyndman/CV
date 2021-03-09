@@ -58,4 +58,4 @@ if(recent_run) {
     recent_run <- FALSE
 }
 if(!recent_run)
-  write_packages_bib(packages$package, file="Rpackages.bib")
+  write_packages_bib(rjhpackages$package, file="Rpackages.bib")
