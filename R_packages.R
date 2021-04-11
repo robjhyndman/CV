@@ -32,9 +32,9 @@ github <- c(
   "robjhyndman/thief",
   "robjhyndman/tscompdata",
   "robjhyndman/tsfeatures",
-  "ropenscilabs/cricketdata",
-  "ropenscilabs/ozbabynames",
-  "ropenscilabs/rcademy",
+  "robjhyndman/cricketdata",
+  "robjhyndman/ozbabynames",
+  "robjhyndman/rcademy",
   "sayani07/gravitas",
   "sevvandi/lookout",
   "thiyangt/seer",
@@ -49,7 +49,7 @@ github <- c(
 rjhpackages <- get_rjh_packages(github)
 
 # Check if this has been run today
-# Inefficient as it gets the emta data all over again. Need
+# Inefficient as it gets the meta data all over again. Need
 # to update get_rjh_packages to include the required meta data and
 # pass whole object to write_bib function
 recent_run <- fs::file_exists("Rpackages.bib")
