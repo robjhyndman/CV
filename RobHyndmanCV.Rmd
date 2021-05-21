@@ -42,7 +42,7 @@ grants <- read_csv("Grant_income.csv")
 
 ```{r degrees, results='asis'}
 tribble(
-    ~Degree, ~Institution, ~Year, 
+    ~Degree, ~Institution, ~Year,
     "B.Sc.(Hons)", "University of Melbourne", 1988,
     "Ph.D.", "University of Melbourne", 1992,
     "A.Stat.", "Statistical Society of Australia", 2000
@@ -304,7 +304,7 @@ pubs %>%
   arrange(issued, author$family)
 ```
 
-## Working papers under revision or review
+## Unpublished working papers
 
 ```{r working-papers}
 pubs %>%

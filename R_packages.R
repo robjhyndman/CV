@@ -48,6 +48,18 @@ github <- c(
 )
 rjhpackages <- get_rjh_packages(github)
 
+# Install cran packages
+rjhpackages %>%
+  filter(on_cran) %>%
+  pull(package) %>%
+  remotes::install_cran()
+
+# Install github only packages
+rjhpackages %>%
+  filter(!on_cran) %>%
+  pull(github) %>%
+  remotes::install_github()
+
 # Check if this has been run today
 # Inefficient as it gets the meta data all over again. Need
 # to update get_rjh_packages to include the required meta data and
