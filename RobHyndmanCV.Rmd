@@ -52,6 +52,7 @@ tribble(
 
 # Fellowships
 
+  * Fellow of the Australian Academy of Science (elected 2021).
   * Fellow of the Academy of the Social Sciences in Australia (elected 2020).
 
 # Employment history
