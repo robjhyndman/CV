@@ -226,7 +226,7 @@ grants %>%
 
   * In each of 2018, 2019 and 2020, student evaluations for "Applied forecasting for business and economics" gave an average rating for my teaching above 4.8 out of 5, while all students in 2018 rated "Advanced statistical modelling" at 5 out of 5. (I did not teach the latter subject in 2019 and 2020.)
   * In 1998 and 2020, I received the "Excellence in teaching" award from the Monash Student Association.
-  * I am author of an innovative textbook with George Athanasopoulos entitled *Forecasting: principles and practice* ([`OTexts.org/fpp2/`](https://OTexts.org/fpp2)) which is available online and free of charge. The website has an average of over 20000 pageviews per day.
+  * I am author of an innovative textbook with George Athanasopoulos entitled *Forecasting: principles and practice* ([`OTexts.org/fpp3/`](https://OTexts.org/fpp3)) which is available online and free of charge. The website has an average of over 20000 pageviews per day.
 
 # Consulting
 
