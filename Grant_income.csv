@@ -1,14 +1,22 @@
 ﻿Source,Start,End,People,Title,Amount,Type
+BHP Australia,1989,,"Hyndman,Grunwald",State space models for non-standard time series,23000,Research
+ARC Small Grant,1994,,"Grunwald, Hyndman",Data analytic methods for non-linear and non-normal time series analysis,10000,Research
+ARC Small Grant,1995,,"Grunwald, Hyndman",Modelling and data analysis for exponential family time series,8000,Research
+ARC Small Grant,1995,,Hyndman,Estimating and visualizing conditional densities,3139,Research
+ARC Small Grant,1996,,Hyndman,Kernel estimation of conditional densities,8600,Research
+ARC Small Grant,1998,,Hyndman,Modelling time series with explanatory variables,7459,Research
+IDF,1999,,Hyndman,Intermittent demand forecasting,6940,Internal
+ARC Small Grant,1999,,Hyndman,Non-Gaussian regression models for time series,7523,Resarch
 Telstra Australia,2000,,Hyndman,Forecasting Telstra market share,31000,Research
 DISR,2000,,Hyndman,Econometric modelling of a new trade agreement,6000,Consulting
 Victorian Workcover Authority,2000,,Hyndman,Factors affecting return to work after injury,19678,Research
-GAM,2000,,Hyndman,GAMS with autocorrelation,9000,Internal
+GAM,2000,,Hyndman,GAMS with autocorrelation,9027,Internal
 TXU,2000,2001,Hyndman,Forecasting monthly electricity demand,27933,Research
 WorkCover NSW,2001,2002,Hyndman,Injury management pilot evaluation,42182,Research
-Monash small grant,2001,,Hyndman,Count time series,15000,Internal
+Monash small grant,2001,,Hyndman,Nonparametric additive models for time series of counts,15000,Internal
 SMURF,2001,2002,Hyndman,Business and Economics Forecasting Unit,140000,Internal
 Commonwealth Department of Health and Ageing,2002,,Hyndman,Evaluation of PBS forward estimates methodology,55341,Research
-Monash small grant,2002,,Hyndman,Hierarchical time series,15000,Internal
+Monash small grant,2002,,"Hyndman, Shah",Forecasting related time series with hierarchical and correlated structure,15000,Internal
 Australian Greenhouse Office,2002,,Hyndman,Review of emissions projections methodology,11200,Research
 InvestorWeb,2003,,Hyndman,Evaluation of investment risk profiler,18000,Research
 ARC Discovery Grant,2004,2006,"Martin, Snyder, Hyndman",New approaches to the analysis of count time series,172317,Research
@@ -43,6 +51,5 @@ Advisian,2019,2020,"Bergmeir, Vahid, Hyndman",Application of advanced short term
 ARC Linkage Grant,2019,2022,"Mengersen, Hyndman, Petersen, McGree, Turner, Maxwell, Liquet, Jones",Revolutionising water-quality monitoring in the information age,729855,Research
 ARC Discovery Grant,2020,2022,"Martin, Frazier, Hyndman,  Maneesoonthorn",Loss-based Bayesian prediction,393000,Research
 Tourism Research Australia,2020,,"Hyndman, Athanasopoulos",Review of tourism forecasting in Australia,32400,Research
-ARC Industrial Transformation Training Centre,2020,2024,"Smith-Miles, Stuckey, Taylor, Ernst, Aickelin, Garcia de la Banda, Pearce, Wallace, Bondell, Hyndman, Alpcan, Thomas, Anjomshoa, Kirley, Tack, Costa, Fackrell, Zhang, Glazebrook, Branke, O'Sullivan, O'Shea, Cheah, Meehan, Wetenhall, Bowly, Bridge, Faka, Mareels, Coleman, Crook", "Optimisation Technologies, Integrated Methodologies, and Applications (OPTIMA)",4861236,Research
-Commonwealth Department of Health and Ageing,2021,,"McCaw, Golding, Moss, Shearer, Price, Ross, Hyndman, Dawson","Provision of weekly data modelling and reporting, based on COVID-19 data extracted from the National Notifiable Disease Surveillance System (NDSS)",737960,Research
-
+ARC Industrial Transformation Training Centre,2020,2024,"Smith-Miles, Stuckey, Taylor, Ernst, Aickelin, Garcia de la Banda, Pearce, Wallace, Bondell, Hyndman, Alpcan, Thomas, Anjomshoa, Kirley, Tack, Costa, Fackrell, Zhang, Glazebrook, Branke, O'Sullivan, O'Shea, Cheah, Meehan, Wetenhall, Bowly, Bridge, Faka, Mareels, Coleman, Crook","Optimisation Technologies, Integrated Methodologies, and Applications (OPTIMA)",4861236,Research
+Commonwealth Department of Health and Ageing,2021,,"McCaw, Golding, Moss, Shearer, Price, Ross, Hyndman, Dawson","Provision of weekly data modelling and reporting, based on COVID-19 data extracted from the National Notifiable Disease Surveillance System (NDSS)",737960,Research,,
