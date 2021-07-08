@@ -88,13 +88,14 @@ tribble(
   * **Director**, Business & Economic Forecasting Unit, Department of Econometrics & Business Statistics, Monash University. 2001--2017.
   * **Director of Consulting**, Econometrics and Business Statistics, Monash University. 2000--2014.
   * **Director**, Monash University Statistical Consulting Service, 1997--1998.
-  * **Director**, Key Centre for Statistical Science (joint venture between Monash, Melbourne, La Trobe and RMIT universities), 1996--1998.
+  * **Director**, Key Centre for Statistical Science, 1996--1998.
 
 # Awards and honours
 
 ```{r awards, results='asis'}
 tribble(
     ~Year, ~Award,
+    2021, "Pitman Medal, Statistical Society of Australia",
     2020, "MSA Teaching Excellence Award for Business and Economics, Monash Student Association",
     2020, "Dean's Award for Innovation in Learning and Teaching, Monash Business School",
     2018, "Commendation for the Dean's Award for Research Impact, Monash Business School",
