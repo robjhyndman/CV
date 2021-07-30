@@ -48,18 +48,6 @@ github <- c(
 )
 rjhpackages <- get_rjh_packages(github)
 
-# Install cran packages
-rjhpackages %>%
-  filter(on_cran) %>%
-  pull(package) %>%
-  remotes::install_cran()
-
-# Install github only packages
-rjhpackages %>%
-  filter(!on_cran) %>%
-  pull(github) %>%
-  remotes::install_github()
-
 # Check if this has been run today
 # Inefficient as it gets the meta data all over again. Need
 # to update get_rjh_packages to include the required meta data and
@@ -69,5 +57,18 @@ if(recent_run) {
   if(Sys.Date() > anytime::anydate(fs::file_info("Rpackages.bib")$modification_time))
     recent_run <- FALSE
 }
-if(!recent_run)
-  write_packages_bib(rjhpackages$package, file="Rpackages.bib")
+if(!recent_run) {
+  # Install cran packages
+  rjhpackages %>%
+    filter(on_cran) %>%
+    pull(package) %>%
+    remotes::install_cran()
+
+  # Install github only packages
+  rjhpackages %>%
+    filter(!on_cran) %>%
+    pull(github) %>%
+    remotes::install_github()
+
+    write_packages_bib(rjhpackages$package, file="Rpackages.bib")
+}
