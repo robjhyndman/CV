@@ -249,9 +249,6 @@ grants %>%
   * Program Chair, International Symposium on Forecasting, 2012.
   * Program Co-Chair, International Symposium on Forecasting, 2004.
 
-\newpage
-
-# Publications
 
 ```{r publist}
 # Find editorials
@@ -267,15 +264,16 @@ editorials <- c(
 )
 ```
 
-## PhD thesis
+<!-- # PhD thesis -->
+
 \refstepcounter{bib}\label{papersstart}
 
-```{r thesis}
+```{r thesis, include=FALSE}
 pubs %>%
   filter(type == "thesis")
 ```
 
-## Books
+# Books
 
 ```{r books}
 pubs %>%
@@ -283,7 +281,7 @@ pubs %>%
   arrange(issued, author$family)
 ```
 
-## Refereed research papers
+# Refereed research papers
 
 ```{r research-papers}
 # Normal articles excluding editorials
@@ -292,7 +290,7 @@ pubs %>%
   arrange(issued, author$family)
 ```
 
-## Book chapters
+# Book chapters
 
 ```{r book-chapters}
 pubs %>%
@@ -300,7 +298,7 @@ pubs %>%
   arrange(issued, author$family)
 ```
 
-## Papers in refereed conference proceedings
+# Papers in refereed conference proceedings
 
 ```{r papers-in-proceedings}
 pubs %>%
@@ -308,7 +306,7 @@ pubs %>%
   arrange(issued, author$family)
 ```
 
-## Unpublished working papers
+# Unpublished working papers
 
 ```{r working-papers}
 pubs %>%
@@ -316,7 +314,7 @@ pubs %>%
   arrange(issued, author$family)
 ```
 
-## Book reviews
+# Book reviews
 
 ```{r book-reviews}
 pubs %>%
@@ -324,7 +322,7 @@ pubs %>%
   arrange(issued, author$family)
 ```
 
-## Editorials
+# Editorials
 
 ```{r editorials}
 # Now the editorials
@@ -334,7 +332,7 @@ pubs %>%
 ```
 \refstepcounter{bib}\label{papersend}
 
-## Statistical consulting reports
+# Statistical consulting reports
 \refstepcounter{bib}\label{consultingstart}
 
 ```{r statistical-consulting}
@@ -343,7 +341,7 @@ reports %>% arrange(issued, author$family)
 
 \refstepcounter{bib}\label{consultingend}
 
-## Software (R packages)
+# Software (R packages)
 \refstepcounter{bib}\label{packagestart}
 
 ```{r r-packages-list}
