@@ -245,7 +245,7 @@ grants %>%
 
 # Conference organization
 
-  * General Chair, International Symposium on Forecasting, 2017
+  * General Chair, International Symposium on Forecasting, 2017.
   * Program Chair, International Symposium on Forecasting, 2012.
   * Program Co-Chair, International Symposium on Forecasting, 2004.
 
