@@ -85,7 +85,7 @@ tribble(
 # Academic and research leadership
 
   * **Head**, Department of Econometrics & Business Statistics, Monash University. 2019--
-  * **Director**, Business & Economic Forecasting Unit, Department of Econometrics & Business Statistics, Monash University. 2001--2017.
+  * **Director**, Business & Economic Forecasting Unit, Monash University. 2001--2017.
   * **Director of Consulting**, Econometrics and Business Statistics, Monash University. 2000--2014.
   * **Director**, Monash University Statistical Consulting Service, 1997--1998.
   * **Director**, Key Centre for Statistical Science, 1996--1998.
@@ -96,6 +96,7 @@ tribble(
 tribble(
     ~Year, ~Award,
     2021, "Pitman Medal, Statistical Society of Australia",
+    2021, "Vice-Chancellor's Award for Innovation in Learning and Teaching",
     2020, "MSA Teaching Excellence Award for Business and Economics, Monash Student Association",
     2020, "Dean's Award for Innovation in Learning and Teaching, Monash Business School",
     2018, "Commendation for the Dean's Award for Research Impact, Monash Business School",
@@ -160,15 +161,19 @@ tribble(
 
 # Public lectures
 
+  * Cornish lecture, *Feasts and fables: modern tools for time series analysis*, Adelaide, November 2021.
+  * ACEMS public lecture, *Uncertain futures: what can we forecast and when should we give up?*, August 2021.
   * Monash master class, *Forecasting the future of the power industry: What can you learn from smart meter data?*, Melbourne, September 2018.
   * Yahoo Big Thinkers lecture, *Exploring the boundaries of predictability: what can we forecast, and when should we give up?*, California, June 2015.
   * Invited speaker, *Forecasting functional time series*, Australian Frontiers of Science, Canberra, February 2008.
   * Knibbs lecture, *Population forecasting and the importance of being uncertain*, Statistical Society of Australia, Canberra, November 2007.
   * Belz lecture, *Forecasting and the importance of being uncertain*, Statistical Society of Australia, Melbourne, October 2006.
 
+\enlargethispage*{0.4cm}
+
 # Major conference presentations
 
-  * Keynote speaker, International Symposium on Forecasting, online, October 2020.
+  * Keynote speaker, *Ten years of forecast reconciliation*, International Symposium on Forecasting, online, October 2020.
   * Workshop leader, *Tidy time series and forecasting in R*, rstudio::conf, San Francisco, January 2020.
   * ISI short course, *High-dimensional time series analysis*, Kuala Lumpur, August 2019.
   * Workshop leader, *Forecasting: principles and practice*, New York City, June 2018.
