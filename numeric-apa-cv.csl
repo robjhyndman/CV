@@ -1373,7 +1373,7 @@
           </group>
         </else>
       </choose>
-      <text variable="annote" display="block"/>
+      <text variable="note" display="block"/>
     </layout>
   </citation>
   <bibliography second-field-align="flush" et-al-min="19" et-al-use-first="1" et-al-use-last="false" entry-spacing="0" line-spacing="2">
@@ -1400,13 +1400,17 @@
               <text macro="container"/>
               <text macro="event"/>
               <text macro="publisher"/>
+              <text variable="note"/>
             </group>
+            <choose>
+            <if type="article bill book broadcast dataset entry entry-dictionary entry-encyclopedia figure graphic interview legal_case legislation manuscript map motion_picture musical_score pamphlet patent personal_communication post post-weblog report review review-book song speech thesis treaty webpage" match="any">
             <text macro="access"/>
+            </if>
+            </choose>
             <text macro="publication-history"/>
           </group>
         </else>
       </choose>
-      <text variable="annote" display="block"/>
     </layout>
   </bibliography>
 </style>

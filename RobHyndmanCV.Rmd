@@ -155,7 +155,7 @@ tribble(
 
   * Since 1991 I have authored `r NROW(pubs)` papers, chapters or books on statistical topics (listed on pages \pageref{papersstart}--\pageref{papersend}).
   * My current research involves the analysis of large collections of time series, and includes visualization, forecasting, reconciliation, modelling and anomaly detection..
-  * I currently supervise five PhD students and two post-doctoral research fellows. I have previously supervised another 27 PhD students and 3 Masters students.
+  * I currently supervise seven PhD students. I have previously supervised an additional 27 PhD students and 3 Masters students.
   * I publish the [*Hyndsight*](https://robjhyndman.com/hyndsight) blog on research issues which receives an average of about 2000 pageviews per day.
   * I have coauthored `r NROW(rjhpackages)` R packages as a result of my research (listed on pages \pageref{packagestart}--\pageref{packageend}). There have been over `r round(sum(rjhpackages$count, na.rm=TRUE)/1e6)` million downloads of my packages since 2015 (to `r format(Sys.time(), "%e %B %Y")`).
 
@@ -205,7 +205,7 @@ sumgrants <- grants %>%
   sum(na.rm=TRUE)
 ```
 
-I have acquired (in most cases jointly) about $`r sprintf("%2.1f", sumgrants/1e6)` million in external research grants since 2000. External research grants over $50,000 are listed below.\vspace*{0.2cm}\enlargethispage*{0.5cm}
+I have acquired (in most cases jointly) $`r sprintf("%2.1f", sumgrants/1e6)` million in external research grants since 2000. External research grants over $50,000 are listed below.\vspace*{0.2cm}\enlargethispage*{0.5cm}
 
 ```{r grantstable, results='asis'}
 grants %>%
@@ -233,7 +233,7 @@ grants %>%
 
   * In every year since 2018, student evaluations for "Applied forecasting for business and economics" have given an average rating for my teaching above 4.8 out of 5.
   * In 1998 and 2020, I received the "Excellence in teaching" award from the Monash Student Association.
-  * In 2020, I received (with George Athanasopoulos), the Dean's Award for Innovation in Learning and Teaching.
+  * I have received (with George Athanasopoulos), the 2020 Dean's Award for Innovation in Learning and Teaching, and the 2021 Vice-Chancellor's Award for Innovation in Learning and Teaching.
   * I am author of an innovative textbook with George Athanasopoulos entitled *Forecasting: principles and practice* ([`OTexts.org/fpp3/`](https://OTexts.org/fpp3)) which is available online and free of charge. The website has an average of over 20000 pageviews per day.
 
 # Consulting
