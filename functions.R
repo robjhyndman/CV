@@ -6,8 +6,7 @@ baretable <- function(tbl, digits = 0,
                       add.to.row = getOption("xtable.add.to.row", NULL),
                       longtable = FALSE,
                       ...) {
-  tbl %>%
-    xtable::xtable(digits = digits, ...) %>%
+  xtable::xtable(tbl, digits = digits, ...) %>%
     print(
       include.colnames = include.colnames,
       include.rownames = include.rownames,
@@ -36,22 +35,23 @@ rjh_cran_packages <- function() {
 get_rjh_packages <- function(github) {
   # Check if this has been run in last day
   recent_run <- fs::file_exists(here::here("packages.rds"))
-  if(recent_run) {
+  if (recent_run) {
     info <- fs::file_info(here::here("packages.rds"))
     recent_run <- (Sys.Date() == anytime::anydate(info$modification_time))
   }
-  if(recent_run)
+  if (recent_run) {
     return(readRDS(here::here("packages.rds")))
+  }
 
   packages <- tibble(github = github) %>%
     # Extract packages from github repos
     mutate(
-      package = stringr::str_extract(github,"/[a-zA-Z0-9\\-]*"),
-      package = stringr::str_remove(package,"/"),
-      package = stringr::str_extract(package,"[a-zA-Z0-9]*")
+      package = stringr::str_extract(github, "/[a-zA-Z0-9\\-]*"),
+      package = stringr::str_remove(package, "/"),
+      package = stringr::str_extract(package, "[a-zA-Z0-9]*")
     ) %>%
     # Add in CRAN packages
-    full_join(rjh_cran_packages(), by="package") %>%
+    full_join(rjh_cran_packages(), by = "package") %>%
     replace_na(list(on_cran = FALSE))
 
   # Compute monthly downloads
@@ -67,147 +67,162 @@ get_rjh_packages <- function(github) {
   # CRAN package meta data
   cran_meta <- packages %>%
     filter(on_cran) %>%
-    get_meta(cran=TRUE)
+    get_meta_cran()
 
   # Github package meta data (need to install packages)
-  packages %>%
-    filter(!on_cran) %>%
-    pull(github) %>%
-    remotes::install_github()
   github_meta <- packages %>%
     filter(!on_cran) %>%
-    get_meta(cran=FALSE)
+    pull(github) %>%
+    get_meta_github()
 
   # Add downloads and titles to packages
   packages <- packages %>%
-    left_join(downloads, by="package") %>%
+    left_join(downloads, by = "package") %>%
     left_join(
       bind_rows(cran_meta, github_meta),
-      by="package"
+      by = "package"
     )
 
   # Add URLs
   packages <- packages %>%
     mutate(
       github_url = if_else(is.na(github), NA_character_,
-                           paste0("https://github.com/",github)),
+        paste0("https://github.com/", github)
+      ),
       cran_url = if_else(!on_cran, NA_character_,
-                         paste0("https://cloud.r-project.org/package=",package)),
-      url = if_else(!is.na(url), url,
-                    if_else(!is.na(github), github_url, cran_url))
+        paste0("https://CRAN.R-project.org/package=", package)
+      ),
+      url = if_else(on_cran, cran_url,
+              if_else(!is.na(url), url, github_url)
+      )
     )
 
   # Save result and return it
-  saveRDS(packages, file=here::here("packages.rds"))
+  saveRDS(packages, file = here::here("packages.rds"))
   return(packages)
 }
 
-# Get meta data for vector of package names
-get_meta <- function(packages, cran=TRUE) {
-  get_meta_fn <- ifelse(cran, pkgsearch::cran_package, packageDescription)
-  #description <-
-  title <- url <- rep(NA_character_, NROW(packages))
-  for(i in seq_along(packages$package)) {
-    meta <- get_meta_fn(packages$package[i])
+# Get meta data for vector of packages on CRAN
+get_meta_cran <- function(packages) {
+  title <- version <- date <- authors <- url <- rep(NA_character_, NROW(packages))
+  for (i in seq_along(packages$package)) {
+    meta <- pkgsearch::cran_package(packages$package[i])
+    date[i] <- meta$date
     title[i] <- meta$Title
-    #description[i] <- meta$Description
-    if(!is.null(meta$URL))
-      url[i] <- (str_split(meta$URL,",") %>% unlist())[1]
+    version[i] <- meta$Version
+    # Replace new line unicodes with spaces
+    authors[i] <- gsub("<U\\+000a>", " ", meta$Author, perl=TRUE)
+    # Trim final period
+    authors[i] <- gsub("\\.$","",authors[i])
+    if (!is.null(meta$URL)) {
+      url[i] <- (str_split(meta$URL, ",") %>% unlist())[1]
+    }
   }
-  tibble(package=packages$package, url=url, title=title)
+  tibble(package = packages$package, date = date, url = url, title = title, version = version, authors = authors)
+}
+
+# Get meta data for vector of packages on github
+get_meta_github <- function(repos) {
+  title <- version <- date <- authors <- url <- package <- character(length(repos))
+  tmp <- tempfile()
+  for (i in seq_along(repos)) {
+    date[i] <- gh::gh(paste0("/repos/", repos[i]))$updated_at
+    download.file(gh::gh(paste0("/repos/", repos[i], "/contents/DESCRIPTION"))$download_url, tmp)
+    package[i] <- desc::desc_get_field("Package", file=tmp)
+    title[i] <- desc::desc_get_field("Title", file = tmp)
+    version[i] <- as.character(desc::desc_get_version(tmp))
+    auth <- desc::desc_get_author("aut", tmp)
+    if(!is.null(auth))
+      authors[i] <- paste(as.character(auth), sep = "\n", collapse = "\n")
+    else
+      authors[i] <- desc::desc_get_field("Author",file=tmp)
+    url[i] <- desc::desc_get_field("URL", file = tmp,
+      default = gh::gh(paste0("/repos/", repos[i]))$html_url
+    )
+    url[i] <- (str_split(url[i], ",") %>% unlist())[1]
+  }
+  tibble(package = package, date = date, url = url, title = title, version = version, authors = authors)
 }
 
 # Create bib file for R packages
 # Uses CRAN version if it exists. Otherwise uses github version
+# pkglist is output from get_rjh_packages()
 
 write_packages_bib <- function(pkglist, file) {
   fh <- file(file, open = "w+")
   on.exit(if (isOpen(fh)) close(fh))
-  for (i in seq_along(pkglist)) {
-    bibs <- try(getbibentry(pkglist[i]))
+  for (i in seq(NROW(pkglist))) {
+    bibs <- try(getbibentry(pkglist[i,]))
     if ("try-error" %in% class(bibs)) {
-      stop(paste("Package not found:", pkglist[i]))
+      stop(paste("Package not found:", pkglist[i,]$package))
     } else {
-      message("Writing ", pkglist[i])
+      message("Writing ", pkglist[i,]$package)
       writeLines(toBibtex(bibs), fh)
     }
   }
   message(paste("OK\nResults written to", file))
 }
 
-# Create bib entry for package pkg (character string).
-
+# Create bib entry for package pkg (one row tibble).
 getbibentry <- function(pkg) {
-  # Grab locally stored package info
-  meta <- suppressWarnings(packageDescription(pkg))
-  if (!is.list(meta)) {
-    stop("No package info found")
-  }
-
-  # Check if CRAN version exists
-  cran <- pkgsearch::ps(pkg) %>% filter(package == pkg)
-  found <- ifelse(NROW(cran) > 0, cran$package == pkg, FALSE)
-
-  # Grab CRAN info if the package is on CRAN
-  if (found) {
-    meta$Version <- cran$version
-    meta$Year <- lubridate::year(cran$date)
-    meta$URL <- paste("https://CRAN.R-project.org/package=",
-      pkg,
-      sep = ""
-    )
-  } else {
-    # Grab github info
-    if (is.null(meta$URL)) {
-      meta$URL <- paste("https://github.com/", meta$RemoteUsername,
-        "/", meta$RemoteRepo,
-        sep = ""
-      )
-    }
-    # Find last github commit
-    commits <- gh::gh(paste("GET /repos/", meta$RemoteUsername, "/", meta$RemoteRepo, "/commits", sep = ""))
-    meta$Year <- substr(commits[1][[1]]$commit$author$date, 1, 4)
-  }
-
+  meta <- as.list(pkg)
+  meta$year <- lubridate::year(meta$date)
   # Fix any & in title
-  meta$Title <- gsub("&", "\\\\&", meta$Title)
+  meta$title <- gsub("&", "\\\\&", meta$title)
   # Keep title case
-  meta$Title <- paste0("{", meta$Title, "}")
+  meta$title <- paste0("{", meta$title, "}")
+  # Fix weird characters
+  meta$authors <- gsub("<U+000a>"," ",meta$authors)
   # Add J to my name
-  meta$Author <- gsub("Rob Hyndman", "Rob J Hyndman", meta$Author)
+  meta$authors <- gsub("Rob Hyndman", "Rob J Hyndman", meta$authors)
   # Fix Souhaib's name
-  meta$Author <- gsub("Ben Taieb", "{Ben~Taieb}", meta$Author)
+  meta$authors <- gsub("Ben Taieb", "{Ben~Taieb}", meta$authors)
   # Replace R Core Team with {R Core Team}
-  meta$Author <- gsub("R Core Team", "{R Core Team}", meta$Author)
+  meta$authors <- gsub("R Core Team", "{R Core Team}", meta$authors)
   # Replace AEC
-  meta$Author <- gsub("Commonwealth of Australia AEC", "{Commonwealth of Australia AEC}", meta$Author)
+  meta$authors <- gsub("Commonwealth of Australia AEC", "{Commonwealth of Australia AEC}", meta$authors)
   # Replace ABS
-  meta$Author <- gsub("Australian Bureau of Statistics ABS", "{Australian Bureau of Statistics ABS}", meta$Author)
+  meta$authors <- gsub("Australian Bureau of Statistics ABS", "{Australian Bureau of Statistics ABS}", meta$authors)
   # Remove comments in author fields
-  meta$Author <- gsub("\\([a-zA-Z0-9\\-\\s,&\\(\\)<>:/\\.]*\\)", " ", meta$Author, perl = TRUE)
+  meta$authors <- gsub("\\([a-zA-Z0-9\\-\\s,&\\(\\)<>:/\\.']*\\)", " ", meta$authors, perl = TRUE)
+  # Remove email addresses
+  meta$authors <- gsub("<[a-zA-Z@.]*>","", meta$authors, perl=TRUE)
+  # Remove contribution classification
+  meta$authors <- gsub("\\[[a-zA-Z, ]*\\]","", meta$authors, perl=TRUE)
+  # Remove github handles
+  meta$authors <- gsub("\\([@a-zA-Z0-9\\-]*\\)","", meta$authors, perl=TRUE)
+  # Replace line breaks with "and"
+  meta$authors <- gsub("\\n", " and ", meta$authors)
+  # Replace commas with "and"
+  meta$authors <- gsub(",", " and ", meta$authors)
+  # Trim spaces
+  meta$authors <- trimws(meta$authors)
+  meta$authors <- gsub("  +"," ", meta$authors, perl=TRUE)
+  # Remove duplicate ands
+  meta$authors <- gsub("and and and ","and ", meta$authors, perl=TRUE)
+  meta$authors <- gsub("and and ","and ", meta$authors, perl=TRUE)
 
-    # Turn contributions into note (for demography)
-  if (grepl("with contributions", meta$Author)) {
-    author_split <- stringr::str_split(meta$Author, "with contributions ")
-    meta$Author <- author_split[[1]][1]
-    meta$Note <- paste0("with contributions ", author_split[[1]][2])
-    meta$Note <- gsub("^\\.|\\.$", "", meta$Note)
-    meta$Note <- gsub("(^[a-z])", "\\U\\1", meta$Note, perl = TRUE)
-  }
-  else {
-    meta$Note <- NULL
+  # Remove contributions from author list (for demography)
+  if (grepl("with contributions", meta$authors)) {
+    author_split <- stringr::str_split(meta$authors, "with contributions ")
+    meta$authors <- author_split[[1]][1]
+    #meta$note <- paste0("with contributions ", author_split[[1]][2])
+    #meta$note <- gsub("^\\.|\\.$", "", meta$note)
+    #meta$note <- gsub("(^[a-z])", "\\U\\1", meta$note, perl = TRUE)
+  } else {
+    meta$note <- NULL
   }
 
   # Create bibentry
   bibentry(
     bibtype = "Manual",
-    title = paste("{", meta$Package, "}: ", meta$Title, sep = ""),
-    year = meta$Year,
-    author = meta$Author,
-    url = strsplit(meta$URL, ",")[[1]][1],
-    version = meta$Version,
-    key = paste("R", meta$Package, sep = ""),
-    note = meta$Note
+    title = paste("{", meta$package, "}: ", meta$title, sep = ""),
+    year = meta$year,
+    author = meta$authors,
+    url = strsplit(meta$url, ",")[[1]][1],
+    version = meta$version,
+    key = paste("R", meta$package, sep = ""),
+    note = meta$note
   )
 }
 

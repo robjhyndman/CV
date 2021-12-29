@@ -6,5 +6,5 @@ compile:
 clean:
 	rm -rf RobHyndmanCV.pdf
 	rm -rf Rpackages.bib
-	rm -rf packages.rds
+	rm -rf *.rds
 	latexmk -c

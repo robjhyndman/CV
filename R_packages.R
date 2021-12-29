@@ -58,17 +58,5 @@ if(recent_run) {
     recent_run <- FALSE
 }
 if(!recent_run) {
-  # Install cran packages
-  rjhpackages %>%
-    filter(on_cran) %>%
-    pull(package) %>%
-    remotes::install_cran()
-
-  # Install github only packages
-  rjhpackages %>%
-    filter(!on_cran) %>%
-    pull(github) %>%
-    remotes::install_github()
-
-    write_packages_bib(rjhpackages$package, file="Rpackages.bib")
+  write_packages_bib(rjhpackages, file="Rpackages.bib")
 }
