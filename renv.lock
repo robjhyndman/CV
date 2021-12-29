@@ -37,13 +37,6 @@
       "Repository": "CRAN",
       "Hash": "130c0caba175739d98f2963c6a407cf6"
     },
-    "NLP": {
-      "Package": "NLP",
-      "Version": "0.2-1",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "94b0a21c13933f61cf6272a192964624"
-    },
     "R6": {
       "Package": "R6",
       "Version": "2.5.1",
@@ -212,6 +205,13 @@
       "Repository": "CRAN",
       "Hash": "1f37fa4ab2f5f7eded42f78b9a887182"
     },
+    "desc": {
+      "Package": "desc",
+      "Version": "1.4.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "28763d08fadd0b733e3cee9dab4e12fe"
+    },
     "digest": {
       "Package": "digest",
       "Version": "0.6.29",
@@ -282,13 +282,6 @@
       "Repository": "CRAN",
       "Hash": "7c89603d81793f0d5486d91ab1fc6f1d"
     },
-    "fuzzyjoin": {
-      "Package": "fuzzyjoin",
-      "Version": "0.1.6",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "24af5fc67dbeaac6d776a8e6630aacd9"
-    },
     "gargle": {
       "Package": "gargle",
       "Version": "1.2.0",
@@ -296,26 +289,12 @@
       "Repository": "CRAN",
       "Hash": "9d234e6a87a6f8181792de6dc4a00e39"
     },
-    "gcite": {
-      "Package": "gcite",
-      "Version": "0.10.1",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "3a0e1e463578dd5230ab6c56b00b38d7"
-    },
     "generics": {
       "Package": "generics",
       "Version": "0.1.1",
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "3f6bcfb0ee5d671d9fd1893d2faa79cb"
-    },
-    "geosphere": {
-      "Package": "geosphere",
-      "Version": "1.5-14",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "1ce6e028f3d056dad1ea9c3c0a5444bf"
     },
     "ggplot2": {
       "Package": "ggplot2",
@@ -534,13 +513,6 @@
       "Repository": "CRAN",
       "Hash": "7ea462fc29a69bd66f0ec4e596373c3d"
     },
-    "pbapply": {
-      "Package": "pbapply",
-      "Version": "1.5-0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "11359a5bb73622ab3f4136bf57108b64"
-    },
     "pillar": {
       "Package": "pillar",
       "Version": "1.6.4",
@@ -639,13 +611,6 @@
       "Repository": "CRAN",
       "Hash": "76c9e04c712a05848ae7a23d2f170a40"
     },
-    "remotes": {
-      "Package": "remotes",
-      "Version": "2.4.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "227045be9aee47e6dda9bb38ac870d67"
-    },
     "renv": {
       "Package": "renv",
       "Version": "0.14.0",
@@ -709,27 +674,6 @@
       "Repository": "CRAN",
       "Hash": "3838071b66e0c566d55cc26bd6e27bf4"
     },
-    "slam": {
-      "Package": "slam",
-      "Version": "0.1-49",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "be4af0d3420f164f135a210da1d2ba5e"
-    },
-    "sp": {
-      "Package": "sp",
-      "Version": "1.4-6",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "ce8613f4e8c84ef4da9eba65b874ebe9"
-    },
-    "stringdist": {
-      "Package": "stringdist",
-      "Version": "0.9.8",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "c8b6c79c3b2d7d8475f3ab35cd99737b"
-    },
     "stringi": {
       "Package": "stringi",
       "Version": "1.7.6",
@@ -785,13 +729,6 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "130fe4c61e55b271a2655b3a284a205f"
-    },
-    "tm": {
-      "Package": "tm",
-      "Version": "0.7-8",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "608413cbdf64d418b6a33e6c3d4d3b25"
     },
     "tsibble": {
       "Package": "tsibble",
@@ -862,13 +799,6 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "a376b424c4817cda4920bbbeb3364e85"
-    },
-    "wordcloud": {
-      "Package": "wordcloud",
-      "Version": "2.6",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "dddb6538141ed1e2435cb63c6c748d16"
     },
     "xfun": {
       "Package": "xfun",
