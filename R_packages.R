@@ -1,40 +1,42 @@
 library(tidyverse)
+library(pkgmeta)
 library(RefManageR)
 source("functions.R")
 
-# Github packages I've coauthored
 github <- c(
+  "AndriSignorell/DescTools",
   "AU-BURGr/ozdata",
   "earowang/hts",
   "earowang/sugrrants",
   "eddelbuettel/binb",
   "FinYang/tsdl",
+  "haghbinh/sfar",
   "jforbes14/eechidna",
   "mitchelloharawild/fasster",
   "mitchelloharawild/vitae",
+  "numbats/monash",
   "pridiltal/oddstream",
   "pridiltal/oddwater",
   "pridiltal/stray",
   "robjhyndman/addb",
   "robjhyndman/anomalous",
   "robjhyndman/compenginets",
+  "robjhyndman/cricketdata",
   "robjhyndman/demography",
   "robjhyndman/expsmooth",
   "robjhyndman/fma",
   "robjhyndman/forecast",
-  "robjhyndman/fpp",
   "robjhyndman/fpp2-package",
   "robjhyndman/fpp3-package",
   "robjhyndman/hdrcde",
   "robjhyndman/Mcomp",
   "robjhyndman/MEFM-package",
-  "robjhyndman/MonashEBSTemplates",
+  "robjhyndman/pkgmeta",
   "robjhyndman/thief",
   "robjhyndman/tscompdata",
   "robjhyndman/tsfeatures",
-  "robjhyndman/cricketdata",
-  "robjhyndman/ozbabynames",
-  "robjhyndman/rcademy",
+  "ropenscilabs/ozbabynames",
+  "ropenscilabs/rcademy",
   "sayani07/gravitas",
   "sevvandi/lookout",
   "thiyangt/seer",
@@ -44,19 +46,27 @@ github <- c(
   "tidyverts/tsibble",
   "tidyverts/tsibbledata",
   "verbe039/bfast",
-  "ykang/gratis"
+  "ykang/gratis",
+  NULL
 )
-rjhpackages <- get_rjh_packages(github)
 
-# Check if this has been run today
-# Inefficient as it gets the meta data all over again. Need
-# to update get_rjh_packages to include the required meta data and
-# pass whole object to write_bib function
-recent_run <- fs::file_exists("Rpackages.bib")
-if(recent_run) {
-  if(Sys.Date() > anytime::anydate(fs::file_info("Rpackages.bib")$modification_time))
-    recent_run <- FALSE
+# Check if this has been run in last day
+recent_run <- fs::file_exists(here::here("packages.rds"))
+if (recent_run) {
+  info <- fs::file_info(here::here("packages.rds"))
+  recent_run <- (Sys.Date() == anytime::anydate(info$modification_time))
 }
-if(!recent_run) {
-  write_packages_bib(rjhpackages, file="Rpackages.bib")
+if (recent_run) {
+  rjh_packages <- readRDS(here::here("packages.rds"))
+} else {
+  # CRAN packages I've coauthored
+  rjh_packages <- pkgmeta::get_meta(
+    cran_author = "Hyndman",
+    include_downloads=TRUE, start="2015-01-01",
+    github_repos = github
+  )
+  # Save result and return it
+  saveRDS(rjh_packages, file = here::here("packages.rds"))
 }
+
+write_packages_bib(rjh_packages, file="Rpackages.bib")

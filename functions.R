@@ -22,141 +22,19 @@ baretable <- function(tbl, digits = 0,
     )
 }
 
-# Return CRAN packages with Hyndman as author
-rjh_cran_packages <- function() {
-  pkgsearch::ps("Hyndman", size = 100) %>%
-    filter(purrr::map_lgl(
-      package_data, ~ grepl("Hyndman", .x$Author, fixed = TRUE)
-    )) %>%
-    select(package) %>%
-    mutate(on_cran = TRUE)
-}
-
-get_rjh_packages <- function(github) {
-  # Check if this has been run in last day
-  recent_run <- fs::file_exists(here::here("packages.rds"))
-  if (recent_run) {
-    info <- fs::file_info(here::here("packages.rds"))
-    recent_run <- (Sys.Date() == anytime::anydate(info$modification_time))
-  }
-  if (recent_run) {
-    return(readRDS(here::here("packages.rds")))
-  }
-
-  packages <- tibble(github = github) %>%
-    # Extract packages from github repos
-    mutate(
-      package = stringr::str_extract(github, "/[a-zA-Z0-9\\-]*"),
-      package = stringr::str_remove(package, "/"),
-      package = stringr::str_extract(package, "[a-zA-Z0-9]*")
-    ) %>%
-    # Add in CRAN packages
-    full_join(rjh_cran_packages(), by = "package") %>%
-    replace_na(list(on_cran = FALSE))
-
-  # Compute monthly downloads
-  downloads <- packages %>%
-    filter(on_cran) %>%
-    pull(package) %>%
-    cranlogs::cran_downloads(from = "2015-01-01") %>%
-    as_tibble() %>%
-    mutate(month = tsibble::yearmonth(date)) %>%
-    group_by(package) %>%
-    summarise(count = sum(count), .groups = "drop")
-
-  # CRAN package meta data
-  cran_meta <- packages %>%
-    filter(on_cran) %>%
-    get_meta_cran()
-
-  # Github package meta data (need to install packages)
-  github_meta <- packages %>%
-    filter(!on_cran) %>%
-    pull(github) %>%
-    get_meta_github()
-
-  # Add downloads and titles to packages
-  packages <- packages %>%
-    left_join(downloads, by = "package") %>%
-    left_join(
-      bind_rows(cran_meta, github_meta),
-      by = "package"
-    )
-
-  # Add URLs
-  packages <- packages %>%
-    mutate(
-      github_url = if_else(is.na(github), NA_character_,
-        paste0("https://github.com/", github)
-      ),
-      cran_url = if_else(!on_cran, NA_character_,
-        paste0("https://CRAN.R-project.org/package=", package)
-      ),
-      url = if_else(on_cran, cran_url,
-              if_else(!is.na(url), url, github_url)
-      )
-    )
-
-  # Save result and return it
-  saveRDS(packages, file = here::here("packages.rds"))
-  return(packages)
-}
-
-# Get meta data for vector of packages on CRAN
-get_meta_cran <- function(packages) {
-  title <- version <- date <- authors <- url <- rep(NA_character_, NROW(packages))
-  for (i in seq_along(packages$package)) {
-    meta <- pkgsearch::cran_package(packages$package[i])
-    date[i] <- meta$date
-    title[i] <- meta$Title
-    version[i] <- meta$Version
-    # Replace new line unicodes with spaces
-    authors[i] <- gsub("<U\\+000a>", " ", meta$Author, perl=TRUE)
-    # Trim final period
-    authors[i] <- gsub("\\.$","",authors[i])
-    if (!is.null(meta$URL)) {
-      url[i] <- (str_split(meta$URL, ",") %>% unlist())[1]
-    }
-  }
-  tibble(package = packages$package, date = date, url = url, title = title, version = version, authors = authors)
-}
-
-# Get meta data for vector of packages on github
-get_meta_github <- function(repos) {
-  title <- version <- date <- authors <- url <- package <- character(length(repos))
-  tmp <- tempfile()
-  for (i in seq_along(repos)) {
-    date[i] <- gh::gh(paste0("/repos/", repos[i]))$updated_at
-    download.file(gh::gh(paste0("/repos/", repos[i], "/contents/DESCRIPTION"))$download_url, tmp)
-    package[i] <- desc::desc_get_field("Package", file=tmp)
-    title[i] <- desc::desc_get_field("Title", file = tmp)
-    version[i] <- as.character(desc::desc_get_version(tmp))
-    auth <- desc::desc_get_author("aut", tmp)
-    if(!is.null(auth))
-      authors[i] <- paste(as.character(auth), sep = "\n", collapse = "\n")
-    else
-      authors[i] <- desc::desc_get_field("Author",file=tmp)
-    url[i] <- desc::desc_get_field("URL", file = tmp,
-      default = gh::gh(paste0("/repos/", repos[i]))$html_url
-    )
-    url[i] <- (str_split(url[i], ",") %>% unlist())[1]
-  }
-  tibble(package = package, date = date, url = url, title = title, version = version, authors = authors)
-}
-
 # Create bib file for R packages
 # Uses CRAN version if it exists. Otherwise uses github version
-# pkglist is output from get_rjh_packages()
+# packages is output from pkgmeta::get_meta()
 
-write_packages_bib <- function(pkglist, file) {
+write_packages_bib <- function(packages, file) {
   fh <- file(file, open = "w+")
   on.exit(if (isOpen(fh)) close(fh))
-  for (i in seq(NROW(pkglist))) {
-    bibs <- try(getbibentry(pkglist[i,]))
+  for (i in seq(NROW(packages))) {
+    bibs <- try(getbibentry(packages[i,]))
     if ("try-error" %in% class(bibs)) {
-      stop(paste("Package not found:", pkglist[i,]$package))
+      stop(paste("Package not found:", packages[i,]$package))
     } else {
-      message("Writing ", pkglist[i,]$package)
+      message("Writing ", packages[i,]$package)
       writeLines(toBibtex(bibs), fh)
     }
   }
@@ -323,40 +201,4 @@ dollars <- function(x) {
     "^0+\\.", ".",
     unname(prettyNum(out, ",", preserve.width = "none", scientific = FALSE))
   ))
-}
-
-cran_meta <- function(x) {
-  df <- try(versions::available.versions(x), silent = TRUE)
-  if ("try-error" %in% class(df)) {
-    warning(paste(x, "package not on CRAN"))
-    return(NULL)
-  }
-  tibble(
-    package = x,
-    maintainer = maintainer(x),
-    first_release = tail(df[[1]]$date, 1) %>% as.Date(format = "%Y-%m-%d"),
-    last_release = head(df[[1]]$date, 1) %>% as.Date(format = "%Y-%m-%d"),
-    current_version = head(df[[1]]$version, 1)
-  ) %>%
-    mutate(
-      maintainer = str_trim(str_extract(maintainer, "[A-Za-z'\ ]*")),
-    )
-}
-
-cran_downloads <- function(x) {
-  # Compute monthly download counts
-  down <- cranlogs::cran_downloads(x, from = "2000-01-01") %>%
-    as_tibble() %>%
-    mutate(month = tsibble::yearmonth(date)) %>%
-    group_by(month) %>%
-    summarise(count = sum(count), package = x, .groups = "keep")
-  # Strip out initial zeros
-  first_nonzero <- down %>%
-    filter(count > 0) %>%
-    head(1)
-  if (NROW(first_nonzero) == 0L) {
-    return(NULL)
-  } else {
-    filter(down, month >= first_nonzero$month)
-  }
 }
