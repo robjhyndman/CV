@@ -123,10 +123,10 @@
     },
     "broom": {
       "Package": "broom",
-      "Version": "0.7.10",
+      "Version": "0.7.11",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "ddf8bc55ea050f984835dd2d23cd6828"
+      "Hash": "e4487657db580ae1fe0f85237a88ff1f"
     },
     "callr": {
       "Package": "callr",
@@ -527,6 +527,18 @@
       "Repository": "CRAN",
       "Hash": "01f28d4278f15c76cddbea05899c5d6f"
     },
+    "pkgmeta": {
+      "Package": "pkgmeta",
+      "Version": "0.0.0.9000",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "robjhyndman",
+      "RemoteRepo": "pkgmeta",
+      "RemoteRef": "master",
+      "RemoteSha": "4a3a3a80d38356bd53f84bfaf362582c94dab3d0",
+      "Hash": "c50f2dd47c7e4650574450510ccb7f4a"
+    },
     "pkgsearch": {
       "Package": "pkgsearch",
       "Version": "3.0.3",
@@ -730,13 +742,6 @@
       "Repository": "CRAN",
       "Hash": "130fe4c61e55b271a2655b3a284a205f"
     },
-    "tsibble": {
-      "Package": "tsibble",
-      "Version": "1.1.1",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "6f071a41883a4636158a77e2b01766c3"
-    },
     "tzdb": {
       "Package": "tzdb",
       "Version": "0.2.0",
@@ -764,13 +769,6 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "ecf749a1b39ea72bd9b51b76292261f1"
-    },
-    "versions": {
-      "Package": "versions",
-      "Version": "0.3",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "899888c2f3dc0892c2a5727de2ef3756"
     },
     "viridisLite": {
       "Package": "viridisLite",
