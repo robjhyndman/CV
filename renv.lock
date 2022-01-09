@@ -532,12 +532,12 @@
       "Version": "0.0.0.9000",
       "Source": "GitHub",
       "RemoteType": "github",
-      "RemoteHost": "api.github.com",
       "RemoteUsername": "robjhyndman",
       "RemoteRepo": "pkgmeta",
       "RemoteRef": "master",
-      "RemoteSha": "4a3a3a80d38356bd53f84bfaf362582c94dab3d0",
-      "Hash": "c50f2dd47c7e4650574450510ccb7f4a"
+      "RemoteSha": "6ba8d322447d084b8e699b6d8df550f3c27b19ca",
+      "RemoteHost": "api.github.com",
+      "Hash": "f8debf1eb5ab6758506a4161acdc60c6"
     },
     "pkgsearch": {
       "Package": "pkgsearch",
@@ -625,10 +625,10 @@
     },
     "renv": {
       "Package": "renv",
-      "Version": "0.14.0",
+      "Version": "0.15.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "30e5eba91b67f7f4d75d31de14bbfbdc"
+      "Hash": "36c1a644e5b0ba8050f40f07ea1dae62"
     },
     "reprex": {
       "Package": "reprex",
