@@ -154,7 +154,6 @@ prepare_bib_report <- function(bib_file) {
   out[i] <- sapply(names(out[i]), best_match, y = unlist(out[i], use.names = FALSE))
 
 
-
   indx <- !sapply(out, is_empty)
   no_matchdf <- no_matchdf %>%
     mutate(

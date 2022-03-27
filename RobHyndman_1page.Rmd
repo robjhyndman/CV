@@ -27,7 +27,6 @@ source("functions.R")
 ```
 
 
-
 ```{r Rpackages, eval=FALSE}
 # Construct bib file for R packages
 source("Rpackages.R")
@@ -131,7 +130,6 @@ editorials <- c(
 ```
 
 \newcommand{\bibfont}{\normalfont\fontsize{10}{11.7}\sffamily}
-
 
 # Books (since 2018)
 

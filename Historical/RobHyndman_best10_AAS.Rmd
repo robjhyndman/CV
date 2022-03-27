@@ -77,7 +77,6 @@ rjhtbl <- rjhpubs %>%
   select(key, bibtype, title, author, year, n_citations)
 ```
 
-
 ```{r bestten, include=FALSE, dependson='bibfile'}
 bestten <- data.frame(comments=c(
   smartmeterhts = "This paper combined hierarchical forecasting with probabilistic forecasts for the first time and applied the ideas to the important problem of electricity demand modelling. It is already attracting citations despite being online for only a few months. RJH provided some methodological expertise and knowledge of the associated literature. Contribution: 20\\%.",

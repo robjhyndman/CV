@@ -110,7 +110,6 @@ tribble(
   baretable()
 ```
 
-
 # Society leadership
 
   * Member, Pearson Prize Committee, International Statistical Institute, 2017.
@@ -118,7 +117,6 @@ tribble(
   * Member, Scientific Program Advisory Group, Statistical Society of Australia, 2001--2004
   * Secretary, Victorian branch, Statistical Society of Australia, 1993--1995.
   * Central Council member, Statistical Society of Australia, 1993--1996.
-
 
 # Research Grants
 
@@ -192,4 +190,3 @@ pubs %>%
   mutate(year = as.numeric(unlist(issued))) %>%
   arrange(-year)
 ```
-

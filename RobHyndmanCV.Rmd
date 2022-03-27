@@ -255,7 +255,6 @@ grants %>%
   * Program Chair, International Symposium on Forecasting, 2012.
   * Program Co-Chair, International Symposium on Forecasting, 2004.
 
-
 ```{r publist}
 # Find editorials
 editorials <- c(
@@ -356,4 +355,3 @@ packages %>% dplyr::arrange(id)
 ```
 
 \refstepcounter{bib}\label{packageend}
-

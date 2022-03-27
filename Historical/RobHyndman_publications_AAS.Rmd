@@ -43,7 +43,6 @@ reports <- bibliography_entries("rjhreports.bib")
 packages <- bibliography_entries("Rpackages.bib")
 ```
 
-
 # Rob J Hyndman: Publications List
 
 ```{r publist}
@@ -76,7 +75,6 @@ pubs %>%
   arrange(year, surnames)
 ```
 
-
 ## Refereed journal articles
 
 ```{r research-papers}
@@ -93,4 +91,3 @@ pubs %>%
   filter(bibtype == "InProceedings") %>%
   arrange(year, surnames)
 ```
-

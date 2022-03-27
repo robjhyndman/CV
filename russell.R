@@ -28,7 +28,6 @@ rjh %>%
   filter(year >= 2012, year <= 2018) %>%
   summarise(count = n())
 
-
 rjh %>% filter(Group == "Group 1+", year < 2019)
 rjh %>% filter(Group == "Group 1", year < 2019) 
 rjh %>% filter(Group == "Group 2", year < 2019)

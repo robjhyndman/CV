@@ -63,7 +63,6 @@ reports <- bibliography_entries("rjhreports.bib")
 packages <- bibliography_entries("Rpackages.bib")
 ```
 
-
 # Education and qualifications
 
 ```{r degrees, results='asis'}
@@ -237,7 +236,6 @@ rjhtbl <- rjhpubs %>%
   select(key, bibtype, title, author, year, n_citations)
 ```
 
-
 ```{r bestten, include=FALSE, dependson='bibfile'}
 bestten <- tibble(
    key=c("smartmeterhts","mint","HF10","DHS11","hierarchical",
@@ -264,4 +262,3 @@ cat("\\vspace*{0.2cm}\\par\\mbox{}\\hfill{\\emph{[Citations from Google Scholar 
     "]}}",
     sep="")
 ```
-
