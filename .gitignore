@@ -230,4 +230,6 @@ Rpackages.Rout
 .Rproj.user
 *.rds
 
+# VS code
 
+.vscode/*
