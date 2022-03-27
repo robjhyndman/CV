@@ -30,11 +30,11 @@ write_packages_bib <- function(packages, file) {
   fh <- file(file, open = "w+")
   on.exit(if (isOpen(fh)) close(fh))
   for (i in seq(NROW(packages))) {
-    bibs <- try(getbibentry(packages[i,]))
+    bibs <- try(getbibentry(packages[i, ]))
     if ("try-error" %in% class(bibs)) {
-      stop(paste("Package not found:", packages[i,]$package))
+      stop(paste("Package not found:", packages[i, ]$package))
     } else {
-      message("Writing ", packages[i,]$package)
+      message("Writing ", packages[i, ]$package)
       writeLines(toBibtex(bibs), fh)
     }
   }
@@ -50,7 +50,7 @@ getbibentry <- function(pkg) {
   # Keep title case
   meta$title <- paste0("{", meta$title, "}")
   # Fix weird characters
-  meta$authors <- gsub("<U+000a>"," ",meta$authors)
+  meta$authors <- gsub("<U+000a>", " ", meta$authors)
   # Add J to my name
   meta$authors <- gsub("Rob Hyndman", "Rob J Hyndman", meta$authors)
   # Fix Souhaib's name
@@ -64,29 +64,29 @@ getbibentry <- function(pkg) {
   # Remove comments in author fields
   meta$authors <- gsub("\\([a-zA-Z0-9\\-\\s,&\\(\\)<>:/\\.']*\\)", " ", meta$authors, perl = TRUE)
   # Remove email addresses
-  meta$authors <- gsub("<[a-zA-Z@.]*>","", meta$authors, perl=TRUE)
+  meta$authors <- gsub("<[a-zA-Z@.]*>", "", meta$authors, perl = TRUE)
   # Remove contribution classification
-  meta$authors <- gsub("\\[[a-zA-Z, ]*\\]","", meta$authors, perl=TRUE)
+  meta$authors <- gsub("\\[[a-zA-Z, ]*\\]", "", meta$authors, perl = TRUE)
   # Remove github handles
-  meta$authors <- gsub("\\([@a-zA-Z0-9\\-]*\\)","", meta$authors, perl=TRUE)
+  meta$authors <- gsub("\\([@a-zA-Z0-9\\-]*\\)", "", meta$authors, perl = TRUE)
   # Replace line breaks with "and"
   meta$authors <- gsub("\\n", " and ", meta$authors)
   # Replace commas with "and"
   meta$authors <- gsub(",", " and ", meta$authors)
   # Trim spaces
   meta$authors <- trimws(meta$authors)
-  meta$authors <- gsub("  +"," ", meta$authors, perl=TRUE)
+  meta$authors <- gsub("  +", " ", meta$authors, perl = TRUE)
   # Remove duplicate ands
-  meta$authors <- gsub("and and and ","and ", meta$authors, perl=TRUE)
-  meta$authors <- gsub("and and ","and ", meta$authors, perl=TRUE)
+  meta$authors <- gsub("and and and ", "and ", meta$authors, perl = TRUE)
+  meta$authors <- gsub("and and ", "and ", meta$authors, perl = TRUE)
 
   # Remove contributions from author list (for demography)
   if (grepl("with contributions", meta$authors)) {
     author_split <- stringr::str_split(meta$authors, "with contributions ")
     meta$authors <- author_split[[1]][1]
-    #meta$note <- paste0("with contributions ", author_split[[1]][2])
-    #meta$note <- gsub("^\\.|\\.$", "", meta$note)
-    #meta$note <- gsub("(^[a-z])", "\\U\\1", meta$note, perl = TRUE)
+    # meta$note <- paste0("with contributions ", author_split[[1]][2])
+    # meta$note <- gsub("^\\.|\\.$", "", meta$note)
+    # meta$note <- gsub("(^[a-z])", "\\U\\1", meta$note, perl = TRUE)
   } else {
     meta$note <- NULL
   }
