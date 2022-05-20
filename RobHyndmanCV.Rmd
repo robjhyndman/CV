@@ -11,6 +11,8 @@ csl: numeric-apa-cv.csl
 output: vitae::hyndman
 header-includes:
   \definecolor{headcolor}{HTML}{000088}
+editor_options: 
+  chunk_output_type: console
 ---
 
 \newcounter{bib}
@@ -74,11 +76,16 @@ tribble(
     2016, 2016, "\\textbf{KNAW Visiting Professor}, TU/Eindhoven, Netherlands",
   ) %>%
   arrange(-Start) %>%
-  mutate(End = replace_na(End, "")) %>%
-  mutate(Years = if_else(End == Start,
+  mutate(
+    Start = as.character(Start), 
+    End = as.character(End),
+    End = replace_na(End, ""),
+    Years = if_else(End == Start,
         as.character(Start),
         paste(Start, "--", End, sep = ""),
-        paste(Start, "--", End, sep = ""))) %>%
+        paste(Start, "--", End, sep = "")
+    )
+  ) %>%
   select(Years, Position) %>%
   baretable()
 ```
@@ -128,8 +135,12 @@ tribble(
     2001, 2004, "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}",
     2001, 2004, "\\textbf{Theory and Methods Editor}, \\emph{Australian \\& New Zealand Journal of Statistics}",
   ) %>%
-  mutate(End = replace_na(End, "")) %>%
-  mutate(Year = paste(Start, "--", End, sep = "")) %>%
+  mutate(
+    Start = as.character(Start),
+    End = as.character(End),
+    End = replace_na(End, ""),
+    Year = paste(Start, "--", End, sep = "")
+  ) %>%
   select(Year, Position) %>%
   baretable()
 ```
