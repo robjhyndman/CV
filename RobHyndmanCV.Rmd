@@ -11,7 +11,7 @@ csl: numeric-apa-cv.csl
 output: vitae::hyndman
 header-includes:
   \definecolor{headcolor}{HTML}{000088}
-editor_options: 
+editor_options:
   chunk_output_type: console
 ---
 
@@ -77,7 +77,7 @@ tribble(
   ) %>%
   arrange(-Start) %>%
   mutate(
-    Start = as.character(Start), 
+    Start = as.character(Start),
     End = as.character(End),
     End = replace_na(End, ""),
     Years = if_else(End == Start,
@@ -92,7 +92,7 @@ tribble(
 
 # Academic and research leadership
 
-  * **Head**, Department of Econometrics & Business Statistics, Monash University. 2019--
+  * **Head**, Department of Econometrics & Business Statistics, Monash University. 2019--2022.
   * **Director**, Business & Economic Forecasting Unit, Monash University. 2001--2017.
   * **Director of Consulting**, Econometrics and Business Statistics, Monash University. 2000--2014.
   * **Director**, Monash University Statistical Consulting Service, 1997--1998.
@@ -149,11 +149,11 @@ tribble(
 
 # Society memberships
 
+  * Fellow, International Institute of Forecasters
   * Elected Member, International Statistical Institute
-  * Member, International Institute of Forecasters
   * Member, International Association for Statistical Computing
-  * Member, Statistical Society of Australia
   * Member, International Society for Business and Industrial Statistics
+  * Member, Statistical Society of Australia
 
 # Society leadership
 
