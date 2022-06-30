@@ -201,3 +201,31 @@ dollars <- function(x) {
     unname(prettyNum(out, ",", preserve.width = "none", scientific = FALSE))
   ))
 }
+
+# Read and save tibble with my packages
+
+get_rjh_packages <- function() {
+  # Check if this has been run in last day
+  if(fs::file_exists(here::here("packages.rds"))) {
+    packages <- readRDS(here::here("packages.rds"))
+    info <- fs::file_info(here::here("packages.rds"))
+    recent_run <- (Sys.Date() == anytime::anydate(info$modification_time))
+  } else
+    recent_run <- FALSE
+  if (!recent_run) {
+    # CRAN packages I've coauthored
+    rjh_packages <- try(pkgmeta::get_meta(
+      cran_author = "Hyndman",
+      include_downloads=TRUE, start="2015-01-01",
+      github_repos = read.table("github_r_repos.txt")$V1
+    ))
+    if(!("try-error" %in% class(rjh_packages))) {
+      # Save new version
+      packages <- rjh_packages
+      saveRDS(packages, file = here::here("packages.rds"))
+    }
+  }
+
+  write_packages_bib(packages, file="Rpackages.bib")
+  return(packages)
+}

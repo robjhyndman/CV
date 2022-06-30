@@ -30,7 +30,7 @@ library(vitae)
 source("functions.R")
 
 # Update list of R packages I've coauthored
-source("R_packages.R")
+rjh_packages <- get_rjh_packages()
 
 # Read any bib files
 pubs <- bibliography_entries("rjhpubs.bib")
