@@ -7,60 +7,45 @@ email: "Rob.Hyndman@monash.edu"
 twitter: robjhyndman
 github: robjhyndman
 date: "`r format(Sys.time(), '%B %Y')`"
-headcolor: "000088"
+position: FAA, FASSA, BSc (Hons), PhD, AStat
 csl: numeric-apa-cv.csl
-keep_md: yes
-output:
-  vitae::hyndman:
-    includes:
-      before_body:
-        - \titleformat*{\section}{\color{headcolor}\normalsize\sf\bfseries}
+output: vitae::hyndman
+header-includes:
+  - \geometry{left=1.8cm,right=1.8cm,top=1.9cm,bottom=1.9cm}
+  - \definecolor{headcolor}{HTML}{000088}
+editor_options: 
+  chunk_output_type: console
 ---
 
+\titlespacing{\section}{0pt}{1.ex}{0.5ex}
+\fontsize{10}{11.5}\sf
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, cache = TRUE)
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  cache = FALSE
+)
 library(tidyverse)
+library(RefManageR)
 library(vitae)
 library(gcite)
-library(RefManageR)
 library(fuzzyjoin)
 source("functions.R")
-source("mybibstyle.R")
-```
+source("gscholar.R")
 
-```{r Rpackages}
-# Find installed or CRAN packages with Hyndman as an author
-rjhpkgs <- c(find_rjh_packages(),
-  # Now add github-only packages
-    "addb",
-    "anomalous",
-    "compenginets",
-    "cricketdata",
-    "fasster",
-    "MEFM",
-    "MonashEBSTemplates",
-    "oddwater",
-    "ozbabynames",
-    "rcademy",
-    "tscompdata",
-    "tsdl"
-    ) %>%
-  unique() %>%
-  sort()
+# Update list of R packages I've coauthored
+rjh_packages <- get_rjh_packages()
 
-downloads <- map_dfr(rjhpkgs, cran_downloads) %>%
-  mutate(month = tsibble::yearmonth(month))
-since2015 <- downloads %>%
-  filter(month >= tsibble::yearmonth("2015 Jan"))
-# Write bib file
-#write_packages_bib(rjhpkgs, file="Rpackages.bib")
-```
-
-```{r bibfiles}
 # Read any bib files
-pubs <- bibliography_entries("rjhpubs.bib")
+pubs <- bibliography_entries("rjhpubs.bib") |>
+    mutate(year = lubridate::year(as.Date(issued)))
 reports <- bibliography_entries("rjhreports.bib")
 packages <- bibliography_entries("Rpackages.bib")
+
+# Read grants file
+grants <- read_csv("Grant_income.csv")
 ```
 
 # Education and qualifications
@@ -75,73 +60,71 @@ tribble(
   baretable()
 ```
 
-# Current positions
+# Current position
 
 ```{r employment, results='asis'}
 tribble(
   ~Start, ~End, ~Position,
-  1985, 1992, "\\textbf{Statistical consultant}, Department of Statistics, University of Melbourne",
-  1993, 1994, "\\textbf{Lecturer}, Department of Statistics, University of Melbourne",
-  1995, 1996, "\\textbf{Lecturer}, Department of Mathematics and Statistics, Monash University",
-  1997, 1998, "\\textbf{Senior Lecturer}, Department of Mathematics and Statistics, Monash University",
-  1998, 1998, "\\textbf{Visiting Professor}, Department of Statistics, Colorado State University",
-  1998, 2000, "\\textbf{Senior Lecturer}, Department of Econometrics \\& Business Statistics, Monash University",
-  2001, 2003, "\\textbf{Associate Professor}, Department of Econometrics \\& Business Statistics, Monash University",
-  2002, 2002, "\\textbf{Visiting Senior Research Fellow}, Mathematical Sciences Institute, Australian National University",
-  2003, NA, "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University",
-  2019, NA, "\\textbf{Head}, Department of Econometrics \\& Business Statistics, Monash University",
-  2016, 2016, "\\textbf{KNAW Visiting Professor}, TU/Eindhoven, Netherlands",
+  2003, NA, "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University"
 ) %>%
   arrange(-Start) %>%
-  filter(is.na(End)) %>%
-  mutate(End = replace_na(End, "")) %>%
-  mutate(Years = if_else(End == Start,
+  mutate(
+    Start = as.character(Start),
+    End = as.character(End),
+    End = replace_na(End, ""),
+    Years = if_else(End == Start,
         as.character(Start),
         paste(Start, "--", End, sep = ""),
-        paste(Start, "--", End, sep = ""))) %>%
-  select(Years, Position) %>%
+        paste(Start, "--", End, sep = "")
+    )
+  ) |>
+  select(Years, Position) |>
   baretable()
 ```
+
+# Fellowships
+
+  * Fellow of the Australian Academy of Science (elected 2021).
+  * Fellow of the Academy of the Social Sciences in Australia (elected 2020).
+  * Fellow of the International Institute of Forecasters (elected 2021).
+
 
 # Selected awards and honours
 
 ```{r awards, results='asis'}
 awards <- tribble(
   ~Year, ~Award,
-  2010, "HP Innovation Research Award",
-  2008, "Vice-Chancellor's award for postgraduate supervisor of the year, Monash University",
-  2007, "Moran Medal for Statistical Science, Australian Academy of Science",
-  2005, "Elected member of the International Statistical Institute",
+  2021, "Pitman Medal, Statistical Society of Australia",
+  2021, "Vice-Chancellor's Award for Innovation in Learning and Teaching",
+    2020, "Dean's Award for Innovation in Learning and Teaching, Monash Business School",
+    2010, "Dean's Award for Excellence in Innovation and External Collaboration, Monash Business School",
+    2008, "Dean's Award for Excellence in Research, Monash Business School",
+  2008, "Vice-Chancellor's Award for Postgraduate Supervisor of the Year, Monash University",
+  2007, "Moran Medal for Statistical Science, Australian Academy of Science"
 ) %>%
   baretable()
 ```
-
-# Teaching and mentoring
-
-  * In each of 2018, 2019 and 2020, student evaluations for "Applied forecasting for business and economics" gave an average rating for my teaching above 4.8 out of 5, while all students in 2018 rated "Advanced statistical modelling" at 5 out of 5. (I did not teach the latter subject in 2019 and 2020.)
-  * I currently supervise five PhD students and two post-doctoral research fellows. I have previously supervised another 27 PhD students and 3 Masters students.
-  * I am author of an innovative textbook with George Athanasopoulos entitled *Forecasting: principles and practice* ([`OTexts.org/fpp2/`](https://OTexts.org/fpp2)) which is available online and free of charge. The website has an average of over 20000 pageviews per day.
-  * I publish the [*Hyndsight*](https://robjhyndman.com/hyndsight) blog on research issues which receives an average of about 2000 pageviews per day.
 
 # Editorial boards
 
 ```{r positions, results='asis'}
 tribble(
-  ~Start, ~End, ~Position,
-  2011, NA, "\\textbf{Editor}, \\textit{Journal of Statistical Software}",
-  2001, 2004, "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}",
-  2019, NA, "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}",
-  2005, 2018, "\\textbf{Editor-in-Chief}, \\textit{International Journal of Forecasting}",
-  2001, 2004, "\\textbf{Theory and Methods Editor}, \\emph{Australian \\& New Zealand Journal of Statistics}",
-  1996, 2001, "\\textbf{Book Review Editor}, \\emph{Australian Journal of Statistics}",
-) %>%
-  mutate(End = replace_na(End, "")) %>%
-  mutate(Year = paste(Start, "--", End, sep = "")) %>%
+    ~Start, ~End, ~Position,
+    2011, NA_character_, "\\textbf{Editor}, \\textit{Journal of Statistical Software}",
+    2005, "2018", "\\textbf{Editor-in-Chief}, \\textit{International Journal of Forecasting}",
+    2001, "2004, 2019--", "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}",
+    2001, "2004", "\\textbf{Theory and Methods Editor}, \\emph{Australian \\& New Zealand Journal of Statistics}",
+  ) %>%
+  mutate(
+    Start = as.character(Start),
+    End = replace_na(End, ""),
+    Year = paste(Start, "--", End, sep = "")
+  ) %>%
   select(Year, Position) %>%
   baretable()
 ```
 
-# Research Grants
+# Research grants
 
 ```{r grants}
 grants <- read_csv("Grant_income.csv")
@@ -151,114 +134,76 @@ sumgrants <- grants %>%
   sum(na.rm=TRUE)
 ```
 
-I have acquired (in most cases jointly) about $`r sprintf("%2.1f", sumgrants/1e6)` million in external research grants since 2000.
+I have acquired (in most cases jointly) about $`r round(sumgrants/1e6)` million in external research grants since 2000, including 3 ARC Discovery Grants, 3 ARC Linkage Grants, 1 NHMRC Grant, an ARC Centre of Excellence, an ARC Industrial Training Transformation Centre, and contract research grants from many government and business organizations.
 
-# Public lectures
+# Selected public lectures
 
-  * Belz lecture, *Forecasting and the importance of being uncertain*, Statistical Society of Australia, Melbourne, Oct 2006.
-  * Knibbs lecture, *Population forecasting and the importance of being uncertain*, Statistical Society of Australia, Canberra, Nov 2007.
-  * Invited speaker, *Forecasting functional time series*, Australian Frontiers of Science, Canberra, Feb 2008.
+  * Belz lecture, *Forecasting and the importance of being uncertain*, Statistical Society Australia, Melbourne, Oct 2006.
+  * Knibbs lecture, *Population forecasting and the importance of being uncertain*, Statistical Society Australia, Canberra, Nov 2007.
   * Yahoo Big Thinkers lecture, *Exploring the boundaries of predictability: what can we forecast, and when should we give up?*, California, Jun 2015.
+  * Cornish lecture, *Feasts and fables: modern tools for time series analysis*, Adelaide, November 2021.
 
-# Keynote addresses
+\enlargethispage*{0.8cm}
+
+# Selected keynote addresses
 
   * Keynote speaker, *Extreme Forecasting*, International Symposium on Forecasting, Hong Kong, Jun 2009.
   * Keynote speaker, *Man vs Wild Data*, Young Statisticians Conference, Melbourne, Feb 2013.
   * Keynote speaker, *Forecasting without forecasters*, International Symposium on Forecasting, Seoul, Jun 2013.
   * Keynote speaker, *Automatic time series forecasting*, "New Trends on Intelligent Systems and Soft Computing 2014", Granada, Spain, Feb 2014.
-  * Keynote speaker, *Challenges in forecasting peak electricity demand*, Energy Forum, Valais, Switzerland, June 2014.
   * Keynote speaker, *Forecasting big time series data using R*, Chinese R conference, Nanchang, Oct 2015.
   * Keynote speaker, *Forecasting large collections of related time series*, German Statistical Week, Augsburg, Sep 2016.
   * Keynote speaker, *Visualizing and forecasting big time series data*, ICML Time Series Workshop, Sydney, Aug 2017.
   * Keynote speaker, Beijing Workshop on Forecasting, Nov 2017.
   * Keynote speaker, *10 years of forecast reconciliation*, International Symposium on Forecasting, Oct 2020.
-
-# Conference organization
-
-  * General Chair, International Symposium on Forecasting, 2017
-  * Program Chair, International Symposium on Forecasting, 2012.
-  * Program Co-Chair, International Symposium on Forecasting, 2004.
+  * Blakers lecture, *Forecasting the future and the future of forecasting*, ANU-AAMT National Mathematics Summer School, January 2022.
 
 # R packages
 
-I have coauthored `r length(rjhpkgs)` R packages as a result of my research. There have been over `r round(sum(since2015$count)/1e6)` million downloads of my packages since 2015 (to `r format(Sys.time(), "%e %B %Y")`).
+I have coauthored `r NROW(rjh_packages)` R packages as a result of my research. There have been over `r round(sum(rjh_packages$downloads, na.rm=TRUE)/1e6)` million downloads of my packages since 2015 (to `r format(Sys.time(), "%e %B %Y")`).
 
 # Selected books
 
 ```{r books}
-bibliography_entries("rjhpubs.bib") %>%
-  filter(id %in% c("fpp2","MWH3","expsmooth08")) %>%
+pubs %>%
+  filter(id %in% c("fpp3","MWH3","expsmooth08")) %>%
   arrange(issued, author$family)
+```
+
+\enlargethispage*{1cm}
+
+
+```{r}
+# Count papers
+npapers <- pubs %>%
+  filter(!(type %in% c("book","thesis","review"))) %>%
+  NROW()
 ```
 
 # Selected papers
 
-\enlargethispage*{1.3cm}
+Since 1991 I have authored `r npapers` research papers or book chapters on statistical topics. Some highlights are listed below, with citations taken from Google Scholar on `r format(Sys.time(), "%e %B %Y")`. My h-index is `r rjh$All[2]` with total citations of `r rjh$All[1]`.
 
-```{r GScholar, include=FALSE}
-if(file.exists("gspapers.rds")) {
-  gspapers <- readRDS("gspapers.rds")
-} else {
-  # Grab all citation info, 100 per call
-  gspapers1 <- gcite_url(
-    url = "https://scholar.google.com.au/citations?user=vamErfkAAAAJ&hl=en",
-    cstart = 0, pagesize = 100
+```{r bibfile, dependson='GScholar'}
+# Add Google scholar citations by fuzzy matching on title
+pubs <- pubs %>%
+  stringdist_join(
+    gspapers %>% select(title, n_citations), 
+    by = "title", ignore_case=TRUE
   ) %>%
-    gcite_papers()
-  gspapers2 <- gcite_url(
-    url = "https://scholar.google.com.au/citations?user=vamErfkAAAAJ&hl=en",
-    cstart = 100, pagesize = 100
-  ) %>%
-    gcite_papers()
-  gspapers3 <- gcite_url(
-    url = "https://scholar.google.com.au/citations?user=vamErfkAAAAJ&hl=en",
-    cstart = 200, pagesize = 100
-  ) %>%
-    gcite_papers()
-  gspapers <- bind_rows(gspapers1, gspapers2, gspapers3) %>%
-    as_tibble()
-  saveRDS(gspapers, "gspapers.rds")
-}
-```
-
-```{r bibfile, include=FALSE, dependson='GScholar'}
-# Read bib file
-rjhpubs <- ReadBib("rjhpubs.bib", check = "error")
-
-# Join two tables using fuzzy matching on titles
-rjhtbl <- rjhpubs %>%
-  as.data.frame() %>%
-  rownames_to_column("key") %>%
-  as_tibble() %>%
-  stringdist_join(gspapers, by = "title", ignore_case=TRUE) %>%
   rename(title = title.x) %>%
-  mutate(year = as.integer(year)) %>%
-  select(key, bibtype, title, author, year, n_citations)
-```
+  mutate(note = paste0(". \\emph{[Citations: ", n_citations, "]}.")) |> 
+  select(-title.y)
 
-```{r bestten, include=FALSE, dependson='bibfile'}
-bestten <- tibble(
-   key=c("smartmeterhts","mint","HF10","DHS11","hierarchical",
-         "VHNC10","HK06","HK08","HKSG02","HF96",
-         "ijf25","HU07","HDR96","gefcom2014",
-         "HBG96","HB08","tscv","temporal-hierarchies")
-  ) %>%
-  left_join(rjhtbl, by='key') %>%
-  arrange(-year) %>%
-  mutate(author = str_replace(author, "~", " "))
-```
-
-```{r, echo=FALSE, results='asis', dependson='bestten'}
-for(j in seq(NROW(bestten))) {
-  k <- bestten[j,] %>% pull(key)
-  cat(j)
-  cat(". ")
-  print(rjhpubs[k, ])
-  cat("\\emph{[Citations: ", filter(rjhtbl, key==k) %>% pull(n_citations), "]}.",sep="")
-  cat("\n\n")
-}
-cat("\\vspace*{0.2cm}\\par\\mbox{}\\hfill{\\emph{[Citations from Google Scholar on",
-    format(Sys.time(), "%e %B %Y"),
-    "]}}",
-    sep="")
+# Show selected publications
+pubs %>%
+  filter(id %in% c(
+    "tsibble","globalforecasting","stray","lookout","fforma",
+    "forecastsofa","baggedETS",
+     "smartmeterhts","mint","HF10","DHS11","hierarchical",
+         "VHNC10","HK06","HK08","HKSG02","HF96","m3pca",
+         "ijf25","HU07","HDR96",
+         "HBG96","HB08","tscv","temporal-hierarchies"
+  )) %>%
+  arrange(-year)
 ```

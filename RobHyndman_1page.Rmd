@@ -7,145 +7,129 @@ email: "Rob.Hyndman@monash.edu"
 twitter: robjhyndman
 github: robjhyndman
 date: "`r format(Sys.time(), '%B %Y')`"
-headcolor: "000088"
+position: FAA, FASSA, BSc (Hons), PhD, AStat
 csl: numeric-apa-cv.csl
-output:
-  vitae::hyndman:
-    keep_tex: yes
+output: vitae::hyndman
 header-includes:
-  - \geometry{left=1.8cm,right=1.8cm,top=1.9cm,bottom=1.4cm}
-  - \usepackage{graphicx}
-  - \graphicspath{{~}}
+  - \geometry{left=1.5cm,right=1.5cm,top=1.8cm,bottom=1.7cm}
+  - \definecolor{headcolor}{HTML}{000088}
+editor_options: 
+  chunk_output_type: console
 ---
 
+\titlespacing{\section}{0pt}{1.ex}{0.5ex}
+\fontsize{10}{11.5}\sf
+\thispagestyle{empty}
+\enlargethispage*{0.5cm}
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, cache = FALSE)
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  cache = FALSE
+)
 library(tidyverse)
 library(RefManageR)
 library(vitae)
+library(gcite)
+library(fuzzyjoin)
 source("functions.R")
-```
+source("gscholar.R")
 
+# Update list of R packages I've coauthored
+rjh_packages <- get_rjh_packages()
 
-```{r Rpackages, eval=FALSE}
-# Construct bib file for R packages
-source("Rpackages.R")
-write_packages_bib(
-  pkglist = c(
-    "addb",
-    "anomalous",
-    "bfast",
-    "binb",
-    "compenginets",
-    "cricketdata",
-    "demography",
-    "eechidna",
-    "emma",
-    "expsmooth",
-    "fable",
-    "fabletools",
-    "feasts",
-    "fds",
-    "fma",
-    "forecast",
-    "fpp",
-    "fpp2",
-    "fpp3",
-    "ftsa",
-    "gratis",
-    "gravitas",
-    "hdrcde",
-    "hts",
-    "Mcomp",
-    "MEFM",
-    "MonashEBSTemplates",
-    "oddstream",
-    "oddwater",
-    "ozbabynames",
-    #"ozdata",
-    "rainbow",
-    "rmarkdown",
-    "robets",
-    "seer",
-    "smoothAPC",
-    "stR",
-    "stray",
-    "sugrrants",
-    "thief",
-    "tscompdata",
-    "tsdl",
-    "tsfeatures",
-    "tsibble",
-    "tsibbledata",
-    "vitae"),
-  file="Rpackages.bib")
-```
-
-```{r bibfiles}
 # Read any bib files
-pubs <- ReadBib("rjhpubs.bib", check = FALSE)
-reports <- ReadBib("rjhreports.bib", check = FALSE)
-packages <- ReadBib("Rpackages.bib", check = FALSE)
+pubs <- bibliography_entries("rjhpubs.bib") |>
+    mutate(year = lubridate::year(as.Date(issued)))
+reports <- bibliography_entries("rjhreports.bib")
+packages <- bibliography_entries("Rpackages.bib")
+
+# Read grants file
+grants <- read_csv("Grant_income.csv")
 ```
 
-# Education and qualifications
-
-```{r degrees, results='asis'}
-tribble(
-  ~Year, ~Degree, ~Institution,
-  1988, "B.Sc.(Hons)", "University of Melbourne",
-  1992, "Ph.D.", "University of Melbourne",
-  2000, "A.Stat.", "Statistical Society of Australia"
-) %>%
-  baretable()
-```
-
-# Current positions
+# Current position
 
 ```{r employment, results='asis'}
 tribble(
   ~Start, ~End, ~Position,
-  2003, NA, "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University",
-  2019, NA, "\\textbf{Head}, Department of Econometrics \\& Business Statistics, Monash University",
+  2003, NA, "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University"
 ) %>%
   arrange(-Start) %>%
-  mutate(End = replace_na(End, "")) %>%
-  mutate(Years = paste(Start, "--", End, sep = "")) %>%
-  select(Years, Position) %>%
+  mutate(
+    Start = as.character(Start),
+    End = as.character(End),
+    End = replace_na(End, ""),
+    Years = if_else(End == Start,
+        as.character(Start),
+        paste(Start, "--", End, sep = ""),
+        paste(Start, "--", End, sep = "")
+    )
+  ) |>
+  select(Years, Position) |>
   baretable()
 ```
 
-```{r publist}
-# Find editorials
-editorials <- c(
-  "hyndman2015new",
-  "hyndman2015change",
-  "IJFeditorial13",
-  "tourismeditorial11",
-  "IJFeditorial10b",
-  "IJFeditorial10a",
-  "IJFeditorial06",
-  "IJFeditorial05"
-)
+# Fellowships
+
+  * Fellow of the Australian Academy of Science (elected 2021).
+  * Fellow of the Academy of the Social Sciences in Australia (elected 2020).
+  * Fellow of the International Institute of Forecasters (elected 2021).
+
+# Selected awards and honours
+
+```{r awards, results='asis'}
+awards <- tribble(
+  ~Year, ~Award,
+  2021, "Pitman Medal, Statistical Society of Australia",
+  2007, "Moran Medal for Statistical Science, Australian Academy of Science"
+) %>%
+  baretable()
 ```
 
-\newcommand{\bibfont}{\normalfont\fontsize{10}{11.7}\sffamily}
-
-# Books (since 2018)
+# Selected books
 
 ```{r books}
-bibliography_entries("rjhpubs.bib") %>%
-  filter(type == "book", issued > 2015) %>%
+pubs %>%
+  filter(id %in% c("fpp3","expsmooth08")) %>%
   arrange(issued, author$family)
 ```
 
-# Research papers (since 2018)
+\vspace*{-0.2cm}
 
-```{r research-papers}
-# Normal articles excluding editorials
-bibliography_entries("rjhpubs.bib") %>%
-  filter(type == "article-journal", !(id %in% editorials), issued >= 2018) %>%
-  arrange(issued, author$family)
+# Selected papers
+
+```{r}
+# Count papers
+npapers <- pubs %>%
+  filter(!(type %in% c("book","thesis","review"))) %>%
+  NROW()
 ```
 
-\thispagestyle{empty}\vspace*{-.31cm}\hspace*{14.5cm}\includegraphics[width=4cm]{Sig}\vspace*{-2cm}
+Since 1991 I have authored `r npapers` research papers or book chapters on statistical topics. Some highlights are listed below, with citations taken from Google Scholar on `r format(Sys.time(), "%e %B %Y")`. My h-index is `r rjh$All[2]` with total citations of `r rjh$All[1]`.
+
+```{r bibfile, dependson='GScholar'}
+# Add Google scholar citations by fuzzy matching on title
+pubs <- pubs %>%
+  stringdist_join(
+    gspapers %>% select(title, n_citations), 
+    by = "title", ignore_case=TRUE
+  ) %>%
+  rename(title = title.x) %>%
+  mutate(note = paste0(". \\emph{[Citations: ", n_citations, "]}.")) |> 
+  select(-title.y)
+
+# Show selected publications
+pubs %>%
+  filter(id %in% c(
+    "tsibble","globalforecasting","fforma",
+       "smartmeterhts","mint","HF10","DHS11","hierarchical",
+         "VHNC10","HK06","HK08","HKSG02","HF96","m3pca",
+         "HU07","HDR96",
+         "HB08"
+  )) %>%
+  arrange(-year)
+```
+
