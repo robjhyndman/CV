@@ -226,6 +226,8 @@ get_rjh_packages <- function() {
     }
   }
 
-  write_packages_bib(packages, file="Rpackages.bib")
+  packages |>
+    arrange(package) |>
+    write_packages_bib(file="Rpackages.bib")
   return(packages)
 }
