@@ -209,6 +209,8 @@ tribble(
   * Workshop leader, *Statistical Forecasting: Principles and Practice*, Swiss Statistical Society, Kandersteg, June 2011.
   * Keynote speaker, *Extreme Forecasting*, International Symposium on Forecasting, Hong Kong, June 2009.
 
+&nbsp;
+
 # Grants
 
 ```{r grants}
