@@ -300,6 +300,14 @@ pubs %>%
   arrange(issued, author$family)
 ```
 
+# PhD thesis
+
+```{r phd}
+pubs %>%
+  filter(type == "thesis") %>%
+  arrange(issued, author$family)
+```
+
 # Refereed research papers
 
 ```{r research-papers}
@@ -329,7 +337,7 @@ pubs %>%
 
 ```{r working-papers}
 pubs %>%
-  filter(type %in% c("report", "manuscript") | is.na(type)) %>%
+  filter(type %in% c("report", "manuscript") | is.na(type), is.na(keyword)) %>%
   arrange(issued, author$family)
 ```
 
@@ -350,6 +358,15 @@ pubs %>%
   arrange(issued, author$family)
 ```
 \refstepcounter{bib}\label{papersend}
+
+# Other papers
+
+```{r other}
+# Other papers not counted above
+pubs %>%
+  filter(keyword == "misc") %>%
+  arrange(issued, author$family)
+```
 
 # Statistical consulting reports
 \refstepcounter{bib}\label{consultingstart}
