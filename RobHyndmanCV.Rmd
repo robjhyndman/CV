@@ -174,42 +174,40 @@ tribble(
 
 # Public lectures
 
-  * Cornish lecture, *Feasts and fables: modern tools for time series analysis*, Adelaide, November 2021.
-  * ACEMS public lecture, *Uncertain futures: what can we forecast and when should we give up?*, August 2021.
-  * Monash master class, *Forecasting the future of the power industry: What can you learn from smart meter data?*, Melbourne, September 2018.
-  * Yahoo Big Thinkers lecture, *Exploring the boundaries of predictability: what can we forecast, and when should we give up?*, California, June 2015.
-  * Invited speaker, *Forecasting functional time series*, Australian Frontiers of Science, Canberra, February 2008.
-  * Knibbs lecture, *Population forecasting and the importance of being uncertain*, Statistical Society of Australia, Canberra, November 2007.
-  * Belz lecture, *Forecasting and the importance of being uncertain*, Statistical Society of Australia, Melbourne, October 2006.
+  * Cornish lecture, *Feasts and fables: modern tools for time series analysis*, Adelaide, Nov 2021.
+  * ACEMS public lecture, *Uncertain futures: what can we forecast and when should we give up?*, Aug 2021.
+  * Monash master class, *Forecasting the future of the power industry: What can you learn from smart meter data?*, Melbourne, Sep 2018.
+  * Yahoo Big Thinkers lecture, *Exploring the boundaries of predictability: what can we forecast, and when should we give up?*, California, Jun 2015.
+  * Invited speaker, *Forecasting functional time series*, Australian Frontiers of Science, Canberra, Feb 2008.
+  * Knibbs lecture, *Population forecasting and the importance of being uncertain*, Statistical Society of Australia, Canberra, Nov 2007.
+  * Belz lecture, *Forecasting and the importance of being uncertain*, Statistical Society of Australia, Melbourne, Oct 2006.
 
 \enlargethispage*{0.6cm}
 
 # Major conference presentations
 
-  * Keynote speaker, *Creating social good for forecasters*, Forecasting for Social Good workshop, Oxford UK, July 2022.
-  * Blakers lecture, *Forecasting the future and the future of forecasting*, ANU-AAMT National Mathematics Summer School, January 2022.
-  * Keynote speaker, *Ten years of forecast reconciliation*, International Symposium on Forecasting, online, October 2020.
-  * Workshop leader, *Tidy time series and forecasting in R*, rstudio::conf, San Francisco, January 2020.
-  * ISI short course, *High-dimensional time series analysis*, Kuala Lumpur, August 2019.
-  * Workshop leader, *Forecasting: principles and practice*, New York City, June 2018.
-  * Keynote speaker, Beijing Workshop on Forecasting, November 2017.
-  * Keynote speaker, ICML Time Series Workshop, Sydney, August 2017.
-  * Invited speaker, International Symposium on Energy Analytics, Cairns, June 2017.
-  * Keynote speaker, *Forecasting large collections of related time series*, German Statistical Week, Augsburg, September 2016.
-  * Keynote speaker, *Forecasting big time series data using R*, Chinese R conference, Nanchang, October 2015.
-  * Invited speaker, *Visualization and forecasting of big time series data*, ACEMS Big data workshop, QUT, February 2015.
-  * Workshop leader, *Forecasting: principles and practice*, University of Western Australia, September 2014.
-  * Workshop leader, *Functional time series in demography*, Humboldt University, Berlin, June 2014.
-  * Keynote speaker, *Challenges in forecasting peak electricity demand*, Energy Forum, Valais, Switzerland, June 2014.
+  * Keynote speaker, *Creating social good for forecasters*, Forecasting for Social Good workshop, Oxford UK, Jul 2022.
+  * Blakers lecture, *Forecasting the future and the future of forecasting*, ANU-AAMT National Mathematics Summer School, Jan 2022.
+  * Keynote speaker, *Ten years of forecast reconciliation*, International Symposium on Forecasting, online, Oct 2020.
+  * Workshop leader, *Tidy time series and forecasting in R*, rstudio::conf, San Francisco, Jan 2020.
+  * ISI short course, *High-dimensional time series analysis*, Kuala Lumpur, Aug 2019.
+  * Workshop leader, *Forecasting: principles and practice*, New York City, Jun 2018.
+  * Keynote speaker, Beijing Workshop on Forecasting, Nov 2017.
+  * Keynote speaker, ICML Time Series Workshop, Sydney, Aug 2017.
+  * Invited speaker, International Symposium on Energy Analytics, Cairns, Jun 2017.
+  * Keynote speaker, *Forecasting large collections of related time series*, German Statistical Week, Augsburg, Sep 2016.
+  * Keynote speaker, *Forecasting big time series data using R*, Chinese R conference, Nanchang, Oct 2015.
+  * Invited speaker, *Visualization and forecasting of big time series data*, ACEMS Big data workshop, QUT, Feb 2015.
+  * Workshop leader, *Forecasting: principles and practice*, University of Western Australia, Sep 2014.
+  * Workshop leader, *Functional time series in demography*, Humboldt University, Berlin, Jun 2014.
+  * Keynote speaker, *Challenges in forecasting peak electricity demand*, Energy Forum, Valais, Switzerland, Jun 2014.
   * Workshop leader, *State space models for time series*, Australian Bureau of Statistics, May 2014.
-  * Keynote speaker, *Automatic time series forecasting*, "New Trends on Intelligent Systems and Soft Computing 2014", University of Granada, Spain, February 2014.
-  * Keynote speaker, *Forecasting without forecasters*, International Symposium on Forecasting, Seoul, June 2013.
-  * Keynote speaker, *Man vs Wild Data*, Young Statisticians Conference, Melbourne, February 2013.
-  * Invited speaker, *Advances in automatic time series forecasting*, Australian Statistics Conference, Adelaide, July 2012.
-  * Workshop leader, *Statistical Forecasting: Principles and Practice*, Swiss Statistical Society, Kandersteg, June 2011.
-  * Keynote speaker, *Extreme Forecasting*, International Symposium on Forecasting, Hong Kong, June 2009.
-
-&nbsp;
+  * Keynote speaker, *Automatic time series forecasting*, "New Trends on Intelligent Systems and Soft Computing 2014", University of Granada, Spain, Feb 2014.
+  * Keynote speaker, *Forecasting without forecasters*, International Symposium on Forecasting, Seoul, Jun 2013.
+  * Keynote speaker, *Man vs Wild Data*, Young Statisticians Conference, Melbourne, Feb 2013.
+  * Invited speaker, *Advances in automatic time series forecasting*, Australian Statistics Conference, Adelaide, Jul 2012.
+  * Workshop leader, *Statistical Forecasting: Principles and Practice*, Swiss Statistical Society, Kandersteg, Jun 2011.
+  * Keynote speaker, *Extreme Forecasting*, International Symposium on Forecasting, Hong Kong, Jun 2009.
 
 # Grants
 
