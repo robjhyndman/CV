@@ -1,4 +1,4 @@
-﻿Source,Start,End,People,Title,Amount,Type
+Source,Start,End,People,Title,Amount,Type
 BHP Australia,1989,,"Hyndman,Grunwald",State space models for non-standard time series,23000,Research
 ARC Small Grant,1994,,"Grunwald, Hyndman",Data analytic methods for non-linear and non-normal time series analysis,10000,Research
 ARC Small Grant,1995,,"Grunwald, Hyndman",Modelling and data analysis for exponential family time series,8000,Research
@@ -52,6 +52,7 @@ ARC Linkage Grant,2019,2022,"Mengersen, Hyndman, Petersen, McGree, Turner, Maxwe
 ARC Discovery Grant,2020,2022,"Martin, Frazier, Hyndman,  Maneesoonthorn",Loss-based Bayesian prediction,393000,Research
 Tourism Research Australia,2020,,"Hyndman, Athanasopoulos",Review of tourism forecasting in Australia,32400,Research
 ARC Industrial Transformation Training Centre,2020,2024,"Smith-Miles, Stuckey, Taylor, Ernst, Aickelin, Garcia de la Banda, Pearce, Wallace, Bondell, Hyndman, Alpcan, Thomas, Anjomshoa, Kirley, Tack, Costa, Fackrell, Zhang, Glazebrook, Branke, O'Sullivan, O'Shea, Cheah, Meehan, Wetenhall, Bowly, Bridge, Faka, Mareels, Coleman, Crook","Optimisation Technologies, Integrated Methodologies, and Applications (OPTIMA)",4861236,Research
-Commonwealth Department of Health and Ageing,2021,,"McCaw, Golding, Moss, Shearer, Price, Ross, Hyndman, Dawson","Provision of weekly data modelling and reporting, based on COVID-19 data extracted from the National Notifiable Disease Surveillance System (NDSS)",737960,Research,,
+Commonwealth Department of Health and Ageing,2021,,"McCaw, Golding, Moss, Shearer, Price, Ross, Hyndman, Dawson","Provision of weekly data modelling and reporting, based on COVID-19 data extracted from the National Notifiable Disease Surveillance System (NDSS)",737960,Research
 Facebook,2021,,"Hyndman, Bergmeir, Wickramasuriya, Bandara",DeepHTF: Global model based forecasting framework for large scale hierarchically related time series,70000,Research
-SCOR Foundation, 2022,,"Li, Panagiotelis, Hyndman","Who, When, and Where? Assessing Mortality Risk of Climate Change",14700,Research,,
+SCOR Foundation, 2022,,"Li, Panagiotelis, Hyndman","Who, When, and Where? Assessing Mortality Risk of Climate Change",14700,Research
+Facebook,2022,,"Schmidt, Koo, Hyndman",SETAR-TREE: Global model based forecasting with Trees and Threshold Autoregressive Models,76822,Research
