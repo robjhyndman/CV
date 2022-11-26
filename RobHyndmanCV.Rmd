@@ -119,7 +119,7 @@ tribble(
     1990, "Finalist, Channel Ten Young Achiever Awards",
     1988, "Dwights Prize in Statistics, University of Melbourne",
     1987, "Norma McArthur Prize in Statistics, University of Melbourne",
-    1986, "Second Maurice H.\ Belz Prize in Statistics, University of Melbourne"
+    1986, "Second Maurice H Belz Prize in Statistics, University of Melbourne"
   ) %>%
   filter(!grepl("HP Innovation", Award)) %>%
   baretable()
