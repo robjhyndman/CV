@@ -35,6 +35,7 @@ ropenscilabs/rcademy
 sayani07/gravitas
 Sayani07/gghdr
 sevvandi/lookout
+sevvandi/oddnet
 thiyangt/seer
 tidyverts/fable
 tidyverts/fabletools
