@@ -104,9 +104,10 @@ tribble(
 ```{r awards, results='asis'}
 tribble(
     ~Year, ~Award,
+    2022, "AAUT citation for outstanding contributions to student learning",
     2021, "Pitman Medal, Statistical Society of Australia",
     2021, "Vice-Chancellor's Award for Innovation in Learning and Teaching",
-    2020, "MSA Teaching Excellence Award for Business and Economics, Monash Student Association",
+    #2020, "MSA Teaching Excellence Award for Business and Economics, Monash Student Association",
     2020, "Dean's Award for Innovation in Learning and Teaching, Monash Business School",
     2018, "Commendation for the Dean's Award for Research Impact, Monash Business School",
     2014, "Nominee for MPA Supervisor of the Year, Monash Postgraduate Association",
