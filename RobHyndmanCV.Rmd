@@ -104,7 +104,7 @@ tribble(
 ```{r awards, results='asis'}
 tribble(
     ~Year, ~Award,
-    2022, "AAUT citation for outstanding contributions to student learning",
+    2022, "Australian Awards for University Teaching citation for outstanding contributions to student learning",
     2021, "Pitman Medal, Statistical Society of Australia",
     2021, "Vice-Chancellor's Award for Innovation in Learning and Teaching",
     #2020, "MSA Teaching Excellence Award for Business and Economics, Monash Student Association",
