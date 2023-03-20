@@ -1145,7 +1145,7 @@
       "RemoteUsername": "robjhyndman",
       "RemoteRepo": "pkgmeta",
       "RemoteRef": "HEAD",
-      "RemoteSha": "3e535a32fb0fb3308da13e84568281ee3467c757",
+      "RemoteSha": "b0ce1bbaab7e8cb8201272a9c56e00b63e63f4cb",
       "RemoteHost": "api.github.com",
       "Requirements": [
         "cranlogs",
@@ -1158,20 +1158,25 @@
         "tibble",
         "utils"
       ],
-      "Hash": "5e3658213f9c35c23443c2629300ea95"
+      "Hash": "9f79034adc256d4dd077e348b7050523"
     },
     "pkgsearch": {
       "Package": "pkgsearch",
-      "Version": "3.1.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
+      "Version": "3.1.2.9000",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "pkgsearch",
+      "RemoteUsername": "r-hub",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "760be9773ec5d092ec2a0b080a6cdf68e94f54d4",
       "Requirements": [
         "curl",
         "jsonlite",
         "parsedate",
         "prettyunits"
       ],
-      "Hash": "02175979f7d8edc194e5b1fe5d9f4bf0"
+      "Hash": "5b71c21f4a5074f67e6f61efed67defd"
     },
     "plyr": {
       "Package": "plyr",
