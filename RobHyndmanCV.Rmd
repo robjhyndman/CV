@@ -31,7 +31,7 @@ library(vitae)
 source("functions.R")
 
 # Update list of R packages I've coauthored
-#rjh_packages <- get_rjh_packages()
+rjh_packages <- get_rjh_packages()
 
 # Read any bib files
 pubs <- bibliography_entries("rjhpubs.bib")
@@ -379,8 +379,8 @@ reports %>% arrange(issued, author$family)
 \refstepcounter{bib}\label{packagestart}
 
 ```{r r-packages-list}
-# Sort R packages by title, then year.
-packages %>% dplyr::arrange(id)
+# Sort R packages by package name
+packages
 ```
 
 \refstepcounter{bib}\label{packageend}

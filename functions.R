@@ -219,6 +219,27 @@ get_rjh_packages <- function() {
       include_downloads=TRUE, start="2015-01-01",
       github_repos = read.table("github_r_repos.txt")$V1
     ))
+    # Add in any packages not on r-universe
+    # This is only necessary until pkgsearch is updated.
+    # Then pkgmeta should return a complete set
+    missing_packages <- pkgmeta:::get_meta_cran(
+      c("bayesforecast", "fds", "fpp", "ftsa", "rainbow", "smoothAPC", "stR"),
+      include_downloads = TRUE, start = "2015-01-01"
+    )
+    rjh_packages <- bind_rows(rjh_packages, missing_packages) |>
+      # Sort by package name (case insensitive)
+      mutate(lower_case_package = stringr::str_to_lower(package)) |>
+      arrange(lower_case_package) |>
+      select(-lower_case_package)
+
+    # Fix URL of fpp3 package
+    rjh_packages <- rjh_packages |>
+      mutate(
+        url = if_else(url == "https://OTexts.com/fpp3/",
+                      "http://pkg.robjhyndman.com/fpp3package/",
+                      url)
+      )
+
     if(!("try-error" %in% class(rjh_packages))) {
       # Save new version
       packages <- rjh_packages
@@ -226,8 +247,6 @@ get_rjh_packages <- function() {
     }
   }
 
-  packages |>
-    arrange(package) |>
-    write_packages_bib(file="Rpackages.bib")
+  write_packages_bib(packages, file="Rpackages.bib")
   return(packages)
 }
