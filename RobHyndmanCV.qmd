@@ -7,6 +7,7 @@ email: "Rob.Hyndman@monash.edu"
 twitter: robjhyndman
 github: robjhyndman
 date: "`r format(Sys.Date(), '%B %Y')`"
+date-format: "MMMM YYYY"
 position: FAA, FASSA, BSc (Hons), PhD, AStat
 bibliography: [rjhpubs.bib, rjhreports.bib, Rpackages.bib]
 format: cv-pdf
@@ -144,6 +145,7 @@ tribble(
     End = replace_na(End, ""),
     Year = paste(Start, "--", End, sep = "")
   ) |>
+  arrange(desc(Start)) |> 
   select(Year, Position) |>
   baretable()
 ```
