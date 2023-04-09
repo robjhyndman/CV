@@ -250,3 +250,11 @@ get_rjh_packages <- function() {
   write_packages_bib(packages, file="Rpackages.bib")
   return(packages)
 }
+
+section_bib <- function(x, sort="ynt") {
+  cat("\\begin{refsection}")
+  cat(paste0("\\nocite{",x$key,"}"))
+  cat(paste0("\\newrefcontext[sorting=",sort,"]"))
+  cat("\\printbibliography[heading=none]")
+  cat("\\end{refsection}")
+}

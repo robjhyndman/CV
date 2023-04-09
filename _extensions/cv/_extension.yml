@@ -1,0 +1,9 @@
+title: Monash CV Format Template
+author: Rob J Hyndman and Cynthia Huang
+version: 0.1.0
+contributes:
+  formats:
+    pdf:
+      template: cv.tex
+      pdf-engine: pdflatex
+      echo: false
