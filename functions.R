@@ -230,7 +230,8 @@ get_rjh_packages <- function() {
       # Sort by package name (case insensitive)
       mutate(lower_case_package = stringr::str_to_lower(package)) |>
       arrange(lower_case_package) |>
-      select(-lower_case_package)
+      select(-lower_case_package) |>
+      distinct()
 
     # Fix URL of fpp3 package
     rjh_packages <- rjh_packages |>
