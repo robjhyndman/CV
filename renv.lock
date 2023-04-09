@@ -44,7 +44,7 @@
     },
     "Matrix": {
       "Package": "Matrix",
-      "Version": "1.5-3",
+      "Version": "1.5-4",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -56,7 +56,7 @@
         "stats",
         "utils"
       ],
-      "Hash": "4006dffe49958d2dd591c17e61e60591"
+      "Hash": "e779c7d9f35cc364438578f334cffee2"
     },
     "NLP": {
       "Package": "NLP",
@@ -651,7 +651,7 @@
     },
     "ggplot2": {
       "Package": "ggplot2",
-      "Version": "3.4.1",
+      "Version": "3.4.2",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -672,7 +672,7 @@
         "vctrs",
         "withr"
       ],
-      "Hash": "d494daf77c4aa7f084dbbe6ca5dcaca7"
+      "Hash": "3a147ee02e85a8941aad9909f1b43b7b"
     },
     "gh": {
       "Package": "gh",
@@ -964,7 +964,7 @@
     },
     "lattice": {
       "Package": "lattice",
-      "Version": "0.20-45",
+      "Version": "0.21-8",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -975,7 +975,7 @@
         "stats",
         "utils"
       ],
-      "Hash": "b64cdbb2b340437c4ee047a1f4c4377b"
+      "Hash": "0b8a6d63c8770f02a8b5635f3c431e6b"
     },
     "lifecycle": {
       "Package": "lifecycle",
@@ -1174,21 +1174,16 @@
     },
     "pkgsearch": {
       "Package": "pkgsearch",
-      "Version": "3.1.2.9000",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "pkgsearch",
-      "RemoteUsername": "r-hub",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "760be9773ec5d092ec2a0b080a6cdf68e94f54d4",
+      "Version": "3.1.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
       "Requirements": [
         "curl",
         "jsonlite",
         "parsedate",
         "prettyunits"
       ],
-      "Hash": "5b71c21f4a5074f67e6f61efed67defd"
+      "Hash": "02175979f7d8edc194e5b1fe5d9f4bf0"
     },
     "plyr": {
       "Package": "plyr",
@@ -1236,14 +1231,14 @@
     },
     "ps": {
       "Package": "ps",
-      "Version": "1.7.3",
+      "Version": "1.7.4",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "R",
         "utils"
       ],
-      "Hash": "ebaacc87f539b1100e285e9e5d6496ad"
+      "Hash": "d88be14c6790aa6fd7b27a2079a45a85"
     },
     "purrr": {
       "Package": "purrr",
@@ -1726,8 +1721,13 @@
     "tsibble": {
       "Package": "tsibble",
       "Version": "1.1.3",
-      "Source": "Repository",
-      "Repository": "CRAN",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "tsibble",
+      "RemoteUsername": "tidyverts",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "04b36e7ee9ed4c7bded6b4b938275a0f23da6bd0",
       "Requirements": [
         "R",
         "anytime",
@@ -1742,7 +1742,7 @@
         "tidyselect",
         "vctrs"
       ],
-      "Hash": "a9d10100310663a7583cf7e16a990e6f"
+      "Hash": "096fbe69c0a966cf215810aa2e17c091"
     },
     "tzdb": {
       "Package": "tzdb",
@@ -1808,9 +1808,14 @@
     },
     "vitae": {
       "Package": "vitae",
-      "Version": "0.5.3",
-      "Source": "Repository",
-      "Repository": "CRAN",
+      "Version": "0.5.3.9000",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "vitae",
+      "RemoteUsername": "ropenscilabs",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "40a47e2fe9c1573cc980b6be812217207283ff7e",
       "Requirements": [
         "R",
         "dplyr",
@@ -1825,7 +1830,7 @@
         "xfun",
         "yaml"
       ],
-      "Hash": "6efdb1e66c9de2b18a112eff1f10be96"
+      "Hash": "2aaabb0ee12ee50ae70a16e20dc49e6e"
     },
     "vroom": {
       "Package": "vroom",
