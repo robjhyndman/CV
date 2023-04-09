@@ -131,6 +131,7 @@ tribble(
 ```{r positions, results='asis'}
 tribble(
   ~Start, ~End, ~Position,
+  2023, NA, "\\textbf{Executive Editor}, \\textit{The R Journal}",
   2011, NA, "\\textbf{Editor}, \\textit{Journal of Statistical Software}",
   2019, NA, "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}",
   2005, 2018, "\\textbf{Editor-in-Chief}, \\textit{International Journal of Forecasting}",
