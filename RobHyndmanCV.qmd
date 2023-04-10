@@ -24,23 +24,23 @@ knitr::opts_chunk$set(
   message = FALSE,
   cache = FALSE
 )
-library(tidyverse)
-library(RefManageR)
+library(vitae)
+library(dplyr)
 source("functions.R")
 
 # Update list of R packages I've coauthored
 rjh_packages <- get_rjh_packages()
 
-# Read any bib files
-pubs <- ReadBib("rjhpubs.bib", check = FALSE) |>
-  as_tibble(rownames = "key")
-reports <- ReadBib("rjhreports.bib", check = FALSE) |>
-  as_tibble(rownames = "key")
-packages <- ReadBib("Rpackages.bib") |>
-  as_tibble(rownames = "key")
+# Read any bib files and put in required order
+pubs <- bibliography_entries("rjhpubs.bib") |> 
+  arrange(issued, author$family, title)
+reports <- bibliography_entries("rjhreports.bib") |> 
+  arrange(issued, author$family, title)
+packages <- bibliography_entries("Rpackages.bib") |> 
+  arrange(stringr::str_to_lower(title), issued)
 
 # Read grants file
-grants <- read_csv("Grant_income.csv")
+grants <- readr::read_csv("Grant_income.csv")
 ```
 
 # Education and qualifications
@@ -81,7 +81,7 @@ tribble(
   mutate(
     Start = as.character(Start),
     End = as.character(End),
-    End = replace_na(End, ""),
+    End = tidyr::replace_na(End, ""),
     Years = if_else(End == Start,
       as.character(Start),
       paste(Start, "--", End, sep = ""),
@@ -142,7 +142,7 @@ tribble(
   mutate(
     Start = as.character(Start),
     End = as.character(End),
-    End = replace_na(End, ""),
+    End = tidyr::replace_na(End, ""),
     Year = paste(Start, "--", End, sep = "")
   ) |>
   arrange(desc(Start)) |> 
@@ -296,11 +296,10 @@ editorials <- c(
 # Books
 
 ```{r}
-#| label: books
 #| output: asis
 pubs |>
-  filter(bibtype == "Book") |>
-  section_bib()
+  filter(type == "book") |> 
+  add_bib_section()
 ```
 
 # PhD thesis
@@ -308,8 +307,8 @@ pubs |>
 ```{r phd}
 #| output: asis
 pubs |>
-  filter(bibtype == "PhdThesis") |>
-  section_bib()
+  filter(type == "thesis") |> 
+  add_bib_section()
 ```
 
 # Refereed research papers
@@ -318,8 +317,8 @@ pubs |>
 #| output: asis
 # Normal articles excluding editorials
 pubs |>
-  filter(bibtype == "Article", !(key %in% editorials)) |>
-  section_bib()
+  filter(type == "article-journal", !(id %in% editorials)) |> 
+  add_bib_section()
 ```
 
 # Book chapters
@@ -327,8 +326,8 @@ pubs |>
 ```{r book-chapters}
 #| output: asis
 pubs |>
-  filter(bibtype %in% c("InBook", "InCollection")) |>
-  section_bib()
+  filter(type == "chapter") |> 
+  add_bib_section()
 ```
 
 # Papers in refereed conference proceedings
@@ -336,8 +335,8 @@ pubs |>
 ```{r papers-in-proceedings}
 #| output: asis
 pubs |>
-  filter(bibtype == "InProceedings") |>
-  section_bib()
+  filter(type == "paper-conference") |> 
+  add_bib_section()
 ```
 
 # Unpublished working papers
@@ -345,8 +344,8 @@ pubs |>
 ```{r working-papers}
 #| output: asis
 pubs |>
-  filter(bibtype %in% c("TechReport", "Unpublished")) |>
-  section_bib()
+  filter(type %in% c("manuscript", "report"), is.na(keyword)) |> 
+  add_bib_section()
 ```
 
 # Book reviews
@@ -354,8 +353,8 @@ pubs |>
 ```{r book-reviews}
 #| output: asis
 pubs |>
-  filter(bibtype == "Review") |>
-  section_bib()
+  filter(type == "review") |> 
+  add_bib_section()
 ```
 
 # Editorials
@@ -364,8 +363,8 @@ pubs |>
 #| output: asis
 # Now the editorials
 pubs |>
-  filter(bibtype == "Article", key %in% editorials) |>
-  section_bib()
+  filter(type == "article-journal", id %in% editorials) |> 
+  add_bib_section()
 ```
 \refstepcounter{bib}\label{papersend}
 
@@ -375,8 +374,8 @@ pubs |>
 #| output: asis
 # Other papers not counted above
 pubs |>
-  filter(bibtype == "Report") |>
-  section_bib()
+  filter(type == "report", keyword == "misc") |> 
+  add_bib_section()
 ```
 
 # Statistical consulting reports
@@ -384,8 +383,8 @@ pubs |>
 
 ```{r statistical-consulting}
 #| output: asis
-reports |>
-  section_bib()
+reports |> 
+  add_bib_section()
 ```
 
 \refstepcounter{bib}\label{consultingend}
@@ -396,8 +395,8 @@ reports |>
 ```{r r-packages-list}
 #| output: asis
 # Sort R packages by package name
-packages |>
-  section_bib(sort="ty")
+packages |> 
+  add_bib_section()
 ```
 
 \refstepcounter{bib}\label{packageend}

@@ -22,6 +22,73 @@ baretable <- function(tbl, digits = 0,
     )
 }
 
+# Return dollars in pretty manner.
+# Similar to prettyNum but with $ sign and working for numbers greater than 1e7
+dollars <- function(x) {
+  out <- paste0("\\$", sprintf("%.0f", x))
+  paste0(gsub(
+    "^0+\\.", ".",
+    unname(prettyNum(out, ",", preserve.width = "none", scientific = FALSE))
+  ))
+}
+
+# Generate biblatex section from vitae tibble
+add_bib_section <- function(x) {
+  cat("\\begin{refsection}")
+  cat(paste0("\\nocite{",x$id,"}"))
+  cat("\\printbibliography[heading=none]")
+  cat("\\end{refsection}")
+}
+
+# Read and save tibble with my packages
+get_rjh_packages <- function() {
+  # Check if this has been run in last day
+  if(fs::file_exists(here::here("packages.rds"))) {
+    packages <- readRDS(here::here("packages.rds"))
+    info <- fs::file_info(here::here("packages.rds"))
+    recent_run <- (Sys.Date() == anytime::anydate(info$modification_time))
+  } else
+    recent_run <- FALSE
+  if (!recent_run) {
+    # CRAN packages I've coauthored
+    rjh_packages <- try(pkgmeta::get_meta(
+      cran_author = "Hyndman",
+      include_downloads=TRUE, start="2015-01-01",
+      github_repos = read.table("github_r_repos.txt")$V1
+    ))
+    # Add in any packages not on r-universe
+    # This is only necessary until pkgsearch is updated.
+    # Then pkgmeta should return a complete set
+    missing_packages <- pkgmeta:::get_meta_cran(
+      c("bayesforecast", "fds", "fpp", "ftsa", "rainbow", "smoothAPC", "stR"),
+      include_downloads = TRUE, start = "2015-01-01"
+    )
+    rjh_packages <- bind_rows(rjh_packages, missing_packages) |>
+      # Sort by package name (case insensitive)
+      mutate(lower_case_package = stringr::str_to_lower(package)) |>
+      arrange(lower_case_package) |>
+      select(-lower_case_package) |>
+      distinct()
+
+    # Fix URL of fpp3 package
+    rjh_packages <- rjh_packages |>
+      mutate(
+        url = if_else(url == "https://OTexts.com/fpp3/",
+                      "http://pkg.robjhyndman.com/fpp3package/",
+                      url)
+      )
+
+    if(!("try-error" %in% class(rjh_packages))) {
+      # Save new version
+      packages <- rjh_packages
+      saveRDS(packages, file = here::here("packages.rds"))
+    }
+  }
+
+  write_packages_bib(packages, file="Rpackages.bib")
+  return(packages)
+}
+
 # Create bib file for R packages
 # Uses CRAN version if it exists. Otherwise uses github version
 # packages is output from pkgmeta::get_meta()
@@ -104,158 +171,3 @@ getbibentry <- function(pkg) {
   )
 }
 
-# An Rscript that takes a bib file as input and return a tibble containing
-# one row per publication with a column indicating the class: A*, A, B, etc.
-# The script should take the refs tibble, and append a column based on the ADBC and ERA lists.
-
-prepare_bib_report <- function(bib_file) {
-  fuzzmatch_adbc <- function(x) {
-    return(agrep(x, adbc_ranking$Journal.Title, value = TRUE, ignore.case = TRUE))
-  }
-  fuzzmatch_ERA <- function(x) {
-    return(agrep(x, era_ranking$Title, value = TRUE, ignore.case = TRUE))
-  }
-
-  best_match <- function(x, y) {
-    return(y[which.min(adist(x, y, ignore.case = TRUE))])
-  }
-
-  adbc_ranking <- read.csv("abdc2016.csv", header = TRUE)
-  era_ranking <- read.csv("era2010.csv", header = TRUE)
-
-  levels(adbc_ranking$ABDC.Rating) <- levels(era_ranking$Rank)
-
-  df <- ReadBib(bib_file) %>%
-    as_tibble() %>%
-    mutate(
-      title = stringr::str_remove_all(title, "[{}]"),
-      ADBC_ranking = adbc_ranking[match(journal, adbc_ranking$Journal.Title), "ABDC.Rating"],
-      ERA_ranking = era_ranking[match(journal, era_ranking$Title), "Rank"],
-      Rank = coalesce(ADBC_ranking, ERA_ranking),
-      Rank = as.character(fct_explicit_na(Rank, na_level = "None"))
-    )
-
-  df1 <- df %>% subset(Rank != "None")
-
-  ### check journal names from adbc_ranking database
-  no_matchdf <- df %>%
-    subset(Rank == "None") %>%
-    mutate(
-      journal = fct_explicit_na(journal, na_level = "999999999"),
-      journal = as.character(journal)
-    )
-
-  out <- sapply(no_matchdf$journal, fuzzmatch_adbc)
-
-  ## select the best match
-  i <- lapply(out, function(x) {
-    length(x) > 1
-  }) %>% unlist(use.names = FALSE)
-  out[i] <- sapply(names(out[i]), best_match, y = unlist(out[i], use.names = FALSE))
-
-
-  indx <- !sapply(out, is_empty)
-  no_matchdf <- no_matchdf %>%
-    mutate(
-      journal = unlist(ifelse(indx, out, journal)),
-      ADBC_ranking = adbc_ranking[match(journal, adbc_ranking$Journal.Title), "ABDC.Rating"],
-      Rank = ADBC_ranking,
-      Rank = as.character(fct_explicit_na(Rank, na_level = "None"))
-    )
-  df2 <- no_matchdf %>% subset(Rank != "None")
-
-  ### check journal names from ERA_ranking database
-  no_match_adbc <- no_matchdf %>% subset(Rank == "None")
-  out <- sapply(no_match_adbc$journal, fuzzmatch_ERA)
-
-  ## select the best match
-  i <- lapply(out, function(x) {
-    length(x) > 1
-  }) %>% unlist(use.names = FALSE)
-  out[i] <- sapply(names(out[i]), best_match, y = unlist(out[i], use.names = FALSE))
-
-  indx <- !sapply(out, is_empty)
-  df3 <- no_match_adbc %>%
-    mutate(
-      journal = unlist(ifelse(indx, out, journal)),
-      ERA_ranking = era_ranking[match(journal, era_ranking$Title), "Rank"],
-      Rank = ERA_ranking,
-      Rank = as.character(fct_explicit_na(Rank, na_level = "None"))
-    )
-
-  bind_rows(df1, df2, df3) %>%
-    mutate(
-      journal = ifelse((journal == 999999999), NA, journal),
-      Rank = factor(Rank, levels = c("A*", "A", "B", "C", "None"))
-    ) %>%
-    select(bibtype:year, journal, title, type, ADBC_ranking:Rank, institution, url:pages, doi:school) %>%
-    return()
-}
-
-# Return dollars in pretty manner.
-# Similar to prettyNum but with $ sign and working for numbers greater than 1e7
-dollars <- function(x) {
-  out <- paste0("\\$", sprintf("%.0f", x))
-  paste0(gsub(
-    "^0+\\.", ".",
-    unname(prettyNum(out, ",", preserve.width = "none", scientific = FALSE))
-  ))
-}
-
-# Read and save tibble with my packages
-
-get_rjh_packages <- function() {
-  # Check if this has been run in last day
-  if(fs::file_exists(here::here("packages.rds"))) {
-    packages <- readRDS(here::here("packages.rds"))
-    info <- fs::file_info(here::here("packages.rds"))
-    recent_run <- (Sys.Date() == anytime::anydate(info$modification_time))
-  } else
-    recent_run <- FALSE
-  if (!recent_run) {
-    # CRAN packages I've coauthored
-    rjh_packages <- try(pkgmeta::get_meta(
-      cran_author = "Hyndman",
-      include_downloads=TRUE, start="2015-01-01",
-      github_repos = read.table("github_r_repos.txt")$V1
-    ))
-    # Add in any packages not on r-universe
-    # This is only necessary until pkgsearch is updated.
-    # Then pkgmeta should return a complete set
-    missing_packages <- pkgmeta:::get_meta_cran(
-      c("bayesforecast", "fds", "fpp", "ftsa", "rainbow", "smoothAPC", "stR"),
-      include_downloads = TRUE, start = "2015-01-01"
-    )
-    rjh_packages <- bind_rows(rjh_packages, missing_packages) |>
-      # Sort by package name (case insensitive)
-      mutate(lower_case_package = stringr::str_to_lower(package)) |>
-      arrange(lower_case_package) |>
-      select(-lower_case_package) |>
-      distinct()
-
-    # Fix URL of fpp3 package
-    rjh_packages <- rjh_packages |>
-      mutate(
-        url = if_else(url == "https://OTexts.com/fpp3/",
-                      "http://pkg.robjhyndman.com/fpp3package/",
-                      url)
-      )
-
-    if(!("try-error" %in% class(rjh_packages))) {
-      # Save new version
-      packages <- rjh_packages
-      saveRDS(packages, file = here::here("packages.rds"))
-    }
-  }
-
-  write_packages_bib(packages, file="Rpackages.bib")
-  return(packages)
-}
-
-section_bib <- function(x, sort="ynt") {
-  cat("\\begin{refsection}")
-  cat(paste0("\\nocite{",x$key,"}"))
-  cat(paste0("\\newrefcontext[sorting=",sort,"]"))
-  cat("\\printbibliography[heading=none]")
-  cat("\\end{refsection}")
-}
