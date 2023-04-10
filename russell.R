@@ -6,6 +6,7 @@ library(tidyverse)
 library(RefManageR)
 
 source("function.R")
+source("prepare_bib_report.R")
 
 rjh <- prepare_bib_report("~/git/CV/rjhpubs.bib")
 rjh <- rjh %>%
@@ -21,26 +22,26 @@ rjh <- rjh %>%
                     Group)
   ) %>%
   select(title,author,year,journal,Rank,Group) %>%
-  arrange(desc(year), Group) 
+  arrange(desc(year), Group)
 
-rjh %>% 
+rjh %>%
   group_by(Group) %>%
   filter(year >= 2012, year <= 2018) %>%
   summarise(count = n())
 
 rjh %>% filter(Group == "Group 1+", year < 2019)
-rjh %>% filter(Group == "Group 1", year < 2019) 
+rjh %>% filter(Group == "Group 1", year < 2019)
 rjh %>% filter(Group == "Group 2", year < 2019)
-rjh %>% filter(!grepl("Group", Group)) 
+rjh %>% filter(!grepl("Group", Group))
 
 # MyPlan Achievements 2019
 
-rjh %>% 
-  filter(year==2019) %>% 
+rjh %>%
+  filter(year==2019) %>%
   arrange(Group) %>%
   select(-author, -title)
 
-rjh %>% 
+rjh %>%
   filter(year == 2019) %>%
   group_by(Group) %>%
   summarise(count = n())
@@ -50,4 +51,4 @@ rjh %>%
 read_csv("Grant_income.csv") %>%
   filter(Start >= 2012) %>%
   summarise(Amount = sum(Amount))
-  
+
