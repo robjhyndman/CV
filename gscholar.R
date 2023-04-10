@@ -1,9 +1,16 @@
 # Google scholar citations
 # Need to load in lots of 100 to avoid connection issues
+library(gcite)
 
-if(file.exists("gspapers.rds")) {
-  gspapers <- readRDS("gspapers.rds")
-} else {
+ if(fs::file_exists(here::here("gspapers.rds"))) {
+    gspapers <- readRDS(here::here("gspapers.rds"))
+    info <- fs::file_info(here::here("gspapers.rds"))
+    recent_run <- (Sys.Date() == anytime::anydate(info$modification_time))
+  } else {
+    recent_run <- FALSE
+  }
+
+if(!recent_run) {
   # Grab all citation info, 100 per call
   gspapers <- list()
   complete <- FALSE

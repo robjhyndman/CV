@@ -1,5 +1,5 @@
 ---
-name: Rob J Hyndman\small\hspace*{0.2cm} FAA, FASSA
+name: Rob J Hyndman
 address: "Department of Econometrics & Business Statistics,\\tabularnewline Monash University, VIC 3800, Australia."
 www: robjhyndman.com
 phone: +61 3 9905 5141
@@ -7,10 +7,12 @@ email: "Rob.Hyndman@monash.edu"
 twitter: robjhyndman
 github: robjhyndman
 date: "`r format(Sys.time(), '%B %Y')`"
-headcolor: "000088"
+position: FAA, FASSA, BSc (Hons), PhD, AStat
 csl: numeric-apa-cv.csl
-output:
-  vitae::hyndman
+output: vitae::hyndman
+header-includes:
+  - \geometry{left=1.5cm,right=1.5cm,top=1.8cm,bottom=1.7cm}
+  - \definecolor{headcolor}{HTML}{000088}
 ---
 
 ```{r setup, include=FALSE}
@@ -22,8 +24,13 @@ library(RefManageR)
 library(fuzzyjoin)
 source("functions.R")
 
+# Get Google scholar stats
+rjh <- gcite::gcite_citation_index(
+  gcite::gcite_url("https://scholar.google.com.au/citations?user=vamErfkAAAAJ&hl=en")
+)
+
 # Update list of R packages I've coauthored
-source("R_packages.R")
+rjh_packages <- get_rjh_packages()
 
 # Read any bib files
 pubs <- bibliography_entries("rjhpubs.bib")
@@ -50,30 +57,30 @@ tribble(
 
 ```{r employment, results='asis'}
 tribble(
-    ~Start, ~End, ~Position,
-    2003, NA, "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University",
-    2019, NA, "\\textbf{Head}, Department of Econometrics \\& Business Statistics, Monash University",
+    ~Start, ~Position,
+    2003, "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University",
   ) %>%
   arrange(-Start) %>%
-  mutate(End = replace_na(End, "")) %>%
-  mutate(Years = if_else(End == Start,
-        as.character(Start),
-        paste(Start, "--", End, sep = ""),
-        paste(Start, "--", End, sep = ""))) %>%
-  select(Years, Position) %>%
+  mutate(Start = paste0(Start, "--")) |>
   baretable()
 ```
+
+# Fellowships
+
+  * Fellow of the Australian Academy of Science (elected 2021).
+  * Fellow of the Academy of the Social Sciences in Australia (elected 2020).
+  * Fellow of the International Institute of Forecasters (elected 2021).
 
 # Selected awards and honours
 
 ```{r awards, results='asis'}
 awards <- tribble(
   ~Year, ~Award,
+  2022, "Australian Awards for University Teaching citation for outstanding contributions to student learning",
   2021, "Pitman Medal, Statistical Society of Australia",
   2021, "Elected Fellow of the Australian Academy of Science",
   2021, "Elected Fellow of the International Institute of Forecasters",
   2020, "Elected Fellow of the Academy of the Social Sciences in Australia",
-  2020, "MSA Teaching Excellence Award for Business and Economics, Monash Student Association",
   2020, "Dean's Award for Innovation in Learning and Teaching, Monash Business School",
   2010, "Dean's Award for Excellence in Innovation and External Collaboration, Monash Business School",
   2010, "HP Innovation Research Award",
@@ -97,6 +104,7 @@ awards <- tribble(
 ```{r positions, results='asis'}
 tribble(
   ~Start, ~End, ~Position,
+  2023, NA, "\\textbf{Executive Editor}, \\textit{The R Journal}",
   2011, NA, "\\textbf{Editor}, \\textit{Journal of Statistical Software}",
   2001, 2004, "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}",
   2019, NA, "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}",
@@ -104,6 +112,7 @@ tribble(
   2001, 2004, "\\textbf{Theory and Methods Editor}, \\emph{Australian \\& New Zealand Journal of Statistics}",
   1996, 2001, "\\textbf{Book Review Editor}, \\emph{Australian Journal of Statistics}",
 ) %>%
+  mutate(End = as.character(End)) |>
   mutate(End = replace_na(End, "")) %>%
   mutate(Year = paste(Start, "--", End, sep = "")) %>%
   select(Year, Position) %>%
@@ -162,7 +171,7 @@ I have acquired (in most cases jointly) about $`r sprintf("%2.1f", sumgrants/1e6
 
 # R packages
 
-I have coauthored `r NROW(rjhpackages)` R packages as a result of my research. There have been over `r round(sum(rjhpackages$count, na.rm=TRUE)/1e6)` million downloads of my packages since 2015 (to `r format(Sys.time(), "%e %B %Y")`).
+I have coauthored `r NROW(rjh_packages)` R packages as a result of my research. There have been over `r round(sum(rjh_packages$downloads, na.rm=TRUE)/1e6)` million downloads of my packages since 2015 (to `r format(Sys.time(), "%e %B %Y")`).
 
 # Selected books
 
@@ -176,7 +185,7 @@ pubs %>%
 # Research
 
 * Since 1991 I have authored `r NROW(pubs)` papers, chapters or books on statistical topics. A selection of these are listed below.
-* I have an h-index of 66 on Google Scholar, with 39,700 citations of my papers.
+*  On Google Scholar my h-index is `r rjh$All[2]` with total citations of `r prettyNum(rjh$All[1], big.mark=",")` (as at `r format(Sys.time(), "%e %B %Y")`).
 
 # Selected research papers
 

@@ -13,8 +13,6 @@ output: vitae::hyndman
 header-includes:
   - \geometry{left=1.5cm,right=1.5cm,top=1.8cm,bottom=1.7cm}
   - \definecolor{headcolor}{HTML}{000088}
-editor_options: 
-  chunk_output_type: console
 ---
 
 \titlespacing{\section}{0pt}{1.ex}{0.5ex}
@@ -108,17 +106,18 @@ npapers <- pubs %>%
   NROW()
 ```
 
-Since 1991 I have authored `r npapers` research papers or book chapters on statistical topics. Some highlights are listed below, with citations taken from Google Scholar on `r format(Sys.time(), "%e %B %Y")`. My h-index is `r rjh$All[2]` with total citations of `r rjh$All[1]`.
+Since 1991 I have authored `r npapers` research papers or book chapters on statistical topics. Some highlights are listed below, with citations taken from Google Scholar on `r format(Sys.time(), "%e %B %Y")`.  My h-index is `r rjh$All[2]` with total citations of `r prettyNum(rjh$All[1], big.mark=",")`.
+
 
 ```{r bibfile, dependson='GScholar'}
 # Add Google scholar citations by fuzzy matching on title
 pubs <- pubs %>%
   stringdist_join(
-    gspapers %>% select(title, n_citations), 
+    gspapers %>% select(title, n_citations),
     by = "title", ignore_case=TRUE
   ) %>%
   rename(title = title.x) %>%
-  mutate(note = paste0(". \\emph{[Citations: ", n_citations, "]}.")) |> 
+  mutate(note = paste0(". \\emph{[Citations: ", n_citations, "]}.")) |>
   select(-title.y)
 
 # Show selected publications
@@ -132,4 +131,3 @@ pubs %>%
   )) %>%
   arrange(-year)
 ```
-

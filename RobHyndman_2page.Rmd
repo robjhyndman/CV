@@ -13,8 +13,6 @@ output: vitae::hyndman
 header-includes:
   - \geometry{left=1.8cm,right=1.8cm,top=1.9cm,bottom=1.9cm}
   - \definecolor{headcolor}{HTML}{000088}
-editor_options: 
-  chunk_output_type: console
 ---
 
 \titlespacing{\section}{0pt}{1.ex}{0.5ex}
@@ -94,9 +92,9 @@ tribble(
 ```{r awards, results='asis'}
 awards <- tribble(
   ~Year, ~Award,
+    2022, "Australian Awards for University Teaching citation for outstanding contributions to student learning",
   2021, "Pitman Medal, Statistical Society of Australia",
   2021, "Vice-Chancellor's Award for Innovation in Learning and Teaching",
-    2020, "Dean's Award for Innovation in Learning and Teaching, Monash Business School",
     2010, "Dean's Award for Excellence in Innovation and External Collaboration, Monash Business School",
     2008, "Dean's Award for Excellence in Research, Monash Business School",
   2008, "Vice-Chancellor's Award for Postgraduate Supervisor of the Year, Monash University",
@@ -110,6 +108,7 @@ awards <- tribble(
 ```{r positions, results='asis'}
 tribble(
     ~Start, ~End, ~Position,
+  2023, NA, "\\textbf{Executive Editor}, \\textit{The R Journal}",
     2011, NA_character_, "\\textbf{Editor}, \\textit{Journal of Statistical Software}",
     2005, "2018", "\\textbf{Editor-in-Chief}, \\textit{International Journal of Forecasting}",
     2001, "2004, 2019--", "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}",
@@ -182,28 +181,29 @@ npapers <- pubs %>%
 
 # Selected papers
 
-Since 1991 I have authored `r npapers` research papers or book chapters on statistical topics. Some highlights are listed below, with citations taken from Google Scholar on `r format(Sys.time(), "%e %B %Y")`. My h-index is `r rjh$All[2]` with total citations of `r rjh$All[1]`.
+Since 1991 I have authored `r npapers` research papers or book chapters on statistical topics. Some highlights are listed below, with citations taken from Google Scholar on `r format(Sys.time(), "%e %B %Y")`.  My h-index is `r rjh$All[2]` with total citations of `r prettyNum(rjh$All[1], big.mark=",")`.
+
 
 ```{r bibfile, dependson='GScholar'}
 # Add Google scholar citations by fuzzy matching on title
 pubs <- pubs %>%
   stringdist_join(
-    gspapers %>% select(title, n_citations), 
+    gspapers %>% select(title, n_citations),
     by = "title", ignore_case=TRUE
   ) %>%
   rename(title = title.x) %>%
-  mutate(note = paste0(". \\emph{[Citations: ", n_citations, "]}.")) |> 
+  mutate(note = paste0(". \\emph{[Citations: ", n_citations, "]}.")) |>
   select(-title.y)
 
 # Show selected publications
 pubs %>%
   filter(id %in% c(
-    "tsibble","globalforecasting","stray","lookout","fforma",
+    "tsibble","globalforecasting","stray","fforma",
     "forecastsofa","baggedETS",
      "smartmeterhts","mint","HF10","DHS11","hierarchical",
          "VHNC10","HK06","HK08","HKSG02","HF96","m3pca",
          "ijf25","HU07","HDR96",
-         "HBG96","HB08","tscv","temporal-hierarchies"
+         "HBG96","HB08","tscv"
   )) %>%
   arrange(-year)
 ```
