@@ -1,7 +1,7 @@
 all: compile
 
 compile:
-	Rscript -e 'rmarkdown::render("RobHyndmanCV.Rmd")'
+	quarto render RobHyndmanCV.qmd
 
 clean:
 	rm -rf RobHyndmanCV.pdf
