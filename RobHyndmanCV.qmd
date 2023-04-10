@@ -289,11 +289,9 @@ editorials <- c(
 )
 ```
 
-<!-- # PhD thesis -->
+# Books
 
 \refstepcounter{bib}\label{papersstart}
-
-# Books
 
 ```{r}
 #| output: asis
@@ -366,6 +364,7 @@ pubs |>
   filter(type == "article-journal", id %in% editorials) |> 
   add_bib_section()
 ```
+
 \refstepcounter{bib}\label{papersend}
 
 # Other papers
@@ -379,6 +378,7 @@ pubs |>
 ```
 
 # Statistical consulting reports
+
 \refstepcounter{bib}\label{consultingstart}
 
 ```{r statistical-consulting}
@@ -390,6 +390,7 @@ reports |>
 \refstepcounter{bib}\label{consultingend}
 
 # Software (R packages)
+
 \refstepcounter{bib}\label{packagestart}
 
 ```{r r-packages-list}

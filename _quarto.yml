@@ -1,0 +1,4 @@
+project:
+  title: "Rob J Hyndman CV"
+  render:
+    - "*.qmd"
