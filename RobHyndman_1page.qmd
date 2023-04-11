@@ -6,10 +6,11 @@ phone: +61 3 9905 5141
 email: "Rob.Hyndman@monash.edu"
 twitter: robjhyndman
 github: robjhyndman
-date: "`r format(Sys.time(), '%B %Y')`"
+date: "`r format(Sys.Date(), '%B %Y')`"
+date-format: "MMMM YYYY"
 position: FAA, FASSA, BSc (Hons), PhD, AStat
-csl: numeric-apa-cv.csl
-output: vitae::hyndman
+format: cv-pdf
+pdf-engine: latexmk
 header-includes:
   - \geometry{left=1.5cm,right=1.5cm,top=1.8cm,bottom=1.7cm}
   - \definecolor{headcolor}{HTML}{000088}
@@ -27,46 +28,32 @@ knitr::opts_chunk$set(
   message = FALSE,
   cache = FALSE
 )
-library(tidyverse)
+library(dplyr)
 library(RefManageR)
-library(vitae)
 library(gcite)
-library(fuzzyjoin)
 source("functions.R")
-source("gscholar.R")
+
+# Google scholar stats
+rjh <- gcite_citation_index(
+  gcite_url("https://scholar.google.com.au/citations?user=vamErfkAAAAJ&hl=en")
+)
 
 # Update list of R packages I've coauthored
 rjh_packages <- get_rjh_packages()
 
 # Read any bib files
-pubs <- bibliography_entries("rjhpubs.bib") |>
-    mutate(year = lubridate::year(as.Date(issued)))
-reports <- bibliography_entries("rjhreports.bib")
-packages <- bibliography_entries("Rpackages.bib")
-
-# Read grants file
-grants <- read_csv("Grant_income.csv")
+pubs <- ReadBib("rjhpubs.bib", check = FALSE)
+reports <- ReadBib("rjhreports.bib", check = FALSE)
+packages <- ReadBib("Rpackages.bib", check = FALSE)
 ```
 
 # Current position
 
 ```{r employment, results='asis'}
 tribble(
-  ~Start, ~End, ~Position,
-  2003, NA, "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University"
+  ~Years, ~Position,
+  "2003--", "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University"
 ) %>%
-  arrange(-Start) %>%
-  mutate(
-    Start = as.character(Start),
-    End = as.character(End),
-    End = replace_na(End, ""),
-    Years = if_else(End == Start,
-        as.character(Start),
-        paste(Start, "--", End, sep = ""),
-        paste(Start, "--", End, sep = "")
-    )
-  ) |>
-  select(Years, Position) |>
   baretable()
 ```
 
@@ -90,9 +77,9 @@ awards <- tribble(
 # Selected books
 
 ```{r books}
-pubs %>%
-  filter(id %in% c("fpp3","expsmooth08")) %>%
-  arrange(issued, author$family)
+#| output: asis
+pubs[c("fpp3", "expsmooth08")] |>
+  add_bib_section(show_cites = TRUE)
 ```
 
 \vspace*{-0.2cm}
@@ -102,32 +89,21 @@ pubs %>%
 ```{r}
 # Count papers
 npapers <- pubs %>%
-  filter(!(type %in% c("book","thesis","review"))) %>%
+  as_tibble() |>
+  filter(!(type %in% c("book", "thesis", "review"))) %>%
   NROW()
 ```
 
 Since 1991 I have authored `r npapers` research papers or book chapters on statistical topics. Some highlights are listed below, with citations taken from Google Scholar on `r format(Sys.time(), "%e %B %Y")`.  My h-index is `r rjh$All[2]` with total citations of `r prettyNum(rjh$All[1], big.mark=",")`.
 
 
-```{r bibfile, dependson='GScholar'}
-# Add Google scholar citations by fuzzy matching on title
-pubs <- pubs %>%
-  stringdist_join(
-    gspapers %>% select(title, n_citations),
-    by = "title", ignore_case=TRUE
-  ) %>%
-  rename(title = title.x) %>%
-  mutate(note = paste0(". \\emph{[Citations: ", n_citations, "]}.")) |>
-  select(-title.y)
-
-# Show selected publications
-pubs %>%
-  filter(id %in% c(
-    "tsibble","globalforecasting","fforma",
-       "smartmeterhts","mint","HF10","DHS11","hierarchical",
-         "VHNC10","HK06","HK08","HKSG02","HF96","m3pca",
-         "HU07","HDR96",
-         "HB08"
-  )) %>%
-  arrange(-year)
+```{r bibfile}
+#| output: asis
+pubs[c(
+    "tsibble", "globalforecasting", "fforma",
+    "smartmeterhts", "mint", "HF10", "DHS11", "hierarchical",
+    "VHNC10", "HK06", "HK08", "HKSG02", "HF96", "m3pca",
+    "HU07", "HDR96", "HB08"
+  )] |>
+  add_bib_section(show_cites = TRUE)
 ```

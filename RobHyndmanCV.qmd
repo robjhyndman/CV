@@ -9,7 +9,7 @@ github: robjhyndman
 date: "`r format(Sys.Date(), '%B %Y')`"
 date-format: "MMMM YYYY"
 position: FAA, FASSA, BSc (Hons), PhD, AStat
-bibliography: [rjhpubs.bib, rjhreports.bib, Rpackages.bib]
+bibliography: [rjhreports.bib]
 format: cv-pdf
 header-includes:
   \definecolor{headcolor}{HTML}{000088}
@@ -24,28 +24,27 @@ knitr::opts_chunk$set(
   message = FALSE,
   cache = FALSE
 )
-library(vitae)
 library(dplyr)
+library(RefManageR)
+library(gcite)
 source("functions.R")
 
-# Get Google scholar stats
-rjh <- gcite::gcite_citation_index(
-  gcite::gcite_url("https://scholar.google.com.au/citations?user=vamErfkAAAAJ&hl=en")
+# Google scholar stats
+rjh <- gcite_citation_index(
+  gcite_url("https://scholar.google.com.au/citations?user=vamErfkAAAAJ&hl=en")
 )
 
 # Update list of R packages I've coauthored
 rjh_packages <- get_rjh_packages()
 
-# Read any bib files and put in required order
-pubs <- bibliography_entries("rjhpubs.bib") |>
-  arrange(issued, author$family, title)
-reports <- bibliography_entries("rjhreports.bib") |>
-  arrange(issued, author$family, title)
-packages <- bibliography_entries("Rpackages.bib") |>
-  arrange(stringr::str_to_lower(title), issued)
+# Read any bib files
+pubs <- ReadBib("rjhpubs.bib", check = FALSE)
+reports <- ReadBib("rjhreports.bib", check = FALSE)
+packages <- ReadBib("Rpackages.bib", check = FALSE)
 
 # Read grants file
 grants <- readr::read_csv("Grant_income.csv")
+
 ```
 
 # Education and qualifications
@@ -281,8 +280,9 @@ grants |>
   * Program Co-Chair, International Symposium on Forecasting, 2004.
 
 ```{r publist}
-# Find editorials
-editorials <- c(
+# Set up vector of all bibtypes
+bibtype <- as_tibble(pubs) |> pull(bibtype)
+bibtype[names(pubs) %in%  c(
   "hyndman2015new",
   "hyndman2015change",
   "IJFeditorial13",
@@ -291,7 +291,7 @@ editorials <- c(
   "IJFeditorial10a",
   "IJFeditorial06",
   "IJFeditorial05"
-)
+)] <- "Editorial"
 ```
 
 # Books
@@ -300,8 +300,7 @@ editorials <- c(
 
 ```{r}
 #| output: asis
-pubs |>
-  filter(type == "book") |>
+pubs[bibtype == "Book"] |>
   add_bib_section()
 ```
 
@@ -309,8 +308,7 @@ pubs |>
 
 ```{r phd}
 #| output: asis
-pubs |>
-  filter(type == "thesis") |>
+pubs[bibtype == "PhdThesis"] |> 
   add_bib_section()
 ```
 
@@ -319,8 +317,7 @@ pubs |>
 ```{r research-papers}
 #| output: asis
 # Normal articles excluding editorials
-pubs |>
-  filter(type == "article-journal", !(id %in% editorials)) |>
+pubs[bibtype == "Article"] |>
   add_bib_section()
 ```
 
@@ -328,8 +325,7 @@ pubs |>
 
 ```{r book-chapters}
 #| output: asis
-pubs |>
-  filter(type == "chapter") |>
+pubs[bibtype %in% c("InBook", "InCollection")] |>
   add_bib_section()
 ```
 
@@ -337,8 +333,7 @@ pubs |>
 
 ```{r papers-in-proceedings}
 #| output: asis
-pubs |>
-  filter(type == "paper-conference") |>
+pubs[bibtype == "InProceedings"] |>
   add_bib_section()
 ```
 
@@ -346,8 +341,7 @@ pubs |>
 
 ```{r working-papers}
 #| output: asis
-pubs |>
-  filter(type %in% c("manuscript", "report"), is.na(keyword)) |>
+pubs[bibtype %in% c("TechReport", "Unpublished")] |> 
   add_bib_section()
 ```
 
@@ -355,8 +349,9 @@ pubs |>
 
 ```{r book-reviews}
 #| output: asis
-pubs |>
-  filter(type == "review") |>
+# Need to adjust bibtype so RefManageR understands what to do
+pubs[bibtype == "Review"] |>
+  change_bibtype("Article") |> 
   add_bib_section()
 ```
 
@@ -365,8 +360,7 @@ pubs |>
 ```{r editorials}
 #| output: asis
 # Now the editorials
-pubs |>
-  filter(type == "article-journal", id %in% editorials) |>
+pubs[bibtype == "Editorial"] |> 
   add_bib_section()
 ```
 
@@ -377,8 +371,8 @@ pubs |>
 ```{r other}
 #| output: asis
 # Other papers not counted above
-pubs |>
-  filter(type == "report", keyword == "misc") |>
+pubs[bibtype == "Report"]  |>
+  change_bibtype("Unpublished") |> 
   add_bib_section()
 ```
 
@@ -389,7 +383,7 @@ pubs |>
 ```{r statistical-consulting}
 #| output: asis
 reports |>
-  add_bib_section()
+  add_bib_section(rewrite = FALSE)
 ```
 
 \refstepcounter{bib}\label{consultingend}
@@ -400,9 +394,9 @@ reports |>
 
 ```{r r-packages-list}
 #| output: asis
-# Sort R packages by package name
+# Keep order of R packages as they are already sorted by package name
 packages |>
-  add_bib_section()
+  add_bib_section(sorting = "none")
 ```
 
 \refstepcounter{bib}\label{packageend}

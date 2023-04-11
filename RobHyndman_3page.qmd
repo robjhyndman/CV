@@ -6,50 +6,54 @@ phone: +61 3 9905 5141
 email: "Rob.Hyndman@monash.edu"
 twitter: robjhyndman
 github: robjhyndman
-date: "`r format(Sys.time(), '%B %Y')`"
+date: "`r format(Sys.Date(), '%B %Y')`"
+date-format: "MMMM YYYY"
 position: FAA, FASSA, BSc (Hons), PhD, AStat
-csl: numeric-apa-cv.csl
-output: vitae::hyndman
+format: cv-pdf
+pdf-engine: latexmk
 header-includes:
   - \geometry{left=1.5cm,right=1.5cm,top=1.8cm,bottom=1.7cm}
   - \definecolor{headcolor}{HTML}{000088}
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, cache = TRUE)
-library(tidyverse)
-library(vitae)
-library(gcite)
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  cache = FALSE
+)
+library(dplyr)
 library(RefManageR)
-library(fuzzyjoin)
+library(gcite)
 source("functions.R")
 
-# Get Google scholar stats
-rjh <- gcite::gcite_citation_index(
-  gcite::gcite_url("https://scholar.google.com.au/citations?user=vamErfkAAAAJ&hl=en")
+# Google scholar stats
+rjh <- gcite_citation_index(
+  gcite_url("https://scholar.google.com.au/citations?user=vamErfkAAAAJ&hl=en")
 )
 
 # Update list of R packages I've coauthored
 rjh_packages <- get_rjh_packages()
 
 # Read any bib files
-pubs <- bibliography_entries("rjhpubs.bib")
-reports <- bibliography_entries("rjhreports.bib")
-packages <- bibliography_entries("Rpackages.bib")
+pubs <- ReadBib("rjhpubs.bib", check = FALSE)
+reports <- ReadBib("rjhreports.bib", check = FALSE)
+packages <- ReadBib("Rpackages.bib", check = FALSE)
 
 # Read grants file
-grants <- read_csv("Grant_income.csv")
+grants <- readr::read_csv("Grant_income.csv")
 ```
 
 # Education and qualifications
 
 ```{r degrees, results='asis'}
 tribble(
-    ~Degree, ~Institution, ~Year,
-    "B.Sc.(Hons)", "University of Melbourne", 1988,
-    "Ph.D.", "University of Melbourne", 1992,
-    "A.Stat.", "Statistical Society of Australia", 2000
-  ) %>%
+  ~Degree, ~Institution, ~Year,
+  "B.Sc.(Hons)", "University of Melbourne", 1988,
+  "Ph.D.", "University of Melbourne", 1992,
+  "A.Stat.", "Statistical Society of Australia", 2000
+) %>%
   baretable()
 ```
 
@@ -57,11 +61,9 @@ tribble(
 
 ```{r employment, results='asis'}
 tribble(
-    ~Start, ~Position,
-    2003, "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University",
-  ) %>%
-  arrange(-Start) %>%
-  mutate(Start = paste0(Start, "--")) |>
+  ~Start, ~Position,
+  "2003--", "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University",
+) %>%
   baretable()
 ```
 
@@ -113,7 +115,7 @@ tribble(
   1996, 2001, "\\textbf{Book Review Editor}, \\emph{Australian Journal of Statistics}",
 ) %>%
   mutate(End = as.character(End)) |>
-  mutate(End = replace_na(End, "")) %>%
+  mutate(End = tidyr::replace_na(End, "")) %>%
   mutate(Year = paste(Start, "--", End, sep = "")) %>%
   select(Year, Position) %>%
   baretable()
@@ -130,10 +132,9 @@ tribble(
 # Research Grants
 
 ```{r grants}
-grants <- read_csv("Grant_income.csv")
 sumgrants <- grants %>%
   pull(Amount) %>%
-  sum(na.rm=TRUE)
+  sum(na.rm = TRUE)
 ```
 
 I have acquired (in most cases jointly) about $`r sprintf("%2.1f", sumgrants/1e6)` million in external research grants since 2000. Highlights include being CI on an ARC Centre of Excellence, CI on an ARC Industrial Transformation Training Centre, CI on 3 ARC Discovery Grants, CI on 3 ARC Linkage Grants, and CI on 1 NHMRC grant.
@@ -176,10 +177,9 @@ I have coauthored `r NROW(rjh_packages)` R packages as a result of my research. 
 # Selected books
 
 ```{r books}
-pubs %>%
-  filter(type == "book") %>%
-  filter(id %in% c("fpp3","MWH3","expsmooth08")) %>%
-  arrange(issued, author$family)
+#| output: asis
+pubs[c("fpp3", "MWH3", "expsmooth08")] |>
+  add_bib_section(show_cites = TRUE)
 ```
 
 # Research
@@ -190,12 +190,13 @@ pubs %>%
 # Selected research papers
 
 ```{r best}
-pubs %>%
-  filter(id %in% c("gravitas","uslongevity","smartmeterhts","mint","HF10","DHS11","hierarchical","lhf","dobin","forecastingcompetitions","forecastingsofa",
-         "VHNC10","HK06","HK08","HKSG02","HF96","stray","oddstream",
-         "ijf25","HU07","HDR96","gefcom2014","swissexports",
-         "HBG96","HB08","tscv","temporal-hierarchies")
-  ) %>%
-  mutate(year = as.numeric(unlist(issued))) %>%
-  arrange(-year)
+#| output: asis
+pubs[c(
+    "gravitas", "uslongevity", "smartmeterhts", "mint", "HF10", "DHS11", 
+    "hierarchical", "lhf", "dobin", "forecastingcompetitions", "forecastingsofa",
+    "VHNC10", "HK06", "HK08", "HKSG02", "HF96", "stray", "oddstream",
+    "ijf25", "HU07", "HDR96", "gefcom2014", "swissexports",
+    "HBG96", "HB08", "tscv", "temporal-hierarchies"
+  )] |>
+  add_bib_section(show_cites = TRUE)
 ```
