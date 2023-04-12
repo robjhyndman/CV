@@ -13,6 +13,7 @@ numbats/monash
 pridiltal/oddstream
 pridiltal/oddwater
 pridiltal/stray
+PuwasalaG/conduits
 robjhyndman/addb
 robjhyndman/anomalous
 robjhyndman/compenginets
@@ -32,8 +33,8 @@ robjhyndman/tscompdata
 robjhyndman/tsfeatures
 ropenscilabs/ozbabynames
 ropenscilabs/rcademy
-sayani07/gravitas
 Sayani07/gghdr
+Sayani07/gravitas
 sevvandi/lookout
 sevvandi/oddnet
 thiyangt/seer
