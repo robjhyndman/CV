@@ -44,7 +44,6 @@ packages <- ReadBib("Rpackages.bib", check = FALSE)
 
 # Read grants file
 grants <- readr::read_csv("Grant_income.csv")
-
 ```
 
 # Education and qualifications
