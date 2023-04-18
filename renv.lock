@@ -587,7 +587,7 @@
     },
     "gargle": {
       "Package": "gargle",
-      "Version": "1.3.0",
+      "Version": "1.4.0",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -601,12 +601,11 @@
         "openssl",
         "rappdirs",
         "rlang",
-        "rstudioapi",
         "stats",
         "utils",
         "withr"
       ],
-      "Hash": "bb3208dcdfeb2e68bf33c87601b3cbe3"
+      "Hash": "8c72a723822dc317613da5ff8e8da6ee"
     },
     "gcite": {
       "Package": "gcite",
@@ -1151,26 +1150,26 @@
     },
     "pkgmeta": {
       "Package": "pkgmeta",
-      "Version": "0.0.0.9000",
+      "Version": "0.1.0",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteUsername": "robjhyndman",
       "RemoteRepo": "pkgmeta",
       "RemoteRef": "HEAD",
-      "RemoteSha": "b0ce1bbaab7e8cb8201272a9c56e00b63e63f4cb",
+      "RemoteSha": "4afe507d87153ee4011f9496bf477b6a6880547b",
       "RemoteHost": "api.github.com",
       "Requirements": [
         "cranlogs",
         "desc",
         "dplyr",
         "gh",
-        "jsonlite",
         "pkgsearch",
+        "purrr",
         "stringr",
         "tibble",
         "utils"
       ],
-      "Hash": "9f79034adc256d4dd077e348b7050523"
+      "Hash": "7ffe63d8695cb19c13bd6df820a95267"
     },
     "pkgsearch": {
       "Package": "pkgsearch",
@@ -1333,13 +1332,13 @@
     },
     "renv": {
       "Package": "renv",
-      "Version": "0.17.2",
+      "Version": "0.17.3",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "utils"
       ],
-      "Hash": "aaf3c7f769695266a2113db67a25148b"
+      "Hash": "4543b8cd233ae25c6aba8548be9e747e"
     },
     "reprex": {
       "Package": "reprex",
