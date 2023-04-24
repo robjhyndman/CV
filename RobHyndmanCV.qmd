@@ -24,26 +24,12 @@ knitr::opts_chunk$set(
   message = FALSE,
   cache = FALSE
 )
+library(tibble)
 library(dplyr)
 library(RefManageR)
-library(gcite)
-source("functions.R")
+source("R/functions.R")
 
-# Google scholar stats
-rjh <- gcite_citation_index(
-  gcite_url("https://scholar.google.com.au/citations?user=vamErfkAAAAJ&hl=en")
-)
-
-# Update list of R packages I've coauthored
-rjh_packages <- get_rjh_packages()
-
-# Read any bib files
-pubs <- ReadBib("rjhpubs.bib", check = FALSE)
-reports <- ReadBib("rjhreports.bib", check = FALSE)
-packages <- ReadBib("Rpackages.bib", check = FALSE)
-
-# Read grants file
-grants <- readr::read_csv("Grant_income.csv")
+targets::tar_load(c(pubs, reports, packages, grants, rjh_packages, rjh))
 ```
 
 # Education and qualifications

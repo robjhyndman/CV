@@ -1,3 +1,10 @@
+# Google scholar stats
+get_gcites <- function(date) {
+  "https://scholar.google.com.au/citations?user=vamErfkAAAAJ&hl=en" |>
+    gcite::gcite_url() |>
+    gcite::gcite_citation_index()
+}
+
 # Function to produce very basic table, no lines or headings
 baretable <- function(tbl, digits = 0,
                       include.colnames = FALSE, include.rownames = FALSE,
@@ -33,54 +40,27 @@ dollars <- function(x) {
 }
 
 # Read and save tibble with my packages
-get_rjh_packages <- function() {
-  # Check if this has been run in last day
-  if (fs::file_exists(here::here("packages.rds"))) {
-    packages <- readRDS(here::here("packages.rds"))
-    info <- fs::file_info(here::here("packages.rds"))
-    recent_run <- (Sys.Date() == anytime::anydate(info$modification_time))
-  } else {
-    recent_run <- FALSE
-  }
-  if (!recent_run) {
-    # CRAN packages I've coauthored
-    rjh_packages <- try(pkgmeta::get_meta(
+get_rjh_packages <- function(date) {
+  # CRAN packages I've coauthored
+  rjh_packages <- try(pkgmeta::get_meta(
       cran_author = "Hyndman",
       include_downloads = TRUE, start = "2015-01-01",
       github_repos = read.table("github_r_repos.txt")$V1
-    ))
-    # Add in any packages not on r-universe
-    # This is only necessary until pkgsearch is updated.
-    # Then pkgmeta should return a complete set
-    missing_packages <- pkgmeta:::get_meta_cran(
-      c("bayesforecast", "fds", "fpp", "ftsa", "rainbow", "smoothAPC", "stR"),
-      include_downloads = TRUE, start = "2015-01-01"
+    )) |>
+    # Sort by package name (case insensitive)
+    mutate(lower_case_package = stringr::str_to_lower(package)) |>
+    arrange(lower_case_package) |>
+    select(-lower_case_package)
+
+  # Fix URL of fpp3 package
+  rjh_packages <- rjh_packages |>
+    mutate(
+      url = if_else(url == "https://OTexts.com/fpp3/",
+            "http://pkg.robjhyndman.com/fpp3package/",
+            url)
     )
-    rjh_packages <- bind_rows(rjh_packages, missing_packages) |>
-      # Sort by package name (case insensitive)
-      mutate(lower_case_package = stringr::str_to_lower(package)) |>
-      arrange(lower_case_package) |>
-      select(-lower_case_package) |>
-      distinct()
-
-    # Fix URL of fpp3 package
-    rjh_packages <- rjh_packages |>
-      mutate(
-        url = if_else(url == "https://OTexts.com/fpp3/",
-          "http://pkg.robjhyndman.com/fpp3package/",
-          url
-        )
-      )
-
-    if (!("try-error" %in% class(rjh_packages))) {
-      # Save new version
-      packages <- rjh_packages
-      saveRDS(packages, file = here::here("packages.rds"))
-    }
-  }
-
-  write_packages_bib(packages, file = "Rpackages.bib")
-  return(packages)
+  # Return tibble of package info
+  return(rjh_packages)
 }
 
 # Create bib file for R packages
