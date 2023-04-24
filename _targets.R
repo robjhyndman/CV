@@ -2,7 +2,7 @@ library(targets)
 library(tarchetypes)
 
 tar_option_set(
-  packages = c("RefManageR", "dplyr", "gcite")
+  packages = c("RefManageR", "dplyr", "gcite", "quarto")
 )
 
 # Run the R scripts in the R/ folder containing functions:
