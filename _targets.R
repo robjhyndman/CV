@@ -15,7 +15,8 @@ list(
   tar_target(rjh, get_gcites(date)),
   tar_target(rjhcites, get_scholar_cites(date)),
   # List of R packages I've coauthored
-  tar_target(rjh_packages, get_rjh_packages(date)),
+  tar_target(github_repos, "github_r_repos.txt", format = "file"),
+  tar_target(rjh_packages, get_rjh_packages(date, github_repos)),
   tar_target(rpackages_bib, write_packages_bib(rjh_packages, file = Rpackages)),
   # Publications bib entries
   tar_target(rjhpubs, "rjhpubs.bib", format = "file"),
