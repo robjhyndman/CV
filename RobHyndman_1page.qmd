@@ -30,21 +30,15 @@ knitr::opts_chunk$set(
 )
 library(dplyr)
 library(RefManageR)
-library(gcite)
-source("functions.R")
+source("R/add_bib_section.R")
+source("R/pretty.R")
 
-# Google scholar stats
-rjh <- gcite_citation_index(
-  gcite_url("https://scholar.google.com.au/citations?user=vamErfkAAAAJ&hl=en")
-)
+# Remove any temporary bib file
+if (fs::file_exists("temp.bib")) {
+  fs::file_delete("temp.bib")
+}
 
-# Update list of R packages I've coauthored
-rjh_packages <- get_rjh_packages()
-
-# Read any bib files
-pubs <- ReadBib("rjhpubs.bib", check = FALSE)
-reports <- ReadBib("rjhreports.bib", check = FALSE)
-packages <- ReadBib("Rpackages.bib", check = FALSE)
+targets::tar_load(c(pubs, rjh, rjhcites))
 ```
 
 # Current position
@@ -79,7 +73,7 @@ awards <- tribble(
 ```{r books}
 #| output: asis
 pubs[c("fpp3", "expsmooth08")] |>
-  add_bib_section(show_cites = TRUE)
+  add_bib_section(show_cites = TRUE, rjhcites=rjhcites)
 ```
 
 \vspace*{-0.2cm}
@@ -105,5 +99,5 @@ pubs[c(
     "VHNC10", "HK06", "HK08", "HKSG02", "HF96", "m3pca",
     "HU07", "HDR96", "HB08"
   )] |>
-  add_bib_section(show_cites = TRUE)
+  add_bib_section(show_cites = TRUE, rjhcites=rjhcites)
 ```

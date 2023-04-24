@@ -2,7 +2,7 @@ library(targets)
 library(tarchetypes)
 
 tar_option_set(
-  packages = c("RefManageR", "dplyr")
+  packages = c("RefManageR", "dplyr", "gcite")
 )
 
 # Run the R scripts in the R/ folder containing functions:
@@ -13,6 +13,7 @@ list(
   tar_target(date, Sys.Date()),
   # Update Google scholar citations
   tar_target(rjh, get_gcites(date)),
+  tar_target(rjhcites, get_scholar_cites(date)),
   # List of R packages I've coauthored
   tar_target(rjh_packages, get_rjh_packages(date)),
   tar_target(rpackages_bib, write_packages_bib(rjh_packages, file = Rpackages)),
@@ -28,5 +29,9 @@ list(
   # Grant income csv
   tar_target(Grant_income, "Grant_income.csv", format = "file"),
   tar_target(grants, readr::read_csv(Grant_income)),
-  tar_quarto(CV, "RobHyndmanCV.qmd")
+  # Generate CV
+  tar_quarto(CV, "RobHyndmanCV.qmd"),
+  tar_quarto(CV_1page, "RobHyndman_1page.qmd"),
+  tar_quarto(CV_2page, "RobHyndman_2page.qmd"),
+  tar_quarto(CV_3page, "RobHyndman_3page.qmd")
 )

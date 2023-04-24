@@ -25,24 +25,15 @@ knitr::opts_chunk$set(
 )
 library(dplyr)
 library(RefManageR)
-library(gcite)
-source("functions.R")
+source("R/add_bib_section.R")
+source("R/pretty.R")
 
-# Google scholar stats
-rjh <- gcite_citation_index(
-  gcite_url("https://scholar.google.com.au/citations?user=vamErfkAAAAJ&hl=en")
-)
+# Remove any temporary bib file
+if (fs::file_exists("temp.bib")) {
+  fs::file_delete("temp.bib")
+}
 
-# Update list of R packages I've coauthored
-rjh_packages <- get_rjh_packages()
-
-# Read any bib files
-pubs <- ReadBib("rjhpubs.bib", check = FALSE)
-reports <- ReadBib("rjhreports.bib", check = FALSE)
-packages <- ReadBib("Rpackages.bib", check = FALSE)
-
-# Read grants file
-grants <- readr::read_csv("Grant_income.csv")
+targets::tar_load(c(pubs, rjh, grants, rjh_packages, rjhcites))
 ```
 
 # Education and qualifications
@@ -179,7 +170,7 @@ I have coauthored `r NROW(rjh_packages)` R packages as a result of my research. 
 ```{r books}
 #| output: asis
 pubs[c("fpp3", "MWH3", "expsmooth08")] |>
-  add_bib_section(show_cites = TRUE)
+  add_bib_section(show_cites = TRUE, rjhcites = rjhcites)
 ```
 
 # Research
@@ -192,11 +183,11 @@ pubs[c("fpp3", "MWH3", "expsmooth08")] |>
 ```{r best}
 #| output: asis
 pubs[c(
-    "gravitas", "uslongevity", "smartmeterhts", "mint", "HF10", "DHS11", 
+    "gravitas", "uslongevity", "smartmeterhts", "mint", "HF10", "DHS11",
     "hierarchical", "lhf", "dobin", "forecastingcompetitions", "forecastingsofa",
     "VHNC10", "HK06", "HK08", "HKSG02", "HF96", "stray", "oddstream",
     "ijf25", "HU07", "HDR96", "gefcom2014", "swissexports",
     "HBG96", "HB08", "tscv", "temporal-hierarchies"
   )] |>
-  add_bib_section(show_cites = TRUE)
+  add_bib_section(show_cites = TRUE, rjhcites = rjhcites)
 ```

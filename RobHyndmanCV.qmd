@@ -24,10 +24,15 @@ knitr::opts_chunk$set(
   message = FALSE,
   cache = FALSE
 )
-library(tibble)
 library(dplyr)
 library(RefManageR)
-source("R/functions.R")
+source("R/add_bib_section.R")
+source("R/pretty.R")
+
+# Remove any temporary bib file
+if (fs::file_exists("temp.bib")) {
+  fs::file_delete("temp.bib")
+}
 
 targets::tar_load(c(pubs, reports, packages, grants, rjh_packages, rjh))
 ```
@@ -293,7 +298,7 @@ pubs[bibtype == "Book"] |>
 
 ```{r phd}
 #| output: asis
-pubs[bibtype == "PhdThesis"] |> 
+pubs[bibtype == "PhdThesis"] |>
   add_bib_section()
 ```
 
@@ -326,7 +331,7 @@ pubs[bibtype == "InProceedings"] |>
 
 ```{r working-papers}
 #| output: asis
-pubs[bibtype %in% c("TechReport", "Unpublished")] |> 
+pubs[bibtype %in% c("TechReport", "Unpublished")] |>
   add_bib_section()
 ```
 
@@ -336,7 +341,7 @@ pubs[bibtype %in% c("TechReport", "Unpublished")] |>
 #| output: asis
 # Need to adjust bibtype so RefManageR understands what to do
 pubs[bibtype == "Review"] |>
-  change_bibtype("Article") |> 
+  change_bibtype("Article") |>
   add_bib_section()
 ```
 
@@ -345,7 +350,7 @@ pubs[bibtype == "Review"] |>
 ```{r editorials}
 #| output: asis
 # Now the editorials
-pubs[bibtype == "Editorial"] |> 
+pubs[bibtype == "Editorial"] |>
   add_bib_section()
 ```
 
@@ -357,7 +362,7 @@ pubs[bibtype == "Editorial"] |>
 #| output: asis
 # Other papers not counted above
 pubs[bibtype == "Report"]  |>
-  change_bibtype("Unpublished") |> 
+  change_bibtype("Unpublished") |>
   add_bib_section()
 ```
 
