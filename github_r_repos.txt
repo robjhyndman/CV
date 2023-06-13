@@ -28,6 +28,7 @@ robjhyndman/hdrcde
 robjhyndman/Mcomp
 robjhyndman/MEFM-package
 robjhyndman/pkgmeta
+robjhyndman/TACforecasting
 robjhyndman/thief
 robjhyndman/tscompdata
 robjhyndman/tsfeatures
