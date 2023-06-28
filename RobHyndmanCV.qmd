@@ -166,12 +166,14 @@ tribble(
   * Since 1991 I have authored `r NROW(pubs)` papers, chapters or books on statistical topics (listed on pages \pageref{papersstart}--\pageref{papersend}).
   * On Google Scholar my h-index is `r rjh$All[2]` with total citations of `r prettyNum(rjh$All[1], big.mark=",")` (as at `r format(Sys.time(), "%e %B %Y")`).
   * My current research involves the analysis of large collections of time series, and includes visualization, forecasting, reconciliation, modelling and anomaly detection..
-  * I currently supervise five PhD students. I have previously supervised an additional 29 PhD students and 3 Masters students.
+  * I currently supervise six PhD students. I have supervised to completion 29 PhD students and 3 Masters students.
+  * I have been a PhD examiner more than 10 times for students in Europe, Australia and Asia.
   * I publish the [*Hyndsight*](https://robjhyndman.com/hyndsight) blog on research issues which receives an average of about 1500 pageviews per day.
   * I have coauthored `r NROW(packages)` R packages as a result of my research (listed on pages \pageref{packagestart}--\pageref{packageend}). There have been over `r round(sum(rjh_packages$downloads, na.rm=TRUE)/1e6)` million downloads of my packages since 2015 (to `r format(Sys.time(), "%e %B %Y")`).
 
 # Public lectures
 
+  * ANU public lecture, *Forecasting the future and the future of forecasting*, Canberra, Nov 2022.
   * Cornish lecture, *Feasts and fables: modern tools for time series analysis*, Adelaide, Nov 2021.
   * ACEMS public lecture, *Uncertain futures: what can we forecast and when should we give up?*, Aug 2021.
   * Monash master class, *Forecasting the future of the power industry: What can you learn from smart meter data?*, Melbourne, Sep 2018.
@@ -180,10 +182,9 @@ tribble(
   * Knibbs lecture, *Population forecasting and the importance of being uncertain*, Statistical Society of Australia, Canberra, Nov 2007.
   * Belz lecture, *Forecasting and the importance of being uncertain*, Statistical Society of Australia, Melbourne, Oct 2006.
 
-\enlargethispage*{0.6cm}
-
 # Major conference presentations
 
+  * Keynote speaker, *Visualization of complex seasonal patterns in time series*, 800 year anniversary, University of Padua, Sep 2022.
   * Keynote speaker, *Creating social good for forecasters*, Forecasting for Social Good workshop, Oxford UK, Jul 2022.
   * Blakers lecture, *Forecasting the future and the future of forecasting*, ANU-AAMT National Mathematics Summer School, Jan 2022.
   * Keynote speaker, *Ten years of forecast reconciliation*, International Symposium on Forecasting, online, Oct 2020.
@@ -215,11 +216,11 @@ sumgrants <- grants |>
   sum(na.rm = TRUE)
 ```
 
-I have acquired (in most cases jointly) $`r sprintf("%2.1f", sumgrants/1e6)` million in external research grants since 2000. External research grants over $50,000 are listed below.\vspace*{0.2cm}\enlargethispage*{0.5cm}
+I have acquired (in most cases jointly) $`r sprintf("%2.1f", sumgrants/1e6)` million in external research grants since 2000. External research grants over $70,000 are listed below.\vspace*{0.2cm}\enlargethispage*{0.5cm}
 
 ```{r grantstable, results='asis'}
 grants |>
-  filter(Amount > 49999, Type == "Research") |>
+  filter(Amount > 70000, Type == "Research") |>
   mutate(
     Time = paste0(Start, ifelse(is.na(End), "", paste0("--", End))),
     Entry = paste(People, ". ``", Title, "''. ",
