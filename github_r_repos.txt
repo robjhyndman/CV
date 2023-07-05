@@ -30,6 +30,7 @@ robjhyndman/MEFM-package
 robjhyndman/pkgmeta
 robjhyndman/TACforecasting
 robjhyndman/thief
+robjhyndman/tidylife
 robjhyndman/tscompdata
 robjhyndman/tsfeatures
 ropenscilabs/ozbabynames
