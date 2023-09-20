@@ -26,7 +26,7 @@ list(
   tar_target(reports, ReadBib(rjhreports, check = FALSE)),
   # R packages bib entries
   tar_target(Rpackages, "Rpackages.bib", format = "file"),
-  tar_target(packages, ReadBib(Rpackages, check = FALSE)),
+  tar_target(packages, read_bib(rpackages_bib, Rpackages)),
   # Grant income csv
   tar_target(Grant_income, "Grant_income.csv", format = "file"),
   tar_target(grants, readr::read_csv(Grant_income)),

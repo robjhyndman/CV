@@ -103,3 +103,7 @@ getbibentry <- function(pkg) {
     note = meta$note
   )
 }
+
+read_bib <- function(object, file) {
+  ReadBib(file, check = FALSE)
+}
