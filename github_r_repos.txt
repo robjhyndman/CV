@@ -45,5 +45,5 @@ tidyverts/fabletools
 tidyverts/feasts
 tidyverts/tsibble
 tidyverts/tsibbledata
-verbe039/bfast
+bfast2/bfast
 ykang/gratis
