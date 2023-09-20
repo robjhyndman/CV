@@ -44,7 +44,7 @@
     },
     "Matrix": {
       "Package": "Matrix",
-      "Version": "1.6-1",
+      "Version": "1.6-1.1",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -57,7 +57,7 @@
         "stats",
         "utils"
       ],
-      "Hash": "cb6855ac711958ca734b75e631b2035d"
+      "Hash": "1a00d4828f33a9d690806e98bd17150c"
     },
     "NLP": {
       "Package": "NLP",
@@ -1235,7 +1235,7 @@
       "RemoteUsername": "jimhester",
       "RemoteRepo": "lintr",
       "RemoteRef": "HEAD",
-      "RemoteSha": "a0ab99a967567d0d2cbe776d570e66baa9d1806c",
+      "RemoteSha": "f8fab18cdd3f89e5ca0360b7bc013db61ad5d927",
       "RemoteHost": "api.github.com",
       "Requirements": [
         "R",
@@ -1251,7 +1251,7 @@
         "xml2",
         "xmlparsedata"
       ],
-      "Hash": "1a743d141da0b62f6aa101c621dee5ce"
+      "Hash": "5a6cf7e9c55c9eefdbdaa5577200adc5"
     },
     "listenv": {
       "Package": "listenv",
@@ -1472,10 +1472,10 @@
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
-      "RemoteRepo": "pkgmeta",
       "RemoteUsername": "robjhyndman",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "de59e5721943485a46e815e766e270f0de5dbd2c",
+      "RemoteRepo": "pkgmeta",
+      "RemoteRef": "master",
+      "RemoteSha": "9a64bd0bb6ad5b24f7653f94f90f4dd458764a11",
       "Requirements": [
         "cranlogs",
         "desc",
@@ -1487,7 +1487,7 @@
         "tibble",
         "utils"
       ],
-      "Hash": "64631d32e40adccd0ee7b8a245d4ecd0"
+      "Hash": "fe45ad32d6b95662677785914b845b3a"
     },
     "pkgsearch": {
       "Package": "pkgsearch",
@@ -1574,7 +1574,7 @@
     },
     "quarto": {
       "Package": "quarto",
-      "Version": "1.2",
+      "Version": "1.3",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -1587,7 +1587,7 @@
         "utils",
         "yaml"
       ],
-      "Hash": "298a252816cabed120391c955aced484"
+      "Hash": "79e1cff980960b566ddc4ddb1a49a13d"
     },
     "ragg": {
       "Package": "ragg",
@@ -1681,13 +1681,13 @@
     },
     "renv": {
       "Package": "renv",
-      "Version": "1.0.2",
+      "Version": "1.0.3",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "utils"
       ],
-      "Hash": "4b22ac016fe54028b88d0c68badbd061"
+      "Hash": "41b847654f567341725473431dd0d5ab"
     },
     "reprex": {
       "Package": "reprex",
@@ -1734,7 +1734,7 @@
     },
     "rmarkdown": {
       "Package": "rmarkdown",
-      "Version": "2.24",
+      "Version": "2.25",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -1754,7 +1754,7 @@
         "xfun",
         "yaml"
       ],
-      "Hash": "3854c37590717c08c32ec8542a2e0a35"
+      "Hash": "d65e35823c817f09f4de424fcdfa812a"
     },
     "roxygen2": {
       "Package": "roxygen2",
