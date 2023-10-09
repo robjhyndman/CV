@@ -281,7 +281,8 @@ bibtype[names(pubs) %in%  c(
   "IJFeditorial10b",
   "IJFeditorial10a",
   "IJFeditorial06",
-  "IJFeditorial05"
+  "IJFeditorial05",
+  "Gardner23"
 )] <- "Editorial"
 ```
 
@@ -346,7 +347,7 @@ pubs[bibtype == "Review"] |>
   add_bib_section()
 ```
 
-# Editorials
+# Editorials and obituaries
 
 ```{r editorials}
 #| output: asis
