@@ -33,6 +33,6 @@ list(
   # Generate CV
   #tar_quarto(CV_1page, "RobHyndman_1page.qmd"),
   #tar_quarto(CV_2page, "RobHyndman_2page.qmd"),
-  #tar_quarto(CV_3page, "RobHyndman_3page.qmd"),
+  tar_quarto(CV_3page, "RobHyndman_3page.qmd"),
   tar_quarto(CV, "RobHyndmanCV.qmd")
 )

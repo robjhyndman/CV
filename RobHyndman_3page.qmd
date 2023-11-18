@@ -10,7 +10,6 @@ date: "`r format(Sys.Date(), '%B %Y')`"
 date-format: "MMMM YYYY"
 position: FAA, FASSA, BSc (Hons), PhD, AStat
 format: cv-pdf
-pdf-engine: latexmk
 header-includes:
   - \geometry{left=1.5cm,right=1.5cm,top=1.8cm,bottom=1.7cm}
   - \definecolor{headcolor}{HTML}{000088}
@@ -48,7 +47,7 @@ tribble(
   baretable()
 ```
 
-# Current positions
+# Current position
 
 ```{r employment, results='asis'}
 tribble(
@@ -88,9 +87,9 @@ awards <- tribble(
 # Teaching and mentoring
 
   * In each year since 2018, student evaluations for "Applied forecasting for business and economics" gave an average rating for my teaching above 4.8 out of 5.
-  * I currently supervise five PhD students and two post-doctoral research fellows. I have previously supervised another 27 PhD students and 3 Masters students.
-  * I am author of an innovative textbook with George Athanasopoulos entitled *Forecasting: principles and practice* ([`OTexts.org/fpp3/`](https://OTexts.org/fpp3)) which is available online and free of charge. The website has an average of over 20000 pageviews per day.
-  * I publish the [*Hyndsight*](https://robjhyndman.com/hyndsight) blog on research issues which receives an average of about 2000 pageviews per day.
+  * I currently supervise six PhD students and one post-doctoral research fellow. I have previously supervised another 29 PhD students and 3 Masters students.
+  * I am author of an innovative textbook with George Athanasopoulos entitled *Forecasting: principles and practice* ([`OTexts.org/fpp3/`](https://OTexts.org/fpp3)) which is available online and free of charge. The website has an average of over 25000 pageviews per day.
+  * I publish the [*Hyndsight*](https://robjhyndman.com/hyndsight) blog on research issues which receives an average of about 1500 pageviews per day.
 
 # Editorial boards
 
@@ -114,7 +113,6 @@ tribble(
 
 # Society leadership
 
-  * Member, Pearson Prize Committee, International Statistical Institute, 2017.
   * Director, International Institute of Forecasters, 2005--2018.
   * Member, Scientific Program Advisory Group, Statistical Society of Australia, 2001--2004
   * Secretary, Victorian branch, Statistical Society of Australia, 1993--1995.
@@ -178,16 +176,20 @@ pubs[c("fpp3", "MWH3", "expsmooth08")] |>
 * Since 1991 I have authored `r NROW(pubs)` papers, chapters or books on statistical topics. A selection of these are listed below.
 *  On Google Scholar my h-index is `r rjh$All[2]` with total citations of `r prettyNum(rjh$All[1], big.mark=",")` (as at `r format(Sys.time(), "%e %B %Y")`).
 
-# Selected research papers
+\enlargethispage*{0.4cm}
+
+# Selected research papers^[Citations from Google Scholar on `r format(Sys.time(), "%e %B %Y")`.]
 
 ```{r best}
 #| output: asis
 pubs[c(
-    "gravitas", "uslongevity", "smartmeterhts", "mint", "HF10", "DHS11",
+    "uslongevity", "smartmeterhts", "mint", "HF10", "DHS11",
     "hierarchical", "lhf", "dobin", "forecastingcompetitions", "forecastingsofa",
     "VHNC10", "HK06", "HK08", "HKSG02", "HF96", "stray", "oddstream",
-    "ijf25", "HU07", "HDR96", "gefcom2014", "swissexports",
-    "HBG96", "HB08", "tscv", "temporal-hierarchies"
+    "ijf25", "HU07", "HDR96", "gefcom2014",
+    "HBG96", "HB08", "tscv", "temporal-hierarchies",
+    "ctprob","hfreview","coherentprob","combinations","WSH06",
+    "tsgeneration","LCcomparison","HBY13"
   )] |>
   add_bib_section(show_cites = TRUE, rjhcites = rjhcites)
 ```
