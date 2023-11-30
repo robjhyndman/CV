@@ -34,7 +34,7 @@ if (fs::file_exists("temp.bib")) {
   fs::file_delete("temp.bib")
 }
 
-targets::tar_load(c(pubs, reports, packages, grants, rjh_packages, rjh))
+targets::tar_load(c(pubs, reports, packages, grants, rjh_packages, rjh, rpackages_bib))
 ```
 
 # Education and qualifications
