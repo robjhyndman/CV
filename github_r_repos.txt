@@ -20,7 +20,6 @@ robjhyndman/compenginets
 robjhyndman/cricketdata
 robjhyndman/demography
 robjhyndman/expsmooth
-robjhyndman/fable.binary
 robjhyndman/fma
 robjhyndman/forecast
 robjhyndman/fpp2-package
@@ -42,6 +41,7 @@ sevvandi/lookout
 sevvandi/oddnet
 thiyangt/seer
 tidyverts/fable
+tidyverts/fable.binary
 tidyverts/fabletools
 tidyverts/feasts
 tidyverts/tsibble
