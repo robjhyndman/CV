@@ -182,8 +182,9 @@ tribble(
   * Knibbs lecture, *Population forecasting and the importance of being uncertain*, Statistical Society of Australia, Canberra, Nov 2007.
   * Belz lecture, *Forecasting and the importance of being uncertain*, Statistical Society of Australia, Melbourne, Oct 2006.
 
-# Major conference presentations
+# Major presentations
 
+  * IIF Distinguished Lecturer, *Forecast reconciliation*, online series of lectures, Nov 2023.
   * Keynote speaker, *Visualization of complex seasonal patterns in time series*, 800 year anniversary, University of Padua, Sep 2022.
   * Keynote speaker, *Creating social good for forecasters*, Forecasting for Social Good workshop, Oxford UK, Jul 2022.
   * Blakers lecture, *Forecasting the future and the future of forecasting*, ANU-AAMT National Mathematics Summer School, Jan 2022.
