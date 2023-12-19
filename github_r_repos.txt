@@ -1,6 +1,7 @@
 # Github repos containing packages I've coauthored
 AndriSignorell/DescTools
 AU-BURGr/ozdata
+bfast2/bfast
 earowang/hts
 earowang/sugrrants
 eddelbuettel/binb
@@ -30,9 +31,10 @@ robjhyndman/MEFM-package
 robjhyndman/pkgmeta
 robjhyndman/TACforecasting
 robjhyndman/thief
-robjhyndman/vital
 robjhyndman/tscompdata
 robjhyndman/tsfeatures
+robjhyndman/vital
+robjhyndman/weird-package
 ropenscilabs/ozbabynames
 ropenscilabs/rcademy
 Sayani07/gghdr
@@ -46,5 +48,4 @@ tidyverts/fabletools
 tidyverts/feasts
 tidyverts/tsibble
 tidyverts/tsibbledata
-bfast2/bfast
 ykang/gratis
