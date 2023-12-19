@@ -39,6 +39,8 @@ write_packages_bib <- function(packages, file) {
     }
   }
   message(paste("OK\nResults written to", file))
+  # Return filename
+  return(file)
 }
 
 # Create bib entry for package pkg (one row tibble).
@@ -104,6 +106,6 @@ getbibentry <- function(pkg) {
   )
 }
 
-read_bib <- function(object, file) {
+read_bib <- function(file) {
   ReadBib(file, check = FALSE)
 }

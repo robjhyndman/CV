@@ -14,19 +14,18 @@ list(
   # Update Google scholar citations
   tar_target(rjh, get_gcites(date)),
   tar_target(rjhcites, get_scholar_cites(date)),
-  # List of R packages I've coauthored
-  tar_target(github_repos, "github_r_repos.txt", format = "file"),
-  tar_target(rjh_packages, get_rjh_packages(date, github_repos)),
-  tar_target(rpackages_bib, write_packages_bib(rjh_packages, file = Rpackages)),
   # Publications bib entries
   tar_target(rjhpubs, "rjhpubs.bib", format = "file"),
   tar_target(pubs, ReadBib(rjhpubs, check = FALSE)),
   # Reports bib entries
   tar_target(rjhreports, "rjhreports.bib", format = "file"),
   tar_target(reports, ReadBib(rjhreports, check = FALSE)),
+  # List of R packages I've coauthored
+  tar_target(github_repos, "github_r_repos.txt", format = "file"),
+  tar_target(rjh_packages, get_rjh_packages(date, github_repos)),
   # R packages bib entries
-  tar_target(Rpackages, "Rpackages.bib", format = "file"),
-  tar_target(packages, read_bib(rpackages_bib, Rpackages)),
+  tar_target(rpackages_bib, write_packages_bib(rjh_packages, file = "Rpackages.bib")),
+  tar_target(packages, read_bib(rpackages_bib)),
   # Grant income csv
   tar_target(Grant_income, "Grant_income.csv", format = "file"),
   tar_target(grants, readr::read_csv(Grant_income)),
