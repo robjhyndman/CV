@@ -24,8 +24,10 @@ list(
   tar_target(github_repos, "github_r_repos.txt", format = "file"),
   tar_target(rjh_packages, get_rjh_packages(date, github_repos)),
   # R packages bib entries
-  tar_target(rpackages_bib, write_packages_bib(rjh_packages, file = "Rpackages.bib")),
-  tar_target(packages, read_bib("Rpackages.bib", rpackages_bib)),
+  tar_target(rpackages_bib,
+             write_packages_bib(rjh_packages, file = "Rpackages.bib"),
+             format = "file"),
+  tar_target(packages, read_bib(rpackages_bib)),
   # Grant income csv
   tar_target(Grant_income, "Grant_income.csv", format = "file"),
   tar_target(grants, readr::read_csv(Grant_income)),
