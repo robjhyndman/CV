@@ -283,7 +283,8 @@ bibtype[names(pubs) %in%  c(
   "IJFeditorial10a",
   "IJFeditorial06",
   "IJFeditorial05",
-  "Gardner23"
+  "Gardner23",
+  "freditorial"
 )] <- "Editorial"
 ```
 
