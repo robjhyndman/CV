@@ -1,11 +1,11 @@
 # Generate tibble with package info
 get_rjh_packages <- function(date, github_repos) {
   # CRAN packages I've coauthored
-  rjh_packages <- try(pkgmeta::get_meta(
+  rjh_packages <- pkgmeta::get_meta(
       cran_author = "Hyndman",
       include_downloads = TRUE, start = "2015-01-01",
       github_repos = read.table(github_repos)$V1
-    )) |>
+    ) |>
     # Sort by package name (case insensitive)
     mutate(lower_case_package = stringr::str_to_lower(package)) |>
     arrange(lower_case_package) |>
