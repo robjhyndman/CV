@@ -1,11 +1,17 @@
 # Generate tibble with package info
 get_rjh_packages <- function(date, github_repos) {
   # CRAN packages I've coauthored
-  rjh_packages <- pkgmeta::get_meta(
+  rjh_packages <- tryCatch(pkgmeta::get_meta(
       cran_author = "Hyndman",
       include_downloads = TRUE, start = "2015-01-01",
       github_repos = read.table(github_repos)$V1
-    ) |>
+    ))
+  if("try-error" %in% class(rjh_packages)) {
+    # Just use the last version but give a warning
+    warning("Failed to get package info from CRAN. Using last version.")
+    return(targets::tar_read("rjh_packages"))
+  }
+  rjh_packages <- rjh_packages |>
     # Sort by package name (case insensitive)
     mutate(lower_case_package = stringr::str_to_lower(package)) |>
     arrange(lower_case_package) |>
