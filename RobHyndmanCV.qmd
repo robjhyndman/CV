@@ -184,6 +184,8 @@ tribble(
 
 # Major presentations
 
+  * Suessmilch Lecturer, *vital: Tidy data analysis for demography using R*, Max Planck Institute for Demographic Research, Rostock, Jun 2024.
+  * Keynote speaker, *Forecasting the future and the future of forecasting*, 2024 Australian Treasuries Forecasting Conference, Feb 2024.
   * IIF Distinguished Lecturer, *Forecast reconciliation*, online series of lectures, Nov 2023.
   * Keynote speaker, *Visualization of complex seasonal patterns in time series*, 800 year anniversary, University of Padua, Sep 2022.
   * Keynote speaker, *Creating social good for forecasters*, Forecasting for Social Good workshop, Oxford UK, Jul 2022.
@@ -217,11 +219,11 @@ sumgrants <- grants |>
   sum(na.rm = TRUE)
 ```
 
-I have acquired (in most cases jointly) $`r sprintf("%2.1f", sumgrants/1e6)` million in external research grants since 2000. External research grants over $70,000 are listed below.\vspace*{0.2cm}\enlargethispage*{0.5cm}
+I have acquired (in most cases jointly) $`r sprintf("%2.1f", sumgrants/1e6)` million in external research grants since 2000. External research grants over $80,000 are listed below.\vspace*{0.2cm}\enlargethispage*{0.5cm}
 
 ```{r grantstable, results='asis'}
 grants |>
-  filter(Amount > 70000, Type == "Research") |>
+  filter(Amount > 80000, Type == "Research") |>
   mutate(
     Time = paste0(Start, ifelse(is.na(End), "", paste0("--", End))),
     Entry = paste(People, ". ``", Title, "''. ",
