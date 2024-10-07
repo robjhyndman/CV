@@ -8,6 +8,7 @@ eddelbuettel/binb
 FinYang/tsdl
 haghbinh/sfar
 jforbes14/eechidna
+mitchelloharawild/distributional
 mitchelloharawild/fasster
 mitchelloharawild/vitae
 numbats/monash
@@ -28,15 +29,16 @@ robjhyndman/fpp3-package
 robjhyndman/hdrcde
 robjhyndman/Mcomp
 robjhyndman/MEFM-package
+robjhyndman/ozbabynames
 robjhyndman/pkgmeta
+robjhyndman/rcademy
+robjhyndman/stR
 robjhyndman/TACforecasting
 robjhyndman/thief
 robjhyndman/tscompdata
 robjhyndman/tsfeatures
 robjhyndman/vital
 robjhyndman/weird-package
-ropenscilabs/ozbabynames
-ropenscilabs/rcademy
 Sayani07/gghdr
 Sayani07/gravitas
 sevvandi/lookout
