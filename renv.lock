@@ -1191,7 +1191,7 @@
         "xml2",
         "xmlparsedata"
       ],
-      "Hash": "bdf271aef7804a1e9dfd33df783298eb"
+      "Hash": "3f5a026e6bd62a7a6e95564bcc22d837"
     },
     "lubridate": {
       "Package": "lubridate",
@@ -1588,13 +1588,13 @@
     },
     "renv": {
       "Package": "renv",
-      "Version": "1.0.10",
+      "Version": "1.0.11",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "utils"
       ],
-      "Hash": "d0387d5687ec933dd7587efd4cfa2d85"
+      "Hash": "47623f66b4e80b3b0587bc5d7b309888"
     },
     "reprex": {
       "Package": "reprex",
@@ -2207,7 +2207,7 @@
         "xfun",
         "yaml"
       ],
-      "Hash": "8b805cc68c3fb5fcc630446777a661fa"
+      "Hash": "9f7d59d229e289bd6ff6dc31f2358115"
     },
     "vroom": {
       "Package": "vroom",
