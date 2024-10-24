@@ -87,6 +87,10 @@ getbibentry <- function(pkg) {
   # Remove duplicate ands
   meta$authors <- gsub("and and and ", "and ", meta$authors, perl = TRUE)
   meta$authors <- gsub("and and ", "and ", meta$authors, perl = TRUE)
+  meta$authors <- gsub("î", "i", meta$authors)
+  meta$authors <- gsub("ū", "u", meta$authors)
+  meta$authors <- gsub("ț", "t", meta$authors)
+
 
   # Remove contributions from author list (for demography)
   if (grepl("with contributions", meta$authors)) {
