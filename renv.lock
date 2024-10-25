@@ -51,7 +51,7 @@
     },
     "Matrix": {
       "Package": "Matrix",
-      "Version": "1.7-0",
+      "Version": "1.7-1",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -64,7 +64,7 @@
         "stats",
         "utils"
       ],
-      "Hash": "1920b2f11133b12350024297d8a4ff4a"
+      "Hash": "5122bb14d8736372411f955e1b16bc8a"
     },
     "NLP": {
       "Package": "NLP",
@@ -481,6 +481,20 @@
         "R"
       ],
       "Hash": "d91263322a58af798f6cf3b13fd56dde"
+    },
+    "cyclocomp": {
+      "Package": "cyclocomp",
+      "Version": "1.1.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "callr",
+        "crayon",
+        "desc",
+        "remotes",
+        "withr"
+      ],
+      "Hash": "cdc4a473222b0112d4df0bcfbed12d44"
     },
     "data.table": {
       "Package": "data.table",
@@ -1009,7 +1023,7 @@
     },
     "igraph": {
       "Package": "igraph",
-      "Version": "2.0.3",
+      "Version": "2.1.1",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -1028,7 +1042,7 @@
         "utils",
         "vctrs"
       ],
-      "Hash": "c3b7d801d722e26e4cd888e042bf9af5"
+      "Hash": "c03878b48737a0e2da3b772d7b2e22da"
     },
     "ini": {
       "Package": "ini",
@@ -1170,18 +1184,14 @@
     },
     "lintr": {
       "Package": "lintr",
-      "Version": "3.1.2.9000",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteUsername": "jimhester",
-      "RemoteRepo": "lintr",
-      "RemoteSha": "1db7cc70655a41c77fcc89dbed5e40d5dd8cf74a",
-      "RemoteHost": "api.github.com",
+      "Version": "3.1.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
       "Requirements": [
         "R",
         "backports",
-        "cli",
         "codetools",
+        "cyclocomp",
         "digest",
         "glue",
         "knitr",
@@ -1191,7 +1201,7 @@
         "xml2",
         "xmlparsedata"
       ],
-      "Hash": "3f5a026e6bd62a7a6e95564bcc22d837"
+      "Hash": "08cff46381a242d44c0d8dd0aabd9f71"
     },
     "lubridate": {
       "Package": "lubridate",
@@ -1390,7 +1400,6 @@
       "RemoteHost": "api.github.com",
       "RemoteRepo": "pkgmeta",
       "RemoteUsername": "robjhyndman",
-      "RemotePkgRef": "robjhyndman/pkgmeta",
       "RemoteSha": "9a64bd0bb6ad5b24f7653f94f90f4dd458764a11",
       "Requirements": [
         "cranlogs",
@@ -1403,7 +1412,7 @@
         "tibble",
         "utils"
       ],
-      "Hash": "44e55468d0edc370361e4cf8bf32a8af"
+      "Hash": "78e058a37555996235acfa0c3ed8bd7c"
     },
     "pkgsearch": {
       "Package": "pkgsearch",
@@ -1586,6 +1595,20 @@
       ],
       "Hash": "76c9e04c712a05848ae7a23d2f170a40"
     },
+    "remotes": {
+      "Package": "remotes",
+      "Version": "2.5.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "methods",
+        "stats",
+        "tools",
+        "utils"
+      ],
+      "Hash": "3ee025083e66f18db6cf27b56e23e141"
+    },
     "renv": {
       "Package": "renv",
       "Version": "1.0.11",
@@ -1700,10 +1723,10 @@
     },
     "rstudioapi": {
       "Package": "rstudioapi",
-      "Version": "0.16.0",
+      "Version": "0.17.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "96710351d642b70e8f02ddeb237c46a7"
+      "Hash": "5f90cd73946d706cfe26024294236113"
     },
     "rvest": {
       "Package": "rvest",
@@ -1783,14 +1806,14 @@
     },
     "slam": {
       "Package": "slam",
-      "Version": "0.1-53",
+      "Version": "0.1-54",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "R",
         "stats"
       ],
-      "Hash": "530404612c10533ff2deb1622c458b36"
+      "Hash": "ac3e35b2fb2c202ff6b222e4c39f7b43"
     },
     "sp": {
       "Package": "sp",
@@ -2189,10 +2212,11 @@
       "Version": "0.6.0",
       "Source": "GitHub",
       "RemoteType": "github",
-      "RemoteUsername": "ropenscilabs",
-      "RemoteRepo": "vitae",
-      "RemoteSha": "d31961a78962503b587ad08153fc6ca18188ff65",
       "RemoteHost": "api.github.com",
+      "RemoteRepo": "vitae",
+      "RemoteUsername": "ropenscilabs",
+      "RemotePkgRef": "ropenscilabs/vitae",
+      "RemoteSha": "d31961a78962503b587ad08153fc6ca18188ff65",
       "Requirements": [
         "R",
         "dplyr",
@@ -2207,7 +2231,7 @@
         "xfun",
         "yaml"
       ],
-      "Hash": "9f7d59d229e289bd6ff6dc31f2358115"
+      "Hash": "8e9873877d5dfac91d48e3cee3a06f64"
     },
     "vroom": {
       "Package": "vroom",
