@@ -2,9 +2,7 @@
 name: Rob J Hyndman
 address: "Department of Econometrics & Business Statistics,\\tabularnewline Monash University, VIC 3800, Australia."
 www: robjhyndman.com
-phone: +61 3 9905 5141
 email: "Rob.Hyndman@monash.edu"
-twitter: robjhyndman
 github: robjhyndman
 date: "`r format(Sys.Date(), '%B %Y')`"
 date-format: "MMMM YYYY"
