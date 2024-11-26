@@ -32,8 +32,8 @@ list(
   tar_target(Grant_income, "Grant_income.csv", format = "file"),
   tar_target(grants, readr::read_csv(Grant_income)),
   # Generate CV
-  #tar_quarto(CV_1page, "RobHyndman_1page.qmd"),
-  #tar_quarto(CV_2page, "RobHyndman_2page.qmd"),
+  tar_quarto(CV_1page, "RobHyndman_1page.qmd"),
+  tar_quarto(CV_2page, "RobHyndman_2page.qmd"),
   tar_quarto(CV_3page, "RobHyndman_3page.qmd"),
   tar_quarto(CV, "RobHyndmanCV.qmd")
 )
