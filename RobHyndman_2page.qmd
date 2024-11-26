@@ -110,29 +110,28 @@ sumgrants <- grants %>%
   sum(na.rm = TRUE)
 ```
 
-I have acquired (in most cases jointly) about $`r round(sumgrants/1e6)` million in external research grants since 2000, including 3 ARC Discovery Grants, 3 ARC Linkage Grants, 1 NHMRC Grant, an ARC Centre of Excellence, an ARC Industrial Training Transformation Centre, and contract research grants from many government and business organizations.
+I have acquired (in most cases jointly) about $`r round(sumgrants/1e6)` million in external research grants since 2000, including an ARC Centre of Excellence, an NHMRC Centre of Excellence, an ARC Industrial Training Transformation Centre, 4 ARC Discovery Grants, 3 ARC Linkage Grants, 1 NHMRC Grant, and contract research grants from many government and business organizations.
 
-# Selected public lectures
+# Selected public and keynote lectures
 
   * Belz lecture, *Forecasting and the importance of being uncertain*, Statistical Society Australia, Melbourne, Oct 2006.
   * Knibbs lecture, *Population forecasting and the importance of being uncertain*, Statistical Society Australia, Canberra, Nov 2007.
-  * Yahoo Big Thinkers lecture, *Exploring the boundaries of predictability: what can we forecast, and when should we give up?*, California, Jun 2015.
-  * Cornish lecture, *Feasts and fables: modern tools for time series analysis*, Adelaide, November 2021.
-
-\enlargethispage*{0.8cm}
-
-# Selected keynote addresses
-
   * Keynote speaker, *Extreme Forecasting*, International Symposium on Forecasting, Hong Kong, Jun 2009.
   * Keynote speaker, *Man vs Wild Data*, Young Statisticians Conference, Melbourne, Feb 2013.
   * Keynote speaker, *Forecasting without forecasters*, International Symposium on Forecasting, Seoul, Jun 2013.
   * Keynote speaker, *Automatic time series forecasting*, "New Trends on Intelligent Systems and Soft Computing 2014", Granada, Spain, Feb 2014.
+  * Yahoo Big Thinkers lecture, *Exploring the boundaries of predictability: what can we forecast, and when should we give up?*, California, Jun 2015.
   * Keynote speaker, *Forecasting big time series data using R*, Chinese R conference, Nanchang, Oct 2015.
   * Keynote speaker, *Forecasting large collections of related time series*, German Statistical Week, Augsburg, Sep 2016.
   * Keynote speaker, *Visualizing and forecasting big time series data*, ICML Time Series Workshop, Sydney, Aug 2017.
   * Keynote speaker, Beijing Workshop on Forecasting, Nov 2017.
   * Keynote speaker, *10 years of forecast reconciliation*, International Symposium on Forecasting, Oct 2020.
-  * Blakers lecture, *Forecasting the future and the future of forecasting*, ANU-AAMT National Mathematics Summer School, January 2022.
+  * Cornish lecture, *Feasts and fables: modern tools for time series analysis*, Adelaide, November 2021.
+  * Blakers lecture, *Forecasting the future and the future of forecasting*, ANU-AAMT National Mathematics Summer School, Jan 2022.
+  * Keynote speaker, *Visualization of complex seasonal patterns in time series*, 800 year anniversary, University of Padua, Sep 2022.
+  * ANU public lecture, *Forecasting the future and the future of forecasting*, Canberra, Nov 2022.
+  * IIF Distinguished Lecturer, *Forecast reconciliation*, online series of lectures, Nov 2023.
+  * Suessmilch lecture, *vital: Tidy data analysis for demography using R*, Rostock, Germany, Jun 2024.
 
 # R packages
 

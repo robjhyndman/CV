@@ -68,9 +68,6 @@ awards <- tribble(
   ~Year, ~Award,
   2022, "Australian Awards for University Teaching citation for outstanding contributions to student learning",
   2021, "Pitman Medal, Statistical Society of Australia",
-  2021, "Elected Fellow of the Australian Academy of Science",
-  2021, "Elected Fellow of the International Institute of Forecasters",
-  2020, "Elected Fellow of the Academy of the Social Sciences in Australia",
   2020, "Dean's Award for Innovation in Learning and Teaching, Monash Business School",
   2010, "Dean's Award for Excellence in Innovation and External Collaboration, Monash Business School",
   2010, "HP Innovation Research Award",
@@ -85,7 +82,7 @@ awards <- tribble(
 # Teaching and mentoring
 
   * In each year since 2018, student evaluations for "Applied forecasting for business and economics" gave an average rating for my teaching above 4.8 out of 5.
-  * I currently supervise six PhD students and one post-doctoral research fellow. I have previously supervised another 29 PhD students and 3 Masters students.
+  * I currently supervise six PhD students and one post-doctoral research fellow. I have previously supervised another 30 PhD students and 3 Masters students.
   * I am author of an innovative textbook with George Athanasopoulos entitled *Forecasting: principles and practice* ([`OTexts.org/fpp3/`](https://OTexts.org/fpp3)) which is available online and free of charge. The website has an average of over 25000 pageviews per day.
   * I publish the [*Hyndsight*](https://robjhyndman.com/hyndsight) blog on research issues which receives an average of about 1500 pageviews per day.
 
@@ -124,7 +121,7 @@ sumgrants <- grants %>%
   sum(na.rm = TRUE)
 ```
 
-I have acquired (in most cases jointly) about $`r sprintf("%2.1f", sumgrants/1e6)` million in external research grants since 2000. Highlights include being CI on an ARC Centre of Excellence, CI on an ARC Industrial Transformation Training Centre, CI on 3 ARC Discovery Grants, CI on 3 ARC Linkage Grants, and CI on 1 NHMRC grant.
+I have acquired (in most cases jointly) about $`r sprintf("%2.1f", sumgrants/1e6)` million in external research grants since 2000. Highlights include an ARC Centre of Excellence, an NHMRC Centre of Excellence, an ARC Industrial Training Transformation Centre, 4 ARC Discovery Grants, 3 ARC Linkage Grants, 1 NHMRC Grant, and contract research grants from many government and business organizations.
 
 # Selected public and keynote addresses
 
@@ -143,6 +140,11 @@ I have acquired (in most cases jointly) about $`r sprintf("%2.1f", sumgrants/1e6
   * Keynote speaker, Beijing Workshop on Forecasting, Nov 2017.
   * Keynote speaker, *10 years of forecast reconciliation*, International Symposium on Forecasting, Oct 2020.
   * ACEMS public address, *Uncertain futures: what can we forecast and when should we give up?*, Aug 2021.
+  * Blakers lecture, *Forecasting the future and the future of forecasting*, ANU-AAMT National Mathematics Summer School, Jan 2022.
+  * Keynote speaker, *Visualization of complex seasonal patterns in time series*, 800 year anniversary, University of Padua, Sep 2022.
+  * ANU public lecture, *Forecasting the future and the future of forecasting*, Canberra, Nov 2022.
+  * IIF Distinguished Lecturer, *Forecast reconciliation*, online series of lectures, Nov 2023.
+  * Suessmilch lecture, *vital: Tidy data analysis for demography using R*, Rostock, Germany, Jun 2024.
 
 # Advisory boards
 
@@ -181,7 +183,7 @@ pubs[c("fpp3", "MWH3", "expsmooth08")] |>
 ```{r best}
 #| output: asis
 pubs[c(
-    "uslongevity", "smartmeterhts", "mint", "HF10", "DHS11",
+    "smartmeterhts", "mint", "HF10", "DHS11",
     "hierarchical", "lhf", "dobin", "forecastingcompetitions", "forecastingsofa",
     "VHNC10", "HK06", "HK08", "HKSG02", "HF96", "stray", "oddstream",
     "ijf25", "HU07", "HDR96", "gefcom2014",
