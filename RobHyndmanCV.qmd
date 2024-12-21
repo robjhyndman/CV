@@ -142,8 +142,6 @@ tribble(
   baretable()
 ```
 
-\newpage
-
 # Society memberships
 
   * Fellow, International Institute of Forecasters
