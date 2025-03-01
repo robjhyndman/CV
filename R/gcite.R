@@ -13,10 +13,10 @@ get_scholar_cites <- function(date) {
   while (!complete) {
     k <- length(gspapers)
     gspapers[[k + 1]] <- gcite::gcite_url(
-        url = "https://scholar.google.com.au/citations?user=vamErfkAAAAJ&hl=en",
-        cstart = k * 100,
-        pagesize = 100
-      ) |>
+      url = "https://scholar.google.com.au/citations?user=vamErfkAAAAJ&hl=en",
+      cstart = k * 100,
+      pagesize = 100
+    ) |>
       gcite::gcite_papers() |>
       suppressWarnings()
     if (NROW(gspapers[[k + 1]]) < 100) {
@@ -26,5 +26,3 @@ get_scholar_cites <- function(date) {
   dplyr::bind_rows(gspapers) |>
     tibble::as_tibble()
 }
-
-

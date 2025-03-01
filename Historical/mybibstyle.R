@@ -7,20 +7,25 @@ with(
       fmtBAuthor(paper),
       fmtJournDate(paper),
       fmtJTitle(paper$title),
-      sentenceP(paste0(c(
-        paste0(c(
-          fmtJournal(paper),
-          fmtSeries(paper$series)
+      sentenceP(
+        paste0(
+          c(
+            paste0(
+              c(
+                fmtJournal(paper),
+                fmtSeries(paper$series)
+              ),
+              collapse = ""
+            ),
+            fmtVolume(paper$volume, paper$number)
+          ),
+          collapse = " "
         ),
-        collapse = ""
-        ),
-        fmtVolume(paper$volume, paper$number)
-      ), collapse = " "),
-      fmtBTitle(paper$issuetitle, paper$issuesubtitle),
-      fmtEditor(paper, suffix = NULL, prefix = ". "),
-      fmtNote(paper$note, prefix = ". ", suffix = NULL),
-      pgs = fmtPages(paper$pages, "none"),
-      sep = ""
+        fmtBTitle(paper$issuetitle, paper$issuesubtitle),
+        fmtEditor(paper, suffix = NULL, prefix = ". "),
+        fmtNote(paper$note, prefix = ". ", suffix = NULL),
+        pgs = fmtPages(paper$pages, "none"),
+        sep = ""
       ),
       fmtEprint(paper),
       fmtAddendum(paper$addendum),
@@ -35,9 +40,18 @@ with(
       res <- cleanupLatex(pers$family)
       if (length(pers$given)) {
         if (.BibOptions$first.inits) {
-          paste0(c(substr(vapply(pers$given, cleanupLatex, ""),
-            start = 1L, stop = 1L
-          ), " ", res), collapse = "")
+          paste0(
+            c(
+              substr(
+                vapply(pers$given, cleanupLatex, ""),
+                start = 1L,
+                stop = 1L
+              ),
+              " ",
+              res
+            ),
+            collapse = ""
+          )
         } else {
           cleanupLatex(as.character(pers))
         }
@@ -76,4 +90,4 @@ with(
   }
 )
 tools::bibstyle("custom", custom)
-BibOptions(bib.style = "custom", max.names=200)
+BibOptions(bib.style = "custom", max.names = 200)

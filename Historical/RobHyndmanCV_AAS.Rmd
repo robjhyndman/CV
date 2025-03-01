@@ -49,9 +49,10 @@ tribble(
   arrange(-Start) %>%
   mutate(End = replace_na(End, "")) %>%
   mutate(Years = if_else(End == Start,
-        as.character(Start),
-        paste(Start, "--", End, sep = ""),
-        paste(Start, "--", End, sep = ""))) %>%
+    as.character(Start),
+    paste(Start, "--", End, sep = ""),
+    paste(Start, "--", End, sep = "")
+  )) %>%
   select(Years, Position) %>%
   baretable()
 ```
@@ -159,30 +160,34 @@ grants <- read_csv("Grant_income.csv")
 sumgrants <- grants %>%
   pull(Amount) %>%
   c(100000) %>%
-  sum(na.rm=TRUE)
+  sum(na.rm = TRUE)
 ```
 
 I have acquired (in most cases jointly) about $`r sprintf("%2.1f", sumgrants/1e6)` million in external research grants since 2000. External research grants over $100,000 are listed below.\vspace*{0.2cm}
 
 ```{r grantstable, results='asis'}
 grants %>%
-  filter(Amount > 99999, Type=="Research") %>%
+  filter(Amount > 99999, Type == "Research") %>%
   mutate(
-    Time = paste0(Start, ifelse(is.na(End),"",paste0("--",End))),
+    Time = paste0(Start, ifelse(is.na(End), "", paste0("--", End))),
     Entry = paste(People, ". ``", Title, "''. ",
-                  "\\emph{Funding from ", Source,"}",
-                  sep=""),
+      "\\emph{Funding from ", Source, "}",
+      sep = ""
+    ),
     Amount = dollars(Amount)
   ) %>%
   arrange(Time, desc(Amount)) %>%
   select(Time, Entry, Amount) %>%
-  baretable(align='llp{13.3cm}r',
-            #hline.after=c(0,NROW(.)),
-            size="\\fontsize{10}{14}",
-            longtable=TRUE,
-            add.to.row=list(
-              pos=as.list(seq(NROW(.))),
-              command=rep("\\\\[-0.3cm]",NROW(.))))
+  baretable(
+    align = "llp{13.3cm}r",
+    # hline.after=c(0,NROW(.)),
+    size = "\\fontsize{10}{14}",
+    longtable = TRUE,
+    add.to.row = list(
+      pos = as.list(seq(NROW(.))),
+      command = rep("\\\\[-0.3cm]", NROW(.))
+    )
+  )
 ```
 
 # Major conference presentations
@@ -231,9 +236,9 @@ cran_meta <- function(x) {
     last_release = head(df[[1]]$date, 1) %>% as.Date(format = "%Y-%m-%d"),
     current_version = head(df[[1]]$version, 1)
   ) %>%
-  mutate(
-    maintainer = str_trim(str_extract(maintainer, "[A-Za-z'\ ]*")),
-  )
+    mutate(
+      maintainer = str_trim(str_extract(maintainer, "[A-Za-z'\ ]*")),
+    )
 }
 cran_downloads <- function(x) {
   # Compute monthly download counts
@@ -246,10 +251,11 @@ cran_downloads <- function(x) {
   first_nonzero <- down %>%
     filter(count > 0) %>%
     head(1)
-  if(NROW(first_nonzero) == 0L)
+  if (NROW(first_nonzero) == 0L) {
     return(NULL)
-  else
+  } else {
     filter(down, month >= first_nonzero$month)
+  }
 }
 
 downloads <- map_dfr(rjhpkgs, cran_downloads) %>%
@@ -265,13 +271,13 @@ I have coauthored `r length(rjhpkgs)` R packages in addition to my other researc
 since2015 %>%
   group_by(package) %>%
   summarise(count = sum(count)) %>%
-  filter(!(package %in% c("rmarkdown","fracdiff","DescTools","tsibble"))) %>%
+  filter(!(package %in% c("rmarkdown", "fracdiff", "DescTools", "tsibble"))) %>%
   filter(count > 1e5) %>%
   arrange(desc(count)) %>%
   mutate(count = scales::comma(count)) %>%
   knitr::kable(
-    booktabs=TRUE,
-    col.names=c("Package","Downloads since 2015"),
+    booktabs = TRUE,
+    col.names = c("Package", "Downloads since 2015"),
     linesep = "",
     align = c("l", "r"),
   )

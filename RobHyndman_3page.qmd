@@ -183,13 +183,13 @@ pubs[c("fpp3", "MWH3", "expsmooth08")] |>
 ```{r best}
 #| output: asis
 pubs[c(
-    "smartmeterhts", "mint", "HF10", "DHS11",
-    "hierarchical", "lhf", "dobin", "forecastingcompetitions", "forecastingsofa",
-    "VHNC10", "HK06", "HK08", "HKSG02", "HF96", "stray", "oddstream",
-    "ijf25", "HU07", "HDR96", "gefcom2014",
-    "HBG96", "HB08", "tscv", "temporal-hierarchies",
-    "ctprob","hfreview","coherentprob","combinations","WSH06",
-    "tsgeneration","LCcomparison","HBY13"
-  )] |>
+  "smartmeterhts", "mint", "HF10", "DHS11",
+  "hierarchical", "lhf", "dobin", "forecastingcompetitions", "forecastingsofa",
+  "VHNC10", "HK06", "HK08", "HKSG02", "HF96", "stray", "oddstream",
+  "ijf25", "HU07", "HDR96", "gefcom2014",
+  "HBG96", "HB08", "tscv", "temporal-hierarchies",
+  "ctprob", "hfreview", "coherentprob", "combinations", "WSH06",
+  "tsgeneration", "LCcomparison", "HBY13"
+)] |>
   add_bib_section(show_cites = TRUE, rjhcites = rjhcites)
 ```

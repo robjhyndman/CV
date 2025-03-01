@@ -272,7 +272,7 @@ grants |>
 ```{r publist}
 # Set up vector of all bibtypes
 bibtype <- as_tibble(pubs) |> pull(bibtype)
-bibtype[names(pubs) %in%  c(
+bibtype[names(pubs) %in% c(
   "hyndman2015new",
   "hyndman2015change",
   "IJFeditorial13",
@@ -363,7 +363,7 @@ pubs[bibtype == "Editorial"] |>
 ```{r other}
 #| output: asis
 # Other papers not counted above
-pubs[bibtype == "Report"]  |>
+pubs[bibtype == "Report"] |>
   change_bibtype("Unpublished") |>
   add_bib_section()
 ```

@@ -31,9 +31,9 @@ source("functions.R")
 # Find installed or CRAN packages with Hyndman as an author
 rjhpkgs <- find_rjh_packages()
 # Remove some works in progress or not suitable for CV
-rjhpkgs <- rjhpkgs[!(rjhpkgs %in% c("indmortality2","informs"))]
+rjhpkgs <- rjhpkgs[!(rjhpkgs %in% c("indmortality2", "informs"))]
 # Write bib file
-write_packages_bib(rjhpkgs, file="Rpackages.bib")
+write_packages_bib(rjhpkgs, file = "Rpackages.bib")
 ```
 
 ```{r bibfiles}

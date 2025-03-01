@@ -10,18 +10,17 @@ source("prepare_bib_report.R")
 
 rjh <- prepare_bib_report("~/git/CV/rjhpubs.bib")
 rjh <- rjh %>%
-  filter(bibtype=="Article") %>%
+  filter(bibtype == "Article") %>%
   mutate(
     Rank = as.character(Rank),
-    Group = recode(Rank,
-              `A*` = "Group 1",
-              `A`  = "Group 2"
-    ),
-    Group = if_else(journal == "Journal of the American Statistical Association",
-                    "Group 1+",
-                    Group)
+    Group = recode(Rank, `A*` = "Group 1", `A` = "Group 2"),
+    Group = if_else(
+      journal == "Journal of the American Statistical Association",
+      "Group 1+",
+      Group
+    )
   ) %>%
-  select(title,author,year,journal,Rank,Group) %>%
+  select(title, author, year, journal, Rank, Group) %>%
   arrange(desc(year), Group)
 
 rjh %>%
@@ -37,7 +36,7 @@ rjh %>% filter(!grepl("Group", Group))
 # MyPlan Achievements 2019
 
 rjh %>%
-  filter(year==2019) %>%
+  filter(year == 2019) %>%
   arrange(Group) %>%
   select(-author, -title)
 
@@ -51,4 +50,3 @@ rjh %>%
 read_csv("Grant_income.csv") %>%
   filter(Start >= 2012) %>%
   summarise(Amount = sum(Amount))
-

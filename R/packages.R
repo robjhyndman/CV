@@ -2,11 +2,12 @@
 get_rjh_packages <- function(date, github_repos) {
   # CRAN packages I've coauthored
   rjh_packages <- tryCatch(pkgmeta::get_meta(
-      cran_author = "Hyndman",
-      include_downloads = TRUE, start = "2015-01-01",
-      github_repos = read.table(github_repos)$V1
-    ))
-  if("try-error" %in% class(rjh_packages)) {
+    cran_author = "Hyndman",
+    include_downloads = TRUE,
+    start = "2015-01-01",
+    github_repos = read.table(github_repos)$V1
+  ))
+  if ("try-error" %in% class(rjh_packages)) {
     # Just use the last version but give a warning
     warning("Failed to get package info from CRAN. Using last version.")
     return(targets::tar_read("rjh_packages"))
@@ -20,9 +21,11 @@ get_rjh_packages <- function(date, github_repos) {
   # Fix URL of fpp3 package
   rjh_packages <- rjh_packages |>
     mutate(
-      url = if_else(url == "https://OTexts.com/fpp3/",
-            "http://pkg.robjhyndman.com/fpp3package/",
-            url)
+      url = if_else(
+        url == "https://OTexts.com/fpp3/",
+        "http://pkg.robjhyndman.com/fpp3package/",
+        url
+      )
     )
   # Return tibble of package info
   return(rjh_packages)
@@ -66,11 +69,24 @@ getbibentry <- function(pkg) {
   # Replace R Core Team with {R Core Team}
   meta$authors <- gsub("R Core Team", "{R Core Team}", meta$authors)
   # Replace AEC
-  meta$authors <- gsub("Commonwealth of Australia AEC", "{Commonwealth of Australia AEC}", meta$authors)
+  meta$authors <- gsub(
+    "Commonwealth of Australia AEC",
+    "{Commonwealth of Australia AEC}",
+    meta$authors
+  )
   # Replace ABS
-  meta$authors <- gsub("Australian Bureau of Statistics ABS", "{Australian Bureau of Statistics ABS}", meta$authors)
+  meta$authors <- gsub(
+    "Australian Bureau of Statistics ABS",
+    "{Australian Bureau of Statistics ABS}",
+    meta$authors
+  )
   # Remove comments in author fields
-  meta$authors <- gsub("\\([a-zA-Z0-9\\-\\s,&\\(\\)<>:/\\.']*\\)", " ", meta$authors, perl = TRUE)
+  meta$authors <- gsub(
+    "\\([a-zA-Z0-9\\-\\s,&\\(\\)<>:/\\.']*\\)",
+    " ",
+    meta$authors,
+    perl = TRUE
+  )
   # Remove email addresses
   meta$authors <- gsub("<[a-zA-Z@.]*>", "", meta$authors, perl = TRUE)
   # Remove contribution classification
@@ -90,7 +106,6 @@ getbibentry <- function(pkg) {
   meta$authors <- gsub("î", "i", meta$authors)
   meta$authors <- gsub("ū", "u", meta$authors)
   meta$authors <- gsub("ț", "t", meta$authors)
-
 
   # Remove contributions from author list (for demography)
   if (grepl("with contributions", meta$authors)) {

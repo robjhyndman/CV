@@ -164,12 +164,12 @@ Since 1991 I have authored `r npapers` research papers or book chapters on stati
 ```{r bibfile}
 #| output: asis
 pubs[c(
-    "tsibble", "globalforecasting", "stray", "fforma",
-    "forecastsofa", "baggedETS",
-    "smartmeterhts", "mint", "HF10", "DHS11", "hierarchical",
-    "VHNC10", "HK06", "HK08", "HKSG02", "HF96", "m3pca",
-    "ijf25", "HU07", "HDR96",
-    "HBG96", "HB08", "tscv"
-  )] |>
+  "tsibble", "globalforecasting", "stray", "fforma",
+  "forecastsofa", "baggedETS",
+  "smartmeterhts", "mint", "HF10", "DHS11", "hierarchical",
+  "VHNC10", "HK06", "HK08", "HKSG02", "HF96", "m3pca",
+  "ijf25", "HU07", "HDR96",
+  "HBG96", "HB08", "tscv"
+)] |>
   add_bib_section(show_cites = TRUE, rjhcites = rjhcites)
 ```

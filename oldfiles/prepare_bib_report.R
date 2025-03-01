@@ -4,7 +4,12 @@
 
 prepare_bib_report <- function(bib_file) {
   fuzzmatch_adbc <- function(x) {
-    return(agrep(x, adbc_ranking$Journal.Title, value = TRUE, ignore.case = TRUE))
+    return(agrep(
+      x,
+      adbc_ranking$Journal.Title,
+      value = TRUE,
+      ignore.case = TRUE
+    ))
   }
   fuzzmatch_ERA <- function(x) {
     return(agrep(x, era_ranking$Title, value = TRUE, ignore.case = TRUE))
@@ -23,7 +28,10 @@ prepare_bib_report <- function(bib_file) {
     as_tibble() %>%
     mutate(
       title = stringr::str_remove_all(title, "[{}]"),
-      ADBC_ranking = adbc_ranking[match(journal, adbc_ranking$Journal.Title), "ABDC.Rating"],
+      ADBC_ranking = adbc_ranking[
+        match(journal, adbc_ranking$Journal.Title),
+        "ABDC.Rating"
+      ],
       ERA_ranking = era_ranking[match(journal, era_ranking$Title), "Rank"],
       Rank = coalesce(ADBC_ranking, ERA_ranking),
       Rank = as.character(fct_explicit_na(Rank, na_level = "None"))
@@ -44,15 +52,22 @@ prepare_bib_report <- function(bib_file) {
   ## select the best match
   i <- lapply(out, function(x) {
     length(x) > 1
-  }) %>% unlist(use.names = FALSE)
-  out[i] <- sapply(names(out[i]), best_match, y = unlist(out[i], use.names = FALSE))
-
+  }) %>%
+    unlist(use.names = FALSE)
+  out[i] <- sapply(
+    names(out[i]),
+    best_match,
+    y = unlist(out[i], use.names = FALSE)
+  )
 
   indx <- !sapply(out, is_empty)
   no_matchdf <- no_matchdf %>%
     mutate(
       journal = unlist(ifelse(indx, out, journal)),
-      ADBC_ranking = adbc_ranking[match(journal, adbc_ranking$Journal.Title), "ABDC.Rating"],
+      ADBC_ranking = adbc_ranking[
+        match(journal, adbc_ranking$Journal.Title),
+        "ABDC.Rating"
+      ],
       Rank = ADBC_ranking,
       Rank = as.character(fct_explicit_na(Rank, na_level = "None"))
     )
@@ -65,8 +80,13 @@ prepare_bib_report <- function(bib_file) {
   ## select the best match
   i <- lapply(out, function(x) {
     length(x) > 1
-  }) %>% unlist(use.names = FALSE)
-  out[i] <- sapply(names(out[i]), best_match, y = unlist(out[i], use.names = FALSE))
+  }) %>%
+    unlist(use.names = FALSE)
+  out[i] <- sapply(
+    names(out[i]),
+    best_match,
+    y = unlist(out[i], use.names = FALSE)
+  )
 
   indx <- !sapply(out, is_empty)
   df3 <- no_match_adbc %>%
@@ -82,7 +102,15 @@ prepare_bib_report <- function(bib_file) {
       journal = ifelse((journal == 999999999), NA, journal),
       Rank = factor(Rank, levels = c("A*", "A", "B", "C", "None"))
     ) %>%
-    select(bibtype:year, journal, title, type, ADBC_ranking:Rank, institution, url:pages, doi:school) %>%
+    select(
+      bibtype:year,
+      journal,
+      title,
+      type,
+      ADBC_ranking:Rank,
+      institution,
+      url:pages,
+      doi:school
+    ) %>%
     return()
 }
-

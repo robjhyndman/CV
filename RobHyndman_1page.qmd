@@ -71,7 +71,7 @@ awards <- tribble(
 ```{r books}
 #| output: asis
 pubs[c("fpp3", "expsmooth08")] |>
-  add_bib_section(show_cites = TRUE, rjhcites=rjhcites)
+  add_bib_section(show_cites = TRUE, rjhcites = rjhcites)
 ```
 
 \vspace*{-0.2cm}
@@ -92,10 +92,10 @@ Since 1991 I have authored `r npapers` research papers or book chapters on stati
 ```{r bibfile}
 #| output: asis
 pubs[c(
-    "tsibble", "globalforecasting", "fforma",
-    "smartmeterhts", "mint", "HF10", "DHS11", "hierarchical",
-    "VHNC10", "HK06", "HK08", "HKSG02", "HF96", "m3pca",
-    "HU07", "HDR96", "HB08"
-  )] |>
-  add_bib_section(show_cites = TRUE, rjhcites=rjhcites)
+  "tsibble", "globalforecasting", "fforma",
+  "smartmeterhts", "mint", "HF10", "DHS11", "hierarchical",
+  "VHNC10", "HK06", "HK08", "HKSG02", "HF96", "m3pca",
+  "HU07", "HDR96", "HB08"
+)] |>
+  add_bib_section(show_cites = TRUE, rjhcites = rjhcites)
 ```

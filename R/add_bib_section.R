@@ -5,19 +5,29 @@
 # If rewrite = FALSE, only create section and let user
 # add bibliography file in the yaml
 
-add_bib_section <- function(x, rjhcites = NULL,
-  sorting = "ynt", show_cites = FALSE, rewrite = TRUE, ...) {
+add_bib_section <- function(
+  x,
+  rjhcites = NULL,
+  sorting = "ynt",
+  show_cites = FALSE,
+  rewrite = TRUE,
+  ...
+) {
   # Sort references as required
-  x <- sort(x, sorting=sorting)
+  x <- sort(x, sorting = sorting)
   # Rewrite bib file with relevant references
-  if(rewrite) {
+  if (rewrite) {
     # Generate random keys in order to avoid clashes with any other bib files
-    keys <- sort(replicate(length(x), paste0(sample(c(letters, 0:9), 5, replace = TRUE), collapse = "")))
+    keys <- sort(replicate(
+      length(x),
+      paste0(sample(c(letters, 0:9), 5, replace = TRUE), collapse = "")
+    ))
     names(x) <- keys
     # Add cites?
     if (show_cites) {
-      if(is.null(rjhcites))
+      if (is.null(rjhcites)) {
         stop("No citation data provided")
+      }
       cites <- x |>
         as.data.frame() |>
         mutate(
@@ -26,7 +36,9 @@ add_bib_section <- function(x, rjhcites = NULL,
         ) |>
         fuzzyjoin::stringdist_left_join(
           rjhcites |> select(title, n_citations),
-          by = "title", ignore_case = TRUE, distance_col = "dist"
+          by = "title",
+          ignore_case = TRUE,
+          distance_col = "dist"
         ) |>
         rename(title = title.x) |>
         # When there are multiple matches, choose the one with largest citations
@@ -41,8 +53,9 @@ add_bib_section <- function(x, rjhcites = NULL,
         mutate(note = paste0("\\emph{[Citations: ", n_citations, "]}.")) |>
         pull(note)
       # Add cites to bib list
-      if(length(cites) != length(x))
+      if (length(cites) != length(x)) {
         stop("Can't find all citations")
+      }
       for (i in seq_along(x)) {
         x[[i]]$addendum <- cites[i]
       }
@@ -65,8 +78,9 @@ add_bib_section <- function(x, rjhcites = NULL,
 # so RefManageR can handle them
 
 change_bibtype <- function(x, newtype) {
-  purrr::map(x, function(u){
+  purrr::map(x, function(u) {
     attributes(u)$bibtype <- newtype
-    return(u)}) |>
+    return(u)
+  }) |>
     as.BibEntry()
 }

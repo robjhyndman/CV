@@ -1,11 +1,15 @@
 # Function to produce very basic table, no lines or headings
-baretable <- function(tbl, digits = 0,
-                      include.colnames = FALSE, include.rownames = FALSE,
-                      hline.after = NULL,
-                      size = getOption("xtable.size", NULL),
-                      add.to.row = getOption("xtable.add.to.row", NULL),
-                      longtable = FALSE,
-                      ...) {
+baretable <- function(
+  tbl,
+  digits = 0,
+  include.colnames = FALSE,
+  include.rownames = FALSE,
+  hline.after = NULL,
+  size = getOption("xtable.size", NULL),
+  add.to.row = getOption("xtable.add.to.row", NULL),
+  longtable = FALSE,
+  ...
+) {
   xtable::xtable(tbl, digits = digits, ...) |>
     print(
       include.colnames = include.colnames,
@@ -27,7 +31,8 @@ baretable <- function(tbl, digits = 0,
 dollars <- function(x) {
   out <- paste0("\\$", sprintf("%.0f", x))
   paste0(gsub(
-    "^0+\\.", ".",
+    "^0+\\.",
+    ".",
     unname(prettyNum(out, ",", preserve.width = "none", scientific = FALSE))
   ))
 }

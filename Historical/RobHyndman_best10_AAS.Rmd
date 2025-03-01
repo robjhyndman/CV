@@ -37,7 +37,7 @@ source("mybibstyle.R")
 Ordered by year of publication. Citations are as given on Google scholar (on `r format(Sys.time(), "%d %B %Y")`).\vspace*{0.2cm}
 
 ```{r GScholar, include=FALSE}
-if(file.exists("gspapers.rds")) {
+if (file.exists("gspapers.rds")) {
   gspapers <- readRDS("gspapers.rds")
 } else {
   # Grab all citation info, 100 per call
@@ -71,14 +71,14 @@ rjhtbl <- rjhpubs %>%
   as.data.frame() %>%
   rownames_to_column("key") %>%
   as_tibble() %>%
-  stringdist_join(gspapers, by = "title", ignore_case=TRUE) %>%
+  stringdist_join(gspapers, by = "title", ignore_case = TRUE) %>%
   rename(title = title.x) %>%
   mutate(year = as.integer(year)) %>%
   select(key, bibtype, title, author, year, n_citations)
 ```
 
 ```{r bestten, include=FALSE, dependson='bibfile'}
-bestten <- data.frame(comments=c(
+bestten <- data.frame(comments = c(
   smartmeterhts = "This paper combined hierarchical forecasting with probabilistic forecasts for the first time and applied the ideas to the important problem of electricity demand modelling. It is already attracting citations despite being online for only a few months. RJH provided some methodological expertise and knowledge of the associated literature. Contribution: 20\\%.",
   mint = "This paper provided the theory behind optimal forecast reconciliation, showing why reconciliation works, and providing new insights into how it can be extended.  Although only published last year, it has already received many citations. RJH provided the methodological expertise and problem formulation. Contribution: 33\\%.",
   HF10 = "This paper provided the first stochastic model for forecasting peak electricity demand up to several decades ahead. Variations of this model are now widely used in the electricity industry. One such variation won several prizes in the GEFCom2017 competition. RJH provided the methodological expertise, problem formulation and initial coding. Contribution: 75\\%.",
@@ -89,29 +89,28 @@ bestten <- data.frame(comments=c(
   HK08 = "This paper introduced the `auto.arima` algorithm for automated model selection using ARIMA models. It is now widely used for automatic forecasting in business and industry.  RJH provided the methodological expertise, problem formulation and the implementation. Contribution: 80\\%.",
   HKSG02 = "This paper provided a framework for exponential smoothing, allowing automated model selection, likelihood-based estimation, etc. The algorithm developed is now widely used for automatic forecasting in business and industry. RJH provided the methodological expertise, problem formulation and some of the implementation. Contribution: 75\\%.",
   HF96 = "This paper provided a framework for describing a wide range of sample quantile estimation methods. It is now the basis of quantile estimation routines in many different software packages as well as the Wikipedia article on sample quantiles.  RJH provided the methodological expertise, problem formulation and most of the implementation. Contribution: 80\\%."
-
 )) %>%
   rownames_to_column("key") %>%
-  left_join(rjhtbl, by='key') %>%
+  left_join(rjhtbl, by = "key") %>%
   arrange(-year) %>%
   mutate(author = str_replace(author, "~", " "))
 ```
 
 ```{r, echo=FALSE, results='asis', dependson='bestten'}
-for(j in seq(NROW(bestten))) {
-  k <- bestten[j,] %>% pull(key)
+for (j in seq(NROW(bestten))) {
+  k <- bestten[j, ] %>% pull(key)
   cat(j)
   cat(". ")
   print(rjhpubs[k, ])
   cat("\\begin{quote}")
-  cmt <- filter(bestten, key==k) %>% pull(comments)
+  cmt <- filter(bestten, key == k) %>% pull(comments)
   cat("     ")
   cat(cmt)
   cat("  Citations: ")
-  cites <- filter(rjhtbl, key==k) %>% pull(n_citations)
+  cites <- filter(rjhtbl, key == k) %>% pull(n_citations)
   cat(cites)
-#  if(k=="VHNC10")
-#    cat("\\newpage")
+  #  if(k=="VHNC10")
+  #    cat("\\newpage")
   cat(".\\end{quote}\n\n\\vspace*{0.2cm}")
 }
 ```
