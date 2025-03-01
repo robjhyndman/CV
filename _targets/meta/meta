@@ -1,13 +1,13 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-.Random.seed|object|2c89a4755b51730c|||||||||||||||
+.Random.seed|object|e0683f39b1aca00a|||||||||||||||
 add_bib_section|function|bc0905df1e3ee0e0|||||||||||||||
 baretable|function|f636ec122486539b|||||||||||||||
 change_bibtype|function|f0a5a34513a8b286|||||||||||||||
-CV|stem|e4f2311d43990c78|ebf090dab929d57f|07473a2412da05e7|427539209|RobHyndmanCV.pdf*RobHyndmanCV.qmd|t20124.1110180253s|69e3bd5ebd91f5aa|404558|file|local|vector|||37.309||
-CV_1page|stem|eb8339bfbc8b4305|dd1666cd54220dc5|0589e55f3e4fd678|489928406|RobHyndman_1page.pdf*RobHyndman_1page.qmd|t20124.1105845174s|a6bed2fd4a4e916e|210475|file|local|vector|||26.111||
-CV_2page|stem|624b6d5ea4588eda|102d13d0cb5b5db0|3a7ffc08bf5e9215|1386156343|RobHyndman_2page.pdf*RobHyndman_2page.qmd|t20124.1102822715s|741a6ecdec947c46|222629|file|local|vector|||25.64||
-CV_3page|stem|c11ec831aac88620|ae6ecd19f7227285|3a7ffc08bf5e9215|961491237|RobHyndman_3page.pdf*RobHyndman_3page.qmd|t20124.109986461s|5f8ffbb2acd7332c|272289|file|local|vector|||19.614||
-date|stem|2e2be7147b9229cd|5fd9eb50356118d7|2c530c1562a7fbd1|-2036497900||t20124.10821461s|87bbe5f41aaaedf6|80|rds|local|vector|||0.494||
+CV|stem|5db3887515dcee7d|ebf090dab929d57f|b897be6a856353d3|427539209|RobHyndmanCV.pdf*RobHyndmanCV.qmd|t20148.0005414068s|28d96740c6d8c566|404547|file|local|vector|||37.928||
+CV_1page|stem|66653a3c541cb8ce|dd1666cd54220dc5|b198ca96b0cd92b8|489928406|RobHyndman_1page.pdf*RobHyndman_1page.qmd|t20148.0000889004s|3a1104e348e6f1b9|210472|file|local|vector|||22.257||
+CV_2page|stem|0d86523ff9d0db90|102d13d0cb5b5db0|5c71119162329972|1386156343|RobHyndman_2page.pdf*RobHyndman_2page.qmd|t20147.9998321344s|5be9c3529149477e|222621|file|local|vector|||20.56||
+CV_3page|stem|3e3d533b6e2b18b1|ae6ecd19f7227285|5c71119162329972|961491237|RobHyndman_3page.pdf*RobHyndman_3page.qmd|t20147.9995954838s|45d30c0564be2eaa|272264|file|local|vector|||20.887||
+date|stem|294d8478ef608fbf|5fd9eb50356118d7|2c530c1562a7fbd1|-2036497900||t20147.9981474914s|87bbe5f41aaaedf6|80|rds|local|vector|||0.465||
 dollars|function|2732b072c241cf03|||||||||||||||
 get_gcites|function|114f9854eb193946|||||||||||||||
 get_rjh_packages|function|31ae9c69cd22becd|||||||||||||||
@@ -17,14 +17,14 @@ github_repos|stem|652ae5b321fe0973|dd911adc8dad8df4|2c530c1562a7fbd1|-1689482867
 Grant_income|stem|a7016895a5e42d1f|8d980c288c615d43|2c530c1562a7fbd1|-1670905904|Grant_income.csv|t20053.0240007278s|773d2e497f25d7a6|8236|file|local|vector|||0.394||
 grants|stem|a1879900f98cd1ef|1e53744283ea96fa|db8a358a9b119567|-565297259||t20053.0375149117s|6c20945d78b6d1a3|3873|rds|local|vector|||0.487||
 object|object|063906082331b9d6|||||||||||||||
-packages|stem|2bec904829b608bf|8aa8411cf1b53140|2f4ba7e98bbbb08f|-1880897961||t20121.1707954354s|b8e1cda4c32566f6|9688|rds|local|vector|||0.521||
-pubs|stem|d16759115e32b76d|4ab1a86947b24c99|2aeb564479d1cf6a|29894634||t20124.1097506853s|fd0f4fe32513c75b|31153|rds|local|vector|||2.07||
+packages|stem|d9abbab4ab2381bd|8aa8411cf1b53140|7351acebb3700ae7|-1880897961||t20148.0001025251s|8f7edd16ccd89a0a|9692|rds|local|vector|||0.913||
+pubs|stem|d16759115e32b76d|4ab1a86947b24c99|4c17d4df4b692d4e|29894634||t20141.3088005416s|fd0f4fe32513c75b|31153|rds|local|vector|||1.522||
 read_bib|function|59de483e86fc5836|||||||||||||||
 reports|stem|17c177fcee4bce89|ad27448fd8c53fa9|914a6f7da907a211|536393307||t20053.0465972578s|5acf2a0b5dabfc15|14394|rds|local|vector|||1.16||
-rjh|stem|0a733a22a7fe7e7f|268222c85e6c0f72|b6449dcfc3b9aa84|2137179268||t20124.1082384642s|afd7f87dad3f6f11|195|rds|local|vector|||2.025||
-rjh_packages|stem|e676d1548adcfcf1|12f16c508e13e56b|c855fb68c9f93eee|2135820481||t20124.1097265649s|94ecf84a5d3f2d8a|16433|rds|local|vector|||125.391|Invalid role specification au.. Invalid role specification au.|
-rjhcites|stem|923da0e68ac1f891|a649051df584a0ab|f2b2a2a1fef0cfac|890131534||t20124.1082751886s|7110fcb0a93e0428|19226|rds|local|vector|||3.166||
-rjhpubs|stem|da2eb3cf444fd2af|3a5aabfb20180392|2c530c1562a7fbd1|-90840119|rjhpubs.bib|t20124.1075112557s|a934752fbb813c9a|85522|file|local|vector|||0||
+rjh|stem|32b4a7b8a9952792|268222c85e6c0f72|6b703f2c404c8894|2137179268||t20147.9981723748s|7441a7e00258ee99|194|rds|local|vector|||2.124||
+rjh_packages|stem|225ce705659518de|12f16c508e13e56b|f0ed1b9f7d01c745|2135820481||t20147.9993475434s|54ddb6d6b76ca8ff|16436|rds|local|vector|||98.197|Invalid role specification au.. Invalid role specification au.|
+rjhcites|stem|44200b0a6f6f9f89|a649051df584a0ab|03aa26456d0d11fd|890131534||t20147.9982109036s|18508c8930b44c7e|19375|rds|local|vector|||3.322||
+rjhpubs|stem|fe9735d5b56e5376|3a5aabfb20180392|2c530c1562a7fbd1|-90840119|rjhpubs.bib|t20124.1085252807s|bd006d4d4debe96b|85504|file|local|vector|||0||
 rjhreports|stem|3db0bb1bef664ee6|998e9ac336053b7e|2c530c1562a7fbd1|1709470276|rjhreports.bib|t20053.0464526372s|03ff769f60d06283|72288|file|local|vector|||0.34||
-rpackages_bib|stem|3f098eeee6d03a22|a0ac57394b408541|30b2f194e9b1c661|-448637788|Rpackages.bib|t20124.1097596784s|47c527cb0b292f4b|21046|file|local|vector|||0.771||
+rpackages_bib|stem|9f9df98e68df1ec4|a0ac57394b408541|ebf2172adc65f1ea|-448637788|Rpackages.bib|t20147.9993539443s|47c527cb0b292f4b|21046|file|local|vector|||0.546||
 write_packages_bib|function|d91a80f374d90144|||||||||||||||
