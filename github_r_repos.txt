@@ -12,6 +12,7 @@ mitchelloharawild/distributional
 mitchelloharawild/fasster
 mitchelloharawild/vitae
 numbats/monash
+numbats/spiderorchid
 pridiltal/oddstream
 pridiltal/oddwater
 pridiltal/stray
