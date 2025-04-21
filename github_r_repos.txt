@@ -19,6 +19,7 @@ pridiltal/stray
 PuwasalaG/conduits
 robjhyndman/addb
 robjhyndman/anomalous
+robjhyndman/calcal
 robjhyndman/compenginets
 robjhyndman/cricketdata
 robjhyndman/demography
