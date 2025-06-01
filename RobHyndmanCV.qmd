@@ -142,21 +142,6 @@ tribble(
   baretable()
 ```
 
-# Society memberships
-
-  * Fellow, International Institute of Forecasters
-  * Elected Member, International Statistical Institute
-  * Member, International Association for Statistical Computing
-  * Member, International Society for Business and Industrial Statistics
-  * Member, Statistical Society of Australia
-
-# Society leadership
-
-  * Director, International Institute of Forecasters, 2005--2018.
-  * Member, Scientific Program Advisory Group, Statistical Society of Australia, 2001--2004
-  * Central Council member, Statistical Society of Australia, 1993--1996.
-  * Secretary, Victorian branch, Statistical Society of Australia, 1993--1995.
-
 # Research
 
   * Since 1991 I have authored `r NROW(pubs)` papers, chapters or books on statistical topics (listed on pages \pageref{papersstart}--\pageref{papersend}).
@@ -180,6 +165,8 @@ tribble(
 
 # Major presentations
 
+  * Keynote speaker, *Improving forecasts via subspace projections*, International Forum on Statistics, Beijing, July 2025
+  * Keynote speaker, *Improving forecasts via subspace projections*, International Statistics Conference, Colombo, December 2024
   * Suessmilch Lecturer, *vital: Tidy data analysis for demography using R*, Max Planck Institute for Demographic Research, Rostock, Jun 2024.
   * Keynote speaker, *Forecasting the future and the future of forecasting*, 2024 Australian Treasuries Forecasting Conference, Feb 2024.
   * IIF Distinguished Lecturer, *Forecast reconciliation*, online series of lectures, Nov 2023.
@@ -259,8 +246,24 @@ grants |>
 
   * Member of the Scaling committee, Victorian Tertiary Admissions Centre (1994--). This committee is responsible for producing the ATAR for VCE students.
   * Member of the ATAR Technical Group for the Australasian Conference of Tertiary Admissions Centres (2003--).
-  * Member of the Indigenous Statistical and Information Advisory Group for the Australian Institute of Health and Welfare (2017--).
+  * Member of the National COVID-19 Epidemic Situational Assessment team (2020--2023).
+  * Member of the Indigenous Statistical and Information Advisory Group for the Australian Institute of Health and Welfare (2017--2023).
   * Member of the Methodology Advisory Committee for the Australian Bureau of Statistics (2010--2018).
+
+# Society memberships
+
+  * Fellow, International Institute of Forecasters
+  * Elected Member, International Statistical Institute
+  * Member, International Association for Statistical Computing
+  * Member, International Society for Business and Industrial Statistics
+  * Member, Statistical Society of Australia
+
+# Society leadership
+
+  * Director, International Institute of Forecasters, 2005--2018.
+  * Member, Scientific Program Advisory Group, Statistical Society of Australia, 2001--2004
+  * Central Council member, Statistical Society of Australia, 1993--1996.
+  * Secretary, Victorian branch, Statistical Society of Australia, 1993--1995.
 
 # Conference organization
 
