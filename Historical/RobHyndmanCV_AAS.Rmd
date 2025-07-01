@@ -95,7 +95,7 @@ tribble(
 
   * In each of 2018, 2019 and 2020, student evaluations for "Applied forecasting for business and economics" gave an average rating for my teaching above 4.8 out of 5, while all students in 2018 rated "Advanced statistical modelling" at 5 out of 5. (I did not teach the latter subject in 2019 and 2020.)
   * I currently supervise five PhD students and two post-doctoral research fellows. I have previously supervised another 27 PhD students and 3 Masters students.
-  * I am author of an innovative textbook with George Athanasopoulos entitled *Forecasting: principles and practice* ([`OTexts.org/fpp2/`](https://OTexts.org/fpp2)) which is available online and free of charge. The website has an average of over 20000 pageviews per day.
+  * I am author of an innovative textbook with George Athanasopoulos entitled *Forecasting: principles and practice* ([`OTexts.com/fpp2/`](https://OTexts.com/fpp2)) which is available online and free of charge. The website has an average of over 20000 pageviews per day.
   * I publish the [*Hyndsight*](https://robjhyndman.com/hyndsight) blog on research issues which receives an average of about 2000 pageviews per day.
 
 \newpage

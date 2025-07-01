@@ -235,7 +235,7 @@ grants |>
   * In every year since 2018, student evaluations for "Applied forecasting" have given an average rating for my teaching above 4.8 out of 5.
   * In 1998 and 2020, I received the "Excellence in teaching" award from the Monash Student Association.
   * I have received (with George Athanasopoulos), the 2020 Dean's Award for Innovation in Learning and Teaching, the 2021 Vice-Chancellor's Award for Innovation in Learning and Teaching, and the Australian Awards for University Teaching Citation for Outstanding Contributions to Student Learning.
-  * I am author of an innovative textbook with George Athanasopoulos entitled *Forecasting: principles and practice* ([`OTexts.org/fpp3/`](https://OTexts.org/fpp3)) which is available online and free of charge. The website has an average of over 25000 pageviews per day.
+  * I am author of an innovative textbook with George Athanasopoulos entitled *Forecasting: principles and practice* ([`OTexts.com/fpp3/`](https://OTexts.com/fpp3)) which is available online and free of charge. The website has an average of over 25000 pageviews per day.
 
 # Consulting
 
