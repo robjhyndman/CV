@@ -236,3 +236,5 @@ Rpackages.Rout
 .vscode/*
 
 /.quarto/
+
+**/*.quarto_ipynb
