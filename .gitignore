@@ -238,3 +238,4 @@ Rpackages.Rout
 /.quarto/
 
 **/*.quarto_ipynb
+.history
