@@ -32,6 +32,8 @@ if (fs::file_exists("temp.bib")) {
   fs::file_delete("temp.bib")
 }
 
+year <- format(Sys.Date(), "%Y")
+
 targets::tar_load(c(pubs, reports, packages, grants, rjh_packages, rjh, rpackages_bib))
 ```
 
@@ -382,6 +384,11 @@ reports |>
 ```
 
 \refstepcounter{bib}\label{consultingend}
+
+# Software (CRAN Task Views)
+
+1. Hyndman, RJ, and R Killick (`r year`). CRAN Task View: Time Series Analysis. URL <https://cran.r-project.org/view=TimeSeries>
+2. Talagala, TD, RJ Hyndman, G Romano (`r year`). CRAN Task View: Anomaly Detection. URL <https://cran.r-project.org/view=AnomalyDetection>
 
 # Software (R packages)
 
