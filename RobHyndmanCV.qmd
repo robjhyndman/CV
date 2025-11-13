@@ -99,6 +99,7 @@ tribble(
 ```{r awards, results='asis'}
 tribble(
   ~Year, ~Award,
+  2025, "Highly-cited researcher award, Clarivate Analytics",
   2022, "Australian Awards for University Teaching citation for outstanding contributions to student learning",
   2021, "Pitman Medal, Statistical Society of Australia",
   2021, "Vice-Chancellor's Award for Innovation in Learning and Teaching",
