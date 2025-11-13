@@ -34,17 +34,25 @@ if (fs::file_exists("temp.bib")) {
 
 year <- format(Sys.Date(), "%Y")
 
-targets::tar_load(c(pubs, reports, packages, grants, rjh_packages, rjh, rpackages_bib))
+targets::tar_load(c(
+  pubs,
+  reports,
+  packages,
+  grants,
+  rjh_packages,
+  rjh,
+  rpackages_bib
+))
 ```
 
 # Education and qualifications
 
 ```{r degrees, results='asis'}
 tribble(
-  ~Degree, ~Institution, ~Year,
-  "B.Sc.(Hons)", "University of Melbourne", 1988,
-  "Ph.D.", "University of Melbourne", 1992,
-  "A.Stat.", "Statistical Society of Australia", 2000
+  ~Degree       , ~Institution                       , ~Year ,
+  "B.Sc.(Hons)" , "University of Melbourne"          ,  1988 ,
+  "Ph.D."       , "University of Melbourne"          ,  1992 ,
+  "A.Stat."     , "Statistical Society of Australia" ,  2000
 ) |>
   baretable()
 ```
@@ -59,29 +67,31 @@ tribble(
 
 ```{r employment, results='asis'}
 tribble(
-  ~Start, ~End, ~Position,
-  1985, 1992, "\\textbf{Statistical consultant}, Department of Statistics, University of Melbourne",
-  1993, 1994, "\\textbf{Lecturer}, Department of Statistics, University of Melbourne",
-  1995, 1996, "\\textbf{Lecturer}, Department of Mathematics and Statistics, Monash University",
-  1997, 1998, "\\textbf{Senior Lecturer}, Department of Mathematics and Statistics, Monash University",
-  1998, 1998, "\\textbf{Visiting Professor}, Department of Statistics, Colorado State University",
-  1998, 2000, "\\textbf{Senior Lecturer}, Department of Econometrics \\& Business Statistics, Monash University",
-  2001, 2003, "\\textbf{Associate Professor}, Department of Econometrics \\& Business Statistics, Monash University",
-  2002, 2002, "\\textbf{Visiting Senior Research Fellow}, Mathematical Sciences Institute, Australian National University",
-  2003, NA, "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University",
-  2016, 2016, "\\textbf{KNAW Visiting Professor}, TU/Eindhoven, Netherlands",
+  ~Start , ~End , ~Position                                                                                                    ,
+    1985 , 1992 , "\\textbf{Statistical consultant}, Department of Statistics, University of Melbourne"                        ,
+    1993 , 1994 , "\\textbf{Lecturer}, Department of Statistics, University of Melbourne"                                      ,
+    1995 , 1996 , "\\textbf{Lecturer}, Department of Mathematics and Statistics, Monash University"                            ,
+    1997 , 1998 , "\\textbf{Senior Lecturer}, Department of Mathematics and Statistics, Monash University"                     ,
+    1998 , 1998 , "\\textbf{Visiting Professor}, Department of Statistics, Colorado State University"                          ,
+    1998 , 2000 , "\\textbf{Senior Lecturer}, Department of Econometrics \\& Business Statistics, Monash University"           ,
+    2001 , 2003 , "\\textbf{Associate Professor}, Department of Econometrics \\& Business Statistics, Monash University"       ,
+    2002 , 2002 , "\\textbf{Visiting Senior Research Fellow}, Mathematical Sciences Institute, Australian National University" ,
+    2003 , NA   , "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University"                 ,
+    2016 , 2016 , "\\textbf{KNAW Visiting Professor}, TU/Eindhoven, Netherlands"                                               ,
 ) |>
-  arrange(-Start) |>
   mutate(
+    order = is.na(End) * 1000 + Start,
     Start = as.character(Start),
     End = as.character(End),
     End = tidyr::replace_na(End, ""),
-    Years = if_else(End == Start,
+    Years = if_else(
+      End == Start,
       as.character(Start),
       paste(Start, "--", End, sep = ""),
       paste(Start, "--", End, sep = "")
     )
   ) |>
+  arrange(desc(order)) |>
   select(Years, Position) |>
   baretable()
 ```
@@ -98,25 +108,25 @@ tribble(
 
 ```{r awards, results='asis'}
 tribble(
-  ~Year, ~Award,
-  2025, "Highly-cited researcher award, Clarivate Analytics",
-  2022, "Australian Awards for University Teaching citation for outstanding contributions to student learning",
-  2021, "Pitman Medal, Statistical Society of Australia",
-  2021, "Vice-Chancellor's Award for Innovation in Learning and Teaching",
-  # 2020, "MSA Teaching Excellence Award for Business and Economics, Monash Student Association",
-  2020, "Dean's Award for Innovation in Learning and Teaching, Monash Business School",
-  2018, "Commendation for the Dean's Award for Research Impact, Monash Business School",
-  2014, "Nominee for MPA Supervisor of the Year, Monash Postgraduate Association",
-  2010, "Dean's Award for Excellence in Innovation and External Collaboration, Monash Business School",
-  2010, "HP Innovation Research Award",
-  2008, "Dean's Award for Excellence in Research, Monash Business School",
-  2008, "Vice-Chancellor's Award for Postgraduate Supervisor of the Year, Monash University",
-  2007, "Moran Medal for Statistical Science, Australian Academy of Science",
-  1998, "Award for excellence in teaching, Monash Science Society",
-  1990, "Finalist, Channel Ten Young Achiever Awards",
-  1988, "Dwights Prize in Statistics, University of Melbourne",
-  1987, "Norma McArthur Prize in Statistics, University of Melbourne",
-  1986, "Second Maurice H Belz Prize in Statistics, University of Melbourne"
+  ~Year , ~Award                                                                                                 ,
+   2025 , "Highly-cited researcher award, Clarivate Analytics"                                                   ,
+   2022 , "Australian Awards for University Teaching citation for outstanding contributions to student learning" ,
+   2021 , "Pitman Medal, Statistical Society of Australia"                                                       ,
+   2021 , "Vice-Chancellor's Award for Innovation in Learning and Teaching"                                      ,
+   # 2020, "MSA Teaching Excellence Award for Business and Economics, Monash Student Association",
+  2020 , "Dean's Award for Innovation in Learning and Teaching, Monash Business School"                         ,
+   2018 , "Commendation for the Dean's Award for Research Impact, Monash Business School"                        ,
+   2014 , "Nominee for MPA Supervisor of the Year, Monash Postgraduate Association"                              ,
+   2010 , "Dean's Award for Excellence in Innovation and External Collaboration, Monash Business School"         ,
+   2010 , "HP Innovation Research Award"                                                                         ,
+   2008 , "Dean's Award for Excellence in Research, Monash Business School"                                      ,
+   2008 , "Vice-Chancellor's Award for Postgraduate Supervisor of the Year, Monash University"                   ,
+   2007 , "Moran Medal for Statistical Science, Australian Academy of Science"                                   ,
+   1998 , "Award for excellence in teaching, Monash Science Society"                                             ,
+   1990 , "Finalist, Channel Ten Young Achiever Awards"                                                          ,
+   1988 , "Dwights Prize in Statistics, University of Melbourne"                                                 ,
+   1987 , "Norma McArthur Prize in Statistics, University of Melbourne"                                          ,
+   1986 , "Second Maurice H Belz Prize in Statistics, University of Melbourne"
 ) |>
   filter(!grepl("HP Innovation", Award)) |>
   baretable()
@@ -126,13 +136,13 @@ tribble(
 
 ```{r positions, results='asis'}
 tribble(
-  ~Start, ~End, ~Position,
-  2023, 2026, "\\textbf{Executive Editor}, \\textit{The R Journal}",
-  2011, 2024, "\\textbf{Editor}, \\textit{Journal of Statistical Software}",
-  2019, NA, "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}",
-  2005, 2018, "\\textbf{Editor-in-Chief}, \\textit{International Journal of Forecasting}",
-  2001, 2004, "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}",
-  2001, 2004, "\\textbf{Theory and Methods Editor}, \\emph{Australian \\& New Zealand Journal of Statistics}",
+  ~Start , ~End , ~Position                                                                                       ,
+    2023 , 2026 , "\\textbf{Executive Editor}, \\textit{The R Journal}"                                           ,
+    2011 , 2024 , "\\textbf{Editor}, \\textit{Journal of Statistical Software}"                                   ,
+    2019 , NA   , "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}"                    ,
+    2005 , 2018 , "\\textbf{Editor-in-Chief}, \\textit{International Journal of Forecasting}"                     ,
+    2001 , 2004 , "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}"                    ,
+    2001 , 2004 , "\\textbf{Theory and Methods Editor}, \\emph{Australian \\& New Zealand Journal of Statistics}" ,
 ) |>
   mutate(
     Start = as.character(Start),
@@ -212,8 +222,14 @@ grants |>
   filter(Amount > 100000, Type == "Research") |>
   mutate(
     Time = paste0(Start, ifelse(is.na(End), "", paste0("--", End))),
-    Entry = paste(People, ". ``", Title, "''. ",
-      "\\emph{Funding from ", Source, "}",
+    Entry = paste(
+      People,
+      ". ``",
+      Title,
+      "''. ",
+      "\\emph{Funding from ",
+      Source,
+      "}",
       sep = ""
     ),
     Amount = dollars(Amount)
@@ -278,18 +294,21 @@ grants |>
 ```{r publist}
 # Set up vector of all bibtypes
 bibtype <- as_tibble(pubs) |> pull(bibtype)
-bibtype[names(pubs) %in% c(
-  "hyndman2015new",
-  "hyndman2015change",
-  "IJFeditorial13",
-  "tourismeditorial11",
-  "IJFeditorial10b",
-  "IJFeditorial10a",
-  "IJFeditorial06",
-  "IJFeditorial05",
-  "Gardner23",
-  "freditorial"
-)] <- "Editorial"
+bibtype[
+  names(pubs) %in%
+    c(
+      "hyndman2015new",
+      "hyndman2015change",
+      "IJFeditorial13",
+      "tourismeditorial11",
+      "IJFeditorial10b",
+      "IJFeditorial10a",
+      "IJFeditorial06",
+      "IJFeditorial05",
+      "Gardner23",
+      "freditorial"
+    )
+] <- "Editorial"
 ```
 
 # Books
