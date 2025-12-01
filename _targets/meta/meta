@@ -17,12 +17,12 @@ add_bib_section|function|c841affe3dbbb918
 get_scholar_cites|function|134598e909b35158
 get_rjh_packages|function|31ae9c69cd22becd
 write_packages_bib|function|d91a80f374d90144
-date|stem|289745b878890fa6|5fd9eb50356118d7|2c530c1562a7fbd1|-2036497900||t20419.2193313346s|s81b|81|rds|local|vector|||0.457||
-rjh|stem|da38eb47474a25a5|268222c85e6c0f72|26bc4e9da4f3c99b|2137179268||t20419.2193553905s|s194b|194|rds|local|vector|||2.047||
-rjhcites|stem|9e505ab3642421b8|a649051df584a0ab|5fde28f35a8e4835|890131534||t20419.2193913002s|s19930b|19930|rds|local|vector|||3.049||
-rjh_packages|stem|7367f40724ed9e27|12f16c508e13e56b|eadcdb1da8899bdd|2135820481||t20419.2211670302s|s17438b|17438|rds|local|vector|||153.385|Invalid role specification: ‘au’.. Invalid role specification: ‘au’.|
-rpackages_bib|stem|8d265d640c089c59|a0ac57394b408541|f0dc3d448b29297e|-448637788|Rpackages.bib|t20419.2211703521s|s22497b|22497|file|local|vector|||0.271||
-CV_3page|stem|a645cd6d8990116f|aca491d84caaaec9|73cbfa18fe6bc50f|961491237|RobHyndman_3page.pdf*RobHyndman_3page.qmd*_extensions/cv/_extension.yml*_extensions/cv/cv.aux*_extensions/cv/cv.fdb_latexmk*_extensions/cv/cv.fls*_extensions/cv/cv.log*_extensions/cv/cv.tex|t20419.221306074s|s283477b|283477|file|local|vector|||11.735||
-CV_2page|stem|093e25ebb030e363|9505a89278e6704c|73cbfa18fe6bc50f|1386156343|RobHyndman_2page.pdf*RobHyndman_2page.qmd*_extensions/cv/_extension.yml*_extensions/cv/cv.aux*_extensions/cv/cv.fdb_latexmk*_extensions/cv/cv.fls*_extensions/cv/cv.log*_extensions/cv/cv.tex|t20419.2214434529s|s275980b|275980|file|local|vector|||11.897||
-CV_1page|stem|8f9ebaec8bbfe7c5|0fba2fa06921d053|ac6eb60aae5e8843|489928406|RobHyndman_1page.pdf*RobHyndman_1page.qmd*_extensions/cv/_extension.yml*_extensions/cv/cv.aux*_extensions/cv/cv.fdb_latexmk*_extensions/cv/cv.fls*_extensions/cv/cv.log*_extensions/cv/cv.tex|t20419.2215792939s|s263849b|263849|file|local|vector|||11.705||
-CV|stem|78acea6811b8b71f|65b3db2238f31046|7754400bf4796855|427539209|RobHyndmanCV.pdf*RobHyndmanCV.qmd*_extensions/cv/_extension.yml*_extensions/cv/cv.aux*_extensions/cv/cv.fdb_latexmk*_extensions/cv/cv.fls*_extensions/cv/cv.log*_extensions/cv/cv.tex|t20419.2217966699s|s417523b|417523|file|local|vector|||18.689||
+date|stem|c6e2da9a17aae584|5fd9eb50356118d7|2c530c1562a7fbd1|-2036497900||t20423.1569609849s|s81b|81|rds|local|vector|||0.698||
+rjh|stem|1ea36303ee0792f8|268222c85e6c0f72|cae8fd266baa3511|2137179268||t20423.1569827949s|s193b|193|rds|local|vector|||1.829||
+rjhcites|stem|c7d292bce005d616|a649051df584a0ab|dbf8dab01c08203f|890131534||t20423.1570181929s|s19939b|19939|rds|local|vector|||2.972||
+rjh_packages|stem|ec8b6521d013b7c0|12f16c508e13e56b|8b31b3eb3b21bee2|2135820481||t20423.1586989974s|s17439b|17439|rds|local|vector|||145.17|Invalid role specification: ‘au’.. Invalid role specification: ‘au’.|
+rpackages_bib|stem|8d265d640c089c59|a0ac57394b408541|36d64cc3cf9b2042|-448637788|Rpackages.bib|t20423.1587049581s|s22497b|22497|file|local|vector|||0.491||
+CV_3page|stem|67cb1f5437b89b44|aca491d84caaaec9|1047b2d2f3966d86|961491237|RobHyndman_3page.pdf*RobHyndman_3page.qmd*_extensions/cv/_extension.yml*_extensions/cv/cv.aux*_extensions/cv/cv.fdb_latexmk*_extensions/cv/cv.fls*_extensions/cv/cv.log*_extensions/cv/cv.tex|t20423.1589360965s|s283474b|283474|file|local|vector|||19.953||
+CV_2page|stem|b5f8e00fc3d08c45|9505a89278e6704c|1047b2d2f3966d86|1386156343|RobHyndman_2page.pdf*RobHyndman_2page.qmd*_extensions/cv/_extension.yml*_extensions/cv/cv.aux*_extensions/cv/cv.fdb_latexmk*_extensions/cv/cv.fls*_extensions/cv/cv.log*_extensions/cv/cv.tex|t20423.1591573968s|s275973b|275973|file|local|vector|||19.159||
+CV_1page|stem|6f989ebdc1d28632|0fba2fa06921d053|bda8d652a702748c|489928406|RobHyndman_1page.pdf*RobHyndman_1page.qmd*_extensions/cv/_extension.yml*_extensions/cv/cv.aux*_extensions/cv/cv.fdb_latexmk*_extensions/cv/cv.fls*_extensions/cv/cv.log*_extensions/cv/cv.tex|t20423.1593738707s|s263849b|263849|file|local|vector|||18.665||
+CV|stem|71c881807abfc63a|65b3db2238f31046|7c2f8c647bdaf79f|427539209|RobHyndmanCV.pdf*RobHyndmanCV.qmd*_extensions/cv/_extension.yml*_extensions/cv/cv.aux*_extensions/cv/cv.fdb_latexmk*_extensions/cv/cv.fls*_extensions/cv/cv.log*_extensions/cv/cv.tex|t20423.1597239813s|s417545b|417545|file|local|vector|||30.096||
