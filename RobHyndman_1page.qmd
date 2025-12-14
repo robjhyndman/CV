@@ -19,7 +19,9 @@ header-includes:
 \thispagestyle{empty}
 \enlargethispage*{0.5cm}
 
-```{r setup, include=FALSE}
+```{r}
+#| label: setup
+#| include: false
 knitr::opts_chunk$set(
   echo = FALSE,
   warning = FALSE,
@@ -41,7 +43,9 @@ targets::tar_load(c(pubs, rjh, rjhcites))
 
 # Current position
 
-```{r employment, results='asis'}
+```{r}
+#| label: employment
+#| output: asis
 tribble(
   ~Years, ~Position,
   "2003--", "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University"
@@ -57,7 +61,9 @@ tribble(
 
 # Selected awards and honours
 
-```{r awards, results='asis'}
+```{r}
+#| label: awards
+#| output: asis
 awards <- tribble(
   ~Year, ~Award,
   2021, "Pitman Medal, Statistical Society of Australia",
@@ -68,7 +74,8 @@ awards <- tribble(
 
 # Selected books
 
-```{r books}
+```{r}
+#| label: books
 #| output: asis
 pubs[c("fpp3", "expsmooth08")] |>
   add_bib_section(show_cites = TRUE, rjhcites = rjhcites)
@@ -79,7 +86,7 @@ pubs[c("fpp3", "expsmooth08")] |>
 # Selected papers
 
 ```{r}
-# Count papers
+#| label: count_papers
 npapers <- pubs %>%
   as_tibble() |>
   filter(!(type %in% c("book", "thesis", "review"))) %>%
@@ -89,13 +96,14 @@ npapers <- pubs %>%
 Since 1991 I have authored `r npapers` research papers or book chapters on statistical topics. Some highlights are listed below, with citations taken from Google Scholar on `r format(Sys.time(), "%e %B %Y")`.  My h-index is `r rjh$All[2]` with total citations of `r prettyNum(rjh$All[1], big.mark=",")`.
 
 
-```{r bibfile}
+```{r}
+#| label: bibfile
 #| output: asis
 pubs[c(
-  "tsibble", "globalforecasting", "fforma",
+  "tsibble", "globalforecasting", 
   "smartmeterhts", "mint", "HF10", "DHS11", "hierarchical",
-  "VHNC10", "HK06", "HK08", "HKSG02", "HF96", "m3pca",
-  "HU07", "HDR96", "HB08"
+  "VHNC10", "HK06", "HK08", "HKSG02", "HF96", 
+  "HU07", "HDR96", "HB08","combinations","hfreview","lookout"
 )] |>
   add_bib_section(show_cites = TRUE, rjhcites = rjhcites)
 ```

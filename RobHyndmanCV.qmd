@@ -15,7 +15,9 @@ header-includes:
 
 \newcounter{bib}
 
-```{r setup, include=FALSE}
+```{r}
+#| lable: setup
+#| include: false
 knitr::opts_chunk$set(
   echo = FALSE,
   warning = FALSE,
@@ -47,7 +49,9 @@ targets::tar_load(c(
 
 # Education and qualifications
 
-```{r degrees, results='asis'}
+```{r}
+#| label: degrees
+#| output: 'asis'
 tribble(
   ~Degree       , ~Institution                       , ~Year ,
   "B.Sc.(Hons)" , "University of Melbourne"          ,  1988 ,
@@ -65,7 +69,9 @@ tribble(
 
 # Employment history
 
-```{r employment, results='asis'}
+```{r}
+#| label: employment
+#| output: 'asis'
 tribble(
   ~Start , ~End , ~Position                                                                                                    ,
     1985 , 1992 , "\\textbf{Statistical consultant}, Department of Statistics, University of Melbourne"                        ,
@@ -106,10 +112,12 @@ tribble(
 
 # Awards and honours
 
-```{r awards, results='asis'}
+```{r}
+#| label: awards
+#| output: 'asis'
 tribble(
   ~Year , ~Award                                                                                                 ,
-   2025 , "Highly-cited researcher award, Clarivate Analytics"                                                   ,
+   2025 , "Highly-cited researcher award, Clarivate Analytics"  ,
    2022 , "Australian Awards for University Teaching citation for outstanding contributions to student learning" ,
    2021 , "Pitman Medal, Statistical Society of Australia"                                                       ,
    2021 , "Vice-Chancellor's Award for Innovation in Learning and Teaching"                                      ,
@@ -134,15 +142,17 @@ tribble(
 
 # Editorial boards
 
-```{r positions, results='asis'}
+```{r}
+#| label: positions
+#| output: asis
 tribble(
-  ~Start , ~End , ~Position                                                                                       ,
-    2023 , 2026 , "\\textbf{Executive Editor}, \\textit{The R Journal}"                                           ,
-    2011 , 2024 , "\\textbf{Editor}, \\textit{Journal of Statistical Software}"                                   ,
-    2019 , NA   , "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}"                    ,
-    2005 , 2018 , "\\textbf{Editor-in-Chief}, \\textit{International Journal of Forecasting}"                     ,
-    2001 , 2004 , "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}"                    ,
-    2001 , 2004 , "\\textbf{Theory and Methods Editor}, \\emph{Australian \\& New Zealand Journal of Statistics}" ,
+  ~Start, ~End ,  ~Position ,
+  2023,   "2026", "\\textbf{Executive Editor}, \\textit{The R Journal}",
+  2011,   "2024", "\\textbf{Editor}, \\textit{Journal of Statistical Software}",
+  2005,   "2018", "\\textbf{Editor-in-Chief}, \\textit{International Journal of Forecasting}",
+  2001,   "2004, 2019--", "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}",
+  2001,   "2004", "\\textbf{Theory and Methods Editor}, \\emph{Australian \\& New Zealand Journal of Statistics}" ,
+  1996,   "2001", "\\textbf{Book Review Editor}, \\emph{Australian Journal of Statistics}",
 ) |>
   mutate(
     Start = as.character(Start),
@@ -160,7 +170,7 @@ tribble(
   * Since 1991 I have authored `r NROW(pubs)` papers, chapters or books on statistical topics (listed on pages \pageref{papersstart}--\pageref{papersend}).
   * On Google Scholar my h-index is `r rjh$All[2]` with total citations of `r prettyNum(rjh$All[1], big.mark=",")` (as at `r format(Sys.time(), "%e %B %Y")`).
   * My current research involves the analysis of large collections of time series (including visualization, forecasting, reconciliation and modelling), and anomaly detection.
-  * I currently supervise 6 PhD students. I have supervised to completion 30 PhD students and 3 Masters students.
+  * I currently supervise 2 PhD students. I have supervised to completion 34 PhD students and 3 Masters students.
   * I have been a PhD examiner more than 15 times for students in Europe, Australia and Asia.
   * I publish the [*Hyndsight*](https://robjhyndman.com/hyndsight) blog on research issues which receives an average of about 1500 pageviews per day.
   * I have coauthored `r NROW(packages)` R packages as a result of my research (listed on pages \pageref{packagestart}--\pageref{packageend}). There have been over `r round(sum(rjh_packages$downloads, na.rm=TRUE)/1e6)` million downloads of my packages since 2015 (to `r format(Sys.time(), "%e %B %Y")`).
@@ -178,8 +188,8 @@ tribble(
 
 # Major presentations
 
-  * Keynote speaker, *Improving forecasts via subspace projections*, International Forum on Statistics, Beijing, July 2025
-  * Keynote speaker, *Improving forecasts via subspace projections*, International Statistics Conference, Colombo, December 2024
+  * Keynote speaker, *Improving forecasts via subspace projections*, International Forum on Statistics, Beijing, Jul 2025.
+  * Keynote speaker, *Improving forecasts via subspace projections*, International Statistics Conference, Colombo, Dec 2024.
   * Suessmilch Lecturer, *vital: Tidy data analysis for demography using R*, Max Planck Institute for Demographic Research, Rostock, Jun 2024.
   * Keynote speaker, *Forecasting the future and the future of forecasting*, 2024 Australian Treasuries Forecasting Conference, Feb 2024.
   * IIF Distinguished Lecturer, *Forecast reconciliation*, online series of lectures, Nov 2023.
@@ -209,17 +219,21 @@ tribble(
 
 # Grants
 
-```{r grants}
+```{r}
+#| label: grants
 sumgrants <- grants |>
   pull(Amount) |>
   sum(na.rm = TRUE)
+max_grant <- 75000
 ```
 
-I have acquired (in most cases jointly) $`r sprintf("%2.1f", sumgrants/1e6)` million in external research grants since 2000. External research grants over $100,000 are listed below.\vspace*{0.2cm}\enlargethispage*{0.5cm}
+I have acquired (in most cases jointly) $`r sprintf("%2.1f", sumgrants/1e6)` million in external research grants since 2000. External research grants over $`r prettyNum(max_grant, big.mark = ",", scientific = FALSE)` are listed below.\vspace*{0.2cm}\enlargethispage*{0.5cm}
 
-```{r grantstable, results='asis'}
+```{r}
+#| label: grantstable
+#| output: asis
 grants |>
-  filter(Amount > 100000, Type == "Research") |>
+  filter(Amount > max_grant, Type == "Research") |>
   mutate(
     Time = paste0(Start, ifelse(is.na(End), "", paste0("--", End))),
     Entry = paste(
@@ -263,8 +277,8 @@ grants |>
 
 # Advisory boards
 
-  * Member of the Scaling committee, Victorian Tertiary Admissions Centre (1994--). This committee is responsible for producing the ATAR for VCE students.
-  * Member of the ATAR Technical Group for the Australasian Conference of Tertiary Admissions Centres (2003--).
+  * Member of the Scaling committee, Victorian Tertiary Admissions Centre (1994--2025). This committee is responsible for producing the ATAR for VCE students.
+  * Member of the ATAR Technical Group for the Australasian Conference of Tertiary Admissions Centres (2003--2026).
   * Member of the National COVID-19 Epidemic Situational Assessment team (2020--2023).
   * Member of the Indigenous Statistical and Information Advisory Group for the Australian Institute of Health and Welfare (2017--2023).
   * Member of the Methodology Advisory Committee for the Australian Bureau of Statistics (2010--2018).

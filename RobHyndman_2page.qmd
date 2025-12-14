@@ -17,7 +17,9 @@ header-includes:
 \titlespacing{\section}{0pt}{1.ex}{0.5ex}
 \fontsize{10}{11.5}\sf
 
-```{r setup, include=FALSE}
+```{r}
+#| label: setup
+#| include: false
 knitr::opts_chunk$set(
   echo = FALSE,
   warning = FALSE,
@@ -39,7 +41,9 @@ targets::tar_load(c(pubs, rjh, rjh_packages, grants, rjhcites))
 
 # Education and qualifications
 
-```{r degrees, results='asis'}
+```{r}
+#| label: degrees
+#| output: asis
 tribble(
   ~Year, ~Degree, ~Institution,
   1988, "B.Sc.(Hons)", "University of Melbourne",
@@ -51,7 +55,9 @@ tribble(
 
 # Current position
 
-```{r employment, results='asis'}
+```{r}
+#| label: employment
+#| output: asis
 tribble(
   ~Years, ~Position,
   "2003--", "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University"
@@ -68,9 +74,12 @@ tribble(
 
 # Selected awards and honours
 
-```{r awards, results='asis'}
+```{r}
+#| label: awards
+#| output: asis
 awards <- tribble(
   ~Year, ~Award,
+  2025 , "Highly-cited researcher award, Clarivate Analytics"  ,
   2022, "Australian Awards for University Teaching citation for outstanding contributions to student learning",
   2021, "Pitman Medal, Statistical Society of Australia",
   2021, "Vice-Chancellor's Award for Innovation in Learning and Teaching",
@@ -84,7 +93,9 @@ awards <- tribble(
 
 # Editorial boards
 
-```{r positions, results='asis'}
+```{r}
+#| label: positions
+#| output: asis
 tribble(
   ~Start, ~End, ~Position,
   2023, "2026", "\\textbf{Executive Editor}, \\textit{The R Journal}",
@@ -104,7 +115,8 @@ tribble(
 
 # Research grants
 
-```{r grants}
+```{r}
+#| label: grants
 sumgrants <- grants %>%
   pull(Amount) %>%
   sum(na.rm = TRUE)
@@ -123,8 +135,6 @@ I have acquired (in most cases jointly) about $`r round(sumgrants/1e6)` million 
   * Yahoo Big Thinkers lecture, *Exploring the boundaries of predictability: what can we forecast, and when should we give up?*, California, Jun 2015.
   * Keynote speaker, *Forecasting big time series data using R*, Chinese R conference, Nanchang, Oct 2015.
   * Keynote speaker, *Forecasting large collections of related time series*, German Statistical Week, Augsburg, Sep 2016.
-  * Keynote speaker, *Visualizing and forecasting big time series data*, ICML Time Series Workshop, Sydney, Aug 2017.
-  * Keynote speaker, Beijing Workshop on Forecasting, Nov 2017.
   * Keynote speaker, *10 years of forecast reconciliation*, International Symposium on Forecasting, Oct 2020.
   * Cornish lecture, *Feasts and fables: modern tools for time series analysis*, Adelaide, November 2021.
   * Blakers lecture, *Forecasting the future and the future of forecasting*, ANU-AAMT National Mathematics Summer School, Jan 2022.
@@ -132,6 +142,8 @@ I have acquired (in most cases jointly) about $`r round(sumgrants/1e6)` million 
   * ANU public lecture, *Forecasting the future and the future of forecasting*, Canberra, Nov 2022.
   * IIF Distinguished Lecturer, *Forecast reconciliation*, online series of lectures, Nov 2023.
   * Suessmilch lecture, *vital: Tidy data analysis for demography using R*, Rostock, Germany, Jun 2024.
+  * Keynote speaker, *Improving forecasts via subspace projections*, International Statistics Conference, Colombo, Dec 2024.
+  * Keynote speaker, *Improving forecasts via subspace projections*, International Forum on Statistics, Beijing, Jul 2025.
 
 # R packages
 
@@ -139,17 +151,18 @@ I have coauthored `r NROW(rjh_packages)` R packages as a result of my research. 
 
 # Selected books
 
-```{r books}
+```{r}
+#| label: books
 #| output: asis
 pubs[c("fpp3", "MWH3", "expsmooth08")] |>
   add_bib_section(show_cites = TRUE, rjhcites = rjhcites)
 ```
 
-\enlargethispage*{1cm}
+\enlargethispage*{0.75cm}
 
 
 ```{r}
-# Count papers
+#| label: count_papers
 npapers <- pubs %>%
   as_tibble() |>
   filter(!(type %in% c("book", "thesis", "review"))) %>%
@@ -161,15 +174,16 @@ npapers <- pubs %>%
 Since 1991 I have authored `r npapers` research papers or book chapters on statistical topics. Some highlights are listed below, with citations taken from Google Scholar on `r format(Sys.time(), "%e %B %Y")`.  My h-index is `r rjh$All[2]` with total citations of `r prettyNum(rjh$All[1], big.mark=",")`.
 
 
-```{r bibfile}
+```{r}
+#| label: bibfile
 #| output: asis
 pubs[c(
-  "tsibble", "globalforecasting", "stray", "fforma",
+  "tsibble", "globalforecasting",  
   "forecastsofa", "baggedETS",
   "smartmeterhts", "mint", "HF10", "DHS11", "hierarchical",
   "VHNC10", "HK06", "HK08", "HKSG02", "HF96", "m3pca",
   "ijf25", "HU07", "HDR96",
-  "HBG96", "HB08", "tscv"
+  "HBG96", "HB08", "tscv","combinations","hfreview","lookout"
 )] |>
   add_bib_section(show_cites = TRUE, rjhcites = rjhcites)
 ```
