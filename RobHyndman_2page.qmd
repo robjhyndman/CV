@@ -45,10 +45,10 @@ targets::tar_load(c(pubs, rjh, rjh_packages, grants, rjhcites))
 #| label: degrees
 #| output: asis
 tribble(
-  ~Year, ~Degree, ~Institution,
-  1988, "B.Sc.(Hons)", "University of Melbourne",
-  1992, "Ph.D.", "University of Melbourne",
-  2000, "A.Stat.", "Statistical Society of Australia"
+  ~Year , ~Degree       , ~Institution                       ,
+   1988 , "B.Sc.(Hons)" , "University of Melbourne"          ,
+   1992 , "Ph.D."       , "University of Melbourne"          ,
+   2000 , "A.Stat."     , "Statistical Society of Australia"
 ) %>%
   baretable()
 ```
@@ -59,8 +59,8 @@ tribble(
 #| label: employment
 #| output: asis
 tribble(
-  ~Years, ~Position,
-  "2003--", "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University"
+  ~Years   , ~Position                                                                                    ,
+  "2003--" , "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University"
 ) %>%
   baretable()
 ```
@@ -78,15 +78,15 @@ tribble(
 #| label: awards
 #| output: asis
 awards <- tribble(
-  ~Year, ~Award,
-  2025 , "Highly-cited researcher award, Clarivate Analytics"  ,
-  2022, "Australian Awards for University Teaching citation for outstanding contributions to student learning",
-  2021, "Pitman Medal, Statistical Society of Australia",
-  2021, "Vice-Chancellor's Award for Innovation in Learning and Teaching",
-  2010, "Dean's Award for Excellence in Innovation and External Collaboration, Monash Business School",
-  2008, "Dean's Award for Excellence in Research, Monash Business School",
-  2008, "Vice-Chancellor's Award for Postgraduate Supervisor of the Year, Monash University",
-  2007, "Moran Medal for Statistical Science, Australian Academy of Science"
+  ~Year , ~Award                                                                                                 ,
+   2025 , "Highly-cited researcher award, Clarivate Analytics"                                                   ,
+   2022 , "Australian Awards for University Teaching citation for outstanding contributions to student learning" ,
+   2021 , "Pitman Medal, Statistical Society of Australia"                                                       ,
+   2021 , "Vice-Chancellor's Award for Innovation in Learning and Teaching"                                      ,
+   2010 , "Dean's Award for Excellence in Innovation and External Collaboration, Monash Business School"         ,
+   2008 , "Dean's Award for Excellence in Research, Monash Business School"                                      ,
+   2008 , "Vice-Chancellor's Award for Postgraduate Supervisor of the Year, Monash University"                   ,
+   2007 , "Moran Medal for Statistical Science, Australian Academy of Science"
 ) %>%
   baretable()
 ```
@@ -97,12 +97,12 @@ awards <- tribble(
 #| label: positions
 #| output: asis
 tribble(
-  ~Start, ~End, ~Position,
-  2023, "2026", "\\textbf{Executive Editor}, \\textit{The R Journal}",
-  2011, "2024", "\\textbf{Editor}, \\textit{Journal of Statistical Software}",
-  2005, "2018", "\\textbf{Editor-in-Chief}, \\textit{International Journal of Forecasting}",
-  2001, "2004, 2019--", "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}",
-  2001, "2004", "\\textbf{Theory and Methods Editor}, \\emph{Australian \\& New Zealand Journal of Statistics}",
+  ~Start , ~End           , ~Position                                                                                       ,
+    2023 , "2026"         , "\\textbf{Executive Editor}, \\textit{The R Journal}"                                           ,
+    2011 , "2024"         , "\\textbf{Editor}, \\textit{Journal of Statistical Software}"                                   ,
+    2005 , "2018"         , "\\textbf{Editor-in-Chief}, \\textit{International Journal of Forecasting}"                     ,
+    2001 , "2004, 2019--" , "\\textbf{Associate Editor}, \\textit{International Journal of Forecasting}"                    ,
+    2001 , "2004"         , "\\textbf{Theory and Methods Editor}, \\emph{Australian \\& New Zealand Journal of Statistics}" ,
 ) %>%
   mutate(
     Start = as.character(Start),
@@ -178,12 +178,30 @@ Since 1991 I have authored `r npapers` research papers or book chapters on stati
 #| label: bibfile
 #| output: asis
 pubs[c(
-  "tsibble", "globalforecasting",  
-  "forecastsofa", "baggedETS",
-  "smartmeterhts", "mint", "HF10", "DHS11", "hierarchical",
-  "VHNC10", "HK06", "HK08", "HKSG02", "HF96", "m3pca",
-  "ijf25", "HU07", "HDR96",
-  "HBG96", "HB08", "tscv","combinations","hfreview","lookout"
+  "tsibble",
+  "globalforecasting",
+  "forecastsofa",
+  "baggedETS",
+  "smartmeterhts",
+  "mint",
+  "HF10",
+  "DHS11",
+  "hierarchical",
+  "VHNC10",
+  "HK06",
+  "HK08",
+  "HKSG02",
+  "HF96",
+  "m3pca",
+  "ijf25",
+  "HU07",
+  "HDR96",
+  "HBG96",
+  "HB08",
+  "tscv",
+  "combinations",
+  "hfreview",
+  "lookout"
 )] |>
   add_bib_section(show_cites = TRUE, rjhcites = rjhcites)
 ```

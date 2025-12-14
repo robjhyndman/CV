@@ -47,8 +47,8 @@ targets::tar_load(c(pubs, rjh, rjhcites))
 #| label: employment
 #| output: asis
 tribble(
-  ~Years, ~Position,
-  "2003--", "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University"
+  ~Years   , ~Position                                                                                    ,
+  "2003--" , "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University"
 ) %>%
   baretable()
 ```
@@ -65,9 +65,9 @@ tribble(
 #| label: awards
 #| output: asis
 awards <- tribble(
-  ~Year, ~Award,
-  2021, "Pitman Medal, Statistical Society of Australia",
-  2007, "Moran Medal for Statistical Science, Australian Academy of Science"
+  ~Year , ~Award                                                               ,
+   2021 , "Pitman Medal, Statistical Society of Australia"                     ,
+   2007 , "Moran Medal for Statistical Science, Australian Academy of Science"
 ) %>%
   baretable()
 ```
@@ -100,10 +100,24 @@ Since 1991 I have authored `r npapers` research papers or book chapters on stati
 #| label: bibfile
 #| output: asis
 pubs[c(
-  "tsibble", "globalforecasting", 
-  "smartmeterhts", "mint", "HF10", "DHS11", "hierarchical",
-  "VHNC10", "HK06", "HK08", "HKSG02", "HF96", 
-  "HU07", "HDR96", "HB08","combinations","hfreview","lookout"
+  "tsibble",
+  "globalforecasting",
+  "smartmeterhts",
+  "mint",
+  "HF10",
+  "DHS11",
+  "hierarchical",
+  "VHNC10",
+  "HK06",
+  "HK08",
+  "HKSG02",
+  "HF96",
+  "HU07",
+  "HDR96",
+  "HB08",
+  "combinations",
+  "hfreview",
+  "lookout"
 )] |>
   add_bib_section(show_cites = TRUE, rjhcites = rjhcites)
 ```
