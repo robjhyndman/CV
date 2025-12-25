@@ -34,7 +34,6 @@ robjhyndman/Mcomp
 robjhyndman/MEFM-package
 robjhyndman/ozbabynames
 robjhyndman/pkgmeta
-robjhyndman/rcademy
 robjhyndman/stR
 robjhyndman/TACforecasting
 robjhyndman/thief
