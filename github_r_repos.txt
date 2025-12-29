@@ -1,6 +1,5 @@
 # Github repos containing packages I've coauthored
 AndriSignorell/DescTools
-AU-BURGr/ozdata
 bfast2/bfast
 earowang/hts
 earowang/sugrrants
