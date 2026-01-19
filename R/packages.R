@@ -18,15 +18,29 @@ get_rjh_packages <- function(date, github_repos) {
     arrange(lower_case_package) |>
     select(-lower_case_package)
 
-  # Fix URL of fpp3 package
+  # Fix URLs
   rjh_packages <- rjh_packages |>
     mutate(
       url = if_else(
         url == "https://OTexts.com/fpp3/",
-        "http://pkg.robjhyndman.com/fpp3package/",
+        "https://pkg.robjhyndman.com/fpp3/",
         url
-      )
+      ),
+      url = if_else(
+        url == "https://pkg.robjhyndman.com/weird-package/",
+        "https://pkg.robjhyndman.com/weird/",
+        url
+      ),
+      url = if_else(
+        url == "https://pkg.robjhyndman.com/fpp2-package/",
+        "https://pkg.robjhyndman.com/fpp2/",
+        url
+      ),
     )
+  # Remove fpp
+  rjh_packages <- rjh_packages |>
+    filter(package != "fpp")
+
   # Return tibble of package info
   return(rjh_packages)
 }
