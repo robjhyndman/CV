@@ -1,14 +1,4 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-rjhreports|stem|b68f8c337991dbe3|998e9ac336053b7e|2c530c1562a7fbd1|1709470276|rjhreports.bib|t20431.0612946947s|s73383b|73383|file|local|vector|||0||
-reports|stem|04389fa9d6c3171e|ad27448fd8c53fa9|df4f36405f21bab8|536393307||t20436.8957432103s|s14317b|14317|rds|local|vector|||1.106||
-rjhpubs|stem|06e220c536ce54ec|3a5aabfb20180392|2c530c1562a7fbd1|-90840119|rjhpubs.bib|t20436.9166468422s|s87061b|87061|file|local|vector|||0||
-pubs|stem|dc9c161cc584e2ea|4ab1a86947b24c99|24408b1650f2cb0f|29894634||t20436.9189816707s|s31535b|31535|rds|local|vector|||1.25||
-Grant_income|stem|6963e25aecea733d|8d980c288c615d43|2c530c1562a7fbd1|-1670905904|Grant_income.csv|t20436.9204873741s|s8228b|8228|file|local|vector|||0.555||
-grants|stem|30741355da7d2cb2|1e53744283ea96fa|1633af8a3c3eb4d3|-565297259||t20436.9224531507s|s3869b|3869|rds|local|vector|||0.213||
-github_repos|stem|ebe694935b34db6b|dd911adc8dad8df4|2c530c1562a7fbd1|-1689482867|github_r_repos.txt|t20472.0379208985s|s1128b|1128|file|local|vector|||0||
-rjh|stem|5c76936bcefdd3b3|268222c85e6c0f72|7b39600b34995845|2137179268||t20472.0385657687s|s194b|194|rds|local|vector|||1.619||
-rjhcites|stem|b67ec6a4a1acf606|a649051df584a0ab|8e6c26448ccd8111|890131534||t20472.0385969704s|s19944b|19944|rds|local|vector|||2.681||
-CV_1page|stem|2f5274c3d7519c91|a2c176b2fbb8ce4d|9ce9075182c95866|489928406|RobHyndman_1page.pdf*RobHyndman_1page.qmd*_extensions/cv/_extension.yml*_extensions/cv/cv.tex|t20472.0407165837s|s260326b|260326|file|local|vector|||23.599||
 change_bibtype|function|f0a5a34513a8b286
 get_gcites|function|114f9854eb193946
 getbibentry|function|541204274b28a41f
@@ -19,10 +9,20 @@ add_bib_section|function|c841affe3dbbb918
 get_scholar_cites|function|134598e909b35158
 get_rjh_packages|function|e74118676fb1fd69
 write_packages_bib|function|d91a80f374d90144
-date|stem|0378ce9f24dab42a|5fd9eb50356118d7|2c530c1562a7fbd1|-2036497900||t20472.0606035862s|s80b|80|rds|local|vector|||0.63||
-rjh_packages|stem|5422383c73fc2f0c|12f16c508e13e56b|10b104e8f91b6f8a|2135820481||t20472.0618941808s|s16926b|16926|rds|local|vector|||111.429|Invalid role specification: ‘au’.. Invalid role specification: ‘au’.|
-rpackages_bib|stem|6081b12df7816d5c|a0ac57394b408541|038a867058e0d3ad|-448637788|Rpackages.bib|t20472.0619030467s|s21643b|21643|file|local|vector|||0.692||
-CV_3page|stem|e164406b6ef82ce4|0eb85d03a94639a6|66e8d357221739ae|961491237|RobHyndman_3page.pdf*RobHyndman_3page.qmd*_extensions/cv/_extension.yml*_extensions/cv/cv.tex|t20472.0621218814s|s280895b|280895|file|local|vector|||18.919||
-CV_2page|stem|91c39e168344e341|7159c4f1f94f5e18|66e8d357221739ae|1386156343|RobHyndman_2page.pdf*RobHyndman_2page.qmd*_extensions/cv/_extension.yml*_extensions/cv/cv.tex|t20472.0624083791s|s273356b|273356|file|local|vector|||24.743||
-packages|stem|f90ec63dafc4dc54|8aa8411cf1b53140|35848c88036ca722|-1880897961||t20472.0624175691s|s9826b|9826|rds|local|vector|||0.623||
-CV|stem|5a218d1d4c97be4c|3fa915d4c7420b3c|2d1e54bbed0c9f39|427539209|RobHyndmanCV.pdf*RobHyndmanCV.qmd*_extensions/cv/_extension.yml*_extensions/cv/cv.tex|t20472.0628701806s|s413501b|413501|file|local|vector|||39.102||
+Grant_income|stem|6963e25aecea733d|8d980c288c615d43|2c530c1562a7fbd1|-1670905904|Grant_income.csv|t20474.3657648554s|s8228b|8228|file|local|vector|||0.555||
+rjhreports|stem|b68f8c337991dbe3|998e9ac336053b7e|2c530c1562a7fbd1|1709470276|rjhreports.bib|t20474.3657651147s|s73383b|73383|file|local|vector|||0||
+date|stem|01d5a8d3db8e3e17|5fd9eb50356118d7|2c530c1562a7fbd1|-2036497900||t20484.2362027716s|s80b|80|rds|local|vector|||0.236||
+github_repos|stem|ebe694935b34db6b|dd911adc8dad8df4|2c530c1562a7fbd1|-1689482867|github_r_repos.txt|t20474.3657650059s|s1128b|1128|file|local|vector|||0||
+rjhpubs|stem|06e220c536ce54ec|3a5aabfb20180392|2c530c1562a7fbd1|-90840119|rjhpubs.bib|t20474.3657651147s|s87061b|87061|file|local|vector|||0||
+grants|stem|30741355da7d2cb2|1e53744283ea96fa|1633af8a3c3eb4d3|-565297259||t20484.2362039979s|s3869b|3869|rds|local|vector|||0.092||
+reports|stem|04389fa9d6c3171e|ad27448fd8c53fa9|df4f36405f21bab8|536393307||t20484.2362081299s|s14317b|14317|rds|local|vector|||0.343||
+rjh|stem|102821432b2d5940|268222c85e6c0f72|0c14757c2a448cb2|2137179268||t20484.236225329s|s193b|193|rds|local|vector|||1.48||
+rjhcites|stem|a002194115ac2a00|a649051df584a0ab|c618ecda89dfe4a8|890131534||t20484.2362502831s|s20021b|20021|rds|local|vector|||2.151||
+rjh_packages|stem|893461f258d32139|12f16c508e13e56b|5bc26e2dea247905|2135820481||t20484.2374895327s|s16947b|16947|rds|local|vector|||107.065|Invalid role specification: ‘au’.. Invalid role specification: ‘au’.|
+pubs|stem|dc9c161cc584e2ea|4ab1a86947b24c99|24408b1650f2cb0f|29894634||t20484.237495204s|s31535b|31535|rds|local|vector|||0.479||
+rpackages_bib|stem|c54f79b7c7d155f6|a0ac57394b408541|92ce9a79dfb00073|-448637788|Rpackages.bib|t20484.2374968129s|s21633b|21633|file|local|vector|||0.133||
+CV_3page|stem|db7ad41cbbec9a56|0eb85d03a94639a6|d4f2d43ac5a6209d|961491237|RobHyndman_3page.pdf*RobHyndman_3page.qmd*_extensions/cv/_extension.yml*_extensions/cv/cv.tex|t20484.2375817791s|s280886b|280886|file|local|vector|||7.347||
+CV_2page|stem|cbcaa4769b512130|7159c4f1f94f5e18|d4f2d43ac5a6209d|1386156343|RobHyndman_2page.pdf*RobHyndman_2page.qmd*_extensions/cv/_extension.yml*_extensions/cv/cv.tex|t20484.2376742685s|s273362b|273362|file|local|vector|||8.015||
+CV_1page|stem|35b7ab56ba772266|a2c176b2fbb8ce4d|3fcadea229b4fd9b|489928406|RobHyndman_1page.pdf*RobHyndman_1page.qmd*_extensions/cv/_extension.yml*_extensions/cv/cv.tex|t20484.2377630311s|s260321b|260321|file|local|vector|||7.654||
+packages|stem|09275c330b6973e7|8aa8411cf1b53140|a16fef05426258b2|-1880897961||t20484.2377658784s|s9834b|9834|rds|local|vector|||0.178||
+CV|stem|4c0a7bf52afd3f56|3fa915d4c7420b3c|1e248bad8fc17ec3|427539209|RobHyndmanCV.pdf*RobHyndmanCV.qmd*_extensions/cv/_extension.yml*_extensions/cv/cv.tex|t20484.237910174s|s413495b|413495|file|local|vector|||12.483||
