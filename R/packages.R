@@ -7,6 +7,15 @@ get_rjh_packages <- function(date, github_repos) {
     start = "2015-01-01",
     github_repos = read.table(github_repos)$V1
   ))
+  dups <- rjh_packages$package[duplicated(rjh_packages$package)]
+  if (length(dups) > 0) {
+    warning(paste0(
+      "Duplicate packages found: ",
+      dups,
+      ". Keeping only the first version."
+    ))
+    rjh_packages <- rjh_packages[!duplicated(rjh_packages$package), ]
+  }
   if ("try-error" %in% class(rjh_packages)) {
     # Just use the last version but give a warning
     warning("Failed to get package info from CRAN. Using last version.")

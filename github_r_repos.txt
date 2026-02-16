@@ -49,7 +49,6 @@ tidyverts/fable
 tidyverts/fable.binary
 tidyverts/fabletools
 tidyverts/feasts
-tidyverts/ggtime
 tidyverts/tsibble
 tidyverts/tsibbledata
 xqnwang/conformalForecast
