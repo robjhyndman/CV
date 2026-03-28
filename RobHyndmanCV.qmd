@@ -255,7 +255,7 @@ grants |>
     hline.after = c(0, NROW(.)),
     size = "\\fontsize{10}{12}",
     add.to.row = list(
-      pos = as.list(seq(NROW(.))),
+      pos = as.list(seq_len(NROW(.))),
       command = rep("\\\\[-0.32cm]", NROW(.))
     )
   )
