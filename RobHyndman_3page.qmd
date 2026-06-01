@@ -55,8 +55,8 @@ tribble(
 #| label: employment
 #| output: asis
 tribble(
-  ~Start   , ~Position                                                                                    ,
-  "2003--" , "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University" ,
+  ~Years   , ~Position ,
+  "2026--" , "\\textbf{Vice-Chancellor's Distinguished Professor}, Department of Econometrics \\& Business Statistics, Monash University"
 ) %>%
   baretable()
 ```

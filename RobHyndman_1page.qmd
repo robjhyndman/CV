@@ -47,8 +47,8 @@ targets::tar_load(c(pubs, rjh, rjhcites))
 #| label: employment
 #| output: asis
 tribble(
-  ~Years   , ~Position                                                                                    ,
-  "2003--" , "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University"
+  ~Years   , ~Position ,
+  "2026--" , "\\textbf{Vice-Chancellor's Distinguished Professor}, Department of Econometrics \\& Business Statistics, Monash University"
 ) %>%
   baretable()
 ```

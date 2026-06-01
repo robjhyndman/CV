@@ -82,9 +82,10 @@ tribble(
     1998 , 2000 , "\\textbf{Senior Lecturer}, Department of Econometrics \\& Business Statistics, Monash University"           ,
     2001 , 2003 , "\\textbf{Associate Professor}, Department of Econometrics \\& Business Statistics, Monash University"       ,
     2002 , 2002 , "\\textbf{Visiting Senior Research Fellow}, Mathematical Sciences Institute, Australian National University" ,
-    2003 , NA   , "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University"                 ,
+    2003 , 2026 , "\\textbf{Professor}, Department of Econometrics \\& Business Statistics, Monash University"                 ,
     2016 , 2016 , "\\textbf{KNAW Visiting Professor}, TU/Eindhoven, Netherlands"                                               ,
-) |>
+    2026 , NA   , "\\textbf{Vice-Chancellor's Distinguished Professor}, Department of Econometrics \\& Business Statistics, Monash University"
+  ) |>
   mutate(
     order = is.na(End) * 1000 + Start,
     Start = as.character(Start),
@@ -110,7 +111,7 @@ tribble(
   * **Director**, Monash University Statistical Consulting Service, 1997--1998.
   * **Director**, Key Centre for Statistical Science, 1996--1998.
 
-# Awards and honours
+# Selected awards and honours
 
 ```{r}
 #| label: awards
@@ -139,6 +140,8 @@ tribble(
   filter(!grepl("HP Innovation", Award)) |>
   baretable()
 ```
+
+`\enlargethispage*{0.5cm}`{=latex}
 
 # Editorial boards
 
