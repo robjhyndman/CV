@@ -180,6 +180,7 @@ tribble(
 
 # Public lectures
 
+  * Ihaka Lecture, *Spotting the weird ones*, Auckland, Aug 2026.
   * ANU public lecture, *Forecasting the future and the future of forecasting*, Canberra, Nov 2022.
   * Cornish lecture, *Feasts and fables: modern tools for time series analysis*, Adelaide, Nov 2021.
   * ACEMS public lecture, *Uncertain futures: what can we forecast and when should we give up?*, Aug 2021.
