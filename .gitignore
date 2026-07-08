@@ -240,3 +240,4 @@ Rpackages.Rout
 **/*.quarto_ipynb
 .history
 .claude/settings.local.json
+.posit/assistant/settings.json
