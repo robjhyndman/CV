@@ -96,6 +96,11 @@ getbibentry <- function(pkg) {
   meta$authors <- gsub("Ben Taieb", "{Ben~Taieb}", meta$authors)
   # Replace R Core Team with {R Core Team}
   meta$authors <- gsub("R Core Team", "{R Core Team}", meta$authors)
+  # Replace Posit
+  # (Drop the "PBC" suffix: combined with the comma->and substitution below,
+  # it produces a nested-brace author field that RefManageR's WriteBib()
+  # mis-serializes into invalid BibTeX when add_bib_section() rewrites it.)
+  meta$authors <- gsub("Posit Software, PBC", "{Posit Software}", meta$authors)
   # Replace AEC
   meta$authors <- gsub(
     "Commonwealth of Australia AEC",
