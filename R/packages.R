@@ -1,5 +1,5 @@
 # Generate tibble with package info
-get_rjh_packages <- function(date, github_repos) {
+get_raw_packages <- function(date, github_repos) {
   # CRAN packages I've coauthored
   rjh_packages <- tryCatch(pkgmeta::get_meta(
     cran_author = "Hyndman",
@@ -7,6 +7,16 @@ get_rjh_packages <- function(date, github_repos) {
     start = "2015-01-01",
     github_repos = read.table(github_repos)$V1
   ))
+  if ("try-error" %in% class(rjh_packages)) {
+    # Just use the last version but give a warning
+    warning("Failed to get package info from CRAN. Using last version.")
+    return(targets::tar_read("rjh_packages"))
+  } else {
+    return(rjh_packages)
+  }
+}
+# Generate tibble with package info
+get_rjh_packages <- function(rjh_packages) {
   dups <- rjh_packages$package[duplicated(rjh_packages$package)]
   if (length(dups) > 0) {
     warning(paste0(
@@ -15,11 +25,6 @@ get_rjh_packages <- function(date, github_repos) {
       ". Keeping only the first version."
     ))
     rjh_packages <- rjh_packages[!duplicated(rjh_packages$package), ]
-  }
-  if ("try-error" %in% class(rjh_packages)) {
-    # Just use the last version but give a warning
-    warning("Failed to get package info from CRAN. Using last version.")
-    return(targets::tar_read("rjh_packages"))
   }
   rjh_packages <- rjh_packages |>
     # Sort by package name (case insensitive)
