@@ -22,7 +22,8 @@ list(
   tar_target(reports, ReadBib(rjhreports, check = FALSE)),
   # List of R packages I've coauthored
   tar_target(github_repos, "github_r_repos.txt", format = "file"),
-  tar_target(rjh_packages, get_rjh_packages(date, github_repos)),
+  tar_target(raw_packages, get_raw_packages(date, github_repos)),
+  tar_target(rjh_packages, get_rjh_packages(raw_packages)),
   # R packages bib entries
   tar_target(
     rpackages_bib,

@@ -9,6 +9,7 @@ date-format: "MMMM YYYY"
 position: FAA, FASSA, BSc (Hons), PhD, AStat
 bibliography: [rjhreports.bib]
 format: cv-pdf
+keep-tex: true
 header-includes:
   \definecolor{headcolor}{HTML}{000088}
 ---
@@ -16,7 +17,7 @@ header-includes:
 \newcounter{bib}
 
 ```{r}
-#| lable: setup
+#| label: setup
 #| include: false
 knitr::opts_chunk$set(
   echo = FALSE,
