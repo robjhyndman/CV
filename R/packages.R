@@ -51,9 +51,9 @@ get_rjh_packages <- function(rjh_packages) {
         url
       ),
     )
-  # Remove fpp
+  # Remove fpp and rmarkdown
   rjh_packages <- rjh_packages |>
-    filter(package != "fpp")
+    filter(package %notin% c("fpp", "rmarkdown"))
 
   # Return tibble of package info
   return(rjh_packages)
