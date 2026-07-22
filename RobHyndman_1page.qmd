@@ -22,6 +22,7 @@ header-includes:
 ```{r}
 #| label: setup
 #| include: false
+
 knitr::opts_chunk$set(
   echo = FALSE,
   warning = FALSE,
@@ -46,8 +47,9 @@ targets::tar_load(c(pubs, rjh, rjhcites))
 ```{r}
 #| label: employment
 #| output: asis
+
 tribble(
-  ~Years   , ~Position ,
+  ~Years   , ~Position                                                                                                                    ,
   "2026--" , "\\textbf{Vice-Chancellor's Distinguished Professor}, Department of Econometrics \\& Business Statistics, Monash University"
 ) %>%
   baretable()
@@ -55,15 +57,16 @@ tribble(
 
 # Fellowships
 
-  * Fellow of the Australian Academy of Science (elected 2021).
-  * Fellow of the Academy of the Social Sciences in Australia (elected 2020).
-  * Fellow of the International Institute of Forecasters (elected 2021).
+- Fellow of the Australian Academy of Science (elected 2021).
+- Fellow of the Academy of the Social Sciences in Australia (elected 2020).
+- Fellow of the International Institute of Forecasters (elected 2021).
 
 # Selected awards and honours
 
 ```{r}
 #| label: awards
 #| output: asis
+
 awards <- tribble(
   ~Year , ~Award                                                               ,
    2021 , "Pitman Medal, Statistical Society of Australia"                     ,
@@ -77,6 +80,7 @@ awards <- tribble(
 ```{r}
 #| label: books
 #| output: asis
+
 pubs[c("fpp3", "expsmooth08")] |>
   add_bib_section(show_cites = TRUE, rjhcites = rjhcites)
 ```
@@ -87,18 +91,21 @@ pubs[c("fpp3", "expsmooth08")] |>
 
 ```{r}
 #| label: count_papers
+
 npapers <- pubs %>%
   as_tibble() |>
   filter(!(type %in% c("book", "thesis", "review"))) %>%
   NROW()
 ```
 
-Since 1991 I have authored `r npapers` research papers or book chapters on statistical topics. Some highlights are listed below, with citations taken from Google Scholar on `r format(Sys.time(), "%e %B %Y")`.  My h-index is `r rjh$All[2]` with total citations of `r prettyNum(rjh$All[1], big.mark=",")`.
-
+Since 1991 I have authored `r npapers` research papers or book chapters on statistical topics.
+Some highlights are listed below, with citations taken from Google Scholar on `r format(Sys.time(), "%e %B %Y")`.
+My h-index is `r rjh$All[2]` with total citations of `r prettyNum(rjh$All[1], big.mark=",")`.
 
 ```{r}
 #| label: bibfile
 #| output: asis
+
 pubs[c(
   "tsibble",
   "globalforecasting",
