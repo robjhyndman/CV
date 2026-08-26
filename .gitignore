@@ -241,3 +241,5 @@ Rpackages.Rout
 .history
 .claude/settings.local.json
 .posit/assistant/settings.json
+/.uvr/library/
+/.uvr/activate*

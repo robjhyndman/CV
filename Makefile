@@ -1,7 +1,10 @@
 default: targets
 
-targets:
-	Rscript -e "targets::tar_make()"
+sync:
+	uvr sync
 
-clean:
-	Rscript -e "targets::tar_destroy()"
+targets: sync
+	. .uvr/activate && R_ENVIRON_USER=$$HOME/.Renviron Rscript -e "targets::tar_make()"
+
+clean: sync
+	. .uvr/activate && Rscript -e "targets::tar_destroy()"
