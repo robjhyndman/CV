@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Build Commands
 
 - **Build all CV versions**: `make` (runs `targets::tar_make()`)
-- **Clean build artifacts**: `make clean` (runs `targets::tar_destroy()`)
+- **Clean build artifacts**: `make clean` (runs `targets::tar_destroy(destroy = "objects")`, which forces a full rebuild without deleting `_targets/meta/meta` or `_targets/.gitignore`)
 - **Restore R dependencies**: `Rscript -e "renv::restore()"` if packages are missing
 
 ## Architecture
