@@ -62,6 +62,27 @@ add_bib_section <- function(
     }
     # Create new bib file with x
     WriteBib(x, file = "temp.bib", append = TRUE)
+    # RefManageR's WriteBib() runs author names through
+    # tools::encoded_text_to_latex(), which mishandles some accented
+    # characters:
+    #  - accented i's (e.g. í) become {\a'\i}. biber then decodes the \i
+    #    macro to a raw UTF-8 dotless i but leaves the \a' accent command
+    #    in place, producing an invalid UTF-8 byte sequence in the .bbl.
+    #  - characters it has no LaTeX mapping for (e.g. Lithuanian ė) are
+    #    silently dropped and replaced with a literal "?".
+    # Patch these known cases back to the correct UTF-8 text.
+    bib_fixes <- c(
+      "{\\a'\\i}" = "í", # í
+      "{\\a`\\i}" = "ì", # ì
+      "{\\^\\i}" = "î", # î
+      "{\\\"\\i}" = "ï", # ï
+      "Steponavi{\\v c}?" = "Steponavičė"
+    )
+    bib_text <- readLines("temp.bib", encoding = "UTF-8")
+    for (pattern in names(bib_fixes)) {
+      bib_text <- gsub(pattern, bib_fixes[pattern], bib_text, fixed = TRUE)
+    }
+    writeLines(bib_text, "temp.bib", useBytes = TRUE)
   } else {
     keys <- names(x)
   }
