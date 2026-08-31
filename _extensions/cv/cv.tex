@@ -21,36 +21,36 @@ $endif$
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-  \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
-  \usepackage[utf8]{inputenc}
+\usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
+\usepackage[utf8]{inputenc}
 $if(euro)$
-  \usepackage{eurosym}
+\usepackage{eurosym}
 $endif$
 \else % if luatex or xelatex
-  \ifxetex
-    \usepackage{mathspec}
-  \else
-    \usepackage{fontspec}
-  \fi
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\ifxetex
+\usepackage{mathspec}
+\else
+\usepackage{fontspec}
+\fi
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 $if(euro)$
-  \newcommand{\euro}{€}
+\newcommand{\euro}{€}
 $endif$
 $if(mainfont)$
-    \setmainfont[$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$]{$mainfont$}
+\setmainfont[$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$]{$mainfont$}
 $endif$
 $if(sansfont)$
-    \setsansfont[$for(sansfontoptions)$$sansfontoptions$$sep$,$endfor$]{$sansfont$}
+\setsansfont[$for(sansfontoptions)$$sansfontoptions$$sep$,$endfor$]{$sansfont$}
 $endif$
 $if(monofont)$
-    \setmonofont[Mapping=tex-ansi$if(monofontoptions)$,$for(monofontoptions)$$monofontoptions$$sep$,$endfor$$endif$]{$monofont$}
+\setmonofont[Mapping=tex-ansi$if(monofontoptions)$,$for(monofontoptions)$$monofontoptions$$sep$,$endfor$$endif$]{$monofont$}
 $endif$
 $if(mathfont)$
-    \setmathfont(Digits,Latin,Greek)[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
+\setmathfont(Digits,Latin,Greek)[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
 $endif$
 $if(CJKmainfont)$
-    \usepackage{xeCJK}
-    \setCJKmainfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
+\usepackage{xeCJK}
+\setCJKmainfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
 $endif$
 \fi
 
@@ -61,8 +61,8 @@ $endif$
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
 \IfFileExists{microtype.sty}{%
-\usepackage[$for(microtypeoptions)$$microtypeoptions$$sep$,$endfor$]{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+  \usepackage[$for(microtypeoptions)$$microtypeoptions$$sep$,$endfor$]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
 \PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
 \usepackage[unicode=true,hidelinks]{hyperref}
@@ -112,15 +112,15 @@ $endif$
 $if(indent)$
 $else$
 \IfFileExists{parskip.sty}{%
-\usepackage{parskip}
+  \usepackage{parskip}
 }{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
+  \setlength{\parindent}{0pt}
+  \setlength{\parskip}{6pt plus 2pt minus 1pt}
 }
 $endif$
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 $if(numbersections)$
 \setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
 $else$
@@ -128,19 +128,19 @@ $else$
 $endif$
 $if(dir)$
 \ifxetex
-  % load bidi as late as possible as it modifies e.g. graphicx
-  $if(latex-dir-rtl)$
-  \usepackage[RTLdocument]{bidi}
-  $else$
-  \usepackage{bidi}
-  $endif$
+% load bidi as late as possible as it modifies e.g. graphicx
+$if(latex-dir-rtl)$
+\usepackage[RTLdocument]{bidi}
+$else$
+\usepackage{bidi}
+$endif$
 \fi
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-  \TeXXeTstate=1
-  \newcommand{\RL}[1]{\beginR #1\endR}
-  \newcommand{\LR}[1]{\beginL #1\endL}
-  \newenvironment{RTL}{\beginR}{\endR}
-  \newenvironment{LTR}{\beginL}{\endL}
+\TeXXeTstate=1
+\newcommand{\RL}[1]{\beginR #1\endR}
+\newcommand{\LR}[1]{\beginL #1\endL}
+\newenvironment{RTL}{\beginR}{\endR}
+\newenvironment{LTR}{\beginL}{\endL}
 \fi
 $endif$
 
@@ -167,7 +167,7 @@ $endif$
 % Remove In: for an article or book review
 \renewbibmacro{in:}{%
   \ifentrytype{article}{}{\ifentrytype{review}{}{
-  \printtext{\bibstring{in}\intitlepunct}}}}
+\printtext{\bibstring{in}\intitlepunct}}}}
 \AtEveryBibitem{\clearfield{month}}
 \AtEveryCitekey{\clearfield{month}}
 \makeatletter
@@ -177,14 +177,16 @@ $endif$
   \sort{\field{title}}
   \sort{\field{year}}
 }\defbibenvironment{bibliography}
-  {\enumerate
-     {}
-     {\setlength{\leftmargin}{\bibhang}%
-      \setlength{\itemindent}{-\leftmargin}%
-      \setlength{\itemsep}{\bibitemsep}%
-      \setlength{\parsep}{\bibparsep}}}
-  {\endenumerate}
-  {\item}
+{\enumerate
+  {}
+  {\setlength{\leftmargin}{\bibhang}%
+    \setlength{\itemindent}{-\leftmargin}%
+    \setlength{\itemsep}{\bibitemsep}%
+  \setlength{\parsep}{\bibparsep}}%
+\raggedright}
+{\endenumerate}
+{
+\item}
 
 $for(bibliography)$
 \addbibresource{$bibliography$}
@@ -218,7 +220,7 @@ $endfor$
 \usepackage{fancyhdr,enumitem,pifont}
 \usepackage[compact,small,sf,bf]{titlesec}
 
-\RaggedRight
+\raggedright
 \sloppy
 
 % Header and footer
@@ -245,21 +247,22 @@ $endfor$
 %\addtolength{\headerboxwidth}{0.2cm}
 \makeatletter
 \def\maketitle{
-\thispagestyle{plain}
-\vspace*{-1.4cm}
-\shadebox[0.9]{\headerboxwidth}{\sf\color{headcolor}\hfil
-\hbox to 0.98\textwidth{\begin{tabular}{l}
-\\[-0.3cm]
-\LARGE\textbf{\@name}
-$if(position)$\\[0.1cm]\large $position$\\[0.3cm]$else$\\[0.4cm]$endif$
-\normalsize\textbf{$if(docname)$$docname$$else$Curriculum Vitae$endif$}\\
-\normalsize $if(date)$$date$$else$\today$endif$
-\end{tabular}
-\hfill\hbox{\fontsize{9}{12}\sf
-\begin{tabular}{@{}rl@{}}\\[-0.7cm]
-\@info
-\end{tabular}}}\hfil
-}
+  \thispagestyle{plain}
+  \vspace*{-1.4cm}
+  \shadebox[0.9]{\headerboxwidth}{\sf\color{headcolor}\hfil
+    \hbox to 0.98\textwidth{
+      \begin{tabular}{l}
+        \\[-0.3cm]
+        \LARGE\textbf{\@name}
+        $if(position)$\\[0.1cm]\large $position$\\[0.3cm]$else$\\[0.4cm]$endif$
+        \normalsize\textbf{$if(docname)$$docname$$else$Curriculum Vitae$endif$}\\
+        \normalsize $if(date)$$date$$else$\today$endif$
+      \end{tabular}
+      \hfill\hbox{\fontsize{9}{12}\sf
+        \begin{tabular}{@{}rl@{}}\\[-0.7cm]
+          \@info
+    \end{tabular}}}\hfil
+  }
 \vspace*{0.2cm}}
 \makeatother
 
@@ -289,17 +292,18 @@ $if(position)$\\[0.1cm]\large $position$\\[0.3cm]$else$\\[0.4cm]$endif$
 \name{$name$$if(surname)$ $surname$$endif$}
 \def\imagetop#1{\vtop{\null\hbox{#1}}}
 \info{%
-$if(address)$\raisebox{-0.05cm}{\imagetop{\faIcon{map-marker-alt}}} &  \imagetop{\begin{tabular}{@{}l@{}}$address$\end{tabular}}\\$endif$ %
-$if(www)$\faIcon{home} & \href{http://$www$}{$www$}\\$endif$% %
-$if(phone)$\faIcon{phone-alt} & $phone$\\$endif$%
-$if(email)$\faIcon{envelope} & $email$\\$endif$%
-$if(twitter)$\faIcon{twitter} & \href{https://twitter.com/$twitter$}{@$twitter$}\\$endif$%
-$if(github)$\faIcon{github} & \href{https://github.com/$github$}{$github$}\\$endif$%
-$if(linkedin)$\faIcon{linkedin} & \href{https://www.linkedin.com/in/$linkedin$}{$linkedin$}\\$endif$%
-$if(scholar)$\faIcon{google} & \href{https://scholar.google.com/citations?user=$scholar$}{$scholar$}\\$endif$%
-$if(orcid)$\faIcon{orcid} & \href{https://orcid.org/$orcid$}{$orcid$}\\$endif$%
+  $if(address)$\raisebox{-0.05cm}{\imagetop{\faIcon{map-marker-alt}}} &  \imagetop{
+    \begin{tabular}{@{}l@{}}$address$
+  \end{tabular}}\\$endif$ %
+  $if(www)$\faIcon{home} & \href{http://$www$}{$www$}\\$endif$% %
+  $if(phone)$\faIcon{phone-alt} & $phone$\\$endif$%
+  $if(email)$\faIcon{envelope} & $email$\\$endif$%
+  $if(twitter)$\faIcon{twitter} & \href{https://twitter.com/$twitter$}{@$twitter$}\\$endif$%
+  $if(github)$\faIcon{github} & \href{https://github.com/$github$}{$github$}\\$endif$%
+  $if(linkedin)$\faIcon{linkedin} & \href{https://www.linkedin.com/in/$linkedin$}{$linkedin$}\\$endif$%
+  $if(scholar)$\faIcon{google} & \href{https://scholar.google.com/citations?user=$scholar$}{$scholar$}\\$endif$%
+  $if(orcid)$\faIcon{orcid} & \href{https://orcid.org/$orcid$}{$orcid$}\\$endif$%
 }
-
 
 %\usepackage{inconsolata}
 
@@ -316,7 +320,7 @@ $endif$
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
 \newenvironment{CSLReferences}[3] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
+{% don't indent paragraphs
   \setlength{\parindent}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
@@ -324,14 +328,13 @@ $endif$
   \ifnum #2 > 0
   \setlength{\parskip}{#2\baselineskip}
   \fi
- }%
- {}
+}%
+{}
 \usepackage{calc}
 \newcommand{\CSLBlock}[1]{#1\hfill\break}
 \newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\hfill #1~}}
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \cslhangindent - \csllabelwidth}{#1}\vspace{0.8ex}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
-
 
 \def\endfirstpage{\newpage}
 
