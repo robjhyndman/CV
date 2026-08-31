@@ -66,6 +66,9 @@ $endif$
 }{}
 \PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
 \usepackage[unicode=true,hidelinks]{hyperref}
+% Fixes hyperref bookmarks landing on the wrong side of an automatic page
+% break (e.g. a heading falling right at the top of a new page).
+\usepackage{bookmark}
 %\urlstyle{same}  % don't use monospace font for urls
 $if(verbatim-in-note)$
 \VerbatimFootnotes % allows verbatim text in footnotes
@@ -272,6 +275,71 @@ $endfor$
 \titleformat*{\section}{\color{headcolor}\large\sf\bfseries}
 \titleformat*{\subsection}{\color{headcolor}\sf\bfseries}
 \titlespacing{\subsection}{0pt}{1ex}{0.5ex}
+
+% PDF outline (bookmark) accuracy.
+%
+% hyperref's automatic per-heading bookmark anchor needs an explicit
+% \phantomsection for an unnumbered heading (secnumdepth=0 above). Placed
+% directly in \titleformat (i.e. before the title text), that anchor is
+% created while still in vertical mode -- a separate, independent item in
+% the page's vertical list from the title text that follows -- so (a) for a
+% heading that happens to fall as the first item on a new page, it can be
+% left behind on the previous page by TeX's page-breaking, giving the wrong
+% page in the PDF outline, and (b) even when the page is right, clicking
+% the bookmark scrolls to just below the heading rather than to the
+% heading line itself.
+%
+% Fix: attach \phantomsection directly to the heading text (not via
+% \vadjust) so it is tied to the specific typeset line of the title. This
+% also matters for *where on that line* the anchor lands: \phantomsection
+% called while already in horizontal mode uses hyperref's own
+% \Hy@raisedlink mechanism, which raises the anchor to align with the
+% surrounding text baseline -- exactly what a heading needs. (\vadjust
+% material, by contrast, is vertical-list content spliced in *after* the
+% line, landing at the boundary between the heading and the body text that
+% follows it -- visually indistinguishable from not fixing this at all.)
+% \leavevmode ensures horizontal mode is already active before
+% \phantomsection checks for it. This must modify the mandatory title
+% argument itself (titlesec forbids inserting horizontal-mode material via
+% \titleformat's <format> code).
+%
+% Embedding \phantomsection inside the title text like this confuses
+% hyperref's own automatic bookmark-title extraction (it picks up
+% \phantomsection's internal "[section]" marker as if it were part of the
+% visible title), so automatic bookmark generation is switched off
+% (bookmarksdepth=-1) and each entry is instead written manually right
+% after the heading, using the title text captured before \phantomsection
+% was spliced in -- \section[Short]{Long} form (pandoc's own workaround
+% for a title containing "fragile" content such as a footnote) is honoured
+% here too, preferring Short as the safe display text when given.
+\hypersetup{bookmarksdepth=-1}
+\makeatletter
+\def\ttl@sentinelvalue{ttl@nokey}
+\let\ttl@oldsection\section
+\renewcommand{\section}[2][ttl@nokey]{%
+  \def\ttl@given{#1}%
+  \ifx\ttl@given\ttl@sentinelvalue
+    \def\ttl@title{#2}%
+    \ttl@oldsection{\leavevmode\phantomsection#2}%
+  \else
+    \def\ttl@title{#1}%
+    \ttl@oldsection[#1]{\leavevmode\phantomsection#2}%
+  \fi
+  \bookmark[dest=\@currentHref,level=1]{\ttl@title}%
+}
+\let\ttl@oldsubsection\subsection
+\renewcommand{\subsection}[2][ttl@nokey]{%
+  \def\ttl@given{#1}%
+  \ifx\ttl@given\ttl@sentinelvalue
+    \def\ttl@title{#2}%
+    \ttl@oldsubsection{\leavevmode\phantomsection#2}%
+  \else
+    \def\ttl@title{#1}%
+    \ttl@oldsubsection[#1]{\leavevmode\phantomsection#2}%
+  \fi
+  \bookmark[dest=\@currentHref,level=2]{\ttl@title}%
+}
+\makeatother
 
 % Miscellaneous dimensions
 \setlength{\parskip}{0ex}
