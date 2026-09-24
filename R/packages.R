@@ -51,9 +51,9 @@ get_rjh_packages <- function(rjh_packages) {
         url
       ),
     )
-  # Remove fpp and rmarkdown
+  # Remove fpp, rmarkdown and icons (icons is by a different Hyndman)
   rjh_packages <- rjh_packages |>
-    filter(package %notin% c("fpp", "rmarkdown"))
+    filter(package %notin% c("fpp", "rmarkdown", "icons"))
 
   # Return tibble of package info
   return(rjh_packages)
