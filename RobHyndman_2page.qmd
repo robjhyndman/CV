@@ -82,7 +82,7 @@ tribble(
 
 awards <- tribble(
   ~Year , ~Award                                                                                                 ,
-   2025 , "Highly-cited researcher award, Clarivate Analytics"                                                   ,
+   2025 , "Highly Cited Researcher, Clarivate Analytics"                                                         ,
    2022 , "Australian Awards for University Teaching citation for outstanding contributions to student learning" ,
    2021 , "Pitman Medal, Statistical Society of Australia"                                                       ,
    2021 , "Vice-Chancellor's Award for Innovation in Learning and Teaching"                                      ,
@@ -131,8 +131,8 @@ I have acquired (in most cases jointly) about $`r round(sumgrants/1e6)` million 
 
 # Selected public and keynote lectures
 
-- Belz lecture, *Forecasting and the importance of being uncertain*, Statistical Society Australia, Melbourne, Oct 2006.
-- Knibbs lecture, *Population forecasting and the importance of being uncertain*, Statistical Society Australia, Canberra, Nov 2007.
+- Belz lecture, *Forecasting and the importance of being uncertain*, Statistical Society of Australia, Melbourne, Oct 2006.
+- Knibbs lecture, *Population forecasting and the importance of being uncertain*, Statistical Society of Australia, Canberra, Nov 2007.
 - Keynote speaker, *Extreme Forecasting*, International Symposium on Forecasting, Hong Kong, Jun 2009.
 - Keynote speaker, *Man vs Wild Data*, Young Statisticians Conference, Melbourne, Feb 2013.
 - Keynote speaker, *Forecasting without forecasters*, International Symposium on Forecasting, Seoul, Jun 2013.
@@ -140,10 +140,10 @@ I have acquired (in most cases jointly) about $`r round(sumgrants/1e6)` million 
 - Yahoo Big Thinkers lecture, *Exploring the boundaries of predictability: what can we forecast, and when should we give up?*, California, Jun 2015.
 - Keynote speaker, *Forecasting big time series data using R*, Chinese R conference, Nanchang, Oct 2015.
 - Keynote speaker, *Forecasting large collections of related time series*, German Statistical Week, Augsburg, Sep 2016.
-- Keynote speaker, *10 years of forecast reconciliation*, International Symposium on Forecasting, Oct 2020.
-- Cornish lecture, *Feasts and fables: modern tools for time series analysis*, Adelaide, November 2021.
+- Keynote speaker, *Ten years of forecast reconciliation*, International Symposium on Forecasting, Oct 2020.
+- Cornish lecture, *Feasts and fables: modern tools for time series analysis*, Adelaide, Nov 2021.
 - Blakers lecture, *Forecasting the future and the future of forecasting*, ANU-AAMT National Mathematics Summer School, Jan 2022.
-- Keynote speaker, *Visualization of complex seasonal patterns in time series*, 800 year anniversary, University of Padua, Sep 2022.
+- Keynote speaker, *Visualization of complex seasonal patterns in time series*, 800th anniversary, University of Padua, Sep 2022.
 - ANU public lecture, *Forecasting the future and the future of forecasting*, Canberra, Nov 2022.
 - IIF Distinguished Lecturer, *Forecast reconciliation*, online series of lectures, Nov 2023.
 - Suessmilch lecture, *vital: Tidy data analysis for demography using R*, Rostock, Germany, Jun 2024.
@@ -189,7 +189,6 @@ My h-index is `r rjh$All[2]` with total citations of `r prettyNum(rjh$All[1], bi
 pubs[c(
   "tsibble",
   "globalforecasting",
-  "forecastsofa",
   "baggedETS",
   "smartmeterhts",
   "mint",

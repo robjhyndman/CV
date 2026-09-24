@@ -78,14 +78,14 @@ tribble(
 
 awards <- tribble(
   ~Year , ~Award                                                                                                 ,
-   2025 , "Highly-cited researcher award, Clarivate Analytics"                                                   ,
+   2025 , "Highly Cited Researcher, Clarivate Analytics"                                                         ,
    2022 , "Australian Awards for University Teaching citation for outstanding contributions to student learning" ,
    2021 , "Pitman Medal, Statistical Society of Australia"                                                       ,
    2020 , "Dean's Award for Innovation in Learning and Teaching, Monash Business School"                         ,
    2010 , "Dean's Award for Excellence in Innovation and External Collaboration, Monash Business School"         ,
    2010 , "HP Innovation Research Award"                                                                         ,
-   2008 , "Dean's award for Excellence in Research, Monash Business School"                                      ,
-   2008 , "Vice-Chancellor's award for postgraduate supervisor of the year, Monash University"                   ,
+   2008 , "Dean's Award for Excellence in Research, Monash Business School"                                      ,
+   2008 , "Vice-Chancellor's Award for Postgraduate Supervisor of the Year, Monash University"                   ,
    2007 , "Moran Medal for Statistical Science, Australian Academy of Science"                                   ,
    2005 , "Elected member of the International Statistical Institute"                                            ,
 ) %>%
@@ -96,10 +96,10 @@ awards <- tribble(
 
 - In each year since 2018, student evaluations for "Applied forecasting for business and economics" have given an average rating for my teaching above 4.8 out of 5.
 - I currently supervise 2 PhD students.
-  I have supervised to completion 34 PhD students and 3 Masters students.
-- I am author of an innovative textbook with George Athanasopoulos entitled *Forecasting: principles and practice* ([`OTexts.com/fpp3/`](https://OTexts.com/fpp3)) which is available online and free of charge.
-  The website has an average of over 25000 pageviews per day.
-- I publish the [*Hyndsight*](https://robjhyndman.com/hyndsight) blog on research issues which receives an average of about 1500 pageviews per day.
+  I have supervised to completion 34 PhD students and 3 Master's students.
+- I am co-author, with George Athanasopoulos, of an innovative textbook entitled *Forecasting: principles and practice* ([`OTexts.com/fpp3/`](https://OTexts.com/fpp3)), which is available online and free of charge.
+  The website has an average of over 25,000 pageviews per day.
+- I publish the [*Hyndsight*](https://robjhyndman.com/hyndsight) blog on research issues, which receives an average of about 1500 pageviews per day.
 
 # Editorial boards
 
@@ -126,13 +126,13 @@ tribble(
 # Society leadership
 
 - Director, International Institute of Forecasters, 2005--2018.
-- Member, Scientific Program Advisory Group, Statistical Society of Australia, 2001--2004
+- Member, Scientific Program Advisory Group, Statistical Society of Australia, 2001--2004.
 - Secretary, Victorian branch, Statistical Society of Australia, 1993--1995.
 - Central Council member, Statistical Society of Australia, 1993--1996.
 
 # Advisory boards
 
-- Member of the Scaling committee, Victorian Tertiary Admissions Centre (1994--2025).
+- Member of the Scaling Committee, Victorian Tertiary Admissions Centre (1994--2025).
   This committee is responsible for producing the ATAR for VCE students.
 - Member of the ATAR Technical Group for the Australasian Conference of Tertiary Admissions Centres (2003--2026).
 - Member of the Indigenous Statistical and Information Advisory Group for the Australian Institute of Health and Welfare (2017--2023).
@@ -140,11 +140,11 @@ tribble(
 
 # Conference organization
 
-- General Chair, International Symposium on Forecasting, 2017
+- General Chair, International Symposium on Forecasting, 2017.
 - Program Chair, International Symposium on Forecasting, 2012.
 - Program Co-Chair, International Symposium on Forecasting, 2004.
 
-# Research Grants
+# Research grants
 
 ```{r}
 #| label: grants
@@ -174,10 +174,10 @@ Highlights include an ARC Centre of Excellence, an NHMRC Centre of Excellence, a
 - Keynote speaker, *Forecasting large collections of related time series*, German Statistical Week, Augsburg, Sep 2016.
 - Keynote speaker, *Visualizing and forecasting big time series data*, ICML Time Series Workshop, Sydney, Aug 2017.
 - Keynote speaker, Beijing Workshop on Forecasting, Nov 2017.
-- Keynote speaker, *10 years of forecast reconciliation*, International Symposium on Forecasting, Oct 2020.
-- ACEMS public address, *Uncertain futures: what can we forecast and when should we give up?*, Aug 2021.
+- Keynote speaker, *Ten years of forecast reconciliation*, International Symposium on Forecasting, Oct 2020.
+- ACEMS public lecture, *Uncertain futures: what can we forecast and when should we give up?*, Aug 2021.
 - Blakers lecture, *Forecasting the future and the future of forecasting*, ANU-AAMT National Mathematics Summer School, Jan 2022.
-- Keynote speaker, *Visualization of complex seasonal patterns in time series*, 800 year anniversary, University of Padua, Sep 2022.
+- Keynote speaker, *Visualization of complex seasonal patterns in time series*, 800th anniversary, University of Padua, Sep 2022.
 - ANU public lecture, *Forecasting the future and the future of forecasting*, Canberra, Nov 2022.
 - IIF Distinguished Lecturer, *Forecast reconciliation*, online series of lectures, Nov 2023.
 - Suessmilch lecture, *vital: Tidy data analysis for demography using R*, Rostock, Germany, Jun 2024.
@@ -202,7 +202,7 @@ pubs[c("fpp3", "MWH3", "expsmooth08")] |>
 # Research
 
 - Since 1991 I have authored `r NROW(pubs)` papers, chapters or books on statistical topics.
-  A selection of these are listed below.
+  A selection of these is listed below.
 - On Google Scholar my h-index is `r rjh$All[2]` with total citations of `r prettyNum(rjh$All[1], big.mark=",")` (as at `r format(Sys.time(), "%e %B %Y")`).
 
 # Selected research papers^[Citations from Google Scholar on `r format(Sys.time(), "%e %B %Y")`.]
