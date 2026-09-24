@@ -6,7 +6,7 @@
   - Runs `targets::tar_make()` to execute the targets pipeline
   - Generates all CV variants (full, 1-page, 2-page, 3-page)
 - **Clean build artifacts**: `make clean`
-  - Runs `targets::tar_destroy()` to remove all targets
+  - Runs `targets::tar_destroy(destroy = "objects")`, forcing a full rebuild without deleting `_targets/meta/meta`
 
 The build system uses the `targets` package to manage dependencies and ensure reproducible builds.
 
@@ -80,7 +80,7 @@ The `cv-pdf` format (defined in `_extensions/`) provides:
 
 ## Environment
 
-- **R environment**: Managed by `renv` (see `renv.lock`)
-  - Activate with `renv::restore()` if dependencies are missing
+- **R environment**: Managed by `uvr` (see `uvr.toml` and `uvr.lock`)
+  - `make` runs `uvr sync` first; run it manually if dependencies are missing
 - **Project structure**: Standard R project (`CV.Rproj`)
 - **Configuration**: `.Renviron` and `.Rprofile` for local settings
