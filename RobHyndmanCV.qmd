@@ -205,6 +205,7 @@ tribble(
 
 # Major presentations
 
+- Keynote speaker, *Spotting the weird ones*, WOMBAT 2026, Melbourne, Dec 2026.
 - Keynote speaker, *Improving forecasts via subspace projections*, International Forum on Statistics, Beijing, Jul 2025.
 - Keynote speaker, *Improving forecasts via subspace projections*, International Statistics Conference, Colombo, Dec 2024.
 - Suessmilch Lecturer, *vital: Tidy data analysis for demography using R*, Max Planck Institute for Demographic Research, Rostock, Jun 2024.
