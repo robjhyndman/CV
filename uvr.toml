@@ -160,5 +160,4 @@ yaml = "*"
 
 [dependencies.pkgmeta]
 git = "robjhyndman/pkgmeta"
-rev = "6ed051c473f81ab9497ce159302ac94e62b4d954"
 

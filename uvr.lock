@@ -1,3 +1,5 @@
+manifest_fingerprint = "sha256:fdfa598e4eaa87308d61e98b6ba1e27b01b244041c358a2a96360fccf2a2b3c2"
+
 [r]
 version = "4.6.1"
 
@@ -183,12 +185,11 @@ requires = ["backports"]
 
 [[package]]
 name = "bibtex"
-version = "0.5.2"
+version = "0.5.3"
 source = "cran"
-raw_version = "0.5.2"
-url = "https://cran.r-project.org/src/contrib/bibtex_0.5.2.tar.gz"
-checksum = "md5:d825527513d2017da22e72141f184649"
-requires = ["backports"]
+raw_version = "0.5.3"
+url = "https://cran.r-project.org/src/contrib/bibtex_0.5.3.tar.gz"
+checksum = "md5:fd227d3ccecccdf6581d84c393972da4"
 
 [[package]]
 name = "bit"
@@ -200,11 +201,11 @@ checksum = "md5:f36540550af63b0db8c78429d7366998"
 
 [[package]]
 name = "bit64"
-version = "4.8.4"
+version = "4.8.6"
 source = "cran"
-raw_version = "4.8.4"
-url = "https://cran.r-project.org/src/contrib/bit64_4.8.4.tar.gz"
-checksum = "md5:a02c94b7ea2637da988127cb12933fbf"
+raw_version = "4.8.6"
+url = "https://cran.r-project.org/src/contrib/bit64_4.8.6.tar.gz"
+checksum = "md5:8c4fb59f92ce6b09ecdc8e0f7a186504"
 requires = ["bit"]
 
 [[package]]
@@ -389,11 +390,11 @@ checksum = "md5:bb290c70d23b2200006187ac7839116f"
 
 [[package]]
 name = "curl"
-version = "8.0.0"
+version = "8.1.0"
 source = "cran"
-raw_version = "8.0.0"
-url = "https://cran.r-project.org/src/contrib/curl_8.0.0.tar.gz"
-checksum = "md5:11e42cdbfa575a081e5bf9a710ee76bd"
+raw_version = "8.1.0"
+url = "https://cran.r-project.org/src/contrib/curl_8.1.0.tar.gz"
+checksum = "md5:196b1c5e8adafec4b5bb9123864b52b4"
 
 [[package]]
 name = "data.table"
@@ -568,11 +569,11 @@ requires = [
 
 [[package]]
 name = "gargle"
-version = "1.6.1"
+version = "1.7.0"
 source = "cran"
-raw_version = "1.6.1"
-url = "https://cran.r-project.org/src/contrib/gargle_1.6.1.tar.gz"
-checksum = "md5:a0ca8a66d77f1417539ad13bb3e85b5d"
+raw_version = "1.7.0"
+url = "https://cran.r-project.org/src/contrib/gargle_1.7.0.tar.gz"
+checksum = "md5:a9fa47dd8abb7187360f09c9a48261ab"
 requires = [
     "cli",
     "fs",
@@ -581,6 +582,7 @@ requires = [
     "jsonlite",
     "lifecycle",
     "openssl",
+    "R6",
     "rappdirs",
     "rlang",
     "withr",
@@ -678,11 +680,11 @@ checksum = "md5:24e3cd382f52015c929538a5208d11aa"
 
 [[package]]
 name = "googledrive"
-version = "2.1.2"
+version = "2.2.0"
 source = "cran"
-raw_version = "2.1.2"
-url = "https://cran.r-project.org/src/contrib/googledrive_2.1.2.tar.gz"
-checksum = "md5:8aeb39196ae48307a903bba1e5d73fa5"
+raw_version = "2.2.0"
+url = "https://cran.r-project.org/src/contrib/googledrive_2.2.0.tar.gz"
+checksum = "md5:1fb09b1ba4fed95d93b03406bb0447f5"
 requires = [
     "cli",
     "gargle",
@@ -702,11 +704,11 @@ requires = [
 
 [[package]]
 name = "googlesheets4"
-version = "1.1.2"
+version = "1.1.3"
 source = "cran"
-raw_version = "1.1.2"
-url = "https://cran.r-project.org/src/contrib/googlesheets4_1.1.2.tar.gz"
-checksum = "md5:21094083f375d8f9d1499263de1d9ecc"
+raw_version = "1.1.3"
+url = "https://cran.r-project.org/src/contrib/googlesheets4_1.1.3.tar.gz"
+checksum = "md5:bf92d615c0f33c62c3f7e916d43195c7"
 requires = [
     "cellranger",
     "cli",
@@ -716,7 +718,6 @@ requires = [
     "googledrive",
     "httr",
     "ids",
-    "lifecycle",
     "magrittr",
     "purrr",
     "rematch2",
@@ -814,11 +815,11 @@ requires = [
 
 [[package]]
 name = "httr"
-version = "1.4.8"
+version = "1.4.9"
 source = "cran"
-raw_version = "1.4.8"
-url = "https://cran.r-project.org/src/contrib/httr_1.4.8.tar.gz"
-checksum = "md5:8756015b94a9cff6f410ca4de8557f12"
+raw_version = "1.4.9"
+url = "https://cran.r-project.org/src/contrib/httr_1.4.9.tar.gz"
+checksum = "md5:22833540ae6b924a3de576cf6c9c8e50"
 requires = [
     "curl",
     "jsonlite",
@@ -861,11 +862,11 @@ requires = [
 
 [[package]]
 name = "igraph"
-version = "2.3.3"
+version = "2.3.4"
 source = "cran"
-raw_version = "2.3.3"
-url = "https://cran.r-project.org/src/contrib/igraph_2.3.3.tar.gz"
-checksum = "md5:afb847dd9d9cd2c0606573ebe214393d"
+raw_version = "2.3.4"
+url = "https://cran.r-project.org/src/contrib/igraph_2.3.4.tar.gz"
+checksum = "md5:32025403dd0a955373615930cf0aa578"
 requires = [
     "cli",
     "lifecycle",
@@ -917,11 +918,11 @@ checksum = "md5:3e54e6fbc0c9063936e3d01e91419c14"
 
 [[package]]
 name = "knitr"
-version = "1.51.0"
+version = "1.52.0"
 source = "cran"
-raw_version = "1.51"
-url = "https://cran.r-project.org/src/contrib/knitr_1.51.tar.gz"
-checksum = "md5:79f32f24b572fe198baca8882d6aa87f"
+raw_version = "1.52"
+url = "https://cran.r-project.org/src/contrib/knitr_1.52.tar.gz"
+checksum = "md5:0fc9f044e50fd86269f05b6067159bc6"
 requires = [
     "evaluate",
     "highr",
@@ -939,22 +940,22 @@ checksum = "md5:915e6c823c1d8243641ce97253389f14"
 
 [[package]]
 name = "languageserver"
-version = "0.3.18"
+version = "0.3.21"
 source = "cran"
-raw_version = "0.3.18"
-url = "https://cran.r-project.org/src/contrib/languageserver_0.3.18.tar.gz"
-checksum = "md5:3283b759b82dbc59a2f884b3f1d6aab2"
+raw_version = "0.3.21"
+url = "https://cran.r-project.org/src/contrib/languageserver_0.3.21.tar.gz"
+checksum = "md5:290900ede2daae034823cbbb55cef36c"
 requires = [
     "callr",
     "collections",
     "digest",
     "fs",
     "jsonlite",
-    "lintr",
+    "processx",
+    "ps",
     "R6",
     "roxygen2",
     "stringi",
-    "styler",
     "xml2",
     "xmlparsedata",
 ]
@@ -1088,11 +1089,11 @@ checksum = "md5:cecd0f434a6327dcf5ca0bc2da494d06"
 
 [[package]]
 name = "pbapply"
-version = "1.7.4"
+version = "1.7.5"
 source = "cran"
-raw_version = "1.7-4"
-url = "https://cran.r-project.org/src/contrib/pbapply_1.7-4.tar.gz"
-checksum = "md5:4cba88d695ff0beb228301caef295561"
+raw_version = "1.7-5"
+url = "https://cran.r-project.org/src/contrib/pbapply_1.7-5.tar.gz"
+checksum = "md5:5a7e1d9183bf7dd782d3c96539314717"
 
 [[package]]
 name = "pillar"
@@ -1156,8 +1157,8 @@ requires = [
 name = "pkgmeta"
 version = "0.1.0"
 source = "github"
-url = "https://api.github.com/repos/robjhyndman/pkgmeta/tarball/6ed051c473f81ab9497ce159302ac94e62b4d954"
-checksum = "git:6ed051c473f81ab9497ce159302ac94e62b4d954"
+url = "https://api.github.com/repos/robjhyndman/pkgmeta/tarball/b620fd603f4bad003aa2bf36156150c16f4fc78d"
+checksum = "git:b620fd603f4bad003aa2bf36156150c16f4fc78d"
 requires = [
     "cranlogs",
     "desc",
@@ -1328,13 +1329,15 @@ requires = [
 
 [[package]]
 name = "readxl"
-version = "1.5.0"
+version = "1.6.0"
 source = "cran"
-raw_version = "1.5.0"
-url = "https://cran.r-project.org/src/contrib/readxl_1.5.0.tar.gz"
-checksum = "md5:bd4cffa51566929514856062c026ffb6"
+raw_version = "1.6.0"
+url = "https://cran.r-project.org/src/contrib/readxl_1.6.0.tar.gz"
+checksum = "md5:1d3f34e0d3f5f639aaf4286dfc631024"
 requires = [
     "cellranger",
+    "cli",
+    "rlang",
     "tibble",
     "cpp11",
     "progress",
@@ -1359,11 +1362,11 @@ requires = ["tibble"]
 
 [[package]]
 name = "renv"
-version = "1.2.4"
+version = "1.3.1"
 source = "cran"
-raw_version = "1.2.4"
-url = "https://cran.r-project.org/src/contrib/renv_1.2.4.tar.gz"
-checksum = "md5:6389e4edea14694db66b360f94bbaa35"
+raw_version = "1.3.1"
+url = "https://cran.r-project.org/src/contrib/renv_1.3.1.tar.gz"
+checksum = "md5:e50cf391271f5864c528b1953aad3d84"
 
 [[package]]
 name = "reprex"
@@ -1405,11 +1408,11 @@ checksum = "md5:b52c165e43f4d7fe5cfa15c5c9467ff4"
 
 [[package]]
 name = "rmarkdown"
-version = "2.31.0"
+version = "2.32.0"
 source = "cran"
-raw_version = "2.31"
-url = "https://cran.r-project.org/src/contrib/rmarkdown_2.31.tar.gz"
-checksum = "md5:8f7a4eef6b62e7f2284550c3134f28c8"
+raw_version = "2.32"
+url = "https://cran.r-project.org/src/contrib/rmarkdown_2.32.tar.gz"
+checksum = "md5:01b497e82b287a2269a965119ed59271"
 requires = [
     "bslib",
     "evaluate",
@@ -1425,11 +1428,11 @@ requires = [
 
 [[package]]
 name = "roxygen2"
-version = "8.1.0"
+version = "8.1.1"
 source = "cran"
-raw_version = "8.1.0"
-url = "https://cran.r-project.org/src/contrib/roxygen2_8.1.0.tar.gz"
-checksum = "md5:db68d5c2c7cff5bf6c7db0069507a465"
+raw_version = "8.1.1"
+url = "https://cran.r-project.org/src/contrib/roxygen2_8.1.1.tar.gz"
+checksum = "md5:9c8666c36cdff91561fa7176dae67c98"
 requires = [
     "brew",
     "cli",
@@ -1517,20 +1520,19 @@ requires = [
 
 [[package]]
 name = "secretbase"
-version = "1.3.0"
+version = "1.3.1"
 source = "cran"
-raw_version = "1.3.0"
-url = "https://cran.r-project.org/src/contrib/secretbase_1.3.0.tar.gz"
-checksum = "md5:a563588d4e0d71e2aa92b2aeec56f046"
+raw_version = "1.3.1"
+url = "https://cran.r-project.org/src/contrib/secretbase_1.3.1.tar.gz"
+checksum = "md5:0cb59852ea54b9d99e85fd04708a7364"
 
 [[package]]
 name = "selectr"
-version = "0.6.0"
+version = "0.8.0"
 source = "cran"
-raw_version = "0.6-0"
-url = "https://cran.r-project.org/src/contrib/selectr_0.6-0.tar.gz"
-checksum = "md5:7d86872fb9fa73c7c81aa6682134d712"
-requires = ["R6"]
+raw_version = "0.8-0"
+url = "https://cran.r-project.org/src/contrib/selectr_0.8-0.tar.gz"
+checksum = "md5:06a8ec7b306aec30a99f3654c60d5f59"
 
 [[package]]
 name = "slam"
@@ -1779,20 +1781,20 @@ requires = ["cpp11"]
 
 [[package]]
 name = "tinytex"
-version = "0.60.0"
+version = "0.61.0"
 source = "cran"
-raw_version = "0.60"
-url = "https://cran.r-project.org/src/contrib/tinytex_0.60.tar.gz"
-checksum = "md5:c680dc21cfd948a22a4f72427967e3e0"
+raw_version = "0.61"
+url = "https://cran.r-project.org/src/contrib/tinytex_0.61.tar.gz"
+checksum = "md5:67e114649aa529e1631baed939110e97"
 requires = ["xfun"]
 
 [[package]]
 name = "tm"
-version = "0.7.19"
+version = "0.7.20"
 source = "cran"
-raw_version = "0.7-19"
-url = "https://cran.r-project.org/src/contrib/tm_0.7-19.tar.gz"
-checksum = "md5:24a21c16791e22e7662479e86dc91c1f"
+raw_version = "0.7-20"
+url = "https://cran.r-project.org/src/contrib/tm_0.7-20.tar.gz"
+checksum = "md5:0353a36c24c2ac3c537da306791aa4c5"
 requires = [
     "NLP",
     "Rcpp",
@@ -1958,11 +1960,11 @@ requires = [
 
 [[package]]
 name = "xfun"
-version = "0.60.0"
+version = "0.62.0"
 source = "cran"
-raw_version = "0.60"
-url = "https://cran.r-project.org/src/contrib/xfun_0.60.tar.gz"
-checksum = "md5:1bea9ab58602d9b6eac3b5823a95e5e6"
+raw_version = "0.62"
+url = "https://cran.r-project.org/src/contrib/xfun_0.62.tar.gz"
+checksum = "md5:93bc01d797fcdf1e4014998e4c248bd7"
 
 [[package]]
 name = "xml2"
