@@ -243,3 +243,6 @@ Rpackages.Rout
 .posit/assistant/settings.json
 /.uvr/library/
 /.uvr/activate*
+
+# make stamps
+.make/
