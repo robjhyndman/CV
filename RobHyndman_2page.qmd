@@ -47,10 +47,10 @@ targets::tar_load(c(pubs, rjh, rjh_packages, grants, rjhcites))
 #| output: asis
 
 tribble(
-  ~Year , ~Degree       , ~Institution                       ,
-   1988 , "B.Sc.(Hons)" , "University of Melbourne"          ,
-   1992 , "Ph.D."       , "University of Melbourne"          ,
-   2000 , "A.Stat."     , "Statistical Society of Australia"
+  ~Year , ~Degree      , ~Institution                       ,
+   1988 , "BSc (Hons)" , "University of Melbourne"          ,
+   1992 , "PhD"        , "University of Melbourne"          ,
+   2000 , "AStat"      , "Statistical Society of Australia"
 ) %>%
   baretable()
 ```
@@ -127,14 +127,14 @@ sumgrants <- grants %>%
   sum(na.rm = TRUE)
 ```
 
-I have acquired (in most cases jointly) about $`r round(sumgrants/1e6)` million in external research grants since 2000, including an ARC Centre of Excellence, an NHMRC Centre of Excellence, an ARC Industrial Training Transformation Centre, 4 ARC Discovery Grants, 3 ARC Linkage Grants, 1 NHMRC Grant, and contract research grants from many government and business organizations.
+I have acquired (in most cases jointly) about $`r round(sumgrants/1e6)` million in external research grants since 2000, including an ARC Centre of Excellence, an NHMRC Centre of Excellence, an ARC Industrial Training Transformation Centre, 4 ARC Discovery Grants, 3 ARC Linkage Grants, 1 NHMRC Grant, and contract research grants from many government and business organisations.
 
 # Selected public and keynote lectures
 
 - Belz lecture, *Forecasting and the importance of being uncertain*, Statistical Society of Australia, Melbourne, Oct 2006.
 - Knibbs lecture, *Population forecasting and the importance of being uncertain*, Statistical Society of Australia, Canberra, Nov 2007.
-- Keynote speaker, *Extreme Forecasting*, International Symposium on Forecasting, Hong Kong, Jun 2009.
-- Keynote speaker, *Man vs Wild Data*, Young Statisticians Conference, Melbourne, Feb 2013.
+- Keynote speaker, *Extreme forecasting*, International Symposium on Forecasting, Hong Kong, Jun 2009.
+- Keynote speaker, *Man vs wild data*, Young Statisticians Conference, Melbourne, Feb 2013.
 - Keynote speaker, *Forecasting without forecasters*, International Symposium on Forecasting, Seoul, Jun 2013.
 - Keynote speaker, *Automatic time series forecasting*, "New Trends on Intelligent Systems and Soft Computing 2014", Granada, Spain, Feb 2014.
 - Yahoo Big Thinkers lecture, *Exploring the boundaries of predictability: what can we forecast, and when should we give up?*, California, Jun 2015.
@@ -143,7 +143,7 @@ I have acquired (in most cases jointly) about $`r round(sumgrants/1e6)` million 
 - Keynote speaker, *Ten years of forecast reconciliation*, International Symposium on Forecasting, Oct 2020.
 - Cornish lecture, *Feasts and fables: modern tools for time series analysis*, Adelaide, Nov 2021.
 - Blakers lecture, *Forecasting the future and the future of forecasting*, ANU-AAMT National Mathematics Summer School, Jan 2022.
-- Keynote speaker, *Visualization of complex seasonal patterns in time series*, 800th anniversary, University of Padua, Sep 2022.
+- Keynote speaker, *Visualisation of complex seasonal patterns in time series*, 800th anniversary, University of Padua, Sep 2022.
 - ANU public lecture, *Forecasting the future and the future of forecasting*, Canberra, Nov 2022.
 - IIF Distinguished Lecturer, *Forecast reconciliation*, online series of lectures, Nov 2023.
 - Suessmilch lecture, *vital: Tidy data analysis for demography using R*, Rostock, Germany, Jun 2024.

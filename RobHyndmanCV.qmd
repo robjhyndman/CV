@@ -56,10 +56,10 @@ targets::tar_load(c(
 #| output: "asis"
 
 tribble(
-  ~Degree       , ~Institution                       , ~Year ,
-  "B.Sc.(Hons)" , "University of Melbourne"          ,  1988 ,
-  "Ph.D."       , "University of Melbourne"          ,  1992 ,
-  "A.Stat."     , "Statistical Society of Australia" ,  2000
+  ~Degree      , ~Institution                       , ~Year ,
+  "BSc (Hons)" , "University of Melbourne"          ,  1988 ,
+  "PhD"        , "University of Melbourne"          ,  1992 ,
+  "AStat"      , "Statistical Society of Australia" ,  2000
 ) |>
   baretable()
 ```
@@ -98,7 +98,6 @@ tribble(
     Years = if_else(
       End == Start,
       as.character(Start),
-      paste(Start, "--", End, sep = ""),
       paste(Start, "--", End, sep = "")
     )
   ) |>
@@ -181,7 +180,7 @@ tribble(
 
 - Since 1991 I have authored `r NROW(pubs)` papers, chapters or books on statistical topics (listed on pages \pageref{papersstart}--\pageref{papersend}).
 - On Google Scholar my h-index is `r rjh$All[2]` with total citations of `r prettyNum(rjh$All[1], big.mark=",")` (as at `r format(Sys.time(), "%e %B %Y")`).
-- My current research involves the analysis of large collections of time series (including visualization, forecasting, reconciliation and modelling), and anomaly detection.
+- My current research involves the analysis of large collections of time series (including visualisation, forecasting, reconciliation and modelling), and anomaly detection.
 - I currently supervise 2 PhD students.
   I have supervised to completion 34 PhD students and 3 Master's students.
 - I have been a PhD examiner more than 15 times for students in Europe, Australia and Asia.
@@ -209,31 +208,31 @@ tribble(
 - Keynote speaker, *Improving forecasts via subspace projections*, International Forum on Statistics, Beijing, Jul 2025.
 - Keynote speaker, *Improving forecasts via subspace projections*, International Statistics Conference, Colombo, Dec 2024.
 - Suessmilch Lecturer, *vital: Tidy data analysis for demography using R*, Max Planck Institute for Demographic Research, Rostock, Jun 2024.
-- Keynote speaker, *Forecasting the future and the future of forecasting*, 2024 Australian Treasuries Forecasting Conference, Feb 2024.
+- Keynote speaker, *Forecasting the future and the future of forecasting*, 2024 Australian Treasuries Forecasting Conference, Melbourne, Feb 2024.
 - IIF Distinguished Lecturer, *Forecast reconciliation*, online series of lectures, Nov 2023.
-- Keynote speaker, *Visualization of complex seasonal patterns in time series*, 800th anniversary, University of Padua, Sep 2022.
-- Keynote speaker, *Creating social good for forecasters*, Forecasting for Social Good workshop, Oxford UK, Jul 2022.
+- Keynote speaker, *Visualisation of complex seasonal patterns in time series*, 800th anniversary, University of Padua, Sep 2022.
+- Keynote speaker, *Creating social good for forecasters*, Forecasting for Social Good workshop, Oxford, UK, Jul 2022.
 - Blakers lecture, *Forecasting the future and the future of forecasting*, ANU-AAMT National Mathematics Summer School, Jan 2022.
 - Keynote speaker, *Ten years of forecast reconciliation*, International Symposium on Forecasting, online, Oct 2020.
 - Workshop leader, *Tidy time series and forecasting in R*, rstudio::conf, San Francisco, Jan 2020.
 - ISI short course, *High-dimensional time series analysis*, Kuala Lumpur, Aug 2019.
 - Workshop leader, *Forecasting: principles and practice*, New York City, Jun 2018.
-- Keynote speaker, Beijing Workshop on Forecasting, Nov 2017.
+- Keynote speaker, Workshop on Forecasting, CUFE, Beijing, Nov 2017.
 - Keynote speaker, ICML Time Series Workshop, Sydney, Aug 2017.
 - Invited speaker, International Symposium on Energy Analytics, Cairns, Jun 2017.
 - Keynote speaker, *Forecasting large collections of related time series*, German Statistical Week, Augsburg, Sep 2016.
 - Keynote speaker, *Forecasting big time series data using R*, Chinese R conference, Nanchang, Oct 2015.
-- Invited speaker, *Visualization and forecasting of big time series data*, ACEMS Big data workshop, QUT, Feb 2015.
+- Invited speaker, *Visualisation and forecasting of big time series data*, ACEMS Big data workshop, QUT, Feb 2015.
 - Workshop leader, *Forecasting: principles and practice*, University of Western Australia, Sep 2014.
 - Workshop leader, *Functional time series in demography*, Humboldt University, Berlin, Jun 2014.
 - Keynote speaker, *Challenges in forecasting peak electricity demand*, Energy Forum, Valais, Switzerland, Jun 2014.
 - Workshop leader, *State space models for time series*, Australian Bureau of Statistics, May 2014.
 - Keynote speaker, *Automatic time series forecasting*, "New Trends on Intelligent Systems and Soft Computing 2014", University of Granada, Spain, Feb 2014.
 - Keynote speaker, *Forecasting without forecasters*, International Symposium on Forecasting, Seoul, Jun 2013.
-- Keynote speaker, *Man vs Wild Data*, Young Statisticians Conference, Melbourne, Feb 2013.
+- Keynote speaker, *Man vs wild data*, Young Statisticians Conference, Melbourne, Feb 2013.
 - Invited speaker, *Advances in automatic time series forecasting*, Australian Statistics Conference, Adelaide, Jul 2012.
-- Workshop leader, *Statistical Forecasting: Principles and Practice*, Swiss Statistical Society, Kandersteg, Jun 2011.
-- Keynote speaker, *Extreme Forecasting*, International Symposium on Forecasting, Hong Kong, Jun 2009.
+- Workshop leader, *Statistical forecasting: principles and practice*, Swiss Statistical Society, Kandersteg, Jun 2011.
+- Keynote speaker, *Extreme forecasting*, International Symposium on Forecasting, Hong Kong, Jun 2009.
 
 # Grants
 
@@ -310,11 +309,11 @@ grants |>
 
 # Society memberships
 
-- Fellow, International Institute of Forecasters
-- Elected Member, International Statistical Institute
-- Member, International Association for Statistical Computing
-- Member, International Society for Business and Industrial Statistics
-- Member, Statistical Society of Australia
+- Fellow, International Institute of Forecasters.
+- Elected Member, International Statistical Institute.
+- Member, International Association for Statistical Computing.
+- Member, International Society for Business and Industrial Statistics.
+- Member, Statistical Society of Australia.
 
 # Society leadership
 
@@ -323,7 +322,7 @@ grants |>
 - Central Council member, Statistical Society of Australia, 1993--1996.
 - Secretary, Victorian branch, Statistical Society of Australia, 1993--1995.
 
-# Conference organization
+# Conference organisation
 
 - Chair, IIF Workshop on Forecast Reconciliation, 2023.
 - General Chair, International Symposium on Forecasting, 2017.
