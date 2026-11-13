@@ -139,8 +139,8 @@ getbibentry <- function(pkg) {
   meta$authors <- trimws(meta$authors)
   meta$authors <- gsub("  +", " ", meta$authors, perl = TRUE)
   # Remove duplicate ands
-  meta$authors <- gsub("and and and ", "and ", meta$authors, perl = TRUE)
-  meta$authors <- gsub("and and ", "and ", meta$authors, perl = TRUE)
+  # (word boundaries so names ending in "and", e.g. Wand, aren't matched)
+  meta$authors <- gsub("\\band( and)+\\b", "and", meta$authors, perl = TRUE)
   meta$authors <- gsub("î", "i", meta$authors)
   meta$authors <- gsub("ū", "u", meta$authors)
   meta$authors <- gsub("ț", "t", meta$authors)
