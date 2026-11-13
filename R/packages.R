@@ -89,6 +89,8 @@ write_packages_bib <- function(packages, file) {
 getbibentry <- function(pkg) {
   meta <- as.list(pkg)
   meta$year <- lubridate::year(meta$date)
+  # Keep title on one line (DESCRIPTION titles may be wrapped)
+  meta$title <- stringr::str_squish(meta$title)
   # Fix any & in title
   meta$title <- gsub("&", "\\\\&", meta$title)
   # Keep title case
