@@ -118,6 +118,19 @@ getbibentry <- function(pkg) {
     "{Australian Bureau of Statistics ABS}",
     meta$authors
   )
+  # Brace other corporate authors so BibTeX doesn't parse them as people
+  for (org in c(
+    "R Foundation",
+    "Journal of Statistical Software",
+    "Association for Computing Machinery"
+  )) {
+    meta$authors <- gsub(org, paste0("{", org, "}"), meta$authors, fixed = TRUE)
+  }
+  meta$authors <- gsub(
+    "Taylor and Francis",
+    "{Taylor \\\\& Francis}",
+    meta$authors
+  )
   # Remove comments in author fields
   meta$authors <- gsub(
     "\\([a-zA-Z0-9\\-\\s,&\\(\\)<>:/\\.']*\\)",

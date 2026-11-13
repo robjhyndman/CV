@@ -76,7 +76,9 @@ add_bib_section <- function(
       "{\\a`\\i}" = "ì", # ì
       "{\\^\\i}" = "î", # î
       "{\\\"\\i}" = "ï", # ï
-      "Steponavi{\\v c}?" = "Steponavičė"
+      "Steponavi{\\v c}?" = "Steponavičė",
+      # \& in author names loses its escape, leaving a bare & for LaTeX
+      "{Taylor & Francis}" = "{Taylor \\& Francis}"
     )
     bib_text <- readLines("temp.bib", encoding = "UTF-8")
     for (pattern in names(bib_fixes)) {
