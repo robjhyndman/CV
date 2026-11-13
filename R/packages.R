@@ -55,6 +55,11 @@ get_rjh_packages <- function(rjh_packages) {
   rjh_packages <- rjh_packages |>
     filter(package %notin% c("fpp", "rmarkdown", "icons"))
 
+  # Flag packages currently on CRAN (not archived)
+  current <- rownames(available.packages(repos = "https://cloud.r-project.org"))
+  rjh_packages <- rjh_packages |>
+    mutate(on_cran = package %in% current)
+
   # Return tibble of package info
   return(rjh_packages)
 }
@@ -159,9 +164,29 @@ getbibentry <- function(pkg) {
     author = meta$authors,
     url = strsplit(meta$url, ",")[[1]][1],
     version = meta$version,
+    doi = cran_doi(meta),
     key = paste("R", meta$package, sep = ""),
     note = meta$note
   )
+}
+
+# CRAN DOI (10.32614/CRAN.package.<name>) for a package, or NULL.
+# Current CRAN packages always have one. Packages archived before CRAN
+# started minting DOIs don't, so for archived packages only return the
+# DOI if it resolves.
+cran_doi <- function(meta) {
+  if (is.na(meta$cran_url)) {
+    return(NULL)
+  }
+  doi <- paste0("10.32614/CRAN.package.", meta$package)
+  if (isTRUE(meta$on_cran)) {
+    return(doi)
+  }
+  status <- tryCatch(
+    attr(curlGetHeaders(paste0("https://doi.org/", doi)), "status"),
+    error = function(e) NA
+  )
+  if (isTRUE(status < 400)) doi else NULL
 }
 
 read_bib <- function(file) {
